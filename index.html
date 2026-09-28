@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="theme-color" content="#ffffff">
 <script>try{if(localStorage.getItem("tk-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<script>/* always open at the top (browsers otherwise restore the old scroll position) */
+try{if("scrollRestoration" in history)history.scrollRestoration="manual"}catch(e){}
+if(!location.hash){window.scrollTo(0,0);addEventListener("load",function(){window.scrollTo(0,0);if(window.__lenis)window.__lenis.scrollTo(0,{immediate:true,force:true});});addEventListener("pageshow",function(e){if(e.persisted)window.scrollTo(0,0);});}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Team K | Karl Vermeulen, Harcourts Howick</title>
 <meta name="description" content="Sell faster with Karl Vermeulen and Team K at Harcourts Howick. Close to $845 million in property sales across Howick and East Auckland.">
@@ -632,16 +635,16 @@ body.cur-on .cursor,body.cur-on .cursor-ring{opacity:1}
 .led.lit{border-color:rgba(0,173,239,.55);box-shadow:inset 0 0 24px rgba(0,0,0,.7),0 0 34px -6px rgba(0,173,239,.55),0 14px 34px -14px rgba(11,31,58,.6)}
 .led.lit::after{content:"";position:absolute;inset:-2px;border-radius:15px;pointer-events:none;box-shadow:0 0 40px 2px rgba(0,173,239,.25);opacity:0;animation:hum 3.5s 1.8s ease-in-out infinite}
 @keyframes ledOn{
-  0%{color:var(--led-off);text-shadow:none}
+  0%{color:var(--led-off);text-shadow:var(--led-emb,none)}
   12%{color:var(--led-on);text-shadow:var(--led-glow)}
-  20%{color:var(--led-off);text-shadow:none}
+  20%{color:var(--led-off);text-shadow:var(--led-emb,none)}
   32%{color:var(--led-on);text-shadow:var(--led-glow)}
-  38%{color:var(--led-off);text-shadow:none}
+  38%{color:var(--led-off);text-shadow:var(--led-emb,none)}
   52%,100%{color:var(--led-on);text-shadow:var(--led-glow)}}
 @keyframes ledOnK{
-  0%{color:var(--led-off);text-shadow:none}
+  0%{color:var(--led-off);text-shadow:var(--led-emb,none)}
   18%{color:var(--led-on);text-shadow:var(--led-glow-k)}
-  26%{color:var(--led-off);text-shadow:none}
+  26%{color:var(--led-off);text-shadow:var(--led-emb,none)}
   44%,100%{color:var(--led-on);text-shadow:var(--led-glow-k)}}
 @keyframes hum{50%{opacity:1}}
 .led-sub{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;color:var(--text)}
@@ -816,6 +819,122 @@ html[data-theme="dark"] .bar .logo.led-nav{--led-off:#3A5075;--led-on:#FFFFFF;
 .no-js .bar .logo.led-nav span{color:#0A93E6;text-shadow:0 0 10px rgba(0,173,239,.5)}
 @media (max-width:600px){.bar .logo.led-nav{font-size:1.05rem}}
 @media (max-width:340px){.bar .logo.led-nav{font-size:.9rem}}
+
+/* ================= PERFORMANCE (smoother scrolling) ================= */
+.blob{filter:none!important;will-change:transform}
+.blob.b1{background:radial-gradient(circle,rgba(0,173,239,.9),transparent 62%)}
+.blob.b2{background:radial-gradient(circle,rgba(127,211,247,.9),transparent 62%)}
+.blob.b3{background:radial-gradient(circle,rgba(46,107,255,.8),transparent 62%)}
+.scene-svg,html[data-theme="dark"] .scene-svg{filter:none!important}
+.ring::after{filter:none!important}
+.fwc,.bb,.pill,.chip,.led-sub,.rv-chip,.quote,.tracker,.card{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.row{will-change:transform}
+.paused,.paused *,.paused *::before,.paused *::after{animation-play-state:paused!important}
+
+@media (max-width:900px){.xp-pin{padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px))}}
+
+/* ================= DOOR: Team K colours ================= */
+.door{background:linear-gradient(180deg,#0B2A55,#0B1F3A 55%,#081733);box-shadow:inset 0 0 0 clamp(10px,1.6vw,22px) #0A1A36,inset 0 0 0 calc(clamp(10px,1.6vw,22px) + 2px) rgba(0,173,239,.35)}
+.dl{border-right:3px solid #00ADEF}.dr{border-left:3px solid #0077C8}
+.dp{box-shadow:inset 0 0 0 2px rgba(0,173,239,.35),inset 6px 6px 18px rgba(0,0,0,.35),inset -4px -4px 12px rgba(255,255,255,.05)}
+.dp.glass{background:linear-gradient(135deg,rgba(0,173,239,.45),rgba(0,119,200,.12) 45%,rgba(255,255,255,.3) 55%,rgba(0,173,239,.1))}
+.knob{background:linear-gradient(90deg,#9FB0CC,#FFFFFF 45%,#B9C8D9);box-shadow:0 6px 14px rgba(0,0,0,.45),0 0 0 2px rgba(0,173,239,.4)}
+.plq{background:linear-gradient(135deg,#0077C8,#00ADEF);color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.45),0 0 18px rgba(0,173,239,.45);border:1px solid rgba(255,255,255,.35)}
+.lintel{background:#0B1F3A;color:#00ADEF;border:1px solid rgba(0,173,239,.45);box-shadow:0 0 16px rgba(0,173,239,.25)}
+.mat{background:repeating-linear-gradient(90deg,#0B1F3A 0 3px,#10295A 3px 6px);color:#FFFFFF;border:2px solid #0077C8;box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 18px rgba(0,173,239,.3)}
+.loader .spill{background:radial-gradient(ellipse at 50% 60%,rgba(255,255,255,1),rgba(210,240,255,.95) 40%,#fff 75%)}
+@media (max-width:900px){.xp-stage{place-items:start center;padding-top:30px}.phone-fit{transform-origin:50% 0}}
+#tw1{display:inline-block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em;vertical-align:top}
+#tw1 .dw{display:inline-block;will-change:transform}
+
+/* smooth headline writing */
+.tw-wrap{position:relative;display:inline-block;--p:-14}
+.tw-wrap .tw-g{display:inline-block;padding-right:.08em;
+  -webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(var(--p) * 1%),transparent calc(var(--p) * 1% + 12%));
+          mask-image:linear-gradient(90deg,#000 0,#000 calc(var(--p) * 1%),transparent calc(var(--p) * 1% + 12%))}
+.tw-caret{position:absolute;top:.1em;left:clamp(0%,calc(var(--p) * 1% + 4%),100%);margin-left:.04em}
+.hero h1 > .tw-l > .caret:not(.tw-caret){display:none}
+.door{will-change:transform}.doors{will-change:transform}.loader{animation:loaderOut .3s 8.5s forwards}
+.dp.glass{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.loader .spill{will-change:opacity}
+
+/* buttery headline letters */
+.tw-wrap .tw-g{background:none!important;-webkit-mask-image:none!important;mask-image:none!important;animation:none!important;color:inherit;display:inline-block;padding-right:0}
+.tw-ch{display:inline-block;white-space:pre;will-change:transform,opacity,filter;
+  background-image:linear-gradient(100deg,#0077C8,#00ADEF 45%,#2E6BFF 75%,#0077C8);background-repeat:no-repeat;
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+html[data-theme="dark"] .tw-ch{background-image:linear-gradient(100deg,#00ADEF,#9EE3FF 45%,#3D7BFF 75%,#00ADEF)}
+.tw-caret{left:0!important;top:.1em;will-change:transform}
+.tw-caret.is-writing{animation:none;opacity:1}
+.xp-pin{padding-top:calc(var(--nav-h) + 4px + env(safe-area-inset-top,0px))}
+@media (max-width:900px){.xp-stage{padding-top:12px}}
+
+/* ================= HERO REVIEW (10-day card) ================= */
+.tq{position:relative;margin:16px 0 0;padding:20px 20px 18px;border-radius:20px;overflow:hidden;
+  background:linear-gradient(135deg,#0B1F3A,#10295A 60%,#0B3A6E);color:#fff;box-shadow:0 20px 40px -22px rgba(11,31,58,.7)}
+.tq::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.14) 45%,transparent 60%);transform:translateX(-120%);animation:tqShine 5s 2.5s ease-in-out infinite;pointer-events:none}
+@keyframes tqShine{0%{transform:translateX(-120%)}35%,100%{transform:translateX(120%)}}
+.tq-mark{position:absolute;right:16px;top:12px;width:54px;height:44px;color:rgba(0,173,239,.35)}
+.tq-stars{color:#F2B705;letter-spacing:3px;font-size:1rem;text-shadow:0 0 12px rgba(242,183,5,.45)}
+.tq blockquote{margin:10px 0 0;font:600 clamp(1.05rem,1.4vw,1.22rem)/1.45 "Poppins",sans-serif;letter-spacing:-.01em;color:#fff}
+.tq-hl{color:#fff;padding:0 .12em;border-radius:6px;background:linear-gradient(90deg,#0077C8,#00ADEF) no-repeat 0 100%/0% 100%;animation:hlDraw 1.1s 3.2s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes hlDraw{to{background-size:100% 100%}}
+.tq figcaption{display:flex;align-items:center;gap:12px;margin-top:14px}
+.tq-av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#00ADEF,#0077C8);font:700 1rem "Poppins",sans-serif;box-shadow:0 0 0 3px rgba(255,255,255,.15)}
+.tq figcaption b{display:block;font-weight:700}.tq figcaption small{display:block;color:#9FC4E6;font-size:.82rem}
+.tracker q{display:none}
+@media (prefers-reduced-motion:reduce){.tq::after{display:none}.tq-hl{animation:none;background-size:100% 100%}}
+
+/* ================= EMBOSSED LOGO ================= */
+.bar .logo.led-nav{--led-emb:-1px -1px 0 rgba(255,255,255,.95),1px 1px 0 rgba(11,31,58,.55),2px 3px 4px rgba(11,31,58,.28);
+  --led-off:#12305E;--led-on:#FFFFFF;
+  --led-glow:-1px -1px 0 rgba(255,255,255,.6),1px 1px 0 rgba(8,29,67,.75),2px 3px 4px rgba(8,29,67,.35),0 0 10px #00ADEF,0 0 22px #00ADEF,0 0 40px rgba(0,119,200,.7);
+  --led-glow-k:-1px -1px 0 rgba(255,255,255,.6),1px 1px 0 rgba(8,29,67,.8),2px 3px 5px rgba(8,29,67,.4),0 0 12px #00ADEF,0 0 28px #00ADEF,0 0 50px rgba(46,107,255,.7)}
+html[data-theme="dark"] .bar .logo.led-nav{--led-emb:-1px -1px 0 rgba(255,255,255,.14),1px 1px 0 rgba(0,0,0,.9),2px 3px 4px rgba(0,0,0,.6);
+  --led-off:#1E3862;
+  --led-glow:-1px -1px 0 rgba(255,255,255,.25),1px 1px 0 rgba(0,0,0,.8),0 0 10px #00ADEF,0 0 22px #00ADEF,0 0 40px #0077C8;
+  --led-glow-k:-1px -1px 0 rgba(255,255,255,.25),1px 1px 0 rgba(0,0,0,.85),0 0 14px #00ADEF,0 0 30px #00ADEF,0 0 54px #2E6BFF}
+.bar .logo.led-nav span{text-shadow:var(--led-emb)}
+.bar .logo.led-nav .lt{font-weight:500}
+
+/* ===== Lit logo: white letters with a black outline around each letter ===== */
+.bar .logo.led-nav,html[data-theme="dark"] .bar .logo.led-nav{
+  --led-glow:1.5px 0 0 #000,-1.5px 0 0 #000,0 1.5px 0 #000,0 -1.5px 0 #000,1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,0 0 10px #00ADEF,0 0 22px #00ADEF,0 0 40px rgba(0,119,200,.7);
+  --led-glow-k:1.5px 0 0 #000,-1.5px 0 0 #000,0 1.5px 0 #000,0 -1.5px 0 #000,1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,0 0 12px #00ADEF,0 0 28px #00ADEF,0 0 50px rgba(46,107,255,.7)}
+
+/* ===== thinner, softer outline on the lit logo ===== */
+.bar .logo.led-nav,html[data-theme="dark"] .bar .logo.led-nav{
+  --led-glow:0.7px 0 0 rgba(8,20,46,.55),-0.7px 0 0 rgba(8,20,46,.55),0 0.7px 0 rgba(8,20,46,.55),0 -0.7px 0 rgba(8,20,46,.55),0 0 10px #00ADEF,0 0 22px #00ADEF,0 0 40px rgba(0,119,200,.7);
+  --led-glow-k:0.7px 0 0 rgba(8,20,46,.55),-0.7px 0 0 rgba(8,20,46,.55),0 0.7px 0 rgba(8,20,46,.55),0 -0.7px 0 rgba(8,20,46,.55),0 0 12px #00ADEF,0 0 28px #00ADEF,0 0 50px rgba(46,107,255,.7)}
+.island{display:none!important}
+/* screens can use the top space the notch used to take */
+.sc{padding-top:30px}
+.xprof{margin-top:-30px}
+
+/* ===== Lit logo: glowing Team K blue, no outline ===== */
+.bar .logo.led-nav{--led-on:#0A9BE8;
+  --led-glow:0 0 6px rgba(0,173,239,.85),0 0 16px rgba(0,173,239,.6),0 0 32px rgba(0,119,200,.4);
+  --led-glow-k:0 0 8px rgba(0,173,239,.95),0 0 20px rgba(0,173,239,.65),0 0 40px rgba(46,107,255,.45)}
+html[data-theme="dark"] .bar .logo.led-nav{--led-on:#33C2FF;
+  --led-glow:0 0 6px #00ADEF,0 0 16px #00ADEF,0 0 34px rgba(0,119,200,.8);
+  --led-glow-k:0 0 8px #00ADEF,0 0 22px #00ADEF,0 0 44px rgba(46,107,255,.8)}
+
+/* ===== Logo: embossed white, then slowly glows Team K blue ===== */
+.bar .logo.led-nav,html[data-theme="dark"] .bar .logo.led-nav{--led-off:#FFFFFF}
+.bar .logo.led-nav{--led-emb:-1px -1px 0 rgba(255,255,255,1),1px 1px 1px rgba(11,31,58,.45),2px 3px 5px rgba(11,31,58,.3)}
+html[data-theme="dark"] .bar .logo.led-nav{--led-emb:-1px -1px 0 rgba(255,255,255,.25),1px 1px 1px rgba(0,0,0,.9),2px 3px 5px rgba(0,0,0,.6)}
+.bar .logo.led-nav span{color:var(--led-off);text-shadow:var(--led-emb);transition:color 2.2s cubic-bezier(.4,0,.2,1),text-shadow 2.4s cubic-bezier(.4,0,.2,1);transition-delay:calc(var(--i) * .16s)}
+.bar .logo.led-nav.lit span{animation:none!important;color:var(--led-on);text-shadow:var(--led-glow)}
+.bar .logo.led-nav.lit .lk{text-shadow:var(--led-glow-k)}
+/* team stories centred */
+.w-stories{display:flex;flex-direction:column;align-items:center;text-align:center}
+.w-stories .wl{align-self:center}
+.st-row{justify-content:center;width:100%}
+.w-stories .hint{text-align:center}
+/* balanced face layout: 3 + 3, or one row of 6 when there's room */
+.st-row{display:grid!important;grid-template-columns:repeat(3,auto);justify-content:center;column-gap:22px;row-gap:14px}
+@media (min-width:601px) and (max-width:1000px){.st-row{grid-template-columns:repeat(6,auto)}}
+@media (max-width:380px){.st-row{column-gap:12px}.st-av span{width:56px;height:56px}.st-av{font-size:.76rem}}
 </style>
 </head>
 <body class="no-js">
@@ -866,7 +985,7 @@ html[data-theme="dark"] .bar .logo.led-nav{--led-off:#3A5075;--led-on:#FFFFFF;
     <div class="hero-grid">
       <div class="hero-copy">
         <div class="led-row"><span class="led-sub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>One of Harcourts' leading global agents</span></div>
-        <h1 id="heroTitle" aria-label="Get your home sold faster with Karl."><span class="ln tw-l" aria-hidden="true"><span id="tw1">Get your home</span></span><span class="ln tw-l" aria-hidden="true"><span class="tw-g" id="tw2">sold faster.</span></span></h1>
+        <h1 id="heroTitle" aria-label="Get your home sold faster with Karl."><span class="ln tw-l" aria-hidden="true"><span id="tw1"><span class="dw">Get</span> <span class="dw">your</span> <span class="dw">home</span></span></span><span class="ln tw-l" aria-hidden="true"><span class="tw-g" id="tw2">sold faster.</span></span></h1>
         <p class="sub">Born and raised in the Eastern Beaches, Karl has <b>25+ years</b> of experience and close to <b>$845 million</b> in property sales across Howick and East Auckland.</p>
         <div class="acts">
           <a class="btn magnetic" href="#contact">Book a free appraisal<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -877,7 +996,12 @@ html[data-theme="dark"] .bar .logo.led-nav{--led-off:#3A5075;--led-on:#FFFFFF;
           <div class="steps"><span class="fill" id="fill"></span>
             <div class="step"><i></i>Listed<small>Day 1</small></div><div class="step"><i></i>Open home<small>Day 4</small></div><div class="step"><i></i>Offer<small>Day 8</small></div><div class="step sold"><i></i>Sold<small>Day 10</small></div>
           </div>
-          <q>"I had my buyer within 10 days with the exposure Karl gave the property…" <span>Mrs Ferguson, Somerville</span></q>
+          <figure class="tq">
+            <svg class="tq-mark" viewBox="0 0 40 32" aria-hidden="true"><path fill="currentColor" d="M0 32V19C0 8 6 1 16 0l1 5c-5 1-8 5-8 10h7v17zm23 0V19c0-11 6-18 16-19l1 5c-5 1-8 5-8 10h7v17z"/></svg>
+            <div class="tq-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote>I had my buyer <mark class="tq-hl">within 10 days</mark> with the exposure Karl gave the property…</blockquote>
+            <figcaption><span class="tq-av">F</span><span><b>Mrs Ferguson</b><small>Sold on Somerville Road, Somerville</small></span></figcaption>
+          </figure>
         </div>
       </div>
       <div class="visual" id="visual">
@@ -985,7 +1109,7 @@ html[data-theme="dark"] .bar .logo.led-nav{--led-off:#3A5075;--led-on:#FFFFFF;
       <div class="xp-stage">
         <div class="fwg on" data-i="0"><div class="fwc l t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><span><b>Search</b><small>Howick &amp; East Auckland</small></span></div><div class="fwc r b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/></svg></span><span><b>Listings</b><small>Live on Harcourts</small></span></div></div><div class="fwg" data-i="1"><div class="fwc l t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.4 6.5 20.3l1-6.2L3 9.7l6.2-.9z"/></svg></span><span><b>$845m</b><small>in property sales</small></span></div><div class="fwc r m"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span><span><b>25+ years</b><small>of experience</small></span></div><div class="fwc l b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/></svg></span><span><b>Eastern Beaches</b><small>born &amp; raised</small></span></div></div><div class="fwg" data-i="2"><div class="fwc l t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span><span><b>Day 1</b><small>Listed &amp; marketed</small></span></div><div class="fwc r m"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span><span><b>Day 8</b><small>Offer received</small></span></div><div class="fwc l b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.2-8.2M16 7l2 2"/></svg></span><span><b>Day 10</b><small>SOLD</small></span></div></div><div class="fwg" data-i="3"><div class="fwc l t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.3-5 6.5-5s5.7 1.6 6.5 5"/><circle cx="17" cy="9" r="2.8"/><path d="M16 14.5c3 0 5 1.5 5.5 4.5"/></svg></span><span><b>6 people</b><small>one team</small></span></div><div class="fwc r b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.4 6.5 20.3l1-6.2L3 9.7l6.2-.9z"/></svg></span><span><b>70+ years</b><small>combined experience</small></span></div></div><div class="fwg" data-i="4"><div class="fwc l t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.4 6.5 20.3l1-6.2L3 9.7l6.2-.9z"/></svg></span><span><b>“Buyer within 10 days”</b><small>Mrs Ferguson</small></span></div><div class="fwc r m"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.4 6.5 20.3l1-6.2L3 9.7l6.2-.9z"/></svg></span><span><b>“Recommended by 6 people”</b><small>The Hindles</small></span></div></div><div class="fwg" data-i="5"><div class="fwc l t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span><span><b>Free</b><small>no strings attached</small></span></div><div class="fwc r b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span><b>027 204 4249</b><small>call Karl directly</small></span></div></div>
         <div class="phone-fit" id="phoneFit"><div class="phone3d" id="phone3d">
-          <div class="scr"><div class="island"></div>
+          <div class="scr">
 <div class="sc on" data-i="0">
   <div class="sc-top"><div><small>Kia ora</small><b>Find your place</b></div><span class="sc-logo">TEAM<b>K</b></span></div>
   <div class="xsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Howick &amp; East Auckland homes</span></div>
@@ -1141,7 +1265,7 @@ html[data-theme="dark"] .bar .logo.led-nav{--led-off:#3A5075;--led-on:#FFFFFF;
 <script>function initXP(){
   const scs=[...document.querySelectorAll('.sc')], tabs=[...document.querySelectorAll('.xt')], ws=[...document.querySelectorAll('.bw-w')], fws=[...document.querySelectorAll('.fwg')], js=[...document.querySelectorAll('.xj')];
   const phone=document.getElementById('phone3d'), fitEl=document.getElementById('phoneFit'), bar=document.getElementById('xpBar'); let cur=0, st=null;
-  const fit=()=>{ const h=innerHeight, w=innerWidth; const s=Math.min(1,(h-(w<700?250:190))/680,(w-60)/330); fitEl.style.setProperty('--ps',s.toFixed(3)); };
+  const fit=()=>{ const h=innerHeight, w=innerWidth; const mob=w<=900; const s=mob ? Math.min(1.2,(h-128)/680,(w-14)/330) : Math.min(1.35,(h-120)/680,(w-40)/330); fitEl.style.setProperty('--ps',s.toFixed(3)); };
   fit(); addEventListener('resize',fit);
   const go=i=>{ if(i===cur) return; cur=i; scs.forEach((s,j)=>{ s.classList.toggle('on',j===i); s.classList.toggle('past',j<i); });
     tabs.forEach((t,j)=>t.classList.toggle('on',j===i)); ws.forEach((w,j)=>w.classList.toggle('on',j===i)); fws.forEach((f,j)=>f.classList.toggle('on',j===i));
@@ -1313,22 +1437,30 @@ if (window.gsap && !reduce) { try {
   const intro = gsap.timeline({defaults:{ease:'expo.out'}});
   intro.from('.door', {opacity:0, duration:.5, ease:'power1.out'})
     .from('.lintel, .mat', {y:20, opacity:0, duration:.6, stagger:.1}, '<.1')
-    .to('.knob', {rotation:-30, duration:.22, ease:'power2.out', yoyo:true, repeat:1}, '+=.35')
-    .to('.dl', {rotateY:-112, duration:1.7, ease:'power3.inOut'}, '+=.05')
-    .to('.dr', {rotateY:112, duration:1.7, ease:'power3.inOut'}, '<')
-    .to('.dshade', {opacity:1, duration:1.2, ease:'power1.in'}, '<')
-    .to('.spill', {opacity:1, duration:.7, ease:'power2.out'}, '<.15')
-    .to('.lintel, .mat', {opacity:0, duration:.4}, '<')
-    .to('.doors', {scale:1.35, duration:1.7, ease:'power2.in'}, '<')
-    .to('.loader', {opacity:0, duration:.6, ease:'power1.inOut'}, '-=.55')
+    .to('.knob', {rotation:-30, duration:.32, ease:'sine.inOut', yoyo:true, repeat:1}, '+=.3')
+    /* doors ease open a crack first, light slips through, then swing wide */
+    .to('.dl', {rotateY:-9, duration:.6, ease:'sine.inOut'}, '-=.12')
+    .to('.dr', {rotateY:9, duration:.6, ease:'sine.inOut'}, '<')
+    .to('.spill', {opacity:.5, duration:.6, ease:'sine.out'}, '<')
+    .to('.dl', {rotateY:-112, duration:2.2, ease:'power2.inOut'}, '+=.08')
+    .to('.dr', {rotateY:112, duration:2.2, ease:'power2.inOut'}, '<')
+    .to('.dshade', {opacity:1, duration:1.7, ease:'sine.in'}, '<')
+    .to('.spill', {opacity:1, duration:1.1, ease:'sine.inOut'}, '<.15')
+    .to('.lintel, .mat', {opacity:0, duration:.7, ease:'sine.out'}, '<')
+    .to('.doors', {scale:1.26, duration:2.4, ease:'sine.inOut'}, '<.05')
+    .to('.loader', {opacity:0, duration:1.05, ease:'sine.inOut'}, '-=1')
     .set('.loader', {display:'none'})
     .add(() => setTimeout(() => document.getElementById('led').classList.add('lit'), 2000))
     .from('.blob', {scale:.4, opacity:0, duration:2, stagger:.15}, '-=.7')
-    .from('.led-row', {y:20, opacity:0, duration:.8}, '<.2')
-        .from('.hero .sub, .hero .acts', {y:30, opacity:0, duration:1, stagger:.1}, '-=.8')
+    .addLabel('drop', '<-.3')
+    .fromTo('.led-row', {y:-50, opacity:0, filter:'blur(8px)'}, {y:0, opacity:1, filter:'blur(0px)', duration:1.3, ease:'power3.out', clearProps:'filter'}, 'drop')
+    .fromTo('#tw1 .dw', {yPercent:-115, opacity:0}, {yPercent:0, opacity:1, duration:1.4, stagger:.12, ease:'power4.out'}, 'drop+=.2')
+    .fromTo('.hero .sub', {y:-36, opacity:0, filter:'blur(6px)'}, {y:0, opacity:1, filter:'blur(0px)', duration:1.3, ease:'power3.out', clearProps:'filter'}, 'drop+=.55')
+    .fromTo('.hero .acts > *', {y:-30, opacity:0}, {y:0, opacity:1, duration:1.2, stagger:.12, ease:'power3.out'}, 'drop+=.75')
     .from('#house', {y:40, opacity:0, duration:1.2}, '<-.4')
     .from('.ring', {scale:.6, opacity:0, duration:1.6}, '<')
-    .from('.tracker', {y:30, opacity:0, duration:1}, '<')
+    .fromTo('.tracker', {y:-40, opacity:0, filter:'blur(6px)'}, {y:0, opacity:1, filter:'blur(0px)', duration:1.3, ease:'power3.out', clearProps:'filter'}, 'drop+=.95')
+    .add(() => window.__startWriting && window.__startWriting(), 'drop+=.9')
     .from('.bar .logo, .bar-right', {y:-30, opacity:0, duration:.8, clearProps:'transform'}, '<')
     .add(() => runScene());
 
@@ -1349,7 +1481,7 @@ if (window.gsap && !reduce) { try {
       gsap.timeline().to('#cal', {scaleY:.2, transformOrigin:'50% 50%', duration:.08, ease:'power1.in'})
         .add(() => { calNum.textContent = d; calNum.setAttribute('fill', d === 10 ? '#FF5A4E' : '#0B1F3A'); })
         .to('#cal', {scaleY:1, duration:.18, ease:'back.out(3)'}); };
-    const tl = gsap.timeline({repeat:-1, repeatDelay:.6, defaults:{ease:'power3.out'}});
+    const tl = gsap.timeline({repeat:-1, repeatDelay:.6, paused:true, defaults:{ease:'power3.out'}});
     tl.add(() => { set(-1); setDay(1); })
       .set('#avatar', {x:-260}).set('#sign', {scaleY:0, transformOrigin:'50% 100%'}).set('#faceSale', {opacity:1}).set('#faceSold', {opacity:0})
       .set('#board', {scaleX:1, transformOrigin:'50% 50%'}).set('.note', {opacity:0, y:20}).set('#bubble', {opacity:0, scale:.6, transformOrigin:'50% 100%'})
@@ -1400,6 +1532,12 @@ if (window.gsap && !reduce) { try {
       /* 6. sign drops, reset */
       .to('#sign', {scaleY:0, duration:.4, ease:'power2.in'})
       .to('#avatar', {x:-260, duration:.9, ease:'power2.in'}, '<.2');
+    /* play from Day 1 each time the journey scrolls into view; pause when it leaves */
+    ScrollTrigger.create({trigger:'#visual', start:'top 80%', end:'bottom 15%',
+      onToggle:self=>{ if(self.isActive){ tl.restart(); } else { tl.pause(); } }});
+    ScrollTrigger.create({trigger:'.tracker', start:'top 85%', end:'bottom 10%',
+      onEnter:()=>{ if(!tl.isActive()) tl.restart(); }, onEnterBack:()=>{ if(!tl.isActive()) tl.restart(); }});
+    ScrollTrigger.refresh();
   }
 
   /* Floating chips */
@@ -1474,24 +1612,37 @@ if (window.gsap && !reduce) { try {
   }
 })();
 
-/* ===== Typewriter headline ===== */
+/* ===== Headline writing: buttery letter-by-letter reveal ===== */
 (function(){
-  const l1=document.getElementById('tw1'), l2=document.getElementById('tw2'); if(!l1) return;
-  const LINE1='Get your home', PHRASES=['sold faster.','sold smarter.','sold with Karl.'];
-  const caret=document.createElement('span'); caret.className='caret';
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ l1.textContent=LINE1; l2.textContent=PHRASES[0]; return; }
-  l1.textContent=''; l2.textContent='';
-  const wait=ms=>new Promise(r=>setTimeout(r,ms));
-  const put=el=>el.parentNode.appendChild(caret);
-  async function type(el,txt,sp){ put(el); caret.classList.add('typing'); for(const ch of txt){ el.textContent+=ch; await wait(sp+Math.random()*40); } caret.classList.remove('typing'); }
-  async function erase(el,sp){ caret.classList.add('typing'); while(el.textContent.length){ el.textContent=el.textContent.slice(0,-1); await wait(sp); } caret.classList.remove('typing'); }
-  async function run(){
-    await wait(window.gsap ? 3300 : 400);
-    await type(l1,LINE1,55); await wait(250);
-    let i=0;
-    while(true){ await type(l2,PHRASES[i],60); await wait(i===PHRASES.length-1 ? 3200 : 1700); await erase(l2,30); await wait(300); i=(i+1)%PHRASES.length; }
+  const l2=document.getElementById('tw2'); if(!l2) return;
+  const PHRASES=['sold faster.','sold smarter.','sold with Karl.'];
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches || !window.gsap){ l2.textContent=PHRASES[0]; return; }
+  const wrap=document.createElement('span'); wrap.className='tw-wrap'; l2.parentNode.insertBefore(wrap,l2); wrap.appendChild(l2);
+  const caret=document.createElement('span'); caret.className='caret tw-caret'; wrap.appendChild(caret);
+  const cx={x:0}; const moveCaret=()=>caret.style.transform='translate3d('+cx.x.toFixed(1)+'px,0,0)';
+  let chars=[], ends=[];
+  function build(txt){
+    l2.innerHTML=''; chars=[...txt].map(ch=>{ const c=document.createElement('span'); c.className='tw-ch'; c.textContent=ch; l2.appendChild(c); return c; });
+    const W=l2.getBoundingClientRect().width||1, L=l2.getBoundingClientRect().left;
+    ends=chars.map(c=>{ const r=c.getBoundingClientRect(); c.style.backgroundSize=W+'px 100%'; c.style.backgroundPosition=(-(r.left-L))+'px 0'; return r.right-L; });
+    gsap.set(chars,{opacity:0,yPercent:38,filter:'blur(10px)'});
   }
-  run();
+  const write=txt=>new Promise(res=>{ build(txt); cx.x=0; moveCaret(); caret.classList.add('is-writing');
+    const each=.055, n=chars.length;
+    gsap.to(chars,{opacity:1,yPercent:0,filter:'blur(0px)',duration:.9,ease:'power3.out',stagger:each});
+    gsap.to(cx,{x:ends[n-1]+2,duration:each*n+.25,ease:'sine.inOut',onUpdate:moveCaret,onComplete:()=>{ caret.classList.remove('is-writing'); setTimeout(res,650); }}); });
+  const unwrite=()=>new Promise(res=>{ caret.classList.add('is-writing'); const n=chars.length;
+    gsap.to(chars,{opacity:0,yPercent:-30,filter:'blur(8px)',duration:.5,ease:'power2.in',stagger:{each:.028,from:'end'}});
+    gsap.to(cx,{x:0,duration:.028*n+.45,ease:'sine.inOut',onUpdate:moveCaret,onComplete:()=>{ caret.classList.remove('is-writing'); res(); }}); });
+  const pause=ms=>new Promise(r=>setTimeout(r,ms));
+  build(PHRASES[0]); gsap.set(chars,{opacity:0});
+  let started=false;
+  async function run(){ if(started) return; started=true; let i=0;
+    while(true){ await write(PHRASES[i]); await pause(i===PHRASES.length-1 ? 2600 : 1400); await unwrite(); await pause(200); i=(i+1)%PHRASES.length; } }
+  window.__startWriting=run;
+  setTimeout(run, 9000);
+  addEventListener('resize',()=>{ if(!chars.length) return; const W=l2.getBoundingClientRect().width||1, L=l2.getBoundingClientRect().left;
+    ends=chars.map(c=>{ const r=c.getBoundingClientRect(); c.style.backgroundSize=W+'px 100%'; c.style.backgroundPosition=(-(r.left-L))+'px 0'; return r.right-L; }); });
 })();
 
 /* ===== Reviews: speed up with scroll, drift apart as you pass ===== */
@@ -1518,6 +1669,12 @@ if (window.gsap && !reduce) { try {
   /* if the door animation can't run, still light the sign */
   const led=document.getElementById('led'); if(led) setTimeout(()=>led.classList.add('lit'), window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches ? 9000 : 2000);
 })();
+
+/* ===== pause looping animations in sections that are off screen ===== */
+(function(){ if(!('IntersectionObserver' in window)) return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('paused',!e.isIntersecting)),{rootMargin:'200px 0px'});
+  document.querySelectorAll('#hero, .strip, .bs, .reviews, .appsec').forEach(el=>io.observe(el)); })();
+
 </script>
 </body>
 </html>
