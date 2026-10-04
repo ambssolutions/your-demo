@@ -275,6 +275,9 @@ footer{padding:40px 0 calc(34px + env(safe-area-inset-bottom,0px));overflow:hidd
 .giant:hover .t,.giant:hover .k{color:rgba(0,173,239,.14);-webkit-text-stroke-color:rgba(0,173,239,.6)}
 .foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;color:var(--muted);font-size:.93rem;margin-top:18px}
 .foot-row a{text-underline-offset:4px}
+.foot-nav ul{list-style:none;margin:10px 0 0;padding:0 0 18px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 4px;border-bottom:1px solid var(--stroke)}
+.foot-nav a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;color:var(--text);transition:background .3s,color .3s}
+.foot-nav a:hover,.foot-nav a:focus-visible{background:var(--glass-2);color:var(--blue)}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:1100px){
@@ -489,6 +492,7 @@ body{background:#fff}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:#0077C8;box-shadow:0 0 0 4px rgba(0,119,200,.12)}
 .note{color:#0077C8}
 footer{border-top-color:#E6EDF5;background:#fff}
+.foot-nav ul{border-bottom-color:#E6EDF5}.foot-nav a{color:#1B2B45}.foot-nav a:hover,.foot-nav a:focus-visible{background:#EEF5FC;color:#0077C8}
 .giant .t,.giant .k{-webkit-text-stroke:1.5px rgba(0,119,200,.18)}
 .giant:hover .t,.giant:hover .k{color:rgba(0,173,239,.1);-webkit-text-stroke-color:rgba(0,119,200,.5)}
 .progress{background:linear-gradient(90deg,#0077C8,#00ADEF)}
@@ -720,6 +724,7 @@ html[data-theme="dark"] .field input,html[data-theme="dark"] .field select,html[
 html[data-theme="dark"] .field input:focus,html[data-theme="dark"] .field select:focus,html[data-theme="dark"] .field textarea:focus{border-color:#00ADEF;box-shadow:0 0 0 4px rgba(0,173,239,.18)}
 html[data-theme="dark"] .note{color:#00ADEF}
 html[data-theme="dark"] footer{background:#050E24;border-top-color:rgba(255,255,255,.1)}
+html[data-theme="dark"] .foot-nav ul{border-bottom-color:rgba(255,255,255,.1)}html[data-theme="dark"] .foot-nav a{color:#E8EEF8}html[data-theme="dark"] .foot-nav a:hover,html[data-theme="dark"] .foot-nav a:focus-visible{background:rgba(255,255,255,.08);color:#00ADEF}
 html[data-theme="dark"] .giant .t,html[data-theme="dark"] .giant .k{-webkit-text-stroke:1.5px rgba(158,227,255,.25)}
 html[data-theme="dark"] .cursor{background:#00ADEF}html[data-theme="dark"] .cursor-ring{border-color:rgba(158,227,255,.6)}
 
@@ -1256,6 +1261,17 @@ html[data-theme="dark"] .bar .logo.led-nav{--led-emb:-1px -1px 0 rgba(255,255,25
 
 <footer>
   <div class="logo giant" aria-hidden="true"><span class="t">TEAM</span><span class="k">K</span></div>
+  <nav class="wrap foot-nav" aria-label="Footer">
+    <ul>
+      <li><a href="#listings">Buy</a></li>
+      <li><a href="#services">Sell</a></li>
+      <li><a href="#about">About Karl</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact">Free appraisal</a></li>
+    </ul>
+  </nav>
   <div class="wrap foot-row">
     <span>© <span id="yr"></span> Team K, Harcourts Howick, 18 Fencible Drive, Howick. Licensed under the REAA 2008.</span>
     <span><a href="mailto:karl.vermeulen@harcourts.co.nz">karl.vermeulen@harcourts.co.nz</a> &nbsp;|&nbsp; <a href="tel:+64272044249">027 204 4249</a> &nbsp;|&nbsp; <a data-harcourts href="#">Listings on Harcourts</a></span>
