@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thomas Consultants · Concept 02</title>
+<meta name="description" content="Thomas Consultants: end-to-end land development support. Surveying, RMA planning, engineering, landscape architecture, environmental services and project management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  (function(){
+    var d=document.documentElement; d.classList.add('js');
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ d.classList.add('anim'); }
+    setTimeout(function(){ if(!window.gsap){ d.classList.remove('anim'); } },4000);
+  })();
+</script>
+<style>
+:root{
+  --navy:#06231f;          /* deep forest-navy for text */
+  --navy-2:#0b3530;
+  --slate:#45605a;
+  --slate-2:#6c837d;
+  --bg:#ffffff;
+  --bg-soft:#f5f9f7;
+  --line:#e2ebe7;
+  --green:#6DAB3C;
+  --green-deep:#5F9434;
+  --lime:#b6e36a;
+  --teal:#14b8a6;
+  --teal-deep:#0f766e;
+  --mint:#7ee0c3;
+  --sky:#38bdf8;
+  --display:'Sora', system-ui, sans-serif;
+  --body:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --gutter:clamp(16px,4vw,40px);
+  --max:1200px;
+  --r:16px;
+  --r-lg:24px;
+  --shadow:0 2px 4px rgba(6,35,31,.04),0 12px 32px -8px rgba(6,35,31,.12),0 40px 80px -30px rgba(6,35,31,.18);
+  --ease:cubic-bezier(.22,.8,.2,1);
+  --cut:6vw;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--navy);font-family:var(--body);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg,canvas{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.025em;margin:0}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;left:-999px;top:8px;z-index:300;background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px}
+.skip:focus{left:16px}
+.label{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep)}
+.label::before{content:"";width:18px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--green),var(--teal))}
+.on-dark .label{color:var(--mint)}
+.h2{font-size:clamp(32px,4.4vw,56px);line-height:1.08;font-weight:600;margin-top:14px;max-width:18ch}
+.lead{font-size:clamp(17px,1.4vw,19px);color:var(--slate);max-width:56ch;margin:18px 0 0}
+.on-dark .lead{color:#a9c4bd}
+.grad-text{background:linear-gradient(90deg,var(--green-deep),var(--teal) 60%,var(--teal-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- Buttons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;font-size:15.5px;transition:background .25s,color .25s,box-shadow .25s;will-change:transform}
+.btn svg{width:14px;height:14px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{background:var(--teal-deep)}
+.btn-light{background:#fff;color:var(--navy);box-shadow:0 1px 2px rgba(6,35,31,.1),inset 0 0 0 1px rgba(6,35,31,.08)}
+.btn-light:hover{box-shadow:0 8px 24px -6px rgba(6,35,31,.25),inset 0 0 0 1px rgba(6,35,31,.12)}
+.btn-glow{background:linear-gradient(135deg,var(--green),var(--teal));color:#04211c;box-shadow:0 8px 30px -8px rgba(20,184,166,.6)}
+.btn-glow:hover{box-shadow:0 12px 40px -6px rgba(20,184,166,.8)}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;display:flex;align-items:center;transition:background .3s,box-shadow .3s,height .3s}
+.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);box-shadow:0 1px 0 var(--line);height:64px}
+.nav .wrap{display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;white-space:nowrap}
+.brand-mark{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--green),var(--teal));display:grid;place-items:center;flex:none}
+.brand-mark svg{width:16px;height:16px}
+.nav-links{display:flex;gap:2px;list-style:none;margin:0 0 0 12px;padding:0}
+.nav-links a{display:block;padding:8px 14px;border-radius:8px;font-size:15px;font-weight:500;color:var(--navy-2);transition:background .2s,color .2s}
+.nav-links a:hover{background:rgba(6,35,31,.06)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.nav-right .portal{font-size:15px;font-weight:500;padding:8px 12px}
+.nav-right .portal:hover{color:var(--teal-deep)}
+.nav-right .btn{min-height:40px;padding:0 18px;font-size:14.5px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;align-items:center;justify-content:center;background:rgba(255,255,255,.6)}
+.burger svg{width:22px;height:22px}
+.drawer{position:fixed;top:10px;left:10px;right:10px;z-index:120;background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:18px;transform-origin:top right;transform:scale(.94) translateY(-8px);opacity:0;visibility:hidden;transition:transform .35s var(--ease),opacity .25s,visibility .35s}
+.drawer.open{transform:none;opacity:1;visibility:visible}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.drawer ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.drawer li a{display:block;padding:14px 12px;border-radius:12px;font-weight:600;font-family:var(--display)}
+.drawer li a:hover{background:var(--bg-soft)}
+.drawer .drawer-foot{margin-top:12px;padding-top:14px;border-top:1px solid var(--line);display:grid;gap:10px}
+.drawer .drawer-foot .btn{width:100%}
+.drawer .phones-mini{display:flex;justify-content:space-between;font-size:14px;color:var(--slate);gap:10px;flex-wrap:wrap}
+.drawer .phones-mini a{color:var(--navy);font-weight:600}
+.scrim{position:fixed;inset:0;z-index:110;background:rgba(6,35,31,.35);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.scrim.open{opacity:1;visibility:visible}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:150px 0 120px;overflow:hidden;isolation:isolate}
+.mesh{position:absolute;inset:0 0 auto 0;height:100%;z-index:-2;clip-path:polygon(0 0,100% 0,100% 64%,0 100%);background:linear-gradient(120deg,#b6e36a 0%,#6DAB3C 25%,#14b8a6 55%,#7ee0c3 80%,#e9f7c9 100%)}
+.mesh canvas{width:100%;height:100%;filter:saturate(1.1)}
+.mesh::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0) 50%,rgba(255,255,255,.15));pointer-events:none}
+.hero-grid-lines{position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%);clip-path:polygon(0 0,100% 0,100% 64%,0 100%)}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border-radius:999px;background:rgba(255,255,255,.55);backdrop-filter:blur(10px);font-size:14px;font-weight:500;color:var(--navy);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.pill b{background:var(--navy);color:#fff;font-size:12px;padding:3px 10px;border-radius:999px;font-weight:600}
+.hero h1{font-size:clamp(40px,5.8vw,80px);line-height:1.02;font-weight:700;letter-spacing:-.04em;margin:22px 0 0;color:var(--navy)}
+.hero h1 .word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .word > span{display:inline-block}
+.hero-sub{font-family:var(--display);font-size:clamp(18px,1.6vw,22px);font-weight:500;margin:22px 0 0;color:var(--navy-2)}
+.hero-body{margin:12px 0 0;max-width:52ch;color:#1d4740;font-size:17px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* Hero UI card stack */
+.ui-stack{position:relative;height:500px;perspective:1400px}
+.ui-card{position:absolute;background:#fff;border-radius:var(--r-lg);box-shadow:var(--shadow);padding:22px;color:var(--navy)}
+.ui-main{right:0;top:20px;width:min(100%,400px);transform:rotateY(-10deg) rotateX(6deg);transform-style:preserve-3d}
+.ui-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.ui-head small{font-family:var(--mono);font-size:11.5px;color:var(--slate-2);letter-spacing:.05em}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--teal-deep);background:#e6f7f3;padding:4px 10px;border-radius:999px}
+.status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.ui-main h4{font-size:19px;margin:0 0 4px}
+.ui-main p{margin:0;color:var(--slate);font-size:14px}
+.ui-plan{margin:16px 0;border-radius:12px;background:var(--bg-soft);height:150px;overflow:hidden}
+.ui-plan svg{width:100%;height:100%}
+.ui-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ui-steps span{height:6px;border-radius:6px;background:var(--line);overflow:hidden;position:relative}
+.ui-steps span i{position:absolute;inset:0;background:linear-gradient(90deg,var(--green),var(--teal));transform-origin:left}
+.ui-steps-l{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px;font-size:11.5px;color:var(--slate-2)}
+.ui-mini{left:0;bottom:30px;width:230px;padding:18px}
+.ui-mini .k{font-family:var(--display);font-size:42px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.ui-mini .k span{font-size:18px;color:var(--teal-deep)}
+.ui-mini p{margin:6px 0 0;font-size:13.5px;color:var(--slate)}
+.spark{margin-top:12px;height:40px}
+.spark path{fill:none;stroke:url(#sparkGrad);stroke-width:2.5;stroke-linecap:round}
+.ui-chip{right:24px;bottom:0;padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.ui-chip .ok{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--teal));display:grid;place-items:center}
+.ui-chip .ok svg{width:14px;height:14px}
+.ui-chip small{display:block;font-weight:400;color:var(--slate-2);font-size:12px}
+
+/* ---------- Marquee ---------- */
+.logos{padding:10px 0 70px}
+.logos p{text-align:center;font-size:14px;color:var(--slate-2);margin:0 0 22px}
+.marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee ul{display:flex;list-style:none;margin:0;padding:0}
+.marquee li{font-family:var(--display);font-weight:600;font-size:clamp(18px,2vw,24px);letter-spacing:-.02em;color:#89a09a;padding:0 clamp(22px,3vw,44px);white-space:nowrap;display:flex;align-items:center;gap:clamp(22px,3vw,44px);transition:color .3s}
+.marquee li:hover{color:var(--navy)}
+.marquee li::after{content:"";width:6px;height:6px;border-radius:2px;background:linear-gradient(135deg,var(--green),var(--teal));transform:rotate(45deg);margin-right:calc(-1 * clamp(22px,3vw,44px))}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ---------- Services ---------- */
+.services{padding:90px 0 120px;background:var(--bg)}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:56px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;perspective:1200px}
+.card{--mx:50%;--my:50%;--rx:0deg;--ry:0deg;position:relative;border-radius:var(--r-lg);padding:30px 28px 28px;background:#fff;box-shadow:inset 0 0 0 1px var(--line),0 1px 2px rgba(6,35,31,.04);transform:rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;transition:transform .5s var(--ease),box-shadow .4s;overflow:hidden;isolation:isolate}
+.card.tilting{transition:transform .08s linear,box-shadow .4s}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(20,184,166,.16),rgba(109,171,60,.08) 40%,transparent 65%);opacity:0;transition:opacity .4s}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:radial-gradient(260px circle at var(--mx) var(--my),var(--teal),var(--green) 40%,transparent 70%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s;pointer-events:none}
+.card:hover{box-shadow:inset 0 0 0 1px transparent,var(--shadow)}
+.card:hover::before,.card:hover::after{opacity:1}
+.card .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#eaf6dd,#dcf5ef);margin-bottom:22px;transform:translateZ(40px)}
+.card .ico svg{width:26px;height:26px;stroke:var(--teal-deep);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:21px;font-weight:600;transform:translateZ(30px)}
+.card p{margin:10px 0 0;color:var(--slate);font-size:15.5px;transform:translateZ(20px)}
+.card ul{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px dashed var(--line);display:grid;gap:7px;font-size:14px;color:var(--navy-2);transform:translateZ(16px)}
+.card li{display:flex;gap:8px;align-items:flex-start}
+.card li::before{content:"";flex:none;width:14px;height:14px;margin-top:4px;border-radius:50%;background:radial-gradient(circle,var(--teal) 30%,#d4f1ea 34%)}
+.card .num{position:absolute;top:24px;right:24px;font-family:var(--mono);font-size:12px;color:var(--slate-2)}
+
+/* ---------- Why (dark angled) ---------- */
+.why{position:relative;color:#fff;padding:calc(var(--cut) + 110px) 0 calc(var(--cut) + 110px);isolation:isolate}
+.why-bg{position:absolute;inset:0;z-index:-1;background:radial-gradient(900px 500px at 85% 20%,rgba(20,184,166,.35),transparent 60%),radial-gradient(700px 500px at 10% 90%,rgba(109,171,60,.3),transparent 60%),var(--navy);clip-path:polygon(0 var(--cut),100% 0,100% calc(100% - var(--cut)),0 100%)}
+.why-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at center,#000,transparent 75%);mask-image:radial-gradient(ellipse at center,#000,transparent 75%)}
+.why-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.why .h2{color:#fff}
+.why-points{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:18px}
+.why-points li{display:flex;gap:14px}
+.why-points .chk{flex:none;width:28px;height:28px;border-radius:8px;background:rgba(126,224,195,.14);display:grid;place-items:center;margin-top:2px}
+.why-points .chk svg{width:14px;height:14px;stroke:var(--mint);fill:none;stroke-width:2.5}
+.why-points b{display:block;font-family:var(--display);font-weight:600}
+.why-points span{color:#a9c4bd;font-size:15px}
+.why-visual{position:relative}
+.photo{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3.2;background:linear-gradient(135deg,var(--green-deep),var(--teal-deep));box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.big-stat{position:absolute;left:-28px;bottom:-36px;background:rgba(6,35,31,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:20px;padding:20px 24px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.big-stat .n{font-family:var(--display);font-weight:700;font-size:clamp(56px,6vw,84px);letter-spacing:-.05em;line-height:1}
+.big-stat .n span{font-size:.45em}
+.big-stat p{margin:4px 0 0;color:#a9c4bd;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:96px;border-radius:var(--r-lg);overflow:hidden;background:rgba(255,255,255,.1)}
+.stat{background:rgba(6,35,31,.6);backdrop-filter:blur(6px);padding:28px 24px}
+.stat .v{font-family:var(--display);font-size:clamp(34px,3.6vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.stat .v em{font-style:normal;background:linear-gradient(90deg,var(--lime),var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat p{margin:8px 0 0;color:#a9c4bd;font-size:14px}
+
+/* ---------- Process timeline ---------- */
+.process{padding:100px 0 120px}
+.process .head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:72px}
+.process .head .h2{max-width:20ch}
+.process .head .lead{text-align:center}
+.timeline{position:relative;list-style:none;margin:0 auto;padding:0;max-width:980px}
+.rail{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--line);border-radius:2px}
+.rail-fill{position:absolute;inset:0;background:linear-gradient(180deg,var(--green),var(--teal) 60%,var(--teal-deep));transform-origin:top;border-radius:2px}
+html.anim .rail-fill{transform:scaleY(0)}
+.rail-dot{position:absolute;left:50%;top:0;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--teal),0 0 24px 4px rgba(20,184,166,.5);opacity:0}
+.tl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:80px;padding:28px 0}
+.tl-node{position:absolute;left:50%;top:52px;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:500;color:var(--slate-2);transition:box-shadow .4s,color .4s,background .4s;z-index:1}
+.tl-item.lit .tl-node,html:not(.anim) .tl-node{background:linear-gradient(135deg,var(--green),var(--teal));color:#fff;box-shadow:0 0 0 6px rgba(20,184,166,.15)}
+.tl-card{background:#fff;border-radius:var(--r-lg);padding:26px;box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .4s,transform .5s var(--ease)}
+.tl-item.lit .tl-card{box-shadow:var(--shadow)}
+.tl-item:nth-child(odd of .tl-item) .tl-card{grid-column:1}
+.tl-item:nth-child(even of .tl-item) .tl-card{grid-column:2}
+.tl-card small{font-family:var(--mono);font-size:12px;color:var(--teal-deep);letter-spacing:.06em;text-transform:uppercase}
+.tl-card h3{font-size:24px;margin:6px 0 8px;font-weight:600}
+.tl-card p{margin:0;color:var(--slate);font-size:15.5px}
+.tl-card .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--bg-soft);color:var(--navy-2);box-shadow:inset 0 0 0 1px var(--line)}
+
+/* ---------- Projects (horizontal) ---------- */
+.projects{position:relative;padding:100px 0 110px;background:var(--bg-soft);overflow:hidden}
+.projects::before{content:"";position:absolute;inset:0 0 auto 0;height:var(--cut);background:#fff;clip-path:polygon(0 0,100% 0,0 100%)}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.proj-viewport{overflow:hidden}
+.proj-track{display:flex;gap:20px;padding:0 var(--gutter);width:max-content;will-change:transform}
+.proj{position:relative;flex:none;width:clamp(300px,30vw,400px);border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .4s,transform .5s var(--ease)}
+.proj:hover{box-shadow:var(--shadow);transform:translateY(-6px)}
+.proj-art{position:relative;aspect-ratio:4/3;overflow:hidden}
+.proj-art img,.proj-art svg{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.proj:hover .proj-art img,.proj:hover .proj-art svg{transform:scale(1.06)}
+.proj-body{padding:20px 22px 24px}
+.proj-body small{font-family:var(--mono);font-size:11.5px;color:var(--slate-2);letter-spacing:.06em;text-transform:uppercase}
+.proj-body h3{font-size:19px;font-weight:600;margin:6px 0 12px;line-height:1.25}
+.proj-body .chips span{background:#fff}
+.proj-progress{margin:36px var(--gutter) 0;height:3px;border-radius:3px;background:var(--line);max-width:var(--max);overflow:hidden}
+.proj-progress i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--green),var(--teal));transform-origin:left;transform:scaleX(0)}
+
+/* ---------- Testimonials ---------- */
+.voices{padding:110px 0}
+.voices .head{margin-bottom:48px}
+.q-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:20px}
+.q-card{position:relative;border-radius:var(--r-lg);padding:28px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.q-card.feature{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,var(--green),var(--teal),var(--mint)) border-box;border:1.5px solid transparent;box-shadow:var(--shadow);grid-row:span 2}
+.q-card blockquote{margin:0;font-size:16px;color:var(--navy-2)}
+.q-card.feature blockquote{font-family:var(--display);font-size:clamp(20px,2vw,26px);line-height:1.35;letter-spacing:-.02em;color:var(--navy);font-weight:500}
+.q-mark{width:36px;height:36px;margin-bottom:14px}
+.q-who{display:flex;align-items:center;gap:12px;font-size:14.5px}
+.q-who .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:600;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--green),var(--teal));flex:none}
+.q-who b{display:block;font-weight:600}
+.q-who span{color:var(--slate-2);font-size:13.5px}
+
+/* ---------- Trust (accreditations) ---------- */
+.trust{padding:0 0 110px}
+.trust-box{border-radius:var(--r-lg);background:var(--bg-soft);padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:center}
+.trust-box h3{font-size:clamp(24px,2.4vw,32px);font-weight:600;margin-top:12px}
+.trust-box p{color:var(--slate);margin:10px 0 0}
+.accred{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.accred li{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-weight:500;font-size:14.5px;transition:transform .3s var(--ease),box-shadow .3s}
+.accred li:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.accred li svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2.2}
+
+/* ---------- Contact ---------- */
+.contact{position:relative;padding:0 0 110px}
+.cta-card{position:relative;border-radius:28px;overflow:hidden;color:#fff;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);isolation:isolate;background:var(--navy)}
+.cta-card canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2;opacity:.9}
+.cta-card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(115deg,rgba(6,35,31,.92) 30%,rgba(6,35,31,.55) 70%,rgba(6,35,31,.2))}
+.cta-card h2{font-size:clamp(34px,4.4vw,58px);line-height:1.04;font-weight:700;letter-spacing:-.035em}
+.cta-card .lead{color:#cfe3dd}
+.offices{display:grid;gap:12px;margin-top:32px}
+.office{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);backdrop-filter:blur(8px);transition:background .3s}
+.office:hover{background:rgba(255,255,255,.16)}
+.office small{display:block;font-size:13px;color:#a9c4bd}
+.office b{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.01em}
+.office .call{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--teal));display:grid;place-items:center;flex:none}
+.office .call svg{width:18px;height:18px;stroke:#04211c;fill:none;stroke-width:2}
+.form{background:#fff;color:var(--navy);border-radius:20px;padding:clamp(20px,3vw,32px);box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.form h3{font-size:22px;font-weight:600}
+.form > div > p{margin:4px 0 20px;color:var(--slate);font-size:14.5px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:12px;background:var(--bg-soft);margin-bottom:16px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0}
+.seg span{display:block;text-align:center;padding:10px 8px;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--slate);transition:background .25s,color .25s,box-shadow .25s;cursor:pointer}
+.seg input:checked + span{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(6,35,31,.12)}
+.seg input:focus-visible + span{outline:2px solid var(--teal);outline-offset:2px}
+.f{display:block;margin-bottom:12px}
+.f span{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--navy-2)}
+.f input,.f textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--navy);transition:border-color .2s,box-shadow .2s}
+.f textarea{min-height:96px;resize:vertical}
+.f input:focus,.f textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(20,184,166,.15)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form .btn{width:100%;margin-top:6px}
+.thanks{display:none;text-align:center;padding:36px 8px}
+.thanks .ok{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;background:linear-gradient(135deg,var(--green),var(--teal));display:grid;place-items:center}
+.thanks .ok svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:3}
+.form.sent .form-body{display:none}
+.form.sent .thanks{display:block}
+
+/* ---------- Footer ---------- */
+.footer{border-top:1px solid var(--line);padding:56px 0 90px;font-size:14.5px;color:var(--slate)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+.footer h4{font-size:13px;font-family:var(--body);font-weight:600;color:var(--navy);margin:0 0 14px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.footer a:hover{color:var(--teal-deep)}
+.foot-base{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+
+.badge{position:fixed;left:14px;bottom:14px;z-index:90;font-family:var(--mono);font-size:11px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.85);color:var(--navy);backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(6,35,31,.12),inset 0 0 0 1px var(--line);pointer-events:none}
+
+/* ---------- Intro hidden state (JS+GSAP only) ---------- */
+html.anim .hero h1 .word > span{transform:translateY(105%)}
+html.anim .pill,html.anim .hero-sub,html.anim .hero-body,html.anim .hero-ctas,html.anim .ui-card{opacity:0}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .nav-links,.nav-right .portal{display:none}
+  .burger{display:inline-flex}
+  .hero-layout{grid-template-columns:1fr}
+  .ui-stack{height:440px;max-width:520px;margin:0 auto;width:100%}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .q-grid{grid-template-columns:1fr 1fr}
+  .q-card.feature{grid-column:1 / -1;grid-row:auto}
+  .trust-box{grid-template-columns:1fr}
+  .cta-card{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:899px){
+  /* Projects become a native swipe strip */
+  .proj-viewport{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .proj-viewport::-webkit-scrollbar{display:none}
+  .proj{scroll-snap-align:start;width:min(82vw,360px)}
+  .proj-track{padding:0 var(--gutter) 10px}
+  .proj-progress{display:none}
+}
+@media (max-width:760px){
+  .nav-right .btn{display:none}
+  .hero{padding:120px 0 90px}
+  .mesh,.hero-grid-lines{clip-path:polygon(0 0,100% 0,100% 80%,0 100%)}
+  .hero-ctas .btn{width:100%}
+  .ui-stack{height:400px}
+  .ui-main{width:calc(100% - 20px);transform:none;top:0}
+  .ui-mini{bottom:16px;width:200px}
+  .ui-chip{display:none}
+  .cards{grid-template-columns:1fr}
+  .rail,.rail-dot{left:22px}
+  .tl-node{left:22px;top:30px}
+  .tl-item{grid-template-columns:1fr;gap:0;padding:14px 0 14px 64px}
+  .tl-item:nth-child(n) .tl-card{grid-column:1}
+  .big-stat{left:12px;bottom:-24px}
+  .stats{margin-top:64px}
+  .q-grid{grid-template-columns:1fr}
+  .f2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .drawer ul{grid-template-columns:1fr}
+  :root{--cut:10vw}
+}
+@media (max-width:420px){
+  .stats{grid-template-columns:1fr}
+  .seg{grid-template-columns:1fr}
+  .office b{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  .marquee-track{animation:none}
+  .marquee{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkGrad" x1="0" x2="1"><stop offset="0" stop-color="#6DAB3C"/><stop offset="1" stop-color="#14b8a6"/></linearGradient>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Thomas Consultants home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="#04211c" stroke-width="1.8" stroke-linecap="round"><path d="M2 11c2-3 4-4 6-4s4 1 6 4"/><path d="M4 13.5c1.4-1.8 2.6-2.5 4-2.5s2.6.7 4 2.5"/><path d="M8 2v5"/></svg></span>
+      Thomas Consultants
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why us</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="portal" href="https://portal.thomasconsultants.co.nz" rel="noopener">Client portal</a>
+      <a class="btn btn-dark magnetic" href="#contact">Free consultation <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+  <div class="drawer-head">
+    <span class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="#04211c" stroke-width="1.8" stroke-linecap="round"><path d="M2 11c2-3 4-4 6-4s4 1 6 4"/><path d="M4 13.5c1.4-1.8 2.6-2.5 4-2.5s2.6.7 4 2.5"/><path d="M8 2v5"/></svg></span>Thomas Consultants</span>
+    <button class="burger" id="drawerClose" aria-label="Close menu" style="display:inline-flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#voices">Testimonials</a></li>
+    <li><a href="https://portal.thomasconsultants.co.nz" rel="noopener">Client portal</a></li>
+  </ul>
+  <div class="drawer-foot">
+    <a class="btn btn-glow" href="#contact">Book Your Free Development Consultation</a>
+    <div class="phones-mini"><span>Auckland <a href="tel:+6498361804">09 836 1804</a></span><span>Manukau <a href="tel:+6498696070">09 869 6070</a></span></div>
+  </div>
+</div>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="mesh" aria-hidden="true"><canvas id="mesh"></canvas></div>
+    <div class="hero-grid-lines" aria-hidden="true"></div>
+    <div class="wrap hero-layout">
+      <div>
+        <span class="pill"><b>25 years</b> Land development &amp; subdivision consultants</span>
+        <h1 id="hero-title" class="split">Your Trusted Partner for End-to-End Land Development Support</h1>
+        <p class="hero-sub">Creating Better Spaces Together.</p>
+        <p class="hero-body">As experienced land development specialists, we work closely with our clients to understand their vision and help them create smarter, more sustainable spaces. Engineers, planners, surveyors, landscape architects, ecologists and contamination experts support you from site assessment to final delivery.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-dark magnetic" href="#contact">Book Your Free Development Consultation <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+          <a class="btn btn-light magnetic" href="#contact">Complimentary Planner Meeting</a>
+        </div>
+      </div>
+      <div class="ui-stack" id="uiStack" aria-hidden="true">
+        <div class="ui-card ui-main">
+          <div class="ui-head"><small>PROJECT · HOBSONVILLE</small><span class="status">On programme</span></div>
+          <h4>Residential subdivision</h4>
+          <p>Surveying · Planning · Engineering</p>
+          <div class="ui-plan">
+            <svg viewBox="0 0 360 150" preserveAspectRatio="xMidYMid slice">
+              <g fill="none" stroke="#cfe0da" stroke-width="1">
+                <path d="M-10 120 C60 90 120 110 190 80 S300 40 380 60"/><path d="M-10 100 C60 70 120 90 190 60 S300 20 380 40"/><path d="M-10 140 C60 110 120 130 190 100 S300 60 380 80"/>
+              </g>
+              <g class="lots" fill="#fff" stroke="#14b8a6" stroke-width="1.4">
+                <rect x="40" y="28" width="44" height="40" rx="4"/><rect x="90" y="28" width="44" height="40" rx="4"/><rect x="140" y="28" width="44" height="40" rx="4"/><rect x="190" y="28" width="44" height="40" rx="4"/>
+                <rect x="40" y="86" width="44" height="40" rx="4"/><rect x="90" y="86" width="44" height="40" rx="4"/><rect x="140" y="86" width="44" height="40" rx="4" fill="#e6f7f3"/><rect x="190" y="86" width="44" height="40" rx="4"/>
+              </g>
+              <path d="M20 77 H300" stroke="#6DAB3C" stroke-width="3" stroke-dasharray="8 6" fill="none"/>
+              <circle cx="280" cy="50" r="18" fill="#eaf6dd" stroke="#6DAB3C"/>
+            </svg>
+          </div>
+          <div class="ui-steps"><span><i></i></span><span><i></i></span><span><i></i></span><span><i style="transform:scaleX(.4)"></i></span></div>
+          <div class="ui-steps-l"><span>Assess</span><span>Consent</span><span>Design</span><span>Deliver</span></div>
+        </div>
+        <div class="ui-card ui-mini">
+          <div class="k" id="heroK">25<span> yrs</span></div>
+          <p>Delivering land development across Aotearoa</p>
+          <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none"><path d="M2 34 C30 30 40 26 60 24 S100 22 120 14 S170 10 198 4"/></svg>
+        </div>
+        <div class="ui-card ui-chip"><span class="ok"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 7.5l2.5 2.5L11 4.5"/></svg></span><div>Resource consent granted<small>Scott Road, Hobsonville</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLIENT MARQUEE ============ -->
+  <section class="logos" aria-label="Clients">
+    <p>Trusted by councils, agencies and developers across New Zealand</p>
+    <div class="marquee">
+      <div class="marquee-track">
+        <ul>
+          <li>Kāinga Ora</li><li>Auckland Transport</li><li>Watercare</li><li>Panuku</li><li>NZ Transport Agency</li><li>Ministry of Education</li><li>Waikato District Council</li><li>Rotorua Lakes Council</li><li>Hobsonville Point</li><li>Homes of Choice</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>Kāinga Ora</li><li>Auckland Transport</li><li>Watercare</li><li>Panuku</li><li>NZ Transport Agency</li><li>Ministry of Education</li><li>Waikato District Council</li><li>Rotorua Lakes Council</li><li>Hobsonville Point</li><li>Homes of Choice</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services" aria-labelledby="svc-title">
+    <div class="wrap">
+      <div class="svc-head">
+        <div>
+          <span class="label">Services</span>
+          <h2 class="h2" id="svc-title">One team for <span class="grad-text">every stage</span> of your land development.</h2>
+        </div>
+        <p class="lead" style="max-width:40ch">Quality civil engineering, resource consents and planning, with specialists in-house so your project never waits on a handover.</p>
+      </div>
+      <div class="cards">
+        <article class="card tilt">
+          <span class="num">01</span>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <h3>Land Surveying</h3>
+          <p>Accurate and reliable data for your development projects.</p>
+          <ul><li>Boundary redefinition</li><li>Cross-lease to freehold</li><li>Topographical &amp; set out</li><li>Drone inspections, 3D laser scanning</li></ul>
+        </article>
+        <article class="card tilt">
+          <span class="num">02</span>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+          <h3>RMA Planning</h3>
+          <p>Advice on zoning, land use and resource consent applications.</p>
+          <ul><li>Resource consent applications</li><li>Feasibility reports</li><li>Hearings evidence</li><li>Plan changes</li></ul>
+        </article>
+        <article class="card tilt">
+          <span class="num">03</span>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V10l7-5 7 5v10"/><path d="M9 20v-6h6v6"/></svg></div>
+          <h3>Engineering</h3>
+          <p>Infrastructure that is robust and compliant.</p>
+          <ul><li>Roads &amp; earthworks</li><li>Stormwater &amp; three waters</li><li>Flood engineering</li><li>Construction monitoring</li></ul>
+        </article>
+        <article class="card tilt">
+          <span class="num">04</span>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c-4 0-6-3-6-6a6 6 0 0 1 12 0c0 3-2 6-6 6z"/><path d="M4 21h16"/></svg></div>
+          <h3>Landscape Architecture</h3>
+          <p>Every aspect of the outdoor design process.</p>
+          <ul><li>Open space design</li><li>Landscape &amp; visual assessments</li><li>Planting plans</li></ul>
+        </article>
+        <article class="card tilt">
+          <span class="num">05</span>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-3 4-5 7-5 10a5 5 0 0 0 10 0c0-3-2-6-5-10z"/><path d="M10 14a2 2 0 0 0 2 2"/></svg></div>
+          <h3>Environmental Services</h3>
+          <p>Environmental Management Plans, ecology, contamination testing and asbestos.</p>
+          <ul><li>Environmental Management Plans</li><li>Ecology</li><li>Soil &amp; water contamination testing</li><li>Asbestos</li></ul>
+        </article>
+        <article class="card tilt">
+          <span class="num">06</span>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M4 12h16M4 18h7"/><circle cx="17" cy="6" r="2"/><circle cx="14" cy="18" r="2"/></svg></div>
+          <h3>Project Management</h3>
+          <p>From concept to completion, we oversee the entire process.</p>
+          <ul><li>Programme &amp; budget control</li><li>Consultant coordination</li><li>Single point of contact</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY ============ -->
+  <section class="why on-dark" id="why" aria-labelledby="why-title">
+    <div class="why-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="why-grid">
+        <div>
+          <span class="label">Why Thomas Consultants</span>
+          <h2 class="h2" id="why-title">25 years of expertise that is second to none.</h2>
+          <p class="lead">After 25 years of delivering multi-faceted land development and infrastructure projects, we bring a depth of experience that keeps your project moving.</p>
+          <ul class="why-points">
+            <li><span class="chk"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.5 2.5L11 4.5"/></svg></span><div><b>Environmentally responsible</b><span>Committed to sustainable development from the first site visit.</span></div></li>
+            <li><span class="chk"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.5 2.5L11 4.5"/></svg></span><div><b>Transparent communication</b><span>You always know where your project stands.</span></div></li>
+            <li><span class="chk"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.5 2.5L11 4.5"/></svg></span><div><b>Seamless project management</b><span>Timely results, on budget and aligned with your vision.</span></div></li>
+          </ul>
+        </div>
+        <div class="why-visual">
+          <div class="photo" id="whyPhoto"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="A Thomas Consultants land development site" loading="lazy"></div>
+          <div class="big-stat"><div class="n"><span class="count" data-to="25">25</span><span>+</span></div><p>years in land development</p></div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="v"><em class="count" data-to="6">6</em></div><p>In-house disciplines</p></div>
+        <div class="stat"><div class="v"><em class="count" data-to="3">3</em></div><p>Offices: Auckland, Manukau, Christchurch</p></div>
+        <div class="stat"><div class="v"><em class="count" data-to="10">10</em></div><p>Accreditations &amp; memberships</p></div>
+        <div class="stat"><div class="v"><em>1</em></div><p>Team, from assessment to delivery</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="process" id="process" aria-labelledby="proc-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">How we work</span>
+        <h2 class="h2" id="proc-title">A clear path from <span class="grad-text">bare land</span> to finished place.</h2>
+        <p class="lead">Four stages, one accountable team. Every handover happens inside Thomas Consultants.</p>
+      </div>
+      <ol class="timeline" id="timeline">
+        <li class="rail" aria-hidden="true"><span class="rail-fill" id="railFill"></span><span class="rail-dot" id="railDot"></span></li>
+        <li class="tl-item"><span class="tl-node">01</span><div class="tl-card"><small>Stage one</small><h3>Site assessment</h3><p>We survey and test the land first: topography, boundaries, contamination and ecology, then a feasibility view of what the site can deliver.</p><div class="chips"><span>Topographical survey</span><span>Soil testing</span><span>Feasibility</span></div></div></li>
+        <li class="tl-item"><span class="tl-node">02</span><div class="tl-card"><small>Stage two</small><h3>Consent</h3><p>Our RMA planners advise on zoning and land use, prepare resource consent applications and represent you at hearings.</p><div class="chips"><span>Resource consent</span><span>Hearings evidence</span><span>Plan changes</span></div></div></li>
+        <li class="tl-item"><span class="tl-node">03</span><div class="tl-card"><small>Stage three</small><h3>Design</h3><p>Engineering and landscape design that is robust and compliant: roads, three waters, earthworks, open space and planting.</p><div class="chips"><span>Three waters</span><span>Earthworks</span><span>Planting plans</span></div></div></li>
+        <li class="tl-item"><span class="tl-node">04</span><div class="tl-card"><small>Stage four</small><h3>Delivery</h3><p>Set out, construction monitoring and project management through to completion, on time and on budget.</p><div class="chips"><span>Construction monitoring</span><span>Set out</span><span>Project management</span></div></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects" id="projects" aria-labelledby="proj-title">
+    <div class="wrap proj-head">
+      <div>
+        <span class="label">Selected projects</span>
+        <h2 class="h2" id="proj-title">Places we've helped shape.</h2>
+      </div>
+      <a class="btn btn-light magnetic" href="#contact">Discuss your project <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    </div>
+    <div class="proj-pin" id="projPin">
+      <div class="proj-viewport" id="projViewport">
+        <div class="proj-track" id="projTrack">
+          <article class="proj"><div class="proj-art" style="background:linear-gradient(135deg,#5F9434,#0f766e)"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Open space development at Fearon Park" loading="lazy"></div><div class="proj-body"><small>Mount Roskill</small><h3>Open Space Development, Fearon Park</h3><div class="chips"><span>Project Management</span><span>Contaminated Sites</span></div></div></article>
+          <article class="proj" data-art="1"><div class="proj-art" style="background:#e3f3ec"></div><div class="proj-body"><small>Kāinga Ora</small><h3>McMillan and Lockwood</h3><div class="chips"><span>Construction Monitoring</span><span>Engineering</span><span>Residential</span></div></div></article>
+          <article class="proj" data-art="2"><div class="proj-art" style="background:#eaf6dd"></div><div class="proj-body"><small>Auckland</small><h3>Churchill Park Lookout</h3><div class="chips"><span>Landscape Architecture</span><span>Open Space Design</span></div></div></article>
+          <article class="proj"><div class="proj-art" style="background:linear-gradient(135deg,#0f766e,#6DAB3C)"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Engineer on site at Cracroft Road" loading="lazy"></div><div class="proj-body"><small>Kāinga Ora</small><h3>2 Cracroft Road / 618-620 Great South Road</h3><div class="chips"><span>Engineering</span><span>Surveying</span></div></div></article>
+          <article class="proj" data-art="3"><div class="proj-art" style="background:#dff4f0"></div><div class="proj-body"><small>Auckland</small><h3>Observation Green</h3><div class="chips"><span>Landscape &amp; Visual Assessments</span><span>Planting Plan</span></div></div></article>
+          <article class="proj" data-art="4"><div class="proj-art" style="background:#eef7e4"></div><div class="proj-body"><small>Alderman Drive, Henderson</small><h3>PAK'nSAVE Henderson</h3><div class="chips"><span>Commercial</span><span>Civil Engineering</span></div></div></article>
+          <article class="proj" data-art="5"><div class="proj-art" style="background:#e3f3ec"></div><div class="proj-body"><small>Hobsonville</small><h3>Scott Road</h3><div class="chips"><span>Resource Consent</span><span>Traffic Engineering</span><span>Soil Testing</span></div></div></article>
+          <article class="proj" data-art="6"><div class="proj-art" style="background:#eaf6dd"></div><div class="proj-body"><small>Hobsonville Point</small><h3>GJ Gardner Kokowai Apartments</h3><div class="chips"><span>Landscape Architecture</span></div></div></article>
+          <article class="proj" data-art="7"><div class="proj-art" style="background:#dff4f0"></div><div class="proj-body"><small>Residential subdivision</small><h3>Homes of Choice</h3><div class="chips"><span>Engineering</span><span>Planning</span><span>Subdivision</span></div></div></article>
+        </div>
+      </div>
+      <div class="proj-progress" aria-hidden="true"><i id="projBar"></i></div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="voices" id="voices" aria-labelledby="voices-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Testimonials</span>
+        <h2 class="h2" id="voices-title">Clients notice the difference.</h2>
+      </div>
+      <div class="q-grid">
+        <figure class="q-card feature" style="margin:0">
+          <div>
+            <svg class="q-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="qg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#6DAB3C"/><stop offset="1" stop-color="#14b8a6"/></linearGradient></defs><path fill="url(#qg)" d="M4 26c0-8 4-14 11-17l1 3c-4 2-6 5-6 8h5v9H4zm17 0c0-8 4-14 11-17l1 3c-4 2-6 5-6 8h5v9H21z"/></svg>
+            <blockquote>I have to say, this looks amazing. I think this is the first time I received a first concept that fully met the brief and looks exactly how I imagined it.</blockquote>
+          </div>
+          <figcaption class="q-who"><span class="av" aria-hidden="true">BH</span><div><b>Barbara Heise</b><span>Auckland Council</span></div></figcaption>
+        </figure>
+        <figure class="q-card" style="margin:0">
+          <blockquote>Outstanding customer service, responsive and very professional. Despite the logistical challenges of extended lockdowns, Brett from Thomas Consultants went above and beyond to help with our environmental property needs.</blockquote>
+          <figcaption class="q-who"><span class="av" aria-hidden="true">MC</span><div><b>Marie CK</b><span>Private Client</span></div></figcaption>
+        </figure>
+        <figure class="q-card" style="margin:0">
+          <blockquote>You have been timely, pro-active in your communications with us, given us a cost-effective outcome, and I have found Thomas Consultants very easy to deal with.</blockquote>
+          <figcaption class="q-who"><span class="av" aria-hidden="true">N</span><div><b>Nigel</b><span>New Plymouth District Council</span></div></figcaption>
+        </figure>
+        <figure class="q-card" style="margin:0">
+          <blockquote>Very quick and helpful responses and helped us get a BCE in a very short timeframe!</blockquote>
+          <figcaption class="q-who"><span class="av" aria-hidden="true">DC</span><div><b>David Cho</b><span>High-profile event manager</span></div></figcaption>
+        </figure>
+        <figure class="q-card" style="margin:0">
+          <blockquote>I want to say thank you very much for all the hard work you put in on this job. Couldn't be happier with the outcome!</blockquote>
+          <figcaption class="q-who"><span class="av" aria-hidden="true">PC</span><div><b>Private Client</b><span>Resource Consent, Mission Bay</span></div></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST ============ -->
+  <section class="trust" aria-labelledby="trust-title">
+    <div class="wrap">
+      <div class="trust-box">
+        <div>
+          <span class="label">Accreditations</span>
+          <h3 id="trust-title">Certified, accredited and accountable.</h3>
+          <p>Our people and systems are recognised by New Zealand's leading professional and industry bodies.</p>
+        </div>
+        <ul class="accred">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>ISO 45001</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>IANZ</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>Toitū Envirocare</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>Engineering NZ</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>Water NZ</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>Survey and Spatial NZ</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>NZ Planning Institute</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>NZILA</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>SiteSafe</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>SiteWise</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="cta-card on-dark">
+        <canvas id="mesh2" aria-hidden="true"></canvas>
+        <div>
+          <span class="label">Get started</span>
+          <h2 id="contact-title" style="margin-top:14px">Let's talk about your site.</h2>
+          <p class="lead">Book your free development consultation or a complimentary planner meeting. No obligation, just clear advice on what is possible.</p>
+          <div class="offices">
+            <a class="office" href="tel:+6498361804"><div><small>Auckland · Head Office</small><b>09 836 1804</b></div><span class="call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span></a>
+            <a class="office" href="tel:+6498696070"><div><small>Manukau</small><b>09 869 6070</b></div><span class="call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span></a>
+          </div>
+          <p style="color:#a9c4bd;font-size:14px;margin:14px 0 0">Plus a satellite office in Christchurch.</p>
+        </div>
+        <form class="form" id="enquiry" novalidate>
+          <div class="form-body">
+            <h3>Request a meeting</h3>
+            <p>We will get back to you within one business day.</p>
+            <fieldset class="seg" style="border:0;margin:0 0 16px">
+              <legend class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Meeting type</legend>
+              <label><input type="radio" name="type" value="consult" checked><span>Free consultation</span></label>
+              <label><input type="radio" name="type" value="planner"><span>Planner meeting</span></label>
+            </fieldset>
+            <div class="f2">
+              <label class="f"><span>Name</span><input name="name" autocomplete="name" required></label>
+              <label class="f"><span>Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+            </div>
+            <label class="f"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+            <label class="f"><span>Site address &amp; goals</span><textarea name="msg" placeholder="e.g. 3 lot subdivision in West Auckland"></textarea></label>
+            <button class="btn btn-glow" type="submit">Send request <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
+          </div>
+          <div class="thanks" role="status">
+            <div class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h3>Request received</h3>
+            <p style="color:var(--slate);margin:6px 0 0">Thanks. A member of our team will be in touch shortly.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:12px"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="#04211c" stroke-width="1.8" stroke-linecap="round"><path d="M2 11c2-3 4-4 6-4s4 1 6 4"/><path d="M4 13.5c1.4-1.8 2.6-2.5 4-2.5s2.6.7 4 2.5"/><path d="M8 2v5"/></svg></span>Thomas Consultants</a>
+        <p style="margin:0;max-width:34ch">Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p>
+      </div>
+      <div><h4>Offices</h4><ul><li><a href="tel:+6498361804">Auckland HQ · 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau · 09 869 6070</a></li><li>Christchurch (satellite)</li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#process">Process</a></li><li><a href="https://portal.thomasconsultants.co.nz" rel="noopener">Client portal</a></li></ul></div>
+      <div><h4>Social</h4><ul><li><a href="https://www.facebook.com/thomasconsultantsltd" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" rel="noopener">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="foot-base"><span>&copy; 2026 Thomas Consultants Ltd</span><span>Creating Better Spaces Together</span></div>
+  </div>
+</footer>
+
+<div class="badge">Concept 02 · Flow</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root = document.documentElement;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGSAP = !!(window.gsap && window.ScrollTrigger);
+  if(!hasGSAP) root.classList.remove('anim');
+  var animate = hasGSAP && !reduced;
+  var fine = window.matchMedia('(pointer:fine)').matches;
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  /* ================= Mesh gradient (canvas) ================= */
+  function Mesh(canvas, opts){
+    var ctx = canvas.getContext('2d'), w = 0, h = 0, t = Math.random()*100, raf = 0, visible = true;
+    var blobs = opts.blobs;
+    var scale = opts.scale || 0.25;
+    function resize(){
+      var r = canvas.getBoundingClientRect();
+      w = Math.max(2, Math.round(r.width * scale)); h = Math.max(2, Math.round(r.height * scale));
+      canvas.width = w; canvas.height = h; draw();
+    }
+    function draw(){
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.fillStyle = opts.base; ctx.fillRect(0,0,w,h);
+      for(var i=0;i<blobs.length;i++){
+        var b = blobs[i];
+        var x = (b.x + Math.sin(t*b.sx + b.p)*b.ax) * w;
+        var y = (b.y + Math.cos(t*b.sy + b.p*1.3)*b.ay) * h;
+        var rad = b.r * Math.max(w,h) * (1 + Math.sin(t*0.7 + b.p)*0.12);
+        var g = ctx.createRadialGradient(x,y,0,x,y,rad);
+        g.addColorStop(0, b.c); g.addColorStop(1, b.c.replace(/[\d.]+\)$/,'0)'));
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x,y,rad,0,Math.PI*2); ctx.fill();
+      }
+    }
+    function loop(){ t += 0.006; draw(); raf = requestAnimationFrame(loop); }
+    function start(){ if(!raf && visible && !reduced) raf = requestAnimationFrame(loop); }
+    function stop(){ cancelAnimationFrame(raf); raf = 0; }
+    resize();
+    window.addEventListener('resize', resize);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ visible = es[0].isIntersecting; visible ? start() : stop(); }).observe(canvas);
+    }
+    start();
+    document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+    return {resize:resize};
+  }
+  var blobsA = [
+    {x:.15,y:.2, r:.55, c:'rgba(182,227,106,1)', sx:.9, sy:.7, ax:.15, ay:.2, p:0},
+    {x:.55,y:.1, r:.5,  c:'rgba(20,184,166,1)',  sx:.6, sy:.8, ax:.2,  ay:.15, p:1.7},
+    {x:.85,y:.45,r:.5,  c:'rgba(126,224,195,1)', sx:.8, sy:.5, ax:.12, ay:.25, p:3.1},
+    {x:.35,y:.75,r:.45, c:'rgba(109,171,60,1)',  sx:.5, sy:.9, ax:.25, ay:.15, p:4.2},
+    {x:.7, y:.85,r:.4,  c:'rgba(15,118,110,.9)', sx:.7, sy:.6, ax:.2,  ay:.1,  p:5.3},
+    {x:.95,y:.05,r:.35, c:'rgba(56,189,248,.55)',sx:.4, sy:.7, ax:.1,  ay:.1,  p:2.4}
+  ];
+  var blobsB = [
+    {x:.8,y:.2, r:.6, c:'rgba(20,184,166,.9)', sx:.5, sy:.6, ax:.15, ay:.2, p:.5},
+    {x:.95,y:.8,r:.5, c:'rgba(109,171,60,.9)', sx:.7, sy:.4, ax:.1,  ay:.2, p:2},
+    {x:.55,y:.6,r:.4, c:'rgba(126,224,195,.6)',sx:.6, sy:.8, ax:.2,  ay:.1, p:4}
+  ];
+  var meshEl = document.getElementById('mesh');
+  if(meshEl.getContext){ Mesh(meshEl, {base:'#7ccf8f', blobs:blobsA, scale:.2}); Mesh(document.getElementById('mesh2'), {base:'#06231f', blobs:blobsB, scale:.2}); }
+
+  /* ================= Drawer menu ================= */
+  var burger = document.getElementById('burger'), drawer = document.getElementById('drawer'), scrim = document.getElementById('scrim'), closeBtn = document.getElementById('drawerClose');
+  function setDrawer(open){
+    drawer.classList.toggle('open', open); scrim.classList.toggle('open', open);
+    drawer.setAttribute('aria-hidden', !open); burger.setAttribute('aria-expanded', open);
+    if(open) closeBtn.focus(); else burger.focus({preventScroll:true});
+  }
+  burger.addEventListener('click', function(){ setDrawer(true); });
+  closeBtn.addEventListener('click', function(){ setDrawer(false); });
+  scrim.addEventListener('click', function(){ setDrawer(false); });
+  drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ drawer.classList.remove('open'); scrim.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && drawer.classList.contains('open')) setDrawer(false); });
+
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ================= 3D tilt + glow cards ================= */
+  document.querySelectorAll('.tilt').forEach(function(card){
+    var frame = 0;
+    card.addEventListener('pointermove', function(e){
+      var r = card.getBoundingClientRect(), px = (e.clientX - r.left)/r.width, py = (e.clientY - r.top)/r.height;
+      card.style.setProperty('--mx', (px*100)+'%'); card.style.setProperty('--my', (py*100)+'%');
+      if(!fine || reduced) return;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(function(){
+        card.classList.add('tilting');
+        card.style.setProperty('--ry', ((px - .5) * 14).toFixed(2)+'deg');
+        card.style.setProperty('--rx', ((.5 - py) * 12).toFixed(2)+'deg');
+      });
+    });
+    card.addEventListener('pointerleave', function(){
+      cancelAnimationFrame(frame);
+      card.classList.remove('tilting');
+      card.style.setProperty('--rx','0deg'); card.style.setProperty('--ry','0deg');
+    });
+  });
+
+  /* ================= Project card art (site plans) ================= */
+  function rng(s){ return function(){ s = (s*16807)%2147483647; return (s-1)/2147483646; }; }
+  var palettes = [['#14b8a6','#6DAB3C'],['#6DAB3C','#0f766e'],['#0f766e','#7ee0c3'],['#5F9434','#14b8a6']];
+  document.querySelectorAll('.proj[data-art]').forEach(function(card){
+    var n = +card.getAttribute('data-art'), r = rng(n*131+7), pal = palettes[n % palettes.length];
+    var svg = document.createElementNS(SVGNS,'svg'); svg.setAttribute('viewBox','0 0 400 300'); svg.setAttribute('preserveAspectRatio','xMidYMid slice'); svg.setAttribute('aria-hidden','true');
+    var html = '';
+    for(var i=0;i<7;i++){ var y = 40 + i*36 + r()*10; html += '<path d="M-20 '+y+' C 100 '+(y-30*r())+' 220 '+(y+40*r())+' 420 '+(y-20)+'" fill="none" stroke="'+pal[1]+'" stroke-opacity=".18"/>'; }
+    var bx = 60 + r()*60, by = 50 + r()*40, cols = 3 + Math.floor(r()*3);
+    for(var c=0;c<cols;c++){ for(var k=0;k<2;k++){ var fillOn = r() > .7; html += '<rect x="'+(bx+c*52)+'" y="'+(by+k*86)+'" width="46" height="70" rx="6" fill="'+(fillOn?pal[0]:'#fff')+'" fill-opacity="'+(fillOn?.85:.9)+'" stroke="'+pal[0]+'" stroke-width="1.4"/>'; } }
+    html += '<path d="M0 '+(by+78)+' H400" stroke="'+pal[1]+'" stroke-width="10" stroke-opacity=".25"/><path d="M0 '+(by+78)+' H400" stroke="#fff" stroke-width="1.5" stroke-dasharray="10 8"/>';
+    html += '<circle cx="'+(300+r()*60)+'" cy="'+(60+r()*50)+'" r="'+(26+r()*20)+'" fill="'+pal[1]+'" fill-opacity=".18" stroke="'+pal[1]+'"/>';
+    svg.innerHTML = html;
+    card.querySelector('.proj-art').appendChild(svg);
+  });
+  document.querySelectorAll('img').forEach(function(img){ img.addEventListener('error', function(){ img.style.display = 'none'; }); });
+
+  /* ================= Form ================= */
+  var form = document.getElementById('enquiry');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.name.value.trim()){ form.name.focus(); return; }
+    if(!/.+@.+\..+/.test(form.email.value)){ form.email.focus(); return; }
+    form.classList.add('sent');
+    if(animate) gsap.from(form.querySelector('.thanks'), {scale:.9, opacity:0, duration:.6, ease:'back.out(1.8)'});
+  });
+
+  if(!animate) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ================= Magnetic buttons ================= */
+  if(fine){
+    document.querySelectorAll('.magnetic').forEach(function(btn){
+      var xTo = gsap.quickTo(btn,'x',{duration:.4,ease:'power3'}), yTo = gsap.quickTo(btn,'y',{duration:.4,ease:'power3'});
+      btn.addEventListener('pointermove', function(e){ var b = btn.getBoundingClientRect(); xTo((e.clientX-b.left-b.width/2)*.25); yTo((e.clientY-b.top-b.height/2)*.35); });
+      btn.addEventListener('pointerleave', function(){ xTo(0); yTo(0); });
+    });
+  }
+
+  /* ================= Hero intro ================= */
+  var h1 = document.querySelector('.hero h1.split');
+  h1.setAttribute('aria-label', h1.textContent);
+  h1.innerHTML = h1.textContent.trim().split(/\s+/).map(function(w){
+    var cls = /End-to-End/.test(w) ? ' class="grad-text"' : '';
+    return '<span class="word" aria-hidden="true"><span'+cls+'>'+w+'</span></span>';
+  }).join(' ');
+  var tl = gsap.timeline({defaults:{ease:'expo.out'}});
+  tl.fromTo('.mesh', {opacity:0, scale:1.08}, {opacity:1, scale:1, duration:1.6, ease:'power2.out'}, 0)
+    .to('.pill', {opacity:1, duration:.8}, .2)
+    .fromTo('.pill', {y:16}, {y:0, duration:.8}, .2)
+    .to('.hero h1 .word > span', {y:0, duration:1.1, stagger:.045}, .3)
+    .fromTo('.hero-sub', {opacity:0, y:16}, {opacity:1, y:0, duration:.9}, .8)
+    .fromTo('.hero-body', {opacity:0, y:16}, {opacity:1, y:0, duration:.9}, .9)
+    .fromTo('.hero-ctas', {opacity:0, y:16}, {opacity:1, y:0, duration:.9}, 1.0)
+    .fromTo('.ui-main', {opacity:0, y:60, rotationY:-25}, {opacity:1, y:0, rotationY:-10, duration:1.4}, .6)
+    .fromTo('.ui-mini', {opacity:0, x:-40}, {opacity:1, x:0, duration:1.2}, .95)
+    .fromTo('.ui-chip', {opacity:0, y:30, scale:.9}, {opacity:1, y:0, scale:1, duration:1, ease:'back.out(1.8)'}, 1.25)
+    .from('.ui-steps i', {scaleX:0, duration:1, stagger:.15, ease:'power2.out'}, 1.1)
+    .from('.ui-plan .lots rect', {opacity:0, y:8, stagger:.05, duration:.5, ease:'power2.out'}, 1.1);
+  var spark = document.querySelector('.spark path'), sl = spark.getTotalLength();
+  tl.fromTo(spark, {strokeDasharray:sl, strokeDashoffset:sl}, {strokeDashoffset:0, duration:1.4, ease:'power2.inOut'}, 1.1);
+
+  // Parallax of the UI stack and float
+  gsap.to('#uiStack', {yPercent:-12, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+  gsap.to('.ui-chip', {y:-10, duration:2.4, ease:'sine.inOut', yoyo:true, repeat:-1, delay:2.4});
+  gsap.to('.ui-mini', {y:8, duration:3, ease:'sine.inOut', yoyo:true, repeat:-1, delay:2.2});
+  // Pointer parallax on the main card
+  if(fine){
+    var stack = document.getElementById('uiStack'), main = document.querySelector('.ui-main');
+    var rY = gsap.quickTo(main,'rotationY',{duration:.8,ease:'power3'}), rX = gsap.quickTo(main,'rotationX',{duration:.8,ease:'power3'});
+    document.querySelector('.hero').addEventListener('pointermove', function(e){
+      var px = e.clientX / window.innerWidth - .5, py = e.clientY / window.innerHeight - .5;
+      rY(-10 + px*10); rX(6 - py*8);
+    });
+  }
+
+  /* ================= Section reveals ================= */
+  gsap.utils.toArray('.h2, .lead, .label').forEach(function(el){
+    if(el.closest('.hero')) return;
+    gsap.from(el, {y:30, opacity:0, duration:1, ease:'expo.out', scrollTrigger:{trigger:el, start:'top 88%'}});
+  });
+  ScrollTrigger.batch('.card', {start:'top 88%', onEnter:function(b){
+    gsap.from(b, {y:60, opacity:0, rotationX:-12, transformOrigin:'50% 100%', duration:1, ease:'expo.out', stagger:.08, clearProps:'transform,opacity'});
+  }});
+
+  /* ================= Why: angle + counters ================= */
+  gsap.fromTo('.why-bg', {clipPath:'polygon(0 30%,100% 10%,100% 90%,0 100%)'}, {clipPath:'polygon(0 var(--cut),100% 0,100% calc(100% - var(--cut)),0 100%)', ease:'none', scrollTrigger:{trigger:'.why', start:'top bottom', end:'top 30%', scrub:true}});
+  gsap.from('#whyPhoto', {clipPath:'inset(20% 20% 20% 20% round 24px)', scale:1.05, duration:1.4, ease:'expo.out', scrollTrigger:{trigger:'#whyPhoto', start:'top 80%'}});
+  gsap.fromTo('#whyPhoto img', {yPercent:-8, scale:1.15}, {yPercent:8, scale:1.15, ease:'none', scrollTrigger:{trigger:'#whyPhoto', start:'top bottom', end:'bottom top', scrub:true}});
+  gsap.from('.big-stat', {y:40, opacity:0, duration:1, ease:'expo.out', scrollTrigger:{trigger:'.big-stat', start:'top 92%'}});
+  gsap.from('.why-points li', {x:-24, opacity:0, stagger:.12, duration:.9, ease:'expo.out', scrollTrigger:{trigger:'.why-points', start:'top 85%'}});
+  gsap.from('.stat', {y:30, opacity:0, stagger:.08, duration:.9, ease:'expo.out', scrollTrigger:{trigger:'.stats', start:'top 88%'}});
+  document.querySelectorAll('.count').forEach(function(el){
+    var to = +el.getAttribute('data-to'), o = {v:0};
+    el.textContent = '0';
+    gsap.to(o, {v:to, duration:2, ease:'power3.out', scrollTrigger:{trigger:el, start:'top 92%', once:true}, onUpdate:function(){ el.textContent = Math.round(o.v); }});
+  });
+
+  /* ================= Process: line draws with scroll ================= */
+  var items = gsap.utils.toArray('.tl-item');
+  gsap.to('#railFill', {scaleY:1, ease:'none', scrollTrigger:{trigger:'#timeline', start:'top 65%', end:'bottom 65%', scrub:.4,
+    onUpdate:function(self){
+      var dot = document.getElementById('railDot'), tlEl = document.getElementById('timeline');
+      gsap.set(dot, {opacity: self.progress > 0.002 && self.progress < .998 ? 1 : 0, y: self.progress * tlEl.offsetHeight - 7});
+    }}});
+  items.forEach(function(it, i){
+    ScrollTrigger.create({trigger:it.querySelector('.tl-node'), start:'top 65%', onEnter:function(){ it.classList.add('lit'); }, onLeaveBack:function(){ it.classList.remove('lit'); }});
+    var fromX = window.innerWidth > 760 ? (i % 2 ? 60 : -60) : 30;
+    gsap.from(it.querySelector('.tl-card'), {x:fromX, opacity:0, duration:1.1, ease:'expo.out', scrollTrigger:{trigger:it, start:'top 80%'}});
+  });
+
+  /* ================= Projects: pinned horizontal reel (desktop) ================= */
+  var mm = gsap.matchMedia();
+  mm.add('(min-width: 900px)', function(){
+    var track = document.getElementById('projTrack');
+    function dist(){ return Math.max(0, track.scrollWidth - window.innerWidth); }
+    var tween = gsap.to(track, {x:function(){ return -dist(); }, ease:'none',
+      scrollTrigger:{trigger:'#projPin', start:'center center', end:function(){ return '+=' + dist(); }, pin:'.projects', pinSpacing:true, scrub:.6, invalidateOnRefresh:true,
+        onUpdate:function(self){ gsap.set('#projBar', {scaleX:self.progress}); }}});
+    gsap.utils.toArray('.proj').forEach(function(p){
+      gsap.fromTo(p.querySelector('.proj-art > *'), {xPercent:-6}, {xPercent:6, ease:'none', scrollTrigger:{trigger:p, containerAnimation:tween, start:'left right', end:'right left', scrub:true}});
+    });
+    return function(){ gsap.set(track, {clearProps:'x'}); };
+  });
+  gsap.from('.proj', {y:50, opacity:0, stagger:.06, duration:1, ease:'expo.out', scrollTrigger:{trigger:'.projects', start:'top 75%'}});
+
+  /* ================= Testimonials + trust ================= */
+  ScrollTrigger.batch('.q-card', {start:'top 88%', onEnter:function(b){ gsap.from(b, {y:50, opacity:0, stagger:.1, duration:1, ease:'expo.out'}); }});
+  gsap.from('.accred li', {y:16, opacity:0, scale:.94, stagger:.04, duration:.6, ease:'back.out(1.8)', scrollTrigger:{trigger:'.accred', start:'top 88%'}});
+  gsap.from('.cta-card', {y:60, opacity:0, scale:.97, duration:1.2, ease:'expo.out', scrollTrigger:{trigger:'.contact', start:'top 85%'}});
+  gsap.from('.office', {x:-30, opacity:0, stagger:.1, duration:.9, ease:'expo.out', scrollTrigger:{trigger:'.offices', start:'top 90%'}});
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
