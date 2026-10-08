@@ -28,3 +28,27 @@ Nav (sticky, with mobile menu) · Hero · Services (all 6) · Why us / 25 years 
 - <title>: "Thomas Consultants · Concept NN"
 - Must look like its own distinct design language, not a reskin of the others.
 - Inspired-by means the *style* only: never use another brand's name, logo, copy or assets on the page.
+
+# Phase 2: make every concept a complete end-to-end website
+
+Each concept becomes a full multi-page site in its own design language (same fonts, tokens, nav, footer, motion system).
+
+## File layout (for concept NN-slug)
+- Home stays at `designs/NN-slug.html`
+- Inner pages in a folder: `designs/NN-slug/services.html`, `projects.html`, `about.html`, `contact.html`
+- Optional extra: `designs/NN-slug/project.html` (one project case-study detail page, e.g. Scott Road, Hobsonville)
+- Pages may share nothing on disk except what's copied (keep each page self-contained, inline CSS/JS; duplication is fine).
+- Links: home → `NN-slug/services.html` etc; inner pages → `../NN-slug.html` for Home and plain `services.html` etc. between siblings. Home-page "Learn more"/"View all" links go to the matching inner page (anchors like `services.html#engineering` welcome).
+
+## Page content (from BRIEF.md)
+- services.html: all 6 services with their sub-services listed, process steps, FAQ accordion (4-5 Qs, e.g. "Do I need a resource consent?", "How long does a subdivision take?", "What is a cross-lease to freehold conversion?", "Do you work outside Auckland?"), CTA.
+- projects.html: all 9 projects with working category filter buttons (Engineering, Planning, Landscape, Surveying, Environmental, Residential/Commercial) and animated filtering; each card links to project.html (or #).
+- about.html: 25-year story, values (sustainability, transparent communication, on-time on-budget), "Why choose us", accreditations, client list, community & sustainability commitment, testimonials, offices.
+- contact.html: both offices with phones (tel: links), Christchurch satellite office, full enquiry form with validation (name, email, phone, service select, message; inline errors; success state, no backend), "Complimentary Planner Meeting" booking block, social links, client portal link (https://portal.thomasconsultants.co.nz).
+- Nav on every page: Home, Services, Projects, About, Contact + CTA button; active page highlighted; mobile menu works on every page.
+
+## End-to-end requirements
+- Every internal link resolves to an existing file (no 404s), every anchor target exists.
+- Page transitions: add a tasteful transition between pages consistent with the concept (e.g. overlay wipe on link click then navigate; reveal on load). Must not break back/forward (handle `pageshow` with persisted to remove overlay).
+- Same motion quality on inner pages as on home (hero reveal, scroll reveals, micro-interactions).
+- No console errors, no horizontal overflow at 390px and 1440px on any page.

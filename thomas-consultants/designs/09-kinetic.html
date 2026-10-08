@@ -17,6 +17,8 @@
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (window.gsap && window.ScrollTrigger && !reduce) document.documentElement.classList.add('motion');
     if (window.matchMedia && window.matchMedia('(pointer: fine)').matches) document.documentElement.classList.add('fine');
+    var seen = false; try { seen = sessionStorage.getItem('tc09-seen') === '1'; } catch (e) {}
+    document.documentElement.classList.add(seen ? 'revisit' : 'first-visit');
   })();
 </script>
 <style>
@@ -66,6 +68,7 @@ html.fine.motion .cursor{display:flex}
 
 /* ---------- Preloader ---------- */
 .loader{display:none}
+html.revisit .loader{display:none!important}
 html.motion .loader{display:block;position:fixed;inset:0;z-index:250;pointer-events:none}
 .loader__panel{position:absolute;inset:0;background:var(--ink-2);display:flex;flex-direction:column;justify-content:space-between;padding:var(--gutter)}
 .loader__panel--lime{background:var(--lime)}
@@ -90,6 +93,16 @@ html.motion .loader{display:block;position:fixed;inset:0;z-index:250;pointer-eve
 .roll>span+span{position:absolute;left:0;top:100%;color:var(--lime)}
 a:hover .roll>span, a:focus-visible .roll>span{transform:translateY(-100%)}
 .nav__right{display:flex;gap:10px;align-items:center}
+.nav__links a.is-active{color:var(--lime)}
+.nav__links a.is-active::after{content:"";position:absolute;left:50%;bottom:4px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--lime)}
+.menu li a[aria-current="page"]{font-style:italic}
+/* page transition */
+.pt{display:none}
+html.motion .pt{display:flex;position:fixed;inset:0;z-index:260;background:var(--lime);color:var(--ink);align-items:flex-end;padding:var(--gutter);pointer-events:none;clip-path:inset(0 0 0 0);animation:ptSafety 0s linear 4s forwards}
+html.motion.first-visit .pt{clip-path:inset(0 0 100% 0)}
+.pt span{font-family:var(--display);font-weight:800;font-size:clamp(3rem,13vw,14rem);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}
+@keyframes ptSafety{to{visibility:hidden}}
+html.motion .loader{animation:ptSafety 0s linear 7s forwards}
 .btn{--bg:var(--lime);--fg:var(--ink);display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;background:var(--bg);color:var(--fg);text-decoration:none;font-weight:600;font-size:15px;border:0;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;will-change:transform}
 .btn::before{content:"";position:absolute;inset:0;background:var(--paper);border-radius:inherit;transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
 .btn:hover::before,.btn:focus-visible::before{transform:none}
@@ -203,8 +216,8 @@ html.fine.motion .preview{display:block}
 .art img{width:100%;height:100%;object-fit:cover}
 
 /* ---------- Why / 25 ---------- */
-.why{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,6vw,100px);align-items:start}
-.big25{font-family:var(--display);font-weight:800;font-size:clamp(10rem,32vw,34rem);line-height:.78;letter-spacing:-.07em;color:transparent;-webkit-text-stroke:2px var(--lime);margin:0;display:block;transform-origin:left bottom}
+.why{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,100px);align-items:start}
+.big25{font-family:var(--display);font-weight:800;font-size:clamp(8rem,28vw,30rem);line-height:.78;letter-spacing:-.07em;color:transparent;-webkit-text-stroke:2px var(--lime);margin:0;display:block;transform-origin:left bottom}
 .big25 sup{font-size:.25em;-webkit-text-stroke:0;color:var(--lime);vertical-align:top;letter-spacing:0}
 .why__lead{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,2.9vw,2.8rem);line-height:1.12;letter-spacing:-.025em;margin:0 0 40px}
 .why__lead .w{opacity:1}
@@ -254,6 +267,12 @@ html.reel-pinned .reel{overflow:visible;scroll-snap-type:none;padding-bottom:0;w
 .reel__progress{margin:clamp(24px,4vw,48px) var(--gutter) 0;height:2px;background:var(--line);position:relative}
 .reel__progress i{position:absolute;inset:0;background:var(--lime);transform-origin:left;transform:scaleX(0)}
 html:not(.reel-pinned) .reel__progress{display:none}
+html.reel-pinned .work__pin{min-height:100vh;padding:90px 0 24px}
+html.reel-pinned .work .giant{font-size:clamp(2.8rem,7vw,7.5rem)}
+html.reel-pinned .work .sec-head{margin-bottom:28px!important}
+html.reel-pinned .proj{width:clamp(280px,37vh,30vw)}
+html.reel-pinned .proj:nth-child(even){margin-top:4vh}
+html.reel-pinned .reel__end{width:clamp(280px,40vh,32vw)}
 
 /* ---------- Testimonials ---------- */
 .quotes{display:grid;grid-template-columns:240px 1fr;gap:clamp(24px,5vw,80px)}
@@ -323,7 +342,7 @@ html:not(.reel-pinned) .reel__progress{display:none}
 .footer ul a:hover{color:var(--lime)}
 .footer__lead{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.15;letter-spacing:-.02em;max-width:22ch;margin:0}
 .build{display:block;text-decoration:none;margin-top:clamp(48px,8vw,100px);position:relative;text-align:center}
-.build__txt{display:inline-block;font-family:var(--display);font-weight:800;font-size:clamp(4rem,17vw,19rem);line-height:.82;letter-spacing:-.065em;white-space:nowrap;color:var(--paper);will-change:transform;transition:color .4s}
+.build__txt{display:inline-block;font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,14vw,19rem);line-height:.82;letter-spacing:-.065em;white-space:nowrap;color:var(--paper);will-change:transform;transition:color .4s}
 .build:hover .build__txt{color:var(--lime)}
 .build__txt i{font-style:normal;color:var(--lime)}
 .build:hover .build__txt i{color:var(--paper)}
@@ -378,6 +397,7 @@ html:not(.reel-pinned) .reel__progress{display:none}
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="pt" aria-hidden="true"><span>Home</span></div>
 <div class="cursor" aria-hidden="true"><span>View</span></div>
 <div class="preview" aria-hidden="true">
   <div class="art art--photo2"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt=""></div>
@@ -401,18 +421,18 @@ html:not(.reel-pinned) .reel__progress{display:none}
 
 <header class="nav" id="nav">
   <div class="nav__bar">
-    <a class="logo" href="#top" aria-label="Thomas Consultants home"><span class="logo__mark" aria-hidden="true">✳</span>Thomas Consultants</a>
+    <a class="logo" href="09-kinetic.html" aria-label="Thomas Consultants home"><span class="logo__mark" aria-hidden="true">✳</span>Thomas Consultants</a>
     <nav aria-label="Primary">
       <ul class="nav__links">
-        <li><a href="#services"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a></li>
-        <li><a href="#why"><span class="roll"><span>Why us</span><span aria-hidden="true">Why us</span></span></a></li>
-        <li><a href="#process"><span class="roll"><span>Process</span><span aria-hidden="true">Process</span></span></a></li>
-        <li><a href="#work"><span class="roll"><span>Work</span><span aria-hidden="true">Work</span></span></a></li>
-        <li><a href="#contact"><span class="roll"><span>Contact</span><span aria-hidden="true">Contact</span></span></a></li>
+        <li><a href="09-kinetic.html" class="is-active" aria-current="page"><span class="roll"><span>Home</span><span aria-hidden="true">Home</span></span></a></li>
+        <li><a href="09-kinetic/services.html"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a></li>
+        <li><a href="09-kinetic/projects.html"><span class="roll"><span>Projects</span><span aria-hidden="true">Projects</span></span></a></li>
+        <li><a href="09-kinetic/about.html"><span class="roll"><span>About</span><span aria-hidden="true">About</span></span></a></li>
+        <li><a href="09-kinetic/contact.html"><span class="roll"><span>Contact</span><span aria-hidden="true">Contact</span></span></a></li>
       </ul>
     </nav>
     <div class="nav__right">
-      <a class="btn magnetic" href="#contact">Free consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+      <a class="btn magnetic" href="09-kinetic/contact.html">Free consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i></i></button>
     </div>
   </div>
@@ -420,11 +440,11 @@ html:not(.reel-pinned) .reel__progress{display:none}
 
 <div class="menu" id="menu" aria-hidden="true">
   <ul>
-    <li><a href="#services">Services <small>01</small></a></li>
-    <li><a href="#why">Why us <small>02</small></a></li>
-    <li><a href="#process">Process <small>03</small></a></li>
-    <li><a href="#work">Work <small>04</small></a></li>
-    <li><a href="#contact">Contact <small>05</small></a></li>
+    <li><a href="09-kinetic.html">Home <small>01</small></a></li>
+    <li><a href="09-kinetic/services.html">Services <small>02</small></a></li>
+    <li><a href="09-kinetic/projects.html">Projects <small>03</small></a></li>
+    <li><a href="09-kinetic/about.html">About <small>04</small></a></li>
+    <li><a href="09-kinetic/contact.html">Contact <small>05</small></a></li>
   </ul>
   <div class="menu__foot">
     <a href="tel:+6498361804">Auckland 09 836 1804</a>
@@ -491,35 +511,35 @@ html:not(.reel-pinned) .reel__progress{display:none}
     <div class="wrap">
       <div class="sec-head">
         <h2 class="giant" id="svc-title"><span class="velo">What</span><br><span class="velo"><em>we do</em></span></h2>
-        <p>Six disciplines under one roof. One team carrying your site from first survey to final sign-off, with quality civil engineering, resource consents and planning.</p>
+        <div><p>Six disciplines under one roof. One team carrying your site from first survey to final sign-off, with quality civil engineering, resource consents and planning.</p><a class="btn btn--ghost magnetic" href="09-kinetic/services.html" style="margin-top:20px">All services &amp; FAQ</a></div>
       </div>
       <ul class="svc">
-        <li data-preview="0"><a href="#contact">
+        <li data-preview="0"><a href="09-kinetic/services.html#surveying">
           <span class="svc__n">(01)</span>
           <div><h3>Land Surveying</h3></div>
           <div><p>We provide accurate and reliable data for your development projects.</p><small>Boundary redefinition · Cross-lease to freehold · Topographical · Set out · Drone inspections · 3D laser scanning</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="1"><a href="#contact">
+        <li data-preview="1"><a href="09-kinetic/services.html#planning">
           <span class="svc__n">(02)</span>
           <div><h3>RMA Planning</h3></div>
           <div><p>Advice on zoning, land use and resource consent applications.</p><small>Feasibility reports · Hearings evidence · Plan changes</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="2"><a href="#contact">
+        <li data-preview="2"><a href="09-kinetic/services.html#engineering">
           <span class="svc__n">(03)</span>
           <div><h3>Engineering</h3></div>
           <div><p>Infrastructure that is robust and compliant.</p><small>Roads · Stormwater · Three waters · Earthworks · Flood engineering · Construction monitoring</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="3"><a href="#contact">
+        <li data-preview="3"><a href="09-kinetic/services.html#landscape">
           <span class="svc__n">(04)</span>
           <div><h3>Landscape Architecture</h3></div>
           <div><p>Every aspect of the outdoor design process.</p><small>Open space design · Landscape &amp; visual assessments · Planting plans</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="4"><a href="#contact">
+        <li data-preview="4"><a href="09-kinetic/services.html#environmental">
           <span class="svc__n">(05)</span>
           <div><h3>Environmental Services</h3></div>
           <div><p>Environmental Management Plans, ecology, soil &amp; water contamination testing, asbestos.</p><small>EMPs · Ecology · Contamination testing · Asbestos</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="5"><a href="#contact">
+        <li data-preview="5"><a href="09-kinetic/services.html#project-management">
           <span class="svc__n">(06)</span>
           <div><h3>Project Management</h3></div>
           <div><p>From concept to completion, we oversee the entire process.</p><small>Programme · Budget · Contractors · Delivery</small></div>
@@ -545,6 +565,7 @@ html:not(.reel-pinned) .reel__progress{display:none}
             <div><h3>Timely and on budget</h3><p>Timely results that are on budget and aligned with your vision.</p></div>
             <div><h3>Sustainable by default</h3><p>Environmentally responsible development, from soil testing to planting plans.</p></div>
           </div>
+          <a class="btn btn--ghost magnetic" href="09-kinetic/about.html" style="margin-top:32px">Our story</a>
         </div>
       </div>
       <div class="stats">
@@ -561,7 +582,7 @@ html:not(.reel-pinned) .reel__progress{display:none}
     <div class="wrap">
       <div class="sec-head">
         <h2 class="giant" id="proc-title"><span class="velo">How it</span><br><span class="velo"><em>moves</em></span></h2>
-        <p>Four stages, one accountable team. We carry your project from the first site walk to handover, so nothing falls between consultants.</p>
+        <div><p>Four stages, one accountable team. We carry your project from the first site walk to handover, so nothing falls between consultants.</p><a class="btn btn--ghost magnetic" href="09-kinetic/services.html#process" style="margin-top:20px">How we work</a></div>
       </div>
       <div class="stack">
         <article class="card">
@@ -597,20 +618,20 @@ html:not(.reel-pinned) .reel__progress{display:none}
     <div class="work__pin">
       <div class="wrap sec-head" style="margin-bottom:clamp(28px,4vw,56px)">
         <h2 class="giant" id="work-title"><span class="velo">Selected</span> <span class="velo"><em>work</em></span></h2>
-        <p>Parks, homes, supermarkets and subdivisions: a cross-section of projects shaped by our team across Tāmaki Makaurau and beyond.</p>
+        <div><p>Parks, homes, supermarkets and subdivisions: a cross-section of projects shaped by our team across Tāmaki Makaurau and beyond.</p><a class="btn btn--ghost magnetic" href="09-kinetic/projects.html" style="margin-top:20px">View all projects</a></div>
       </div>
       <div class="reel-outer">
         <div class="reel">
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--photo3 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Open space development at Fearon Park" loading="lazy"></div><span class="proj__idx">01 / 09</span><span class="proj__big" aria-hidden="true">01</span></div><h3>Open Space Development, Fearon Park, Mount Roskill</h3><p>Project Management · Contaminated Sites</p></a>
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--plan js-clip" role="img" aria-label="Site plan linework"></div><span class="proj__idx">02 / 09</span><span class="proj__big" aria-hidden="true">02</span></div><h3>McMillan and Lockwood (Kāinga Ora)</h3><p>Construction Monitoring · Engineering · Residential</p></a>
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--contour js-clip" role="img" aria-label="Contour lines"></div><span class="proj__idx">03 / 09</span><span class="proj__big" aria-hidden="true">03</span></div><h3>Churchill Park Lookout</h3><p>Landscape Architecture · Open Space Design</p></a>
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--green js-clip" role="img" aria-label="Abstract landscape rings"></div><span class="proj__idx">04 / 09</span><span class="proj__big" aria-hidden="true">04</span></div><h3>Observation Green</h3><p>Landscape &amp; Visual Assessments · Planting Plan</p></a>
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--photo2 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Civil engineer on a construction site" loading="lazy"></div><span class="proj__idx">05 / 09</span><span class="proj__big" aria-hidden="true">05</span></div><h3>2 Cracroft Road / 618-620 Great South Road (Kāinga Ora)</h3><p>Engineering · Surveying</p></a>
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--grid js-clip" role="img" aria-label="Survey grid"></div><span class="proj__idx">06 / 09</span><span class="proj__big" aria-hidden="true">06</span></div><h3>PAK'nSAVE, Alderman Drive, Henderson</h3><p>Commercial · Civil Engineering</p></a>
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--lime js-clip" role="img" aria-label="Hatched site pattern"></div><span class="proj__idx">07 / 09</span><span class="proj__big" aria-hidden="true">07</span></div><h3>Scott Road, Hobsonville</h3><p>Resource Consent · Traffic Engineering · Soil Testing</p></a>
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--contour2 js-clip" role="img" aria-label="Layered terrain contours"></div><span class="proj__idx">08 / 09</span><span class="proj__big" aria-hidden="true">08</span></div><h3>GJ Gardner Kokowai Apartments, Hobsonville Point</h3><p>Landscape Architecture</p></a>
-          <a class="proj" href="#contact"><div class="proj__media"><div class="art art--photo1 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Residential subdivision landscape" loading="lazy"></div><span class="proj__idx">09 / 09</span><span class="proj__big" aria-hidden="true">09</span></div><h3>Homes of Choice residential subdivision</h3><p>Engineering · Planning · Subdivision</p></a>
-          <div class="reel__end"><strong>Your site could be next.</strong><a class="btn magnetic" href="#contact">Start a project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--photo3 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Open space development at Fearon Park" loading="lazy"></div><span class="proj__idx">01 / 09</span><span class="proj__big" aria-hidden="true">01</span></div><h3>Open Space Development, Fearon Park, Mount Roskill</h3><p>Project Management · Contaminated Sites</p></a>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--plan js-clip" role="img" aria-label="Site plan linework"></div><span class="proj__idx">02 / 09</span><span class="proj__big" aria-hidden="true">02</span></div><h3>McMillan and Lockwood (Kāinga Ora)</h3><p>Construction Monitoring · Engineering · Residential</p></a>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--contour js-clip" role="img" aria-label="Contour lines"></div><span class="proj__idx">03 / 09</span><span class="proj__big" aria-hidden="true">03</span></div><h3>Churchill Park Lookout</h3><p>Landscape Architecture · Open Space Design</p></a>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--green js-clip" role="img" aria-label="Abstract landscape rings"></div><span class="proj__idx">04 / 09</span><span class="proj__big" aria-hidden="true">04</span></div><h3>Observation Green</h3><p>Landscape &amp; Visual Assessments · Planting Plan</p></a>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--photo2 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Civil engineer on a construction site" loading="lazy"></div><span class="proj__idx">05 / 09</span><span class="proj__big" aria-hidden="true">05</span></div><h3>2 Cracroft Road / 618-620 Great South Road (Kāinga Ora)</h3><p>Engineering · Surveying</p></a>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--grid js-clip" role="img" aria-label="Survey grid"></div><span class="proj__idx">06 / 09</span><span class="proj__big" aria-hidden="true">06</span></div><h3>PAK'nSAVE, Alderman Drive, Henderson</h3><p>Commercial · Civil Engineering</p></a>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--lime js-clip" role="img" aria-label="Hatched site pattern"></div><span class="proj__idx">07 / 09</span><span class="proj__big" aria-hidden="true">07</span></div><h3>Scott Road, Hobsonville</h3><p>Resource Consent · Traffic Engineering · Soil Testing</p></a>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--contour2 js-clip" role="img" aria-label="Layered terrain contours"></div><span class="proj__idx">08 / 09</span><span class="proj__big" aria-hidden="true">08</span></div><h3>GJ Gardner Kokowai Apartments, Hobsonville Point</h3><p>Landscape Architecture</p></a>
+          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--photo1 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Residential subdivision landscape" loading="lazy"></div><span class="proj__idx">09 / 09</span><span class="proj__big" aria-hidden="true">09</span></div><h3>Homes of Choice residential subdivision</h3><p>Engineering · Planning · Subdivision</p></a>
+          <div class="reel__end"><strong>Your site could be next.</strong><a class="btn magnetic" href="09-kinetic/projects.html">View all projects <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div>
         </div>
       </div>
       <div class="reel__progress" aria-hidden="true"><i></i></div>
@@ -681,6 +702,7 @@ html:not(.reel-pinned) .reel__progress{display:none}
           <div class="office"><div><h3>Auckland</h3><span>Head Office</span></div><a href="tel:+6498361804">09 836 1804</a></div>
           <div class="office"><div><h3>Manukau</h3><span>South Auckland office</span></div><a href="tel:+6498696070">09 869 6070</a></div>
           <div class="office"><div><h3>Christchurch</h3><span>Satellite office · via Head Office</span></div><a href="tel:+6498361804">09 836 1804</a></div>
+          <div class="office"><div><h3>Full contact page</h3><span>Offices, planner meetings, socials</span></div><a href="09-kinetic/contact.html">Open ↗</a></div>
           <div class="office"><div><h3>Client portal</h3><span>Existing clients</span></div><a href="https://portal.thomasconsultants.co.nz">Log in ↗</a></div>
         </div>
         <div class="form-wrap" id="formWrap">
@@ -710,11 +732,11 @@ html:not(.reel-pinned) .reel__progress{display:none}
   <div class="wrap">
     <div class="footer__top">
       <div><p class="footer__lead">Land development &amp; subdivision consultants. Creating better spaces together.</p></div>
-      <div><h4>Explore</h4><ul><li><a href="#services">Services</a></li><li><a href="#work">Projects</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="09-kinetic/services.html">Services</a></li><li><a href="09-kinetic/projects.html">Projects</a></li><li><a href="09-kinetic/about.html">About</a></li><li><a href="09-kinetic/contact.html">Contact</a></li></ul></div>
       <div><h4>Call</h4><ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
       <div><h4>Follow</h4><ul><li><a href="https://www.facebook.com/thomasconsultantsltd">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd">LinkedIn</a></li></ul></div>
     </div>
-    <a class="build js-build" href="#contact" aria-label="Let's build: start your project"><span class="build__txt">Let's build<i>.</i></span></a>
+    <a class="build js-build" href="09-kinetic/contact.html" aria-label="Let's build: start your project"><span class="build__txt">Let's build<i>.</i></span></a>
     <div class="footer__base"><span>© Thomas Consultants Ltd</span><span>Auckland · Manukau · Christchurch</span><a href="#top">Back to top ↑</a></div>
   </div>
 </footer>
@@ -820,26 +842,54 @@ html:not(.reel-pinned) .reel__progress{display:none}
   }
   document.querySelectorAll('.q blockquote').forEach(function(b){ splitWords(b, 'qword'); });
 
-  /* ---------- Preloader → hero ---------- */
+  /* ---------- Preloader (first visit) or quick wipe (revisit) → hero ---------- */
   var count = { v: 0 }, countEl = document.querySelector('.js-count');
   var panels = document.querySelectorAll('.loader__panel');
+  var pt = document.querySelector('.pt');
+  pt.style.animation = 'none';
+  var revisit = root.classList.contains('revisit');
+  try { sessionStorage.setItem('tc09-seen', '1'); } catch (e) {}
   if (lenis) lenis.stop();
   var intro = gsap.timeline({ defaults: { ease: 'power4.out' } });
+  var T = 2.95;
+  if (!revisit) {
+    gsap.set(panels, { clipPath: 'inset(0% 0% 0% 0%)' });
+    intro
+      .to(count, { v: 100, duration: 2.1, ease: 'power2.inOut', onUpdate: function(){ countEl.textContent = Math.round(count.v); } }, 0)
+      .to('.loader__bar i', { scaleX: 1, duration: 2.1, ease: 'power2.inOut' }, 0)
+      .to('.loader__count', { yPercent: -20, opacity: 0, duration: .5, ease: 'power2.in' }, 2.15)
+      .to(panels[1], { clipPath: 'inset(0% 0% 100% 0%)', duration: 1, ease: 'expo.inOut' }, 2.4)
+      .to(panels[0], { clipPath: 'inset(0% 0% 100% 0%)', duration: 1, ease: 'expo.inOut' }, 2.55);
+  } else {
+    var ld = document.querySelector('.loader'); if (ld) ld.remove();
+    gsap.set(pt, { clipPath: 'inset(0% 0% 0% 0%)' });
+    intro.to(pt, { clipPath: 'inset(0% 0% 100% 0%)', duration: 1, ease: 'expo.inOut' }, .1);
+    T = .55;
+  }
   intro
-    .to(count, { v: 100, duration: 2.1, ease: 'power2.inOut', onUpdate: function(){ countEl.textContent = Math.round(count.v); } }, 0)
-    .to('.loader__bar i', { scaleX: 1, duration: 2.1, ease: 'power2.inOut' }, 0)
-    .to('.loader__count', { yPercent: -20, opacity: 0, duration: .5, ease: 'power2.in' }, 2.15)
-    .to(panels[1], { clipPath: 'inset(0% 0% 100% 0%)', duration: 1, ease: 'expo.inOut' }, 2.4)
-    .to(panels[0], { clipPath: 'inset(0% 0% 100% 0%)', duration: 1, ease: 'expo.inOut' }, 2.55)
-    .to('.hero .line>span', { y: 0, yPercent: 0, duration: 1.3, stagger: .09 }, 2.95)
-    .from('.pill', { width: 0, margin: 0, duration: 1.2, ease: 'expo.out' }, 3.35)
-    .from('.h-fade', { y: 30, opacity: 0, duration: 1, stagger: .08 }, 3.35)
-    .from('.nav__bar', { yPercent: -100, opacity: 0, duration: 1 }, 3.2)
+    .to('.hero .line>span', { y: 0, yPercent: 0, duration: 1.3, stagger: .09 }, T)
+    .from('.pill', { scale: 0, rotate: -20, duration: 1.2, ease: 'expo.out' }, T + .4)
+    .from('.h-fade', { y: 30, opacity: 0, duration: 1, stagger: .08 }, T + .4)
+    .from('.nav__bar', { yPercent: -100, opacity: 0, duration: 1 }, T + .25)
     .add(function(){
-      document.querySelector('.loader').remove();
+      var l = document.querySelector('.loader'); if (l) l.remove();
       if (lenis) lenis.start();
     });
-  gsap.set(panels, { clipPath: 'inset(0% 0% 0% 0%)' });
+
+  /* ---------- Page transitions: lime wipe up, then navigate ---------- */
+  var LABELS = { 'services.html': 'Services', 'projects.html': 'Projects', 'about.html': 'About', 'contact.html': 'Contact', 'project.html': 'Case study', '09-kinetic.html': 'Home' };
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === '_blank') return;
+    var href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || /^(tel:|mailto:|https?:)/.test(href)) return;
+    e.preventDefault();
+    var file = href.split('#')[0].split('/').pop();
+    pt.querySelector('span').textContent = LABELS[file] || 'Thomas';
+    gsap.fromTo(pt, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: .75, ease: 'expo.inOut', onComplete: function(){ window.location.href = href; } });
+    gsap.fromTo(pt.querySelector('span'), { yPercent: 100 }, { yPercent: 0, duration: .9, ease: 'expo.out', delay: .25 });
+  });
+  window.addEventListener('pageshow', function(e){ if (e.persisted) gsap.set(pt, { clipPath: 'inset(0% 0% 100% 0%)' }); });
 
   /* ---------- Cursor ---------- */
   var cursor = document.querySelector('.cursor');
@@ -910,10 +960,11 @@ html:not(.reel-pinned) .reel__progress{display:none}
     var track = m.querySelector('.marquee__track');
     var item = track.firstElementChild;
     var copies = Math.max(2, Math.ceil((window.innerWidth * 2) / item.offsetWidth) + 1);
-    for (var i = 1; i < copies; i++) { var c = item.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); }
+    for (var i = 1; i < copies + 1; i++) { var c = item.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); }
     var base = parseFloat(m.dataset.speed) || 1;
     var x = 0, w = item.offsetWidth;
     window.addEventListener('resize', function(){ w = item.offsetWidth; });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ w = item.offsetWidth; });
     gsap.ticker.add(function(time, dt){
       var speed = base * scrollDir * (1 + scrollBoost) * dt * .06;
       x -= speed;

@@ -1,0 +1,1361 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thomas Consultants · Concept 03</title>
+<meta name="description" content="Thomas Consultants: land development and subdivision consultants. Civil engineering, surveying, resource consents and planning across Auckland and Christchurch.">
+<script>
+  document.documentElement.classList.add('js');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('reduced');
+  else document.documentElement.classList.add('anim');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#08162A;
+  --ink-2:#0C1E38;
+  --panel:#0F2645;
+  --panel-2:#13305A;
+  --line:rgba(150,215,255,.12);
+  --line-strong:rgba(150,215,255,.28);
+  --cyan:#9BE3FF;
+  --cyan-dim:#5FA9CF;
+  --white:#EAF5FF;
+  --muted:#8FA8C6;
+  --green:#6DAB3C;
+  --green-hi:#8DD24E;
+  --green-dk:#5F9434;
+  --amber:#FFC86B;
+  --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans:'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter:clamp(16px, 4vw, 56px);
+  --max:1320px;
+  --radius:2px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
+body{
+  margin:0;background-color:var(--ink);color:var(--white);
+  font-family:var(--sans);font-size:17px;line-height:1.6;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    linear-gradient(rgba(150,215,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(150,215,255,.045) 1px, transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;
+  background-position:-1px -1px;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--green-hi);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--green);color:var(--ink);padding:10px 14px;z-index:200;font-family:var(--mono)}
+.skip:focus{left:16px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);letter-spacing:.02em}
+.tag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--cyan)}
+.tag b{color:var(--green-hi);font-weight:500}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Buttons ---------- */
+.btn{
+  --bg:var(--green);
+  position:relative;display:inline-flex;align-items:center;gap:12px;min-height:48px;
+  padding:12px 20px;border:1px solid var(--green);background:var(--bg);color:#06120A;
+  font-family:var(--mono);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  text-decoration:none;border-radius:var(--radius);cursor:pointer;transition:background .3s,color .3s,border-color .3s;
+  will-change:transform;
+}
+.btn:hover{--bg:var(--green-hi);border-color:var(--green-hi)}
+.btn .arr{display:inline-block;transition:transform .35s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn--ghost{--bg:transparent;color:var(--cyan);border-color:var(--line-strong)}
+.btn--ghost:hover{--bg:rgba(155,227,255,.08);color:var(--white);border-color:var(--cyan)}
+.btn::before,.btn::after{content:"";position:absolute;width:7px;height:7px;border:1px solid var(--cyan);opacity:0;transition:opacity .3s, transform .3s var(--ease)}
+.btn::before{left:-5px;top:-5px;border-right:0;border-bottom:0;transform:translate(3px,3px)}
+.btn::after{right:-5px;bottom:-5px;border-left:0;border-top:0;transform:translate(-3px,-3px)}
+.btn:hover::before,.btn:hover::after{opacity:1;transform:none}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:0;z-index:90;background:rgba(8,22,42,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand__mark{width:30px;height:30px;border:1.5px solid var(--green);position:relative;flex:none}
+.brand__mark::before,.brand__mark::after{content:"";position:absolute;background:var(--green)}
+.brand__mark::before{left:50%;top:-6px;bottom:-6px;width:1.5px;transform:translateX(-50%)}
+.brand__mark::after{top:50%;left:-6px;right:-6px;height:1.5px;transform:translateY(-50%)}
+.brand__txt{font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1}
+.brand__txt small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.16em;color:var(--muted);margin-top:5px;text-transform:uppercase}
+.nav__links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
+.nav__links a{display:block;padding:10px 12px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;color:var(--muted);transition:color .25s}
+.nav__links a:hover{color:var(--white)}
+.nav__links a span{color:var(--green);margin-right:4px}
+.nav__cta{display:flex;align-items:center;gap:10px}
+.nav__cta .btn{min-height:42px;padding:10px 16px;font-size:12px}
+.portal{font-family:var(--mono);font-size:12px;color:var(--cyan);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;padding:10px 6px}
+.portal:hover{color:var(--white)}
+.burger{display:none;width:48px;height:48px;border:1px solid var(--line-strong);background:transparent;cursor:pointer;position:relative;border-radius:var(--radius)}
+.burger span{position:absolute;left:13px;right:13px;height:1.5px;background:var(--white);transition:transform .35s var(--ease),opacity .2s}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:29px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mmenu{position:fixed;inset:68px 0 0 0;z-index:89;background:var(--ink);background-image:inherit;padding:28px var(--gutter);display:flex;flex-direction:column;gap:6px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .4s var(--ease),visibility 0s .4s;overflow-y:auto}
+.mmenu.open{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .4s var(--ease)}
+.mmenu a{font-size:30px;font-weight:600;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+.mmenu a small{font-family:var(--mono);font-size:12px;color:var(--green-hi);font-weight:400}
+.mmenu .btn{margin-top:20px;font-size:13px;justify-content:center;border-bottom:1px solid var(--green)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow-x:clip;padding:clamp(36px,6vw,72px) 0 clamp(48px,7vw,96px);border-bottom:1px solid var(--line)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero__meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:26px}
+.hero h1{font-size:clamp(36px,4.5vw,68px);line-height:.98;letter-spacing:-.035em;font-weight:600;margin:0 0 22px}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .w > span{display:inline-block}
+.hero h1 em{font-style:normal;color:var(--green-hi)}
+.hero__sub{font-family:var(--mono);font-size:14px;color:var(--cyan);text-transform:uppercase;letter-spacing:.14em;margin:0 0 18px;display:flex;align-items:center;gap:12px}
+.hero__sub::before{content:"";width:34px;height:1px;background:var(--cyan)}
+.hero__body{color:var(--muted);max-width:52ch;margin:0 0 30px;font-size:16px}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:12px}
+.plan{position:relative;border:1px solid var(--line-strong);background:rgba(10,28,52,.55);padding:10px}
+.plan__hd,.plan__ft{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;padding:4px 6px}
+.plan__ft{border-top:1px solid var(--line);margin-top:8px;padding-top:10px;flex-wrap:wrap}
+.plan__ft b{color:var(--white);font-weight:500}
+.plan svg{width:100%;height:auto}
+.plan .corner{position:absolute;width:14px;height:14px;border-color:var(--green);border-style:solid}
+.plan .c1{left:-1px;top:-1px;border-width:2px 0 0 2px}.plan .c2{right:-1px;top:-1px;border-width:2px 2px 0 0}
+.plan .c3{left:-1px;bottom:-1px;border-width:0 0 2px 2px}.plan .c4{right:-1px;bottom:-1px;border-width:0 2px 2px 0}
+.sp-line{fill:none;stroke:var(--cyan);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.sp-bound{fill:none;stroke:var(--white);stroke-width:2.2}
+.sp-road{fill:none;stroke:var(--cyan);stroke-width:1.6}
+.sp-lot{fill:none;stroke:var(--cyan-dim);stroke-width:1}
+.sp-contour{fill:none;stroke:rgba(155,227,255,.22);stroke-width:1}
+.sp-sw{fill:none;stroke:var(--green-hi);stroke-width:1.8;stroke-dasharray:10 6}
+.sp-ww{fill:none;stroke:var(--amber);stroke-width:1.4;stroke-dasharray:3 5}
+.sp-mh{fill:var(--ink);stroke:var(--green-hi);stroke-width:1.5}
+.sp-dim{fill:none;stroke:var(--muted);stroke-width:.9}
+.sp-txt{font-family:var(--mono);font-size:10px;fill:var(--muted);letter-spacing:.05em}
+.sp-txt--lg{font-size:12px;fill:var(--white);font-weight:500}
+.sp-txt--g{fill:var(--green-hi)}
+.sp-txt--a{fill:var(--amber)}
+.sp-tree{fill:rgba(109,171,60,.12);stroke:var(--green);stroke-width:1}
+.sp-cl{fill:none;stroke:rgba(155,227,255,.5);stroke-width:.8;stroke-dasharray:14 4 2 4}
+.sp-flow{animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+.sp-pt{fill:var(--green-hi)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.legend i{display:inline-block;width:18px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
+.hero__scroll{position:absolute;left:var(--gutter);bottom:18px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;display:flex;gap:10px;align-items:center}
+.hero__scroll i{width:1px;height:28px;background:linear-gradient(var(--cyan),transparent);display:block;animation:drip 2s var(--ease) infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- Ticker ---------- */
+.ticker{border-bottom:1px solid var(--line);overflow:hidden;background:rgba(12,30,56,.6)}
+.ticker__track{display:flex;width:max-content;animation:tick 40s linear infinite}
+.ticker__item{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);padding:14px 26px;white-space:nowrap;display:flex;gap:26px;align-items:center}
+.ticker__item::after{content:"+";color:var(--green-hi)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- Section heads ---------- */
+.sec{position:relative;overflow-x:clip;padding:clamp(72px,10vw,140px) 0;border-bottom:1px solid var(--line)}
+.sec__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:end;margin-bottom:clamp(36px,5vw,64px)}
+.sec__head h2{font-size:clamp(32px,4.2vw,58px);line-height:1.02;letter-spacing:-.03em;margin:12px 0 0;font-weight:600}
+.sec__head p{color:var(--muted);margin:0;max-width:56ch}
+.sec__num{font-family:var(--mono);font-size:12px;color:var(--green-hi);letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.sec__num::after{content:"";height:1px;width:60px;background:var(--line-strong)}
+
+/* ---------- Services: drawing sheets ---------- */
+.sheets-wrap{position:relative}
+.sheets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.sheet{position:relative;background:linear-gradient(180deg,rgba(19,48,90,.92),rgba(12,32,60,.96));border:1px solid var(--line-strong);padding:0;display:flex;flex-direction:column;min-width:0;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.sheet__bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line-strong);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sheet__bar b{color:var(--green-hi);font-weight:500}
+.sheet__body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;padding:22px 20px;flex:1}
+.sheet h3{font-size:clamp(24px,2.4vw,34px);line-height:1.05;letter-spacing:-.02em;margin:0 0 12px;font-weight:600}
+.sheet p{color:var(--muted);margin:0 0 16px;font-size:15.5px}
+.notes{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:12px;color:var(--cyan)}
+.notes li{display:flex;gap:10px;padding:6px 0;border-top:1px dashed var(--line)}
+.notes li::before{content:attr(data-n);color:var(--green-hi);min-width:22px}
+.sheet__fig{position:relative;border:1px solid var(--line);background:rgba(8,22,42,.4);min-height:180px;display:flex;align-items:center;justify-content:center;padding:12px}
+.sheet__fig svg{width:100%;height:auto;max-height:240px}
+.sheet__fig .fig-l{position:absolute;left:8px;top:6px;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.1em}
+.fg{fill:none;stroke:var(--cyan);stroke-width:1.3}
+.fg-g{fill:none;stroke:var(--green-hi);stroke-width:1.6}
+.fg-a{fill:none;stroke:var(--amber);stroke-width:1.2}
+.fg-f{fill:rgba(155,227,255,.08);stroke:var(--cyan);stroke-width:1}
+.fg-t{font-family:var(--mono);font-size:9px;fill:var(--muted)}
+.tblock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line-strong);font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.tblock div{padding:8px 12px;border-right:1px solid var(--line)}
+.tblock div:last-child{border-right:0}
+.tblock b{display:block;color:var(--white);font-weight:500;font-size:11px;margin-top:2px}
+.sheet-index{display:none}
+/* stacked mode (desktop, JS on) */
+.stack-mode .sheets-pin{height:100vh;display:flex;align-items:center}
+.stack-mode .sheets-stage{display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;width:100%;align-items:center}
+.stack-mode .sheet-index{display:block;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.sheet-index ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line-strong)}
+.sheet-index li{padding:10px 0 10px 18px;color:var(--muted);position:relative;transition:color .3s}
+.sheet-index li::before{content:"";position:absolute;left:-4px;top:50%;width:7px;height:7px;margin-top:-3.5px;background:var(--ink);border:1px solid var(--muted);transition:background .3s,border-color .3s}
+.sheet-index li.on{color:var(--white)}
+.sheet-index li.on::before{background:var(--green-hi);border-color:var(--green-hi)}
+.sheet-index .sidx-count{font-size:44px;color:var(--white);font-weight:500;letter-spacing:-.02em;margin-bottom:18px;line-height:1}
+.sheet-index .sidx-count span{color:var(--muted);font-size:16px}
+.stack-mode .sheets{display:block;position:relative;height:min(68vh,560px)}
+.stack-mode .sheet{position:absolute;inset:0}
+.stack-mode .sheet__fig svg{max-height:min(34vh,280px)}
+
+/* ---------- Why / readouts ---------- */
+.why{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:start}
+.why__lead{font-size:clamp(22px,2.3vw,30px);line-height:1.3;letter-spacing:-.015em;margin:0 0 22px;font-weight:500}
+.why__lead mark{background:none;color:var(--green-hi)}
+.why__txt{color:var(--muted);margin:0 0 16px}
+.checks{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
+.checks li{display:flex;gap:14px;align-items:flex-start;font-family:var(--mono);font-size:13px;color:var(--cyan);padding:12px 14px;border:1px solid var(--line);background:rgba(12,30,56,.5)}
+.checks li span{color:var(--green-hi)}
+.photo{position:relative;background:linear-gradient(135deg,#123158,#0A1A31);border:1px solid var(--line-strong);aspect-ratio:4/5;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(.8);mix-blend-mode:luminosity;opacity:.85;transform:scale(1.12)}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,22,42,0) 40%,rgba(8,22,42,.85)),repeating-linear-gradient(0deg,rgba(155,227,255,.06) 0 1px,transparent 1px 4px);pointer-events:none}
+.photo__tag{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--white);letter-spacing:.1em;text-transform:uppercase}
+.photo__ret{position:absolute;z-index:2;width:90px;height:90px;left:52%;top:38%;border:1px solid var(--green-hi);border-radius:50%}
+.photo__ret::before,.photo__ret::after{content:"";position:absolute;background:var(--green-hi)}
+.photo__ret::before{left:50%;top:-14px;bottom:-14px;width:1px}
+.photo__ret::after{top:50%;left:-14px;right:-14px;height:1px}
+.readouts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line-strong);margin-top:clamp(48px,6vw,80px);background:rgba(10,26,48,.7)}
+.ro{padding:22px 20px;border-right:1px solid var(--line);position:relative;min-width:0}
+.ro:last-child{border-right:0}
+.ro__lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:6px}
+.ro__lbl i{width:7px;height:7px;border-radius:50%;background:var(--green-hi);box-shadow:0 0 10px var(--green-hi);animation:blink 1.6s steps(2) infinite;flex:none;margin-top:3px}
+@keyframes blink{50%{opacity:.25}}
+.ro__val{font-family:var(--mono);font-size:clamp(40px,5vw,72px);font-weight:500;line-height:1.05;margin:12px 0 6px;color:var(--white);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.ro__val small{font-size:.32em;color:var(--cyan);margin-left:6px;letter-spacing:.05em}
+.ro__bar{height:4px;background:var(--line);position:relative;overflow:hidden}
+.ro__bar span{position:absolute;inset:0;background:linear-gradient(90deg,var(--green),var(--green-hi));transform-origin:left;transform:scaleX(var(--p,1))}
+.ro__ticks{display:flex;justify-content:space-between;margin-top:6px}
+.ro__ticks i{width:1px;height:5px;background:var(--line-strong)}
+.ro__ticks i:nth-child(5n+1){height:9px;background:var(--muted)}
+
+/* ---------- Process ---------- */
+.proc{position:relative}
+.proc__line{position:relative;height:60px;margin:0 0 28px}
+.proc__line svg{width:100%;height:60px;overflow:visible}
+.proc__track{stroke:var(--line-strong);stroke-width:1;stroke-dasharray:4 6}
+.proc__prog{stroke:var(--green-hi);stroke-width:2}
+.proc__steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.step{border:1px solid var(--line-strong);padding:22px 20px 24px;background:rgba(12,30,56,.6);position:relative;min-width:0}
+.step__k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between}
+.step__k b{color:var(--green-hi);font-weight:500}
+.step h3{font-size:24px;letter-spacing:-.02em;margin:16px 0 10px;line-height:1.1;font-weight:600}
+.step p{color:var(--muted);font-size:15px;margin:0 0 14px}
+.step ul{list-style:none;padding:0;margin:0;font-family:var(--mono);font-size:11.5px;color:var(--cyan)}
+.step ul li{padding:4px 0}
+.step ul li::before{content:"› ";color:var(--green-hi)}
+.station{fill:var(--ink);stroke:var(--cyan);stroke-width:1.5}
+.station-t{font-family:var(--mono);font-size:11px;fill:var(--muted);letter-spacing:.08em}
+
+/* ---------- Projects register ---------- */
+.reg{border-top:1px solid var(--line-strong)}
+.reg__hd,.reg__row{display:grid;grid-template-columns:80px minmax(0,2.2fr) minmax(0,1.6fr) 140px 40px;gap:16px;align-items:center;padding:0 12px}
+.reg__hd{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line-strong)}
+.reg__row{position:relative;text-decoration:none;padding-top:22px;padding-bottom:22px;border-bottom:1px solid var(--line);transition:background .3s,padding .4s var(--ease)}
+.reg__row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--green-hi);transform:scaleY(0);transition:transform .35s var(--ease)}
+.reg__row:hover,.reg__row:focus-visible{background:rgba(155,227,255,.05)}
+.reg__row:hover::before,.reg__row:focus-visible::before{transform:scaleY(1)}
+.reg__no{font-family:var(--mono);font-size:13px;color:var(--green-hi)}
+.reg__t{font-size:clamp(18px,1.8vw,24px);font-weight:500;letter-spacing:-.015em;line-height:1.2}
+.reg__t small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em;margin-top:4px;font-weight:400;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);border:1px solid var(--line-strong);padding:4px 8px;white-space:nowrap}
+.reg__st{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.reg__st::before{content:"●";color:var(--green-hi);margin-right:6px}
+.reg__go{font-family:var(--mono);color:var(--cyan);transition:transform .3s var(--ease)}
+.reg__row:hover .reg__go{transform:translate(4px,-4px);color:var(--green-hi)}
+.preview{position:fixed;left:0;top:0;width:300px;height:210px;pointer-events:none;z-index:70;opacity:0;border:1px solid var(--green-hi);background:linear-gradient(135deg,#1A3A66,#0B1C34);overflow:hidden;transform:translate(-50%,-50%) scale(.8)}
+.preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.6) contrast(1.1);opacity:.9}
+.preview__cap{position:absolute;left:0;right:0;bottom:0;background:rgba(8,22,42,.85);font-family:var(--mono);font-size:10.5px;padding:7px 10px;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase}
+
+/* ---------- Testimonials ---------- */
+.log{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);align-items:stretch}
+.log__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-strong)}
+.log__list button{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:16px 8px;cursor:pointer;display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px;color:var(--muted);transition:color .3s,background .3s;min-height:56px}
+.log__list button:hover{color:var(--white)}
+.log__list button[aria-selected="true"]{color:var(--white);background:rgba(155,227,255,.05)}
+.log__list .k{font-family:var(--mono);font-size:12px;color:var(--green-hi)}
+.log__list .n{font-weight:500}
+.log__list .n small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.05em;margin-top:2px}
+.log__view{position:relative;border:1px solid var(--line-strong);background:rgba(12,30,56,.6);padding:clamp(24px,4vw,48px);min-height:340px;display:flex;flex-direction:column;justify-content:space-between}
+.log__view .tag{display:flex;justify-content:space-between}
+.quote{display:none;margin:0}
+.quote.on{display:block}
+.quote p{font-size:clamp(22px,2.6vw,36px);line-height:1.25;letter-spacing:-.02em;margin:24px 0 24px;font-weight:500}
+.quote p::before{content:"“";color:var(--green-hi)}
+.quote p::after{content:"”";color:var(--green-hi)}
+.quote footer{font-family:var(--mono);font-size:12.5px;color:var(--cyan);letter-spacing:.06em;text-transform:uppercase}
+.quote footer span{color:var(--muted)}
+.log__nav{display:flex;gap:8px;margin-top:20px;align-items:center}
+.log__nav button{width:48px;height:48px;border:1px solid var(--line-strong);background:transparent;cursor:pointer;font-family:var(--mono);color:var(--cyan);border-radius:var(--radius)}
+.log__nav button:hover{border-color:var(--cyan)}
+.log__prog{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+.log__prog i{position:absolute;inset:0;background:var(--green-hi);transform-origin:left;transform:scaleX(0)}
+
+/* ---------- Clients / accreditations ---------- */
+.legends{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.leg{border:1px solid var(--line-strong);background:rgba(12,30,56,.5)}
+.leg__hd{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line-strong)}
+.leg ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.leg li{padding:14px 16px;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:12px;align-items:baseline;transition:background .25s,color .25s;min-width:0}
+.leg li:nth-child(odd){border-right:1px solid var(--line)}
+.leg li:hover{background:rgba(109,171,60,.08);color:var(--green-hi)}
+.leg li span{font-family:var(--mono);font-size:10.5px;color:var(--muted);flex:none}
+
+/* ---------- Contact ---------- */
+.contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px)}
+.contact h2{font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.035em;margin:14px 0 18px;font-weight:600}
+.contact h2 em{font-style:normal;color:var(--green-hi)}
+.offices{display:grid;gap:12px;margin-top:28px}
+.office{border:1px solid var(--line-strong);padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center;background:rgba(12,30,56,.5)}
+.office h3{margin:0;font-size:18px;font-weight:600}
+.office .mono{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;grid-column:1}
+.office a.tel{grid-row:1/span 2;grid-column:2;font-family:var(--mono);font-size:16px;color:var(--green-hi);text-decoration:none;padding:12px 0;border-bottom:1px solid transparent}
+.office a.tel:hover{border-bottom-color:var(--green-hi)}
+.form{border:1px solid var(--line-strong);background:rgba(15,38,69,.75);position:relative}
+.form__hd{display:flex;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--line-strong)}
+.form__body{padding:22px 18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field--full{grid-column:1/-1}
+.field label{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;background:rgba(8,22,42,.7);border:1px solid var(--line-strong);border-radius:var(--radius);padding:12px 12px;min-height:48px;color:var(--white);font-size:15px;transition:border-color .25s,box-shadow .25s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green-hi);box-shadow:0 0 0 3px rgba(141,210,78,.2)}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--cyan) 50%),linear-gradient(135deg,var(--cyan) 50%,transparent 50%);background-position:calc(100% - 18px) 21px,calc(100% - 13px) 21px;background-size:5px 5px;background-repeat:no-repeat}
+.form__ft{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.form__ft small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.thanks{display:none;padding:40px 22px;text-align:left}
+.thanks.on{display:block}
+.thanks h3{font-size:28px;margin:12px 0 8px;letter-spacing:-.02em}
+.thanks p{color:var(--muted);margin:0}
+
+/* ---------- Footer ---------- */
+.foot{padding:56px 0 90px}
+.foot__tb{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));border:1px solid var(--line-strong)}
+.foot__tb > div{padding:20px;border-right:1px solid var(--line);min-width:0}
+.foot__tb > div:last-child{border-right:0}
+.foot__big{font-size:clamp(28px,3.4vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1;margin:10px 0 12px}
+.foot ul{list-style:none;padding:0;margin:10px 0 0}
+.foot li{padding:3px 0}
+.foot li a{text-decoration:none;color:var(--muted);font-size:15px;transition:color .2s;display:inline-block;padding:4px 0}
+.foot li a:hover{color:var(--green-hi)}
+.foot__bar{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+
+/* ---------- Badge + cursor ---------- */
+.badge{position:fixed;left:12px;bottom:12px;z-index:95;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:7px 10px;background:rgba(8,22,42,.85);border:1px solid var(--line-strong);color:var(--muted);pointer-events:none}
+.badge b{color:var(--green-hi);font-weight:500}
+.xh{position:fixed;inset:0;pointer-events:none;z-index:100;display:none}
+.has-xh .xh{display:block}
+.has-xh, .has-xh a, .has-xh button, .has-xh input, .has-xh select, .has-xh textarea, .has-xh label{cursor:none}
+.xh__v,.xh__h{position:absolute;background:rgba(155,227,255,.28)}
+.xh__v{top:0;bottom:0;width:1px;left:0}
+.xh__h{left:0;right:0;height:1px;top:0}
+.xh__ret{position:absolute;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;border:1px solid var(--green-hi);transition:width .25s var(--ease),height .25s var(--ease),margin .25s var(--ease),border-radius .25s,background .25s}
+.xh__ret::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;margin:-1.5px;background:var(--green-hi)}
+.xh.hot .xh__ret{width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(141,210,78,.08)}
+.xh__read{position:absolute;left:0;top:0;transform:translate(18px,16px);font-family:var(--mono);font-size:10.5px;line-height:1.45;color:var(--cyan);background:rgba(8,22,42,.88);border:1px solid var(--line-strong);padding:5px 8px;white-space:nowrap;letter-spacing:.04em}
+.xh__read b{color:var(--green-hi);font-weight:500}
+
+/* ---------- Initial animation states (only when JS + GSAP active) ---------- */
+.anim [data-rv]{opacity:0;transform:translateY(24px)}
+.anim .hero h1 .w > span{transform:translateY(105%)}
+.anim .hero__sub,.anim .hero__body,.anim .hero__ctas,.anim .hero__meta,.anim .plan__hd,.anim .plan__ft,.anim .legend{opacity:0}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){
+  .nav__links{display:none}
+  .burger{display:block}
+  .portal{display:none}
+  .hero__grid{grid-template-columns:minmax(0,1fr)}
+  .sheet__body{grid-template-columns:minmax(0,1fr)}
+  .reg__hd,.reg__row{grid-template-columns:60px minmax(0,2fr) minmax(0,1.4fr) 40px}
+  .reg__st,.reg__hd .h-st{display:none}
+}
+@media (max-width:860px){
+  .sec__head,.why,.log,.contact{grid-template-columns:minmax(0,1fr)}
+  .sheets{grid-template-columns:minmax(0,1fr)}
+  .readouts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ro:nth-child(2){border-right:0}
+  .ro:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .proc__steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proc__line{display:none}
+  .legends{grid-template-columns:minmax(0,1fr)}
+  .foot__tb{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot__tb > div:first-child{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)}
+  .photo{aspect-ratio:16/11}
+  .hero__scroll{display:none}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .nav__cta .btn{display:none}
+  .reg__hd{display:none}
+  .reg__row{grid-template-columns:44px minmax(0,1fr) 24px;gap:12px;padding-left:4px;padding-right:4px}
+  .reg__row .chips{grid-column:2/-1;grid-row:2}
+  .proc__steps{grid-template-columns:minmax(0,1fr)}
+  .leg ul{grid-template-columns:minmax(0,1fr)}
+  .leg li:nth-child(odd){border-right:0}
+  .form__body{grid-template-columns:minmax(0,1fr)}
+  .tblock{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tblock div:nth-child(2){border-right:0}
+  .tblock div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .ro{padding:16px 14px}
+  .office{grid-template-columns:minmax(0,1fr)}
+  .office a.tel{grid-row:auto;grid-column:1}
+  .hero__ctas .btn{width:100%;justify-content:space-between}
+  .plan__hd span:nth-child(2){display:none}
+  .foot__tb{grid-template-columns:minmax(0,1fr)}
+  .foot__tb > div{border-right:0;border-bottom:1px solid var(--line)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Thomas Consultants, home">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__txt">Thomas Consultants<small>Land Development · Est. 25 yrs</small></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#services"><span>01</span>Services</a></li>
+        <li><a href="#why"><span>02</span>Why us</a></li>
+        <li><a href="#process"><span>03</span>Process</a></li>
+        <li><a href="#projects"><span>04</span>Projects</a></li>
+        <li><a href="#contact"><span>05</span>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta">
+      <a class="portal" href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal ↗</a>
+      <a class="btn magnetic" href="#contact">Free consult <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mmenu" id="mmenu" aria-label="Mobile">
+  <a href="#services">Services <small>01</small></a>
+  <a href="#why">Why us <small>02</small></a>
+  <a href="#process">Process <small>03</small></a>
+  <a href="#projects">Projects <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+  <a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal <small>↗</small></a>
+  <a class="btn" href="#contact">Book your free consultation <span class="arr">→</span></a>
+</div>
+
+<main id="main">
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero__grid">
+    <div>
+      <div class="hero__meta">
+        <span class="tag">DWG <b>TC-000</b></span>
+        <span class="tag">Rev <b>25</b></span>
+        <span class="tag">Auckland · Manukau · Christchurch</span>
+      </div>
+      <p class="hero__sub">Creating Better Spaces Together</p>
+      <h1 id="hero-h" class="split">Your Trusted Partner for <em>End-to-End</em> Land Development Support</h1>
+      <p class="hero__body">As experienced land development specialists, we work closely with our clients to understand their vision and help them create smarter, more sustainable spaces. Our team of engineers, planners, surveyors, landscape architects, ecologists, and contamination experts ensure you are supported throughout the entire journey, from site assessments to final delivery.</p>
+      <div class="hero__ctas">
+        <a class="btn magnetic" href="#contact">Book Your Free Development Consultation <span class="arr">→</span></a>
+        <a class="btn btn--ghost magnetic" href="#contact">Complimentary Planner Meeting <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <figure class="plan" style="margin:0">
+      <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+      <div class="plan__hd"><span>Scheme plan · Proposed subdivision</span><span>Sheet 1 of 1</span><span>Scale 1:500</span></div>
+      <svg id="siteplan" viewBox="0 0 800 600" role="img" aria-labelledby="sp-t">
+        <title id="sp-t">Illustrative subdivision scheme plan with lots, a cul-de-sac road, stormwater and wastewater lines, dimensions and survey coordinates</title>
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9" fill="none" stroke="#8FA8C6" stroke-width="1.2"/></marker>
+          <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="rgba(155,227,255,.18)" stroke-width="1"/></pattern>
+        </defs>
+        <!-- contours -->
+        <g class="g-contour">
+          <path class="sp-contour draw" d="M20 150 C150 120 260 190 400 150 S640 90 790 130"/>
+          <path class="sp-contour draw" d="M20 250 C170 220 280 290 430 250 S660 190 790 230"/>
+          <path class="sp-contour draw" d="M20 360 C160 330 300 400 450 360 S650 300 790 340"/>
+          <path class="sp-contour draw" d="M20 470 C170 440 310 510 460 470 S660 410 790 450"/>
+          <text class="sp-txt fade" x="24" y="144">RL 42.0</text>
+          <text class="sp-txt fade" x="24" y="244">RL 41.0</text>
+          <text class="sp-txt fade" x="24" y="354">RL 40.0</text>
+          <text class="sp-txt fade" x="24" y="464">RL 39.0</text>
+        </g>
+        <!-- reserve hatch -->
+        <path class="fade" d="M575 300 L706 300 L714 420 L575 420 Z" fill="url(#hatch)"/>
+        <!-- boundary -->
+        <path class="sp-bound draw" d="M100 80 L690 60 L720 500 L130 530 Z"/>
+        <!-- road -->
+        <path class="sp-road draw" d="M380 525 L380 268 A55 55 0 1 1 440 268 L440 522"/>
+        <path class="sp-cl fade" d="M410 520 L410 222"/>
+        <!-- lots -->
+        <g class="g-lots">
+          <path class="sp-lot draw" d="M107 180 L372 180"/>
+          <path class="sp-lot draw" d="M115 300 L380 300"/>
+          <path class="sp-lot draw" d="M123 420 L380 420"/>
+          <path class="sp-lot draw" d="M245 76 L245 524"/>
+          <path class="sp-lot draw" d="M410 167 L410 70"/>
+          <path class="sp-lot draw" d="M462 200 L699 200"/>
+          <path class="sp-lot draw" d="M440 300 L706 300"/>
+          <path class="sp-lot draw" d="M440 420 L714 420"/>
+          <path class="sp-lot draw" d="M575 200 L575 508"/>
+        </g>
+        <!-- trees -->
+        <g class="g-trees">
+          <circle class="sp-tree pop" cx="360" cy="330" r="11"/>
+          <circle class="sp-tree pop" cx="360" cy="400" r="9"/>
+          <circle class="sp-tree pop" cx="360" cy="470" r="11"/>
+          <circle class="sp-tree pop" cx="460" cy="350" r="10"/>
+          <circle class="sp-tree pop" cx="460" cy="440" r="12"/>
+          <circle class="sp-tree pop" cx="640" cy="340" r="14"/>
+          <circle class="sp-tree pop" cx="670" cy="385" r="10"/>
+          <circle class="sp-tree pop" cx="610" cy="390" r="9"/>
+        </g>
+        <!-- services -->
+        <path class="sp-sw sp-flow fade" d="M650 100 L650 470 L470 482 L470 560"/>
+        <path class="sp-ww sp-flow fade" d="M165 120 L165 480 L360 492 L360 560"/>
+        <g class="g-mh">
+          <circle class="sp-mh pop" cx="650" cy="100" r="6"/>
+          <circle class="sp-mh pop" cx="650" cy="290" r="6"/>
+          <circle class="sp-mh pop" cx="650" cy="470" r="6"/>
+          <circle class="sp-mh pop" cx="470" cy="482" r="6"/>
+          <text class="sp-txt sp-txt--g fade" x="660" y="94">SWMH 1</text>
+          <text class="sp-txt sp-txt--g fade" x="660" y="286">SWMH 2  IL 38.42</text>
+          <text class="sp-txt sp-txt--g fade" x="486" y="500">SWMH 4 → OUTFALL</text>
+          <text class="sp-txt sp-txt--a fade" x="172" y="114">WW 150Ø uPVC</text>
+        </g>
+        <!-- lot labels -->
+        <g class="g-labels">
+          <text class="sp-txt sp-txt--lg fade" x="140" y="135">LOT 1</text><text class="sp-txt fade" x="140" y="150">612 m²</text>
+          <text class="sp-txt sp-txt--lg fade" x="280" y="135">LOT 2</text><text class="sp-txt fade" x="280" y="150">588 m²</text>
+          <text class="sp-txt sp-txt--lg fade" x="180" y="245">LOT 3</text><text class="sp-txt fade" x="180" y="260">540 m²</text>
+          <text class="sp-txt sp-txt--lg fade" x="280" y="245">LOT 4</text><text class="sp-txt fade" x="280" y="260">532 m²</text>
+          <text class="sp-txt sp-txt--lg fade" x="190" y="365">LOT 5</text>
+          <text class="sp-txt sp-txt--lg fade" x="280" y="365">LOT 6</text>
+          <text class="sp-txt sp-txt--lg fade" x="190" y="480">LOT 7</text>
+          <text class="sp-txt sp-txt--lg fade" x="280" y="480">LOT 8</text>
+          <text class="sp-txt sp-txt--lg fade" x="520" y="125">LOT 9</text><text class="sp-txt fade" x="520" y="140">701 m²</text>
+          <text class="sp-txt sp-txt--lg fade" x="490" y="255">LOT 10</text>
+          <text class="sp-txt sp-txt--lg fade" x="595" y="255">LOT 11</text>
+          <text class="sp-txt sp-txt--lg fade" x="480" y="365">LOT 12</text>
+          <text class="sp-txt sp-txt--g fade" x="586" y="318">RESERVE</text>
+          <text class="sp-txt sp-txt--lg fade" x="480" y="460">LOT 13</text>
+          <text class="sp-txt fade" x="388" y="380" transform="rotate(-90 396 380)">ROAD 1 · 16.0 m</text>
+        </g>
+        <!-- dimensions -->
+        <g class="g-dims">
+          <path class="sp-dim draw" d="M100 74 L100 30 M690 54 L690 18"/>
+          <path class="sp-dim draw" d="M102 36 L688 22" marker-start="url(#arr)" marker-end="url(#arr)"/>
+          <text class="sp-txt fade" x="360" y="22" transform="rotate(-1.4 360 22)">236.85 m</text>
+          <path class="sp-dim draw" d="M726 500 L772 500 M696 60 L772 60"/>
+          <path class="sp-dim draw" d="M764 62 L764 498" marker-start="url(#arr)" marker-end="url(#arr)"/>
+          <text class="sp-txt fade" x="776" y="285" transform="rotate(90 776 285)">182.40 m</text>
+        </g>
+        <!-- coordinates -->
+        <g class="g-coords">
+          <circle class="sp-pt pop" cx="100" cy="80" r="3.5"/><circle class="sp-pt pop" cx="690" cy="60" r="3.5"/>
+          <circle class="sp-pt pop" cx="720" cy="500" r="3.5"/><circle class="sp-pt pop" cx="130" cy="530" r="3.5"/>
+          <text class="sp-txt fade" x="18" y="74">E1748210.4</text><text class="sp-txt fade" x="18" y="62">N5917386.2</text>
+          <text class="sp-txt fade" x="604" y="574">E1748829.6 N5917241.7</text>
+          <text class="sp-txt fade" x="20" y="560">E1748241.8</text><text class="sp-txt fade" x="20" y="574">N5917202.0</text>
+        </g>
+        <!-- north arrow + scale bar -->
+        <g class="g-north fade" transform="translate(735 545)">
+          <circle r="18" fill="none" stroke="rgba(155,227,255,.4)"/>
+          <path d="M0 -24 L7 6 L0 0 L-7 6 Z" fill="#8DD24E"/>
+          <text class="sp-txt" x="-4" y="-28">N</text>
+        </g>
+        <g class="g-scale fade" transform="translate(180 572)">
+          <rect x="0" y="0" width="40" height="5" fill="#EAF5FF"/><rect x="40" y="0" width="40" height="5" fill="none" stroke="#EAF5FF"/>
+          <rect x="80" y="0" width="40" height="5" fill="#EAF5FF"/>
+          <text class="sp-txt" x="0" y="18">0</text><text class="sp-txt" x="72" y="18">10</text><text class="sp-txt" x="112" y="18">20 m</text>
+        </g>
+      </svg>
+      <div class="plan__ft">
+        <div class="legend">
+          <span><i style="border-color:#EAF5FF"></i>Boundary</span>
+          <span><i style="border-color:#9BE3FF"></i>Road</span>
+          <span><i style="border-color:#8DD24E;border-top-style:dashed"></i>Stormwater</span>
+          <span><i style="border-color:#FFC86B;border-top-style:dotted"></i>Wastewater</span>
+        </div>
+        <span>Drawn <b>TC</b> · Checked <b>RPEng</b></span>
+      </div>
+    </figure>
+  </div>
+  <div class="hero__scroll" aria-hidden="true"><i></i>Scroll to survey</div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span class="ticker__item">Land surveying</span><span class="ticker__item">RMA planning</span><span class="ticker__item">Civil engineering</span><span class="ticker__item">Three waters</span><span class="ticker__item">Landscape architecture</span><span class="ticker__item">Ecology</span><span class="ticker__item">Contamination testing</span><span class="ticker__item">Project management</span>
+    <span class="ticker__item">Land surveying</span><span class="ticker__item">RMA planning</span><span class="ticker__item">Civil engineering</span><span class="ticker__item">Three waters</span><span class="ticker__item">Landscape architecture</span><span class="ticker__item">Ecology</span><span class="ticker__item">Contamination testing</span><span class="ticker__item">Project management</span>
+  </div>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <span class="sec__num">01 / Drawing set</span>
+        <h2 id="svc-h" data-rv>Six disciplines. One coordinated set of drawings.</h2>
+      </div>
+      <p data-rv>Every development needs more than one expert. Our in-house team covers the full sheet list, so survey, planning, engineering, landscape and environmental work are drawn, checked and issued together.</p>
+    </div>
+  </div>
+  <div class="sheets-wrap">
+    <div class="sheets-pin">
+      <div class="wrap sheets-stage">
+        <aside class="sheet-index" aria-hidden="true">
+          <div class="sidx-count"><span class="js-sheetno">01</span><span> / 06</span></div>
+          <ol>
+            <li class="on">S-01 Land surveying</li>
+            <li>S-02 RMA planning</li>
+            <li>S-03 Engineering</li>
+            <li>S-04 Landscape</li>
+            <li>S-05 Environmental</li>
+            <li>S-06 Project mgmt</li>
+          </ol>
+        </aside>
+        <div class="sheets">
+          <!-- S-01 -->
+          <article class="sheet">
+            <div class="sheet__bar"><span>Sheet <b>S-01</b></span><span>Land surveying</span><span>Rev A</span></div>
+            <div class="sheet__body">
+              <div>
+                <h3>Land Surveying</h3>
+                <p>We provide accurate and reliable data for your development projects.</p>
+                <ul class="notes">
+                  <li data-n="01">Boundary redefinition</li>
+                  <li data-n="02">Cross-lease to freehold</li>
+                  <li data-n="03">Topographical surveys</li>
+                  <li data-n="04">Set out</li>
+                  <li data-n="05">Drone inspections</li>
+                  <li data-n="06">3D laser scanning</li>
+                </ul>
+              </div>
+              <div class="sheet__fig">
+                <span class="fig-l">FIG 1 · TRAVERSE</span>
+                <svg viewBox="0 0 240 200" aria-hidden="true">
+                  <path class="fg draw" d="M30 160 L110 40 L210 90 L170 170 Z"/>
+                  <path class="fg-g draw" d="M30 160 L210 90 M110 40 L170 170"/>
+                  <circle class="fg-f" cx="30" cy="160" r="5"/><circle class="fg-f" cx="110" cy="40" r="5"/><circle class="fg-f" cx="210" cy="90" r="5"/><circle class="fg-f" cx="170" cy="170" r="5"/>
+                  <text class="fg-t" x="14" y="180">STN A</text><text class="fg-t" x="96" y="28">STN B</text><text class="fg-t" x="196" y="78">STN C</text><text class="fg-t" x="160" y="190">STN D</text>
+                  <text class="fg-t" x="62" y="92">58°14'20"</text><text class="fg-t" x="150" y="58">124.6 m</text>
+                </svg>
+              </div>
+            </div>
+            <div class="tblock"><div>Drawn<b>TC Survey</b></div><div>Datum<b>NZVD2016</b></div><div>Proj<b>NZTM2000</b></div><div>Status<b>Issued</b></div></div>
+          </article>
+          <!-- S-02 -->
+          <article class="sheet">
+            <div class="sheet__bar"><span>Sheet <b>S-02</b></span><span>RMA planning</span><span>Rev A</span></div>
+            <div class="sheet__body">
+              <div>
+                <h3>RMA Planning</h3>
+                <p>Advice on zoning, land use and resource consent applications.</p>
+                <ul class="notes">
+                  <li data-n="01">Zoning &amp; land use advice</li>
+                  <li data-n="02">Resource consent applications</li>
+                  <li data-n="03">Feasibility reports</li>
+                  <li data-n="04">Hearings evidence</li>
+                  <li data-n="05">Plan changes</li>
+                </ul>
+              </div>
+              <div class="sheet__fig">
+                <span class="fig-l">FIG 2 · ZONING</span>
+                <svg viewBox="0 0 240 200" aria-hidden="true">
+                  <rect class="fg-f draw" x="20" y="30" width="90" height="70"/>
+                  <rect class="fg draw" x="120" y="30" width="100" height="70"/>
+                  <rect class="fg draw" x="20" y="110" width="140" height="60"/>
+                  <rect class="fg-g draw" x="170" y="110" width="50" height="60"/>
+                  <text class="fg-t" x="30" y="70">RES-MHS</text><text class="fg-t" x="135" y="70">RES-MHU</text>
+                  <text class="fg-t" x="30" y="145">MIXED USE</text><text class="fg-t" x="176" y="145">OS</text>
+                  <path class="fg-a draw" d="M10 105 L230 105"/>
+                </svg>
+              </div>
+            </div>
+            <div class="tblock"><div>Act<b>RMA 1991</b></div><div>Plan<b>AUP (OP)</b></div><div>Lodged<b>Council</b></div><div>Status<b>Consented</b></div></div>
+          </article>
+          <!-- S-03 -->
+          <article class="sheet">
+            <div class="sheet__bar"><span>Sheet <b>S-03</b></span><span>Engineering</span><span>Rev B</span></div>
+            <div class="sheet__body">
+              <div>
+                <h3>Engineering</h3>
+                <p>Infrastructure that is robust and compliant.</p>
+                <ul class="notes">
+                  <li data-n="01">Roads</li>
+                  <li data-n="02">Stormwater &amp; three waters</li>
+                  <li data-n="03">Earthworks</li>
+                  <li data-n="04">Flood engineering</li>
+                  <li data-n="05">Construction monitoring</li>
+                </ul>
+              </div>
+              <div class="sheet__fig">
+                <span class="fig-l">FIG 3 · LONG SECTION</span>
+                <svg viewBox="0 0 240 200" aria-hidden="true">
+                  <path class="fg draw" d="M10 70 C60 60 100 80 140 72 S200 60 230 66"/>
+                  <path class="fg-g draw" d="M20 120 L220 150"/>
+                  <path class="fg-g draw" d="M20 132 L220 162"/>
+                  <path class="fg draw" d="M50 70 L50 140 M120 74 L120 150 M190 64 L190 160"/>
+                  <text class="fg-t" x="70" y="186">Ø300 RCRRJ @ 1:65</text>
+                  <text class="fg-t" x="10" y="58">FGL</text><text class="fg-t" x="54" y="110">MH1</text><text class="fg-t" x="124" y="118">MH2</text><text class="fg-t" x="194" y="130">MH3</text>
+                </svg>
+              </div>
+            </div>
+            <div class="tblock"><div>Std<b>NZS 4404</b></div><div>Code<b>AT TDM</b></div><div>Design<b>CPEng</b></div><div>Status<b>For constr.</b></div></div>
+          </article>
+          <!-- S-04 -->
+          <article class="sheet">
+            <div class="sheet__bar"><span>Sheet <b>S-04</b></span><span>Landscape architecture</span><span>Rev A</span></div>
+            <div class="sheet__body">
+              <div>
+                <h3>Landscape Architecture</h3>
+                <p>Every aspect of the outdoor design process.</p>
+                <ul class="notes">
+                  <li data-n="01">Open space design</li>
+                  <li data-n="02">Landscape &amp; visual assessments</li>
+                  <li data-n="03">Planting plans</li>
+                </ul>
+              </div>
+              <div class="sheet__fig">
+                <span class="fig-l">FIG 4 · PLANTING</span>
+                <svg viewBox="0 0 240 200" aria-hidden="true">
+                  <path class="fg draw" d="M10 150 C70 110 120 170 170 120 S220 70 232 60"/>
+                  <circle class="fg-g draw" cx="50" cy="70" r="26"/><circle class="fg-g draw" cx="110" cy="60" r="18"/>
+                  <circle class="fg-g draw" cx="180" cy="160" r="22"/><circle class="fg-g draw" cx="90" cy="160" r="14"/>
+                  <circle class="fg draw" cx="200" cy="40" r="12"/>
+                  <text class="fg-t" x="36" y="74">PTE</text><text class="fg-t" x="100" y="64">KOW</text><text class="fg-t" x="168" y="164">TOT</text>
+                </svg>
+              </div>
+            </div>
+            <div class="tblock"><div>Member<b>NZILA</b></div><div>Species<b>Native</b></div><div>LVA<b>Included</b></div><div>Status<b>Issued</b></div></div>
+          </article>
+          <!-- S-05 -->
+          <article class="sheet">
+            <div class="sheet__bar"><span>Sheet <b>S-05</b></span><span>Environmental services</span><span>Rev A</span></div>
+            <div class="sheet__body">
+              <div>
+                <h3>Environmental Services</h3>
+                <p>Environmental Management Plans, ecology, soil and water contamination testing, and asbestos.</p>
+                <ul class="notes">
+                  <li data-n="01">Environmental Management Plans</li>
+                  <li data-n="02">Ecology</li>
+                  <li data-n="03">Soil &amp; water contamination testing</li>
+                  <li data-n="04">Asbestos</li>
+                </ul>
+              </div>
+              <div class="sheet__fig">
+                <span class="fig-l">FIG 5 · BORE LOG</span>
+                <svg viewBox="0 0 240 200" aria-hidden="true">
+                  <rect class="fg draw" x="40" y="24" width="50" height="160"/>
+                  <rect class="fg-f" x="40" y="24" width="50" height="30"/>
+                  <rect class="fg-f" x="40" y="94" width="50" height="40" style="fill:rgba(141,210,78,.12)"/>
+                  <path class="fg draw" d="M40 54 L90 54 M40 94 L90 94 M40 134 L90 134"/>
+                  <path class="fg-a draw" d="M110 40 L130 40 L130 170 L110 170"/>
+                  <text class="fg-t" x="100" y="42">0.0</text><text class="fg-t" x="140" y="44">TOPSOIL</text>
+                  <text class="fg-t" x="140" y="78">CLAY · SILT</text><text class="fg-t" x="140" y="118">SAMPLE S2 ✓</text>
+                  <text class="fg-t" x="140" y="160">WEATHERED ECBF</text>
+                </svg>
+              </div>
+            </div>
+            <div class="tblock"><div>Lab<b>IANZ</b></div><div>Guide<b>NES-CS</b></div><div>Cert<b>Toitū</b></div><div>Status<b>Reported</b></div></div>
+          </article>
+          <!-- S-06 -->
+          <article class="sheet">
+            <div class="sheet__bar"><span>Sheet <b>S-06</b></span><span>Project management</span><span>Rev A</span></div>
+            <div class="sheet__body">
+              <div>
+                <h3>Project Management</h3>
+                <p>From concept to completion, we oversee the entire process, keeping consultants, contractors and council aligned to programme and budget.</p>
+                <ul class="notes">
+                  <li data-n="01">Concept to completion</li>
+                  <li data-n="02">Programme &amp; budget control</li>
+                  <li data-n="03">Contractor coordination</li>
+                  <li data-n="04">Single point of contact</li>
+                </ul>
+              </div>
+              <div class="sheet__fig">
+                <span class="fig-l">FIG 6 · PROGRAMME</span>
+                <svg viewBox="0 0 240 200" aria-hidden="true">
+                  <path class="fg draw" d="M20 30 L20 180 L230 180"/>
+                  <rect class="fg-f draw" x="30" y="44" width="60" height="16"/>
+                  <rect class="fg-f draw" x="70" y="72" width="70" height="16"/>
+                  <rect class="fg-f draw" x="110" y="100" width="80" height="16"/>
+                  <rect class="fg-g draw" x="160" y="128" width="60" height="16"/>
+                  <path class="fg-a draw" d="M150 34 L150 170"/>
+                  <text class="fg-t" x="154" y="34">TODAY</text>
+                  <text class="fg-t" x="30" y="196">ASSESS  CONSENT  DESIGN  DELIVER</text>
+                </svg>
+              </div>
+            </div>
+            <div class="tblock"><div>Lead<b>TC PM</b></div><div>Report<b>Monthly</b></div><div>Budget<b>Tracked</b></div><div>Status<b>On time</b></div></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY ===================== -->
+<section class="sec" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <span class="sec__num">02 / Calibration</span>
+        <h2 id="why-h" data-rv>25 years of measured, reliable outcomes.</h2>
+      </div>
+      <p data-rv>Why developers, councils and homeowners keep coming back.</p>
+    </div>
+    <div class="why">
+      <div>
+        <p class="why__lead" data-rv>After 25 years of delivering multi-faceted land development and infrastructure projects, our expertise is <mark>second to none</mark>.</p>
+        <p class="why__txt" data-rv>We are committed to environmentally responsible and sustainable development. With transparent communication and seamless project management, we deliver timely results that are on budget and aligned with your vision.</p>
+        <ul class="checks">
+          <li data-rv><span>[✓]</span>Engineers, planners, surveyors, landscape architects, ecologists and contamination experts under one roof</li>
+          <li data-rv><span>[✓]</span>Transparent communication from first site visit to final sign-off</li>
+          <li data-rv><span>[✓]</span>Timely results, on budget, aligned with your vision</li>
+          <li data-rv><span>[✓]</span>Environmentally responsible, sustainable development</li>
+        </ul>
+      </div>
+      <figure class="photo" style="margin:0">
+        <img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Civil engineer reviewing work on a construction site" loading="lazy" width="800" height="1000">
+        <span class="photo__ret" aria-hidden="true"></span>
+        <figcaption class="photo__tag"><span>Construction monitoring</span><span>CAM 02</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="readouts" role="list">
+      <div class="ro" role="listitem">
+        <div class="ro__lbl"><span>Years in practice</span><i aria-hidden="true"></i></div>
+        <div class="ro__val"><span class="count" data-to="25" data-pad="3">025</span><small>YRS</small></div>
+        <div class="ro__bar"><span style="--p:1"></span></div>
+        <div class="ro__ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="ro" role="listitem">
+        <div class="ro__lbl"><span>In-house disciplines</span><i aria-hidden="true"></i></div>
+        <div class="ro__val"><span class="count" data-to="6" data-pad="3">006</span><small>DISC</small></div>
+        <div class="ro__bar"><span style="--p:.6"></span></div>
+        <div class="ro__ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="ro" role="listitem">
+        <div class="ro__lbl"><span>Offices across NZ</span><i aria-hidden="true"></i></div>
+        <div class="ro__val"><span class="count" data-to="3" data-pad="3">003</span><small>OFF</small></div>
+        <div class="ro__bar"><span style="--p:.3"></span></div>
+        <div class="ro__ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="ro" role="listitem">
+        <div class="ro__lbl"><span>Accreditations</span><i aria-hidden="true"></i></div>
+        <div class="ro__val"><span class="count" data-to="10" data-pad="3">010</span><small>CERT</small></div>
+        <div class="ro__bar"><span style="--p:.8"></span></div>
+        <div class="ro__ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="sec proc" id="process" aria-labelledby="proc-h">
+  <div class="proc-pin">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <span class="sec__num">03 / Traverse</span>
+          <h2 id="proc-h" data-rv>From first survey peg to final handover.</h2>
+        </div>
+        <p data-rv>A closed traverse: four stations, one team, no gaps between consultants.</p>
+      </div>
+      <div class="proc__line" aria-hidden="true">
+        <svg viewBox="0 0 1000 60" preserveAspectRatio="none">
+          <line class="proc__track" x1="0" y1="30" x2="1000" y2="30"/>
+          <line class="proc__prog" x1="0" y1="30" x2="1000" y2="30"/>
+        </svg>
+      </div>
+      <div class="proc__steps">
+        <article class="step">
+          <div class="step__k"><span>Stn <b>01</b></span><span>CH 0.000</span></div>
+          <h3>Site assessment</h3>
+          <p>We survey, test and investigate your land to understand constraints and opportunities before you commit.</p>
+          <ul><li>Topo &amp; boundary survey</li><li>Geotech &amp; contamination</li><li>Feasibility report</li></ul>
+        </article>
+        <article class="step">
+          <div class="step__k"><span>Stn <b>02</b></span><span>CH 0.250</span></div>
+          <h3>Resource consent</h3>
+          <p>Our planners prepare and manage your application, working with council through to decision.</p>
+          <ul><li>Zoning advice</li><li>AEE &amp; specialist reports</li><li>Hearings evidence</li></ul>
+        </article>
+        <article class="step">
+          <div class="step__k"><span>Stn <b>03</b></span><span>CH 0.500</span></div>
+          <h3>Design</h3>
+          <p>Engineering and landscape design that is robust, compliant and buildable.</p>
+          <ul><li>Roads &amp; three waters</li><li>Earthworks &amp; flood</li><li>Planting plans</li></ul>
+        </article>
+        <article class="step">
+          <div class="step__k"><span>Stn <b>04</b></span><span>CH 0.750</span></div>
+          <h3>Delivery</h3>
+          <p>Construction monitoring, set out and project management through to titles and handover.</p>
+          <ul><li>Set out &amp; as-builts</li><li>Construction monitoring</li><li>224c &amp; titles</li></ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section class="sec" id="projects" aria-labelledby="prj-h">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <span class="sec__num">04 / Drawing register</span>
+        <h2 id="prj-h" data-rv>Selected projects.</h2>
+      </div>
+      <p data-rv>Public open space, Kāinga Ora housing, commercial sites and residential subdivisions, issued across Tāmaki Makaurau and beyond.</p>
+    </div>
+    <div class="reg" role="list">
+      <div class="reg__hd" aria-hidden="true"><span>No.</span><span>Project</span><span>Disciplines</span><span class="h-st">Status</span><span></span></div>
+      <a class="reg__row" role="listitem" href="#contact" data-img="0" data-rv><span class="reg__no">P-01</span><span class="reg__t">Open Space Development, Fearon Park<small>Mount Roskill</small></span><span class="chips"><span class="chip">Project management</span><span class="chip">Contaminated sites</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+      <a class="reg__row" role="listitem" href="#contact" data-img="2" data-rv><span class="reg__no">P-02</span><span class="reg__t">McMillan and Lockwood<small>Kāinga Ora</small></span><span class="chips"><span class="chip">Construction monitoring</span><span class="chip">Engineering</span><span class="chip">Residential</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+      <a class="reg__row" role="listitem" href="#contact" data-img="1" data-rv><span class="reg__no">P-03</span><span class="reg__t">Churchill Park Lookout<small>Open space</small></span><span class="chips"><span class="chip">Landscape architecture</span><span class="chip">Open space design</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+      <a class="reg__row" role="listitem" href="#contact" data-img="0" data-rv><span class="reg__no">P-04</span><span class="reg__t">Observation Green<small>Landscape</small></span><span class="chips"><span class="chip">Landscape &amp; visual</span><span class="chip">Planting plan</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+      <a class="reg__row" role="listitem" href="#contact" data-img="2" data-rv><span class="reg__no">P-05</span><span class="reg__t">2 Cracroft Road / 618-620 Great South Road<small>Kāinga Ora</small></span><span class="chips"><span class="chip">Engineering</span><span class="chip">Surveying</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+      <a class="reg__row" role="listitem" href="#contact" data-img="1" data-rv><span class="reg__no">P-06</span><span class="reg__t">PAK'nSAVE, Alderman Drive<small>Henderson</small></span><span class="chips"><span class="chip">Commercial</span><span class="chip">Civil engineering</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+      <a class="reg__row" role="listitem" href="#contact" data-img="2" data-rv><span class="reg__no">P-07</span><span class="reg__t">Scott Road<small>Hobsonville</small></span><span class="chips"><span class="chip">Resource consent</span><span class="chip">Traffic engineering</span><span class="chip">Soil testing</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+      <a class="reg__row" role="listitem" href="#contact" data-img="0" data-rv><span class="reg__no">P-08</span><span class="reg__t">GJ Gardner Kokowai Apartments<small>Hobsonville Point</small></span><span class="chips"><span class="chip">Landscape architecture</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+      <a class="reg__row" role="listitem" href="#contact" data-img="1" data-rv><span class="reg__no">P-09</span><span class="reg__t">Homes of Choice residential subdivision<small>Residential</small></span><span class="chips"><span class="chip">Engineering</span><span class="chip">Planning</span><span class="chip">Subdivision</span></span><span class="reg__st">Complete</span><span class="reg__go" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="preview" aria-hidden="true"><img alt="" src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp"><span class="preview__cap">P-01</span></div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="sec" id="testimonials" aria-labelledby="tst-h">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <span class="sec__num">05 / Field log</span>
+        <h2 id="tst-h" data-rv>What clients recorded.</h2>
+      </div>
+      <p data-rv>Notes from councils, developers and private clients we have worked alongside.</p>
+    </div>
+    <div class="log">
+      <ul class="log__list" role="tablist" aria-label="Testimonials">
+        <li role="presentation"><button role="tab" id="tb-0" aria-controls="q-0" aria-selected="true"><span class="k">L-01</span><span class="n">Barbara Heise<small>Auckland Council</small></span></button></li>
+        <li role="presentation"><button role="tab" id="tb-1" aria-controls="q-1" aria-selected="false" tabindex="-1"><span class="k">L-02</span><span class="n">Nigel<small>New Plymouth District Council</small></span></button></li>
+        <li role="presentation"><button role="tab" id="tb-2" aria-controls="q-2" aria-selected="false" tabindex="-1"><span class="k">L-03</span><span class="n">Marie CK<small>Private client</small></span></button></li>
+        <li role="presentation"><button role="tab" id="tb-3" aria-controls="q-3" aria-selected="false" tabindex="-1"><span class="k">L-04</span><span class="n">David Cho<small>High-profile event manager</small></span></button></li>
+      </ul>
+      <div class="log__view">
+        <div class="tag"><span>Entry <b class="js-entry">L-01</b></span><span>Verified client feedback</span></div>
+        <div>
+          <blockquote class="quote on" id="q-0" role="tabpanel" aria-labelledby="tb-0"><p>I have to say – this looks amazing. I think this is the first time I received a first concept that fully met the brief and looks exactly how I imagined it.</p><footer>Barbara Heise <span>· Auckland Council</span></footer></blockquote>
+          <blockquote class="quote" id="q-1" role="tabpanel" aria-labelledby="tb-1"><p>You have been timely, pro-active in your communications with us, given us a cost-effective outcome, and I have found Thomas Consultants very easy to deal with.</p><footer>Nigel <span>· New Plymouth District Council</span></footer></blockquote>
+          <blockquote class="quote" id="q-2" role="tabpanel" aria-labelledby="tb-2"><p>Outstanding customer service, responsive and very professional. Despite the logistical challenges of extended lockdowns, Brett from Thomas Consultants went above and beyond to help with our environmental property needs.</p><footer>Marie CK <span>· Private Client</span></footer></blockquote>
+          <blockquote class="quote" id="q-3" role="tabpanel" aria-labelledby="tb-3"><p>Very quick and helpful responses and helped us get a BCE in a very short timeframe!</p><footer>David Cho <span>· High-profile event manager</span></footer></blockquote>
+        </div>
+        <div class="log__nav">
+          <button type="button" class="js-prev" aria-label="Previous testimonial">←</button>
+          <button type="button" class="js-next" aria-label="Next testimonial">→</button>
+          <div class="log__prog" aria-hidden="true"><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLIENTS ===================== -->
+<section class="sec" id="clients" aria-labelledby="cl-h">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <span class="sec__num">06 / Legend</span>
+        <h2 id="cl-h" data-rv>Trusted by public agencies. Certified to standard.</h2>
+      </div>
+      <p data-rv>A selection of the clients we work with, and the bodies that hold us to account.</p>
+    </div>
+    <div class="legends">
+      <div class="leg" data-rv>
+        <div class="leg__hd"><span class="tag">Clients</span><span class="tag"><b>10</b> entries</span></div>
+        <ul>
+          <li><span>C01</span>Kāinga Ora</li><li><span>C02</span>Auckland Transport</li>
+          <li><span>C03</span>Watercare</li><li><span>C04</span>Panuku</li>
+          <li><span>C05</span>NZ Transport Agency</li><li><span>C06</span>Ministry of Education</li>
+          <li><span>C07</span>Waikato District Council</li><li><span>C08</span>Rotorua Lakes Council</li>
+          <li><span>C09</span>Hobsonville Point</li><li><span>C10</span>Homes of Choice</li>
+        </ul>
+      </div>
+      <div class="leg" data-rv>
+        <div class="leg__hd"><span class="tag">Accreditations</span><span class="tag"><b>10</b> entries</span></div>
+        <ul>
+          <li><span>A01</span>ISO 45001</li><li><span>A02</span>IANZ</li>
+          <li><span>A03</span>Toitū Envirocare</li><li><span>A04</span>Engineering NZ</li>
+          <li><span>A05</span>Water NZ</li><li><span>A06</span>Survey and Spatial NZ</li>
+          <li><span>A07</span>NZ Planning Institute</li><li><span>A08</span>NZILA</li>
+          <li><span>A09</span>SiteSafe</li><li><span>A10</span>SiteWise</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="sec" id="contact" aria-labelledby="ct-h">
+  <div class="wrap contact">
+    <div>
+      <span class="sec__num">07 / Request a survey</span>
+      <h2 id="ct-h" data-rv>Let’s set out your <em>next project.</em></h2>
+      <p style="color:var(--muted);max-width:46ch" data-rv>Book your free development consultation or a complimentary planner meeting. Tell us about the site and we will come back with clear next steps.</p>
+      <div class="offices">
+        <div class="office" data-rv><h3>Auckland · Head Office</h3><span class="mono">S36°52' E174°38'</span><a class="tel" href="tel:+6498361804">09 836 1804</a></div>
+        <div class="office" data-rv><h3>Manukau</h3><span class="mono">S36°59' E174°52'</span><a class="tel" href="tel:+6498696070">09 869 6070</a></div>
+        <div class="office" data-rv><h3>Christchurch</h3><span class="mono">Satellite office · S43°31' E172°38'</span></div>
+      </div>
+    </div>
+    <div class="form" data-rv>
+      <div class="form__hd"><span class="tag">Form <b>TC-RQ-01</b></span><span class="tag">Enquiry</span></div>
+      <form class="form__body" id="enq" novalidate>
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-type">I’d like</label>
+          <select id="f-type" name="type"><option>Free development consultation</option><option>Complimentary planner meeting</option><option>A fee proposal</option><option>Something else</option></select></div>
+        <div class="field field--full"><label for="f-site">Site address</label><input id="f-site" name="site" autocomplete="street-address"></div>
+        <div class="field field--full"><label for="f-msg">About your project</label><textarea id="f-msg" name="msg"></textarea></div>
+        <div class="form__ft"><small>We reply within one business day.</small><button class="btn magnetic" type="submit">Submit request <span class="arr">→</span></button></div>
+      </form>
+      <div class="thanks" role="status" aria-live="polite"><span class="tag">Status <b>Received</b></span><h3>Thanks, request logged.</h3><p>One of our team will be in touch shortly. For anything urgent, call our Head Office on <a href="tel:+6498361804" style="color:var(--green-hi)">09 836 1804</a>.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__tb">
+      <div>
+        <span class="tag">Title block</span>
+        <p class="foot__big">Thomas Consultants</p>
+        <p style="color:var(--muted);margin:0;max-width:40ch;font-size:15px">Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p>
+      </div>
+      <div><span class="tag">Index</span><ul><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><span class="tag">Offices</span><ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="#contact">Christchurch</a></li></ul></div>
+      <div><span class="tag">Connect</span><ul><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal</a></li></ul></div>
+    </div>
+    <div class="foot__bar"><span>© Thomas Consultants Ltd</span><span>DWG TC-000 · Rev 25</span><a href="#top" style="text-decoration:none;color:var(--cyan)">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<div class="badge">Concept 03 · <b>Blueprint</b></div>
+<div class="xh" aria-hidden="true"><div class="xh__v"></div><div class="xh__h"></div><div class="xh__ret"></div><div class="xh__read"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root = document.documentElement;
+  var reduced = root.classList.contains('reduced');
+  var hasGsap = !!(window.gsap && window.ScrollTrigger);
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.querySelector('.burger'), mmenu = document.getElementById('mmenu');
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mmenu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && mmenu.classList.contains('open')) { setMenu(false); burger.focus(); } });
+
+  /* ---------- Form ---------- */
+  var form = document.getElementById('enq');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok = true;
+    ['f-name','f-email'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (!el.value.trim() || (el.type === 'email' && !/^\S+@\S+\.\S+$/.test(el.value))) { el.style.borderColor = '#FF8A7A'; ok = false; }
+      else el.style.borderColor = '';
+    });
+    if (!ok) { form.querySelector('input').focus(); return; }
+    form.style.display = 'none';
+    var t = document.querySelector('.thanks'); t.classList.add('on');
+    if (hasGsap && !reduced) gsap.from(t.children, {y: 16, opacity: 0, stagger: .08, duration: .6, ease: 'power3.out'});
+  });
+
+  /* ---------- Testimonials ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.log__list [role=tab]'));
+  var quotes = Array.prototype.slice.call(document.querySelectorAll('.quote'));
+  var entry = document.querySelector('.js-entry');
+  var progBar = document.querySelector('.log__prog i');
+  var cur = 0, progTween = null;
+  function show(i, focus){
+    cur = (i + tabs.length) % tabs.length;
+    tabs.forEach(function(t, k){ t.setAttribute('aria-selected', k === cur ? 'true' : 'false'); t.tabIndex = k === cur ? 0 : -1; });
+    quotes.forEach(function(q, k){ q.classList.toggle('on', k === cur); });
+    entry.textContent = 'L-0' + (cur + 1);
+    if (focus) tabs[cur].focus();
+    if (hasGsap && !reduced){
+      var q = quotes[cur];
+      gsap.fromTo(q.querySelector('p'), {clipPath:'inset(0 100% 0 0)', opacity:.4}, {clipPath:'inset(0 0% 0 0)', opacity:1, duration:.9, ease:'power3.inOut'});
+      gsap.fromTo(q.querySelector('footer'), {opacity:0, y:8}, {opacity:1, y:0, duration:.5, delay:.5});
+      if (progTween) progTween.kill();
+      progTween = gsap.fromTo(progBar, {scaleX:0}, {scaleX:1, duration:8, ease:'none', onComplete:function(){ show(cur + 1); }});
+    }
+  }
+  tabs.forEach(function(t, k){
+    t.addEventListener('click', function(){ show(k); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight'){ e.preventDefault(); show(cur + 1, true); }
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft'){ e.preventDefault(); show(cur - 1, true); }
+    });
+  });
+  document.querySelector('.js-prev').addEventListener('click', function(){ show(cur - 1); });
+  document.querySelector('.js-next').addEventListener('click', function(){ show(cur + 1); });
+
+  /* ---------- Crosshair cursor with live coordinates ---------- */
+  if (finePointer && !reduced){
+    root.classList.add('has-xh');
+    var xh = document.querySelector('.xh'), v = xh.querySelector('.xh__v'), h = xh.querySelector('.xh__h'),
+        ret = xh.querySelector('.xh__ret'), read = xh.querySelector('.xh__read');
+    var mx = innerWidth/2, my = innerHeight/2, cx = mx, cy = my;
+    function fmt(n){ return n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+    document.addEventListener('pointermove', function(e){ mx = e.clientX; my = e.clientY; }, {passive:true});
+    document.addEventListener('pointerover', function(e){
+      xh.classList.toggle('hot', !!e.target.closest('a,button,input,select,textarea,label,.reg__row'));
+    });
+    document.addEventListener('pointerleave', function(){ xh.style.opacity = 0; });
+    document.addEventListener('pointerenter', function(){ xh.style.opacity = 1; });
+    (function loop(){
+      cx += (mx - cx) * .35; cy += (my - cy) * .35;
+      v.style.transform = 'translateX(' + mx + 'px)';
+      h.style.transform = 'translateY(' + my + 'px)';
+      ret.style.transform = 'translate(' + cx + 'px,' + cy + 'px)';
+      var flip = mx > innerWidth - 220, flipY = my > innerHeight - 70;
+      read.style.transform = 'translate(' + (mx + (flip ? -200 : 18)) + 'px,' + (my + (flipY ? -54 : 16)) + 'px)';
+      var E = 1748000 + mx * 0.25, N = 5917600 - (my + scrollY) * 0.25;
+      read.innerHTML = '<b>E</b> ' + fmt(E) + '<br><b>N</b> ' + fmt(N);
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  /* ---------- Fallback: no GSAP or reduced motion ---------- */
+  if (!hasGsap || reduced){
+    root.classList.remove('anim');
+    return;
+  }
+
+  root.classList.add('anim');
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- Split headline ---------- */
+  var h1 = document.querySelector('.hero h1');
+  (function split(el){
+    el.setAttribute('aria-label', el.textContent.replace(/\s+/g,' ').trim());
+    var out = [];
+    el.childNodes.forEach(function(node){
+      var isEm = node.nodeType === 1;
+      var words = node.textContent.split(/\s+/).filter(Boolean);
+      words.forEach(function(w){
+        out.push('<span class="w" aria-hidden="true"><span>' + (isEm ? '<em>' + w + '</em>' : w) + '</span></span>');
+      });
+    });
+    el.innerHTML = out.join(' ');
+  })(h1);
+
+  /* ---------- Hero: site plan draws itself ---------- */
+  var plan = document.getElementById('siteplan');
+  function prepDraw(scope){
+    scope.querySelectorAll('.draw').forEach(function(p){
+      var len = (p.getTotalLength ? p.getTotalLength() : 600) + 2;
+      p.style.strokeDasharray = len + ' ' + len;
+      p.style.strokeDashoffset = len;
+    });
+  }
+  prepDraw(plan);
+  var drawn = function(sel){ return plan.querySelectorAll(sel); };
+  gsap.set(plan.querySelectorAll('.fade'), {opacity:0});
+  gsap.set(plan.querySelectorAll('.pop'), {scale:0, transformOrigin:'50% 50%', transformBox:'fill-box'});
+
+  var tl = gsap.timeline({defaults:{ease:'power2.inOut'}, delay:.15});
+  tl.to('.hero__meta', {opacity:1, duration:.4})
+    .to('.hero h1 .w > span', {y:0, duration:1, ease:'expo.out', stagger:.05}, '<.1')
+    .to('.hero__sub', {opacity:1, duration:.5}, '-=.6')
+    .to('.hero__body', {opacity:1, duration:.6}, '-=.4')
+    .to('.hero__ctas', {opacity:1, duration:.6}, '-=.4')
+    .to('.plan__hd', {opacity:1, duration:.4}, .2)
+    .to(drawn('.g-contour .draw'), {strokeDashoffset:0, duration:1.6, stagger:.12}, .3)
+    .to(drawn('.g-contour .fade'), {opacity:1, duration:.4, stagger:.1}, 1.2)
+    .to(drawn('.sp-bound'), {strokeDashoffset:0, duration:1.6, ease:'power1.inOut'}, .5)
+    .to(drawn('.g-coords .pop'), {scale:1, duration:.35, stagger:.12, ease:'back.out(3)'}, 1.4)
+    .to(drawn('.g-coords .fade'), {opacity:1, duration:.3, stagger:.06}, 1.5)
+    .to(drawn('.sp-road'), {strokeDashoffset:0, duration:1.3}, 1.6)
+    .to(drawn('.sp-cl'), {opacity:1, duration:.5}, 2.4)
+    .to(drawn('.g-lots .draw'), {strokeDashoffset:0, duration:.6, stagger:.1, ease:'power2.out'}, 2.2)
+    .to(drawn('path.fade[fill]'), {opacity:1, duration:.6}, 2.9)
+    .to(drawn('.g-labels .fade'), {opacity:1, duration:.25, stagger:.035}, 2.9)
+    .to(drawn('.sp-sw, .sp-ww'), {opacity:1, duration:.6, stagger:.2}, 3.1)
+    .to(drawn('.g-mh .pop'), {scale:1, duration:.35, stagger:.1, ease:'back.out(3)'}, 3.3)
+    .to(drawn('.g-mh .fade'), {opacity:1, duration:.3, stagger:.08}, 3.5)
+    .to(drawn('.g-trees .pop'), {scale:1, duration:.5, stagger:.06, ease:'back.out(2)'}, 3.4)
+    .to(drawn('.g-dims .draw'), {strokeDashoffset:0, duration:.7, stagger:.15, ease:'power2.out'}, 3.6)
+    .to(drawn('.g-dims .fade'), {opacity:1, duration:.4, stagger:.1}, 4.1)
+    .to(drawn('.g-north, .g-scale'), {opacity:1, duration:.5}, 4.2)
+    .to('.plan__ft, .legend', {opacity:1, duration:.5}, 4.2);
+
+  // Gentle parallax of the plan on scroll
+  gsap.to('.plan', {yPercent:-6, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+
+  /* ---------- Generic reveals ---------- */
+  gsap.utils.toArray('[data-rv]').forEach(function(el){
+    gsap.to(el, {opacity:1, y:0, duration:.9, ease:'power3.out', scrollTrigger:{trigger:el, start:'top 88%', once:true}});
+  });
+
+  /* ---------- Services: drawing sheets ---------- */
+  var sheets = gsap.utils.toArray('.sheet');
+  sheets.forEach(function(s){ prepDraw(s); });
+  function drawSheet(s, dur){
+    return gsap.to(s.querySelectorAll('.draw'), {strokeDashoffset:0, duration:dur || 1.2, stagger:.08, ease:'power2.inOut'});
+  }
+  var idxItems = document.querySelectorAll('.sheet-index li'), idxNo = document.querySelector('.js-sheetno');
+  function setIndex(i){
+    idxItems.forEach(function(li, k){ li.classList.toggle('on', k === i); });
+    idxNo.textContent = ('0' + (i + 1)).slice(-2);
+  }
+
+  var mm = gsap.matchMedia();
+  mm.add('(min-width: 1101px) and (min-height: 640px)', function(){
+    root.classList.add('stack-mode');
+    gsap.set(sheets, {clearProps:'all'});
+    gsap.set(sheets.slice(1), {xPercent:115, rotation:4, opacity:1});
+    sheets.forEach(function(s, i){ gsap.set(s, {zIndex:i + 1}); });
+    drawSheet(sheets[0], 1.4);
+    var drawnFlags = [true];
+    var stl = gsap.timeline({
+      scrollTrigger:{
+        trigger:'.sheets-pin', start:'top top', end:'+=' + (sheets.length - 1) * 75 + '%', pin:true, scrub:.6,
+        onUpdate:function(self){
+          var i = Math.min(sheets.length - 1, Math.round(self.progress * (sheets.length - 1)));
+          setIndex(i);
+          if (!drawnFlags[i]){ drawnFlags[i] = true; drawSheet(sheets[i]); }
+        }
+      }
+    });
+    sheets.slice(1).forEach(function(s, k){
+      var prev = sheets[k];
+      stl.to(s, {xPercent:0, rotation:(k % 2 ? -.6 : .6), duration:1, ease:'power2.out'})
+         .to(prev, {scale:.94, y:-14, opacity:.35, duration:1, ease:'power1.out'}, '<');
+    });
+    return function(){ root.classList.remove('stack-mode'); gsap.set(sheets, {clearProps:'all'}); };
+  });
+  mm.add('(max-width: 1100px), (max-height: 639px)', function(){
+    sheets.forEach(function(s, i){
+      gsap.fromTo(s, {x: i % 2 ? 60 : -60, opacity:0, clipPath:'inset(0 0 100% 0)'},
+        {x:0, opacity:1, clipPath:'inset(0 0 0% 0)', duration:1, ease:'power3.out',
+         scrollTrigger:{trigger:s, start:'top 85%', once:true, onEnter:function(){ drawSheet(s); }}});
+    });
+  });
+
+  /* ---------- Readout counters ---------- */
+  gsap.utils.toArray('.count').forEach(function(el){
+    var to = +el.dataset.to, pad = +el.dataset.pad || 3, obj = {v:0};
+    function render(v){ el.textContent = String(Math.round(v)).padStart(pad, '0'); }
+    render(0);
+    ScrollTrigger.create({trigger:el, start:'top 90%', once:true, onEnter:function(){
+      var scramble = 0;
+      gsap.to(obj, {v:to, duration:2, ease:'power3.out',
+        onUpdate:function(){
+          scramble++;
+          // flicker last digit like an instrument settling
+          if (obj.v < to - .5 && scramble % 2) {
+            var s = String(Math.floor(obj.v)).padStart(pad, '0');
+            el.textContent = s.slice(0, -1) + Math.floor(Math.random() * 10);
+          } else render(obj.v);
+        },
+        onComplete:function(){ render(to); }});
+    }});
+  });
+  gsap.utils.toArray('.ro__bar span').forEach(function(b){
+    gsap.from(b, {scaleX:0, duration:1.8, ease:'power3.out', scrollTrigger:{trigger:b, start:'top 92%', once:true}});
+  });
+  gsap.fromTo('.photo img', {yPercent:-6}, {yPercent:6, ease:'none', scrollTrigger:{trigger:'.photo', scrub:true}});
+  gsap.fromTo('.photo__ret', {x:-60, y:40}, {x:40, y:-30, ease:'none', scrollTrigger:{trigger:'.photo', scrub:true}});
+
+  /* ---------- Process: traverse ---------- */
+  var steps = gsap.utils.toArray('.step');
+  mm.add('(min-width: 861px) and (min-height: 700px)', function(){
+    gsap.set('.proc__prog', {scaleX:0, transformOrigin:'0 50%'});
+    gsap.set(steps, {opacity:.25, y:20});
+    var ptl = gsap.timeline({scrollTrigger:{trigger:'.proc-pin', start:'top top', end:'+=160%', pin:true, scrub:.5}});
+    steps.forEach(function(s, i){
+      ptl.to('.proc__prog', {scaleX:(i + 1) / steps.length, duration:1, ease:'none'}, i)
+         .to(s, {opacity:1, y:0, borderColor:'rgba(141,210,78,.7)', duration:.5}, i + .3);
+    });
+  });
+  mm.add('(max-width: 860px), (max-height: 699px)', function(){
+    steps.forEach(function(s){
+      gsap.from(s, {opacity:0, x:-30, duration:.8, ease:'power3.out', scrollTrigger:{trigger:s, start:'top 88%', once:true}});
+    });
+  });
+
+  /* ---------- Projects: hover preview ---------- */
+  if (finePointer){
+    var imgs = [
+      'https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp',
+      'https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp',
+      'https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp'
+    ];
+    var pv = document.querySelector('.preview'), pvImg = pv.querySelector('img'), pvCap = pv.querySelector('.preview__cap');
+    var px = gsap.quickTo(pv, 'x', {duration:.5, ease:'power3'}), py = gsap.quickTo(pv, 'y', {duration:.5, ease:'power3'});
+    document.querySelectorAll('.reg__row').forEach(function(r){
+      r.addEventListener('pointerenter', function(){
+        pvImg.src = imgs[+r.dataset.img];
+        pvCap.textContent = r.querySelector('.reg__no').textContent + ' · ' + r.querySelector('.reg__t').firstChild.textContent;
+        gsap.to(pv, {opacity:1, scale:1, duration:.35, ease:'power3.out'});
+      });
+      r.addEventListener('pointerleave', function(){ gsap.to(pv, {opacity:0, scale:.8, duration:.3}); });
+      r.addEventListener('pointermove', function(e){ px(e.clientX + 190); py(e.clientY); });
+    });
+  }
+
+  /* ---------- Magnetic buttons ---------- */
+  if (finePointer){
+    document.querySelectorAll('.magnetic').forEach(function(b){
+      var qx = gsap.quickTo(b, 'x', {duration:.4, ease:'power3'}), qy = gsap.quickTo(b, 'y', {duration:.4, ease:'power3'});
+      b.addEventListener('pointermove', function(e){
+        var r = b.getBoundingClientRect();
+        qx((e.clientX - r.left - r.width / 2) * .25); qy((e.clientY - r.top - r.height / 2) * .35);
+      });
+      b.addEventListener('pointerleave', function(){ qx(0); qy(0); });
+    });
+  }
+
+  /* ---------- Clients legend rows ---------- */
+  gsap.utils.toArray('.leg').forEach(function(l){
+    gsap.from(l.querySelectorAll('li'), {opacity:0, x:-12, stagger:.04, duration:.5, ease:'power2.out', scrollTrigger:{trigger:l, start:'top 85%', once:true}});
+  });
+
+  show(0);
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
