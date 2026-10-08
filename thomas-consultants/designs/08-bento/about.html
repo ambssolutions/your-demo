@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Thomas Consultants | Land Development Consultants, Auckland · Concept 08</title>
-<meta name="description" content="Land development and subdivision consultants in Auckland, Manukau and Christchurch. Surveying, planning, engineering, landscape, environmental and project management.">
+<title>About | Thomas Consultants · Concept 08</title>
+<meta name="description" content="Thomas Consultants has delivered land development and infrastructure projects for 25 years. Our values, accreditations, clients and offices.">
 <meta name="theme-color" content="#F6F5F0">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Thomas Consultants">
-<meta property="og:title" content="Thomas Consultants | Land Development Consultants, Auckland · Concept 08">
-<meta property="og:description" content="Land development and subdivision consultants in Auckland, Manukau and Christchurch. Surveying, planning, engineering, landscape, environmental and project management.">
+<meta property="og:title" content="About | Thomas Consultants · Concept 08">
+<meta property="og:description" content="Thomas Consultants has delivered land development and infrastructure projects for 25 years. Our values, accreditations, clients and offices.">
 <meta property="og:image" content="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp">
 <meta property="og:locale" content="en_NZ">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Thomas Consultants Ltd", "description": "Land development and subdivision consultants. Quality civil engineering, resource consents and planning.", "url": "https://www.thomasconsultants.co.nz/", "image": "https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp", "telephone": "+64 9 836 1804", "areaServed": "New Zealand", "sameAs": ["https://www.facebook.com/thomasconsultantsltd", "https://www.instagram.com/thomasconsultantsltd", "https://www.linkedin.com/company/thomasconsultantsltd"], "department": [{"@type": "ProfessionalService", "name": "Thomas Consultants, Auckland Head Office", "telephone": "+64 9 836 1804", "address": {"@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ"}}, {"@type": "ProfessionalService", "name": "Thomas Consultants, Manukau", "telephone": "+64 9 869 6070", "address": {"@type": "PostalAddress", "addressLocality": "Manukau", "addressCountry": "NZ"}}, {"@type": "ProfessionalService", "name": "Thomas Consultants, Christchurch", "address": {"@type": "PostalAddress", "addressLocality": "Christchurch", "addressCountry": "NZ"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thomasconsultants.co.nz/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://www.thomasconsultants.co.nz/about"}]}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
@@ -441,212 +442,203 @@ html.pt-out .pt i{transform:scale(1.25)}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none !important;transition:none !important}
 }
+
+/* ---------- Inner pages ---------- */
+.crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.crumbs li+li::before{content:"/";margin-right:6px;opacity:.5}
+.crumbs a{text-decoration:none;padding:4px 10px;border-radius:999px;background:#fff}
+.crumbs a:hover{background:var(--sage)}
+.crumbs [aria-current]{padding:4px 0;color:var(--ink)}
+.phero{padding:clamp(24px,4vw,40px) 0 clamp(30px,5vw,60px)}
+.pbento{display:grid;gap:var(--gap);grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(200px,auto);grid-template-areas:"head head m1 m2" "head head m3 m3"}
+.ph-head{grid-area:head;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;justify-content:space-between;gap:20px;background:linear-gradient(160deg,#fff 40%,var(--mint))}
+.ph-head h1{font-size:clamp(34px,4.4vw,60px);letter-spacing:-.035em;margin:18px 0 14px}
+.ph-head .lede{color:var(--muted);font-size:17px;max-width:48ch;margin:0}
+.ph-head .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.pm1{grid-area:m1}.pm2{grid-area:m2}.pm3{grid-area:m3}
+.anim .pbento .tile{opacity:0}
+.anim .rv{opacity:0}
+.big-n{font-size:clamp(60px,6vw,88px);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--deep)}
+.mcap{position:absolute;left:22px;bottom:18px;font-size:14px;font-weight:600;color:var(--ink-2)}
+/* CSS minis */
+@keyframes flip{0%,100%{transform:scaleX(1)}50%{transform:scaleX(-1)}}
+@keyframes sweep{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes draw{0%{stroke-dashoffset:100}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:-100}}
+@keyframes pop{0%,15%{transform:scale(0)}30%,85%{transform:scale(1)}100%{transform:scale(0)}}
+@keyframes bar{0%,10%{transform:scaleX(0)}35%,85%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes ring{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@keyframes wiggle{0%,60%,100%{transform:rotate(0)}65%{transform:rotate(-14deg)}70%{transform:rotate(12deg)}75%{transform:rotate(-10deg)}80%{transform:rotate(8deg)}85%{transform:rotate(0)}}
+@keyframes tick{0%,8%{background:transparent;border-color:var(--sage)}12%,90%{background:var(--thomas);border-color:var(--thomas)}100%{background:transparent;border-color:var(--sage)}}
+.m-theo .head{transform-box:fill-box;transform-origin:50% 50%;animation:flip 3.2s ease-in-out infinite}
+.m-theo .beam{transform-origin:120px 70px;animation:sweep 3.2s ease-in-out infinite}
+.m-draw{stroke-dasharray:100;animation:draw 5s ease-in-out infinite}
+.m-pop{transform-box:fill-box;transform-origin:50% 100%;animation:pop 5s ease-in-out infinite}
+.m-bar{transform-origin:left center;animation:bar 4.5s ease-in-out infinite}
+.m-bounce{animation:bounce 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.m-ring{transform-box:fill-box;transform-origin:50% 50%;animation:ring 1.8s ease-out infinite}
+.m-wiggle{display:inline-block;animation:wiggle 2.4s ease-in-out infinite;transform-origin:50% 50%}
+.m-check li .bx{animation:tick 6s ease-in-out infinite;animation-delay:calc(var(--i) * .6s)}
+.tel-tile{display:flex;flex-direction:column;justify-content:space-between;text-decoration:none}
+.tel-tile .n{font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.02em}
+.tel-tile .ic{width:52px;height:52px;border-radius:18px;background:#fff;display:grid;place-items:center}
+/* sections */
+.sdet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.sdet{padding:clamp(24px,3vw,36px);display:grid;grid-template-columns:1fr auto;gap:20px;align-content:start}
+.sdet .ic{width:64px;height:64px;border-radius:20px;background:#fff;display:grid;place-items:center}
+.sdet .ic svg{width:34px;height:34px}
+.sdet h2{font-size:clamp(26px,2.6vw,34px);margin:6px 0 8px}
+.sdet .d{font-weight:700;margin:0 0 8px}
+.sdet p{color:var(--ink-2);font-size:15.5px}
+.sdet .chips{grid-column:1/-1}
+.sdet .chips li{display:flex;align-items:center;gap:6px;font-size:13.5px;padding:7px 12px}
+.sdet .chips li svg{width:14px;height:14px;color:var(--thomas-dk)}
+.sdet.ink p,.sdet.ink .d{color:#cfd8cc}
+.sdet .k{font-size:13px;font-weight:800;color:var(--muted)}
+.jump{display:flex;gap:8px;flex-wrap:wrap;list-style:none;margin:0 0 20px;padding:0}
+.jump a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:999px;background:#fff;box-shadow:var(--shadow);text-decoration:none;font-weight:700;font-size:14px;color:var(--ink-2)}
+.jump a:hover{background:var(--mint);color:var(--deep)}
+.faq{display:grid;gap:10px;max-width:880px}
+.faq details{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;font-weight:800;font-size:clamp(17px,1.6vw,20px);letter-spacing:-.01em;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:0 0 36px;height:36px;border-radius:12px;background:var(--mint);position:relative;transition:transform .45s var(--spring),background .3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2.5px;border-radius:2px;background:var(--deep);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--thomas)}
+.faq .ans{padding:0 22px 22px;color:var(--ink-2)}
+.faq .ans p{margin:0}
+.ctaband{display:grid;grid-template-columns:1.4fr 1fr;gap:var(--gap)}
+.ctaband .tile{padding:clamp(26px,3.4vw,44px)}
+.ctaband .main{background:var(--thomas);color:#0F1E0A;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:260px}
+.ctaband h2{font-size:clamp(32px,4vw,54px);max-width:16ch}
+.ctaband p{margin:0;font-weight:500;max-width:46ch}
+.ctaband .acts{display:flex;gap:10px;flex-wrap:wrap}
+.ctaband .side{display:flex;flex-direction:column;justify-content:space-between;gap:14px}
+.ctaband .side a.n{font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:-.02em;text-decoration:none}
+.fcount{font-size:14px;font-weight:700;color:var(--muted);margin:12px 0 0}
+.proj.hidden{display:none}
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.values .tile{min-height:240px;display:flex;flex-direction:column}
+.values .tile .ic{width:56px;height:56px;border-radius:18px;background:#fff;display:grid;place-items:center;margin-bottom:auto}
+.values h3{font-size:22px;margin:24px 0 8px}
+.values p{margin:0;color:var(--ink-2);font-size:15.5px}
+.story{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.story .s-main{grid-column:span 3;padding:clamp(26px,3.4vw,44px)}
+.story .s-main p{font-size:clamp(17px,1.5vw,20px);color:var(--ink-2)}
+.story .s-main p:first-of-type{font-size:clamp(20px,1.9vw,26px);font-weight:700;letter-spacing:-.015em;color:var(--ink)}
+.story .s-side{display:flex;flex-direction:column;justify-content:space-between}
+.offices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.offices .tile{min-height:200px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none}
+.offices b{font-size:24px;letter-spacing:-.02em}
+.offices .n{font-size:22px;font-weight:800}
+.cgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);grid-template-areas:"info info form form" "tell book form form" "soc soc form form"}
+.c-info{grid-area:info}.c-tell{grid-area:tell}.c-book{grid-area:book}.c-soc{grid-area:soc}.cgrid .c-form{grid-area:form}
+.c-info h2{font-size:clamp(26px,2.6vw,34px)}
+.c-tell h3,.c-book h3,.c-soc h3{font-size:19px;margin-bottom:10px}
+.c-tell ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
+.c-tell li{display:flex;gap:10px;align-items:flex-start}
+.c-tell li b{flex:0 0 auto}
+.c-tell li::before{content:"";flex:0 0 10px;height:10px;border-radius:4px;background:var(--thomas);margin-top:7px}
+.c-book{display:flex;flex-direction:column;gap:10px}
+.c-book p{font-size:15px;margin:0;color:var(--ink-2)}
+.c-soc .row{display:flex;flex-wrap:wrap;gap:8px}
+.c-soc .row a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:14px;background:var(--bg);text-decoration:none;font-weight:700;font-size:14px}
+.c-soc .row a:hover{background:var(--mint)}
+.pd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.pd .pmedia{grid-column:span 2;grid-row:span 2;padding:0;min-height:360px}
+.pd .pmedia > img,.pd .pmedia > div{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pd .pmedia svg{width:100%;height:100%}
+.pd .facts{grid-column:span 2}
+.pd .facts dl{margin:14px 0 0;display:grid;gap:10px}
+.pd .facts div{display:grid;grid-template-columns:100px 1fr;gap:12px;padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.7)}
+.pd .facts dt{font-weight:700;color:var(--muted);font-size:14px}
+.pd .facts dd{margin:0;font-weight:700}
+.pd .role{grid-column:span 2}
+.pd .role h2{font-size:clamp(24px,2.4vw,32px);margin-bottom:10px}
+.pd .role ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.pd .role li{padding:12px 14px;border-radius:14px;background:var(--bg);font-size:15px}
+.pd .role li b{display:block}
+.pd .role li a{color:var(--thomas-dk);font-weight:700}
+.pnav{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:var(--gap)}
+@media (max-width:1060px){
+  .pbento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"head head" "m1 m2" "m3 m3"}
+  .sdet-grid,.ctaband,.values,.offices{grid-template-columns:1fr 1fr}
+  .story .s-main{grid-column:span 4}.story .s-side{grid-column:span 2}
+  .cgrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"info info" "form form" "tell book" "soc soc"}
+  .pd .pmedia,.pd .facts,.pd .role{grid-column:span 4}
+}
+@media (max-width:620px){
+  .pbento{grid-auto-rows:minmax(170px,auto)}
+  .sdet-grid,.ctaband,.values,.offices{grid-template-columns:1fr}
+  .story .s-side{grid-column:span 4}
+  .cgrid{grid-template-areas:"info info" "form form" "tell tell" "book book" "soc soc"}
+  .pd .pmedia{min-height:260px}
+  .pd .facts div{grid-template-columns:1fr;gap:2px}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a class="brand" href="#top" aria-label="Thomas Consultants home"><span class="mk"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 14 L7 6 L10 10 L12 7 L16 14Z" fill="#fff"/></svg></span>Thomas Consultants</a>
-    <nav aria-label="Primary"><ul class="nav-links"><li><a href="#top" aria-current="page">Home</a></li><li><a href="08-bento/services.html">Services</a></li><li><a href="08-bento/projects.html">Projects</a></li><li><a href="08-bento/about.html">About</a></li><li><a href="08-bento/contact.html">Contact</a></li></ul></nav>
-    <a class="btn green desk magnetic" href="08-bento/contact.html">Book a consultation <span class="ar" aria-hidden="true">&rarr;</span></a>
+    <a class="brand" href="../08-bento.html" aria-label="Thomas Consultants home"><span class="mk"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 14 L7 6 L10 10 L12 7 L16 14Z" fill="#fff"/></svg></span>Thomas Consultants</a>
+    <nav aria-label="Primary"><ul class="nav-links"><li><a href="../08-bento.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <a class="btn green desk magnetic" href="contact.html">Book a consultation <span class="ar" aria-hidden="true">&rarr;</span></a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><span></span></button>
   </div>
 </header>
 <nav class="sheet" id="sheet" aria-hidden="true" aria-label="Mobile">
-  <a href="#top" aria-current="page">Home</a><a href="08-bento/services.html">Services</a><a href="08-bento/projects.html">Projects</a><a href="08-bento/about.html">About</a><a href="08-bento/contact.html">Contact</a>
+  <a href="../08-bento.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="about.html" aria-current="page">About</a><a href="contact.html">Contact</a>
   <a class="tel" href="tel:+6498696070"><small>Manukau</small>09 869 6070</a>
   <a class="tel" href="tel:+6498361804" style="grid-column:span 2"><small>Auckland Head Office</small>09 836 1804</a>
-  <a class="wide" href="08-bento/contact.html#book">Book a free consultation</a>
+  <a class="wide" href="contact.html#book">Book a free consultation</a>
 </nav>
 <div class="pt" aria-hidden="true"><i style="--d:0"></i><i style="--d:45"></i><i style="--d:90"></i><i style="--d:135"></i><i style="--d:180"></i><i style="--d:225"></i><i style="--d:45"></i><i style="--d:90"></i><i style="--d:135"></i><i style="--d:180"></i><i style="--d:225"></i><i style="--d:270"></i><i style="--d:90"></i><i style="--d:135"></i><i style="--d:180"></i><i style="--d:225"></i><i style="--d:270"></i><i style="--d:315"></i><i style="--d:135"></i><i style="--d:180"></i><i style="--d:225"></i><i style="--d:270"></i><i style="--d:315"></i><i style="--d:360"></i></div>
 
 <main id="main">
-<!-- HERO BENTO -->
-<section class="hero" id="top" aria-labelledby="h1">
+<section class="phero" id="top" aria-labelledby="pageTitle">
   <div class="wrap">
-    <div class="bento" id="bento">
-      <div class="tile t-head" data-from="left">
+    <div class="pbento" id="pbento">
+      <div class="tile ph-head" data-from="left">
         <div>
-          <span class="pill"><i></i>Land Development &amp; Subdivision Consultants</span>
-          <h1 id="h1">Your Trusted Partner for End-to-End <span class="hl">Land Development</span> Support</h1>
-          <p class="sub">Creating Better Spaces Together</p>
-          <p class="body">As experienced land development specialists, we work closely with our clients to understand their vision and help them create smarter, more sustainable spaces. Engineers, planners, surveyors, landscape architects, ecologists and contamination experts support you from site assessments to final delivery.</p>
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../08-bento.html">Home</a></li><li><span aria-current="page">About</span></li></ol></nav>
+          <h1 id="pageTitle">Twenty-five years of better spaces.</h1>
+          <p class="lede">We are land development specialists. We help our clients create smarter, more sustainable spaces, and we stay with them for the whole journey.</p>
         </div>
-        <div class="ctas">
-          <a href="#contact" class="btn magnetic">Book Your Free Development Consultation <span class="ar" aria-hidden="true">&rarr;</span></a>
-          <a href="#contact" class="btn soft magnetic">Complimentary Planner Meeting</a>
-        </div>
+        <div class="ctas"><a href="contact.html" class="btn magnetic">Book a free consultation <span class="ar" aria-hidden="true">&rarr;</span></a><a href="tel:+6498361804" class="btn soft magnetic">Call 09 836 1804</a></div>
       </div>
-
-      <div class="tile t-photo" data-from="right">
-        <img class="ph" src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Thomas Consultants team on a development site" width="1600" height="900" fetchpriority="high" decoding="async">
-        <div class="ov">
-          <span class="glass">Auckland · Manukau · Christchurch<small>Three offices, one team</small></span>
-          <span class="glass" style="background:var(--thomas);color:#0F1E0A">25 years<small style="color:#21400f">of land development</small></span>
-        </div>
-      </div>
-
-      <div class="tile t-theo sky" data-from="top">
-        <div class="lbl">Land Surveying <em>Live</em></div>
-        <div class="mini">
-          <svg viewBox="0 0 240 150" aria-hidden="true">
-            <g class="beam" id="beam"><path d="M120 70 L240 46 L240 94Z" fill="#2F6B8F" opacity=".12"/><line x1="120" y1="70" x2="240" y2="70" stroke="#2F6B8F" stroke-width="1.5" stroke-dasharray="4 5"/></g>
-            <g stroke="#18221A" stroke-width="4" stroke-linecap="round"><line x1="120" y1="86" x2="92" y2="146"/><line x1="120" y1="86" x2="148" y2="146"/><line x1="120" y1="86" x2="121" y2="148"/></g>
-            <rect x="104" y="80" width="32" height="8" rx="3" fill="#18221A"/>
-            <g class="theo-head" id="theoHead">
-              <rect x="106" y="50" width="28" height="30" rx="6" fill="#F4C542"/>
-              <rect x="111" y="56" width="18" height="10" rx="2" fill="#18221A"/>
-              <rect x="98" y="62" width="44" height="10" rx="5" fill="#18221A"/>
-              <circle cx="142" cy="67" r="5" fill="#2F6B8F"/>
-            </g>
-          </svg>
-        </div>
-        <span class="readout" id="bearing">127&deg; 14&prime;</span>
-      </div>
-
-      <div class="tile t-count mint" data-from="top">
-        <div class="lbl">Experience</div>
-        <svg class="ticks" id="ticks" viewBox="0 0 150 150" aria-hidden="true"></svg>
-        <div class="mini" style="place-items:center start;inset:40px 22px 40px 22px">
-          <div class="odo" aria-label="25 years"><span class="dg"><span id="d1">2</span></span><span class="dg"><span id="d2">5</span></span><span class="plus">+</span></div>
-        </div>
-        <span class="cap">years of land development</span>
-      </div>
-
-      <div class="tile t-pipe" data-from="left">
-        <div class="lbl">Engineering · Three waters <em>Stormwater</em></div>
-        <div class="mini">
-          <svg viewBox="0 0 520 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <rect x="0" y="30" width="520" height="120" rx="14" fill="#F6F5F0"/>
-            <path d="M0 30 H520" stroke="#C9D7BE" stroke-width="3"/>
-            <g fill="#E8E2D2"><circle cx="40" cy="70" r="3"/><circle cx="140" cy="120" r="3"/><circle cx="300" cy="60" r="2.5"/><circle cx="430" cy="130" r="3"/><circle cx="220" cy="100" r="2"/></g>
-            <g fill="#fff" stroke="#18221A" stroke-width="3"><rect x="58" y="14" width="24" height="56" rx="4"/><rect x="238" y="14" width="24" height="78" rx="4"/><rect x="418" y="14" width="24" height="100" rx="4"/></g>
-            <path class="pipe-run" id="pipeRun" d="M70 70 L250 92 L430 114 L510 124"/>
-            <path class="pipe-flow" id="pipeFlow" d="M70 70 L250 92 L430 114 L510 124"/>
-            <g id="rain" fill="#2F6B8F"><path d="M30 0 q4 8 0 10 q-4 -2 0 -10Z"/><path d="M180 4 q4 8 0 10 q-4 -2 0 -10Z"/><path d="M350 0 q4 8 0 10 q-4 -2 0 -10Z"/><path d="M480 6 q4 8 0 10 q-4 -2 0 -10Z"/></g>
-            <text x="70" y="140" font-size="12" font-weight="700" fill="#6B7769" font-family="Plus Jakarta Sans, sans-serif">MH1</text>
-            <text x="250" y="140" font-size="12" font-weight="700" fill="#6B7769" font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle">MH2 · 1:80</text>
-          </svg>
-        </div>
-      </div>
-
-      <div class="tile t-tree peach" data-from="bottom">
-        <div class="lbl">Landscape <em>Planting</em></div>
-        <div class="mini" style="inset:44px 8px 0 8px">
-          <svg viewBox="0 0 200 260" aria-hidden="true" id="treeSvg">
-            <ellipse cx="100" cy="246" rx="70" ry="10" fill="#E9CDB3"/>
-            <path id="trunk" d="M100 246 C100 210 98 180 100 140 M100 190 C90 176 80 170 70 160 M100 170 C112 158 122 152 132 140" stroke="#7A4E2C" stroke-width="8" stroke-linecap="round" fill="none"/>
-            <g id="canopy">
-              <circle cx="100" cy="112" r="44" fill="#6DAB3C"/>
-              <circle cx="66" cy="138" r="30" fill="#5F9434"/>
-              <circle cx="136" cy="132" r="32" fill="#7DBB4B"/>
-              <circle cx="104" cy="80" r="28" fill="#8BC45A"/>
-            </g>
-            <g id="leaves" fill="#2D531C"><circle cx="84" cy="100" r="3"/><circle cx="118" cy="118" r="3"/><circle cx="96" cy="130" r="2.5"/><circle cx="130" cy="96" r="2.5"/><circle cx="70" cy="132" r="2.5"/></g>
-          </svg>
-        </div>
-      </div>
-
-      <div class="tile t-check lilac" data-from="right">
-        <div class="lbl">RMA Planning <em>Consent</em></div>
-        <ul class="checks" id="checks">
-          <li class="done"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>Site assessment</li>
-          <li class="done"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>Zoning check</li>
-          <li class="done"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>Feasibility report</li>
-          <li class="done"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>Application lodged</li>
-          <li class="done"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>Consent granted</li>
-        </ul>
-        <span class="stamp" id="stamp">Approved</span>
-      </div>
-
-      <div class="tile t-pm butter" data-from="bottom">
-        <div class="lbl">Project Management</div>
-        <div class="gantt" id="gantt" aria-hidden="true" style="--c:var(--butter-ink)"><i class="bar" style="background:var(--butter-ink)"></i><i class="bar" style="background:var(--butter-ink)"></i><i class="bar" style="background:var(--butter-ink)"></i><i class="bar" style="background:var(--butter-ink)"></i></div>
-      </div>
-
-      <div class="tile t-env mint" data-from="bottom">
-        <div class="lbl">Environmental</div>
-        <div class="mini">
-          <svg viewBox="0 0 160 120" aria-hidden="true">
-            <g id="ripples" fill="none" stroke="#5F9434" stroke-width="2"><ellipse cx="80" cy="96" rx="20" ry="5"/><ellipse cx="80" cy="96" rx="20" ry="5"/><ellipse cx="80" cy="96" rx="20" ry="5"/></g>
-            <path id="drop" d="M80 30 C70 46 66 54 66 62 a14 14 0 0 0 28 0 C94 54 90 46 80 30Z" fill="#2F6B8F"/>
-            <path d="M40 60 C40 40 56 30 70 34 C70 50 58 62 40 60Z" fill="#6DAB3C" id="leafL"/>
-            <path d="M122 54 C126 36 112 24 98 26 C96 42 106 54 122 54Z" fill="#8BC45A" id="leafR"/>
-          </svg>
-        </div>
-      </div>
+      <div class="tile pm1 mint" data-from="top"><div class="lbl">Experience</div><div class="mini" style="place-items:center start;inset:40px 22px 40px 22px"><span class="big-n"><span class="count" data-to="25">25</span><span style="color:var(--thomas);font-size:.5em">+</span></span></div><span class="mcap">years of land development</span></div><div class="tile pm2 peach" data-from="right"><div class="lbl">Sustainability</div><div class="mini" style="inset:44px 8px 0 8px"><svg viewBox="0 0 200 260" aria-hidden="true">
+          <ellipse cx="100" cy="246" rx="70" ry="10" fill="#E9CDB3"/>
+          <path class="m-draw" pathLength="100" d="M100 246 C100 210 98 180 100 140 M100 190 C90 176 80 170 70 160 M100 170 C112 158 122 152 132 140" stroke="#7A4E2C" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <circle class="m-pop" style="animation-delay:.6s" cx="100" cy="112" r="44" fill="#6DAB3C"/><circle class="m-pop" style="animation-delay:.75s" cx="66" cy="138" r="30" fill="#5F9434"/>
+          <circle class="m-pop" style="animation-delay:.9s" cx="136" cy="132" r="32" fill="#7DBB4B"/><circle class="m-pop" style="animation-delay:1.05s" cx="104" cy="80" r="28" fill="#8BC45A"/>
+        </svg></div></div><div class="tile pm3 lilac" data-from="bottom"><div class="lbl">Accredited <em>Quality and safety</em></div><ul class="checks m-check"><li style="--i:0"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>ISO 45001</li><li style="--i:1"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>IANZ</li><li style="--i:2"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>Toitū Envirocare</li><li style="--i:3"><span class="bx"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg></span>SiteSafe</li></ul></div>
     </div>
   </div>
 </section>
-
-<!-- STRIP -->
-<div class="strip" aria-label="Clients">
-  <div class="row"><span>Kāinga Ora</span><span>Auckland Transport</span><span>Watercare</span><span>Panuku</span><span>NZ Transport Agency</span><span>Ministry of Education</span><span>Waikato District Council</span><span>Rotorua Lakes Council</span><span>Hobsonville Point</span><span>Homes of Choice</span></div>
-  <div class="row" aria-hidden="true"><span>Kāinga Ora</span><span>Auckland Transport</span><span>Watercare</span><span>Panuku</span><span>NZ Transport Agency</span><span>Ministry of Education</span><span>Waikato District Council</span><span>Rotorua Lakes Council</span><span>Hobsonville Point</span><span>Homes of Choice</span></div>
-</div>
-
-<!-- SERVICES -->
-<section class="section" id="services" aria-labelledby="svcT">
+<section class="section" aria-labelledby="stT" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
-      <div><span class="pill"><i></i>Services</span><h2 id="svcT">Six specialist teams, one friendly front door</h2></div>
-      <div><p style="margin-bottom:14px">Quality civil engineering, resource consents and planning, all under one roof so nothing gets lost between consultants.</p><a class="more" href="08-bento/services.html">All services &rarr;</a></div>
-    </div>
-    <div class="svc-grid reveal-grid">
-      <article class="tile svc big sky">
-        <span class="num">01</span>
-        <div class="ic"><svg viewBox="0 0 30 30" fill="none" stroke="#2F6B8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="3" width="10" height="8" rx="2"/><path d="M15 11v3 M15 14 L8 27 M15 14 L22 27 M15 14 V28"/></svg></div>
-        <h3>Land Surveying</h3>
-        <p>We provide accurate and reliable data for your development projects.</p>
-        <ul class="chips"><li>Boundary redefinition</li><li>Cross-lease to freehold</li><li>Topographical</li><li>Set out</li><li>Drone inspections</li><li>3D laser scanning</li></ul>
-      </article>
-      <article class="tile svc big lilac">
-        <span class="num">02</span>
-        <div class="ic"><svg viewBox="0 0 30 30" fill="none" stroke="#6151A8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h11l5 5v19H7z"/><path d="M11 15l3 3 5-6 M11 23h8"/></svg></div>
-        <h3>RMA Planning</h3>
-        <p>Advice on zoning, land use and resource consent applications.</p>
-        <ul class="chips"><li>Feasibility reports</li><li>Hearings evidence</li><li>Plan changes</li><li>Resource consents</li></ul>
-      </article>
-      <article class="tile svc mint">
-        <span class="num">03</span>
-        <div class="ic"><svg viewBox="0 0 30 30" fill="none" stroke="#2D531C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h24 M3 26h24"/><path d="M6 21 V10 h18 v11"/><path d="M10 10 V6 h10 v4"/></svg></div>
-        <h3>Engineering</h3>
-        <p>Infrastructure that is robust and compliant.</p>
-        <ul class="chips"><li>Roads</li><li>Stormwater</li><li>Three waters</li><li>Earthworks</li><li>Flood engineering</li><li>Construction monitoring</li></ul>
-      </article>
-      <article class="tile svc peach">
-        <span class="num">04</span>
-        <div class="ic"><svg viewBox="0 0 30 30" fill="none" stroke="#B5622A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="11" r="7"/><path d="M15 18 V27 M10 27h10"/></svg></div>
-        <h3>Landscape Architecture</h3>
-        <p>Every aspect of the outdoor design process.</p>
-        <ul class="chips"><li>Open space design</li><li>Landscape &amp; visual assessments</li><li>Planting plans</li></ul>
-      </article>
-      <article class="tile svc butter">
-        <span class="num">05</span>
-        <div class="ic"><svg viewBox="0 0 30 30" fill="none" stroke="#8A6A10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3 C10 10 7 15 7 19 a8 8 0 0 0 16 0 C23 15 20 10 15 3Z"/></svg></div>
-        <h3>Environmental Services</h3>
-        <p>Environmental Management Plans, ecology, soil &amp; water contamination testing, asbestos.</p>
-        <ul class="chips"><li>EMPs</li><li>Ecology</li><li>Contamination</li><li>Asbestos</li></ul>
-      </article>
-      <article class="tile svc ink" style="grid-column:span 6">
-        <span class="num" style="color:#9fb19b">06</span>
-        <div class="ic" style="background:var(--thomas)"><svg viewBox="0 0 30 30" fill="none" stroke="#0F1E0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 27 V4 M6 5 h17 l-3 5 l3 5 h-17"/></svg></div>
-        <h3>Project Management</h3>
-        <p style="color:#cfd8cc">From concept to completion, we oversee the entire process, coordinating every discipline so you deal with one team and one programme.</p>
-        <ul class="chips"><li style="background:rgba(255,255,255,.1)">Programme</li><li style="background:rgba(255,255,255,.1)">Coordination</li><li style="background:rgba(255,255,255,.1)">Budget control</li><li style="background:rgba(255,255,255,.1)">Delivery</li></ul>
-      </article>
+    <div class="sec-head"><div><span class="pill"><i></i>Our story</span><h2 id="stT">Built over 25 years</h2></div></div>
+    <div class="story">
+      <div class="tile s-main rv"><p>Thomas Consultants has delivered land development and infrastructure projects for 25 years. We are a multi-disciplinary team of engineers, planners, surveyors, landscape architects, ecologists and contamination experts.</p><p>We work closely with our clients to understand their vision, then help them create smarter, more sustainable spaces. Councils, government agencies, developers and private landowners trust us to guide them from site assessment to final delivery.</p>
+        <ul class="chips" aria-label="Our team"><li>Engineers</li><li>Planners</li><li>Surveyors</li><li>Landscape architects</li><li>Ecologists</li><li>Contamination experts</li></ul></div>
+      <div class="tile s-side ink rv"><div class="lbl">Our promise</div><p style="font-size:22px;font-weight:800;letter-spacing:-.02em;margin:0">Creating Better Spaces Together.</p></div>
     </div>
   </div>
 </section>
-
+<section class="section" aria-labelledby="vT2" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="pill"><i></i>Values</span><h2 id="vT2">What guides our work</h2></div><p>Three commitments we bring to every site.</p></div>
+    <div class="values"><div class="tile mint rv"><span class="ic"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#2D531C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 27 V14"/><path d="M15 16 C8 16 5 11 6 5 C12 5 15 9 15 16Z"/><path d="M15 19 C21 19 25 15 24 9 C18 9 15 13 15 19Z"/></svg></span><h3>Sustainability</h3><p>We are committed to environmentally responsible and sustainable development, on every site we touch.</p></div><div class="tile sky rv"><span class="ic"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#2D531C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 h22 v14 h-12 l-6 5 v-5 h-4z"/></svg></span><h3>Transparent communication</h3><p>You always know where your project stands. We explain things plainly and tell you early when something changes.</p></div><div class="tile peach rv"><span class="ic"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#2D531C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="16" r="10"/><path d="M15 10 v6 l4 3"/></svg></span><h3>On time, on budget</h3><p>Well-run project management means timely results that are on budget and aligned with your vision.</p></div></div>
+  </div>
+</section>
 <!-- WHY -->
 <section class="section" id="why" aria-labelledby="whyT" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div><span class="pill"><i></i>Why Thomas</span><h2 id="whyT">A quarter century of getting it right</h2></div>
-      <div><p style="margin-bottom:14px">Transparent communication and well-run project management: timely results that are on budget and aligned with your vision.</p><a class="more" href="08-bento/about.html">About us &rarr;</a></div>
+      <div><span class="pill"><i></i>Why choose us</span><h2 id="whyT">A quarter century of getting it right</h2></div>
+      <p>Transparent communication and well-run project management: timely results that are on budget and aligned with your vision.</p>
     </div>
     <div class="why-grid reveal-grid">
       <div class="tile ink w-big">
@@ -674,112 +666,34 @@ html.pt-out .pt i{transform:scale(1.25)}
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section proc" id="process" aria-labelledby="procT" style="padding-top:0">
-  <div class="wrap proc-pin" id="procPin">
-    <div class="proc-top">
-      <div><span class="pill"><i></i>How it works</span><h2 id="procT">Four simple steps</h2></div>
-      <div class="prog" aria-hidden="true"><div class="prog-bar"><i id="progBar"></i></div><div class="prog-l"><span>Understand</span><span>Design</span><span>Deliver</span><span>Hand over</span></div></div>
-    </div>
-    <div class="proc-track" id="procTrack">
-      <article class="tile step sky">
-        <svg class="art" viewBox="0 0 170 170" aria-hidden="true"><g fill="none" stroke="#2F6B8F" stroke-opacity=".25" stroke-width="2"><circle cx="100" cy="70" r="20"/><circle cx="100" cy="70" r="40"/><circle cx="100" cy="70" r="60"/></g><circle cx="100" cy="70" r="6" fill="#2F6B8F"/></svg>
-        <span class="no">1</span><h3>Understand the site</h3><p>We walk the land, survey it and test it, so you know what it can do before you commit.</p>
-      </article>
-      <article class="tile step lilac">
-        <svg class="art" viewBox="0 0 170 170" aria-hidden="true"><rect x="60" y="30" width="80" height="100" rx="12" fill="#6151A8" opacity=".15"/><path d="M78 70 l10 10 l22 -24" stroke="#6151A8" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/></svg>
-        <span class="no">2</span><h3>Design &amp; consent</h3><p>We design the engineering and landscape, then prepare and lodge your resource consent.</p>
-      </article>
-      <article class="tile step mint">
-        <svg class="art" viewBox="0 0 170 170" aria-hidden="true"><g stroke="#2D531C" stroke-opacity=".25" stroke-width="2"><path d="M40 40 h110 M40 70 h110 M40 100 h110 M60 20 v110 M90 20 v110 M120 20 v110"/></g><path d="M50 110 C80 100 90 50 140 40" stroke="#5F9434" stroke-width="5" fill="none" stroke-linecap="round" opacity=".6"/></svg>
-        <span class="no">3</span><h3>Deliver on site</h3><p>We monitor construction and manage the programme so the work matches the approved plans.</p>
-      </article>
-      <article class="tile step peach">
-        <svg class="art" viewBox="0 0 170 170" aria-hidden="true"><path d="M70 130 V40 M70 42 h56 l-10 14 l10 14 h-56" stroke="#B5622A" stroke-width="5" fill="#B5622A" fill-opacity=".15" stroke-linejoin="round" opacity=".55"/></svg>
-        <span class="no">4</span><h3>Complete &amp; hand over</h3><p>We sign off the works, help with titles and hand over a finished, compliant project.</p>
-      </article>
-    </div>
-  </div>
-</section>
 
-<!-- QUIZ -->
-<section class="section" id="quiz" aria-labelledby="quizT" style="padding-top:0">
-  <div class="wrap quiz">
-    <div class="tile q-intro">
-      <div>
-        <span class="pill"><i></i>30-second quiz</span>
-        <h2 id="quizT">Which service do I need?</h2>
-        <p>Answer three quick questions and we'll point you to the right team. No email required.</p>
-      </div>
-      <div class="q-dots" id="qDots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
-    </div>
-    <div class="tile q-card">
-      <div class="q-stage" id="qStage" aria-live="polite">
-        <div class="q-step active" data-step="0">
-          <span class="k">Question 1 of 3</span>
-          <h3>Where is your project at?</h3>
-          <div class="opts">
-            <button class="opt" type="button" data-v="idea"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#5F9434" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="8" r="5"/><path d="M8 16h4"/></svg></span>Just an idea</button>
-            <button class="opt" type="button" data-v="buying"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#5F9434" stroke-width="2" stroke-linecap="round"><path d="M3 9 L10 3 L17 9 V17 H3Z"/></svg></span>Buying or own land</button>
-            <button class="opt" type="button" data-v="ready"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#5F9434" stroke-width="2" stroke-linecap="round"><path d="M4 17 V5 h12 v12"/><path d="M4 10 h12"/></svg></span>Ready to design</button>
-            <button class="opt" type="button" data-v="build"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#5F9434" stroke-width="2" stroke-linecap="round"><path d="M3 17 h14 M6 17 V9 l4 -5 l4 5 v8"/></svg></span>Under construction</button>
-          </div>
-        </div>
-        <div class="q-step" data-step="1">
-          <span class="k">Question 2 of 3</span>
-          <h3>What's top of mind right now?</h3>
-          <div class="opts">
-            <button class="opt" type="button" data-v="survey"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#2F6B8F" stroke-width="2" stroke-linecap="round"><path d="M3 15 L10 4 L17 15Z"/></svg></span>Boundaries, levels or titles</button>
-            <button class="opt" type="button" data-v="planning"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#6151A8" stroke-width="2" stroke-linecap="round"><path d="M5 3 h8 l3 3 v11 H5Z M8 11 l2 2 l3 -4"/></svg></span>Council approval or zoning</button>
-            <button class="opt" type="button" data-v="engineering"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#2D531C" stroke-width="2" stroke-linecap="round"><path d="M2 12 h16 M5 12 V7 h10 v5"/></svg></span>Roads, drainage or water</button>
-            <button class="opt" type="button" data-v="landscape"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#B5622A" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="8" r="5"/><path d="M10 13 v5"/></svg></span>Outdoor spaces or planting</button>
-            <button class="opt" type="button" data-v="environmental"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#8A6A10" stroke-width="2" stroke-linecap="round"><path d="M10 2 C7 7 5 10 5 12 a5 5 0 0 0 10 0 C15 10 13 7 10 2Z"/></svg></span>Contamination or ecology</button>
-            <button class="opt" type="button" data-v="pm"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#18221A" stroke-width="2" stroke-linecap="round"><path d="M5 18 V3 M5 4 h10 l-2 3 l2 3 H5"/></svg></span>Keeping it all on track</button>
-          </div>
-        </div>
-        <div class="q-step" data-step="2">
-          <span class="k">Question 3 of 3</span>
-          <h3>How big is the project?</h3>
-          <div class="opts">
-            <button class="opt" type="button" data-v="single"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#5F9434" stroke-width="2"><rect x="6" y="6" width="8" height="8" rx="2"/></svg></span>A single site or home</button>
-            <button class="opt" type="button" data-v="small"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#5F9434" stroke-width="2"><rect x="3" y="6" width="6" height="8" rx="2"/><rect x="11" y="6" width="6" height="8" rx="2"/></svg></span>A small subdivision</button>
-            <button class="opt" type="button" data-v="large"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#5F9434" stroke-width="2"><rect x="2" y="3" width="7" height="6" rx="2"/><rect x="11" y="3" width="7" height="6" rx="2"/><rect x="2" y="11" width="7" height="6" rx="2"/><rect x="11" y="11" width="7" height="6" rx="2"/></svg></span>Large residential or commercial</button>
-            <button class="opt" type="button" data-v="public"><span class="em"><svg viewBox="0 0 20 20" fill="none" stroke="#5F9434" stroke-width="2"><path d="M3 8 L10 3 L17 8 M5 8 v8 M10 8 v8 M15 8 v8 M3 17 h14"/></svg></span>Public space or infrastructure</button>
-          </div>
-        </div>
-        <div class="q-result" id="qResult">
-          <span class="k" style="font-size:13px;font-weight:700;color:var(--thomas-dk)">We recommend</span>
-          <div class="badge-ic" id="rIcon"></div>
-          <h3 id="rTitle">Land Surveying</h3>
-          <p id="rText"></p>
-          <p class="also" id="rAlso"></p>
-          <a href="#contact" class="btn green magnetic" id="rCta">Book a free consultation <span class="ar" aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-      <div class="q-nav">
-        <button class="linkbtn" type="button" id="qBack" disabled>&larr; Back</button>
-        <button class="linkbtn" type="button" id="qRestart">Start again</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section" id="projects" aria-labelledby="projT" style="padding-top:0">
+<section class="section" aria-labelledby="ssT" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
-      <div><span class="pill"><i></i>Selected projects</span><h2 id="projT">Spaces we've helped create</h2></div>
-      <div class="filters" role="group" aria-label="Filter projects">
-        <button type="button" aria-pressed="true" data-f="all">All</button>
-        <button type="button" aria-pressed="false" data-f="eng">Engineering</button>
-        <button type="button" aria-pressed="false" data-f="land">Landscape</button>
-        <button type="button" aria-pressed="false" data-f="plan">Planning</button>
-      </div>
+    <div class="sec-head"><div><span class="pill"><i></i>Community &amp; sustainability</span><h2 id="ssT">Leaving the land better than we found it</h2></div></div>
+    <div class="values">
+      <div class="tile mint rv"><h3 style="margin-top:0">Responsible development</h3><p>We are committed to environmentally responsible and sustainable development on every project.</p></div>
+      <div class="tile butter rv"><h3 style="margin-top:0">Care for the environment</h3><p>Environmental Management Plans, ecology and contamination testing protect people, soil and waterways.</p></div>
+      <div class="tile sky rv"><h3 style="margin-top:0">Better public spaces</h3><p>From Fearon Park to Churchill Park, we help create open spaces that communities enjoy.</p></div>
     </div>
-    <div class="proj-grid" id="projGrid"><a class="tile proj" href="08-bento/project.html?p=fearon-park" data-f="plan env"><div class="media"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Open Space Development, Fearon Park project photo" width="1200" height="900" loading="lazy" decoding="async"><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>Open Space Development, Fearon Park</h3><ul class="chips"><li>Project Management</li><li>Contaminated Sites</li></ul></div></a><a class="tile proj" href="08-bento/project.html?p=mcmillan-lockwood" data-f="eng res"><div class="media"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="McMillan and Lockwood project photo" width="1200" height="900" loading="lazy" decoding="async"><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>McMillan and Lockwood</h3><ul class="chips"><li>Construction Monitoring</li><li>Engineering</li><li>Residential</li></ul></div></a><a class="tile proj" href="08-bento/project.html?p=churchill-park-lookout" data-f="land"><div class="media"><div><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#FBE9DA"/><g stroke="#B5622A" stroke-opacity=".12" stroke-width="1"><path d="M20 0 V300"/><path d="M60 0 V300"/><path d="M100 0 V300"/><path d="M140 0 V300"/><path d="M180 0 V300"/><path d="M220 0 V300"/><path d="M260 0 V300"/><path d="M300 0 V300"/><path d="M340 0 V300"/><path d="M380 0 V300"/><path d="M0 20 H400"/><path d="M0 60 H400"/><path d="M0 100 H400"/><path d="M0 140 H400"/><path d="M0 180 H400"/><path d="M0 220 H400"/><path d="M0 260 H400"/></g><ellipse cx="200" cy="160" rx="165.0" ry="110" fill="none" stroke="#B5622A" stroke-opacity="0.25" stroke-width="2"/><ellipse cx="200" cy="160" rx="120.0" ry="80" fill="none" stroke="#B5622A" stroke-opacity="0.45" stroke-width="2"/><ellipse cx="200" cy="160" rx="75.0" ry="50" fill="none" stroke="#B5622A" stroke-opacity="0.65" stroke-width="2"/><path d="M200 160 L330 60" stroke="#B5622A" stroke-width="3" stroke-dasharray="6 8"/><circle cx="200" cy="160" r="12" fill="#B5622A"/><rect x="300" y="40" width="60" height="34" rx="10" fill="#fff"/></svg></div><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>Churchill Park Lookout</h3><ul class="chips"><li>Landscape Architecture</li><li>Open Space Design</li></ul></div></a><a class="tile proj" href="08-bento/project.html?p=observation-green" data-f="land"><div class="media"><div><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#E8F3DE"/><g stroke="#5F9434" stroke-opacity=".12" stroke-width="1"><path d="M20 0 V300"/><path d="M60 0 V300"/><path d="M100 0 V300"/><path d="M140 0 V300"/><path d="M180 0 V300"/><path d="M220 0 V300"/><path d="M260 0 V300"/><path d="M300 0 V300"/><path d="M340 0 V300"/><path d="M380 0 V300"/><path d="M0 20 H400"/><path d="M0 60 H400"/><path d="M0 100 H400"/><path d="M0 140 H400"/><path d="M0 180 H400"/><path d="M0 220 H400"/><path d="M0 260 H400"/></g><path d="M30 230 C120 180 260 260 370 200" stroke="#fff" stroke-width="18" fill="none" stroke-linecap="round"/><circle cx="80" cy="110" r="34" fill="#5F9434" fill-opacity=".55"/><circle cx="80" cy="110" r="11.9" fill="#fff" fill-opacity=".4"/><circle cx="150" cy="90" r="26" fill="#5F9434" fill-opacity=".55"/><circle cx="150" cy="90" r="9.1" fill="#fff" fill-opacity=".4"/><circle cx="210" cy="130" r="40" fill="#5F9434" fill-opacity=".55"/><circle cx="210" cy="130" r="14.0" fill="#fff" fill-opacity=".4"/><circle cx="290" cy="100" r="30" fill="#5F9434" fill-opacity=".55"/><circle cx="290" cy="100" r="10.5" fill="#fff" fill-opacity=".4"/><circle cx="340" cy="150" r="22" fill="#5F9434" fill-opacity=".55"/><circle cx="340" cy="150" r="7.7" fill="#fff" fill-opacity=".4"/><circle cx="120" cy="180" r="20" fill="#5F9434" fill-opacity=".55"/><circle cx="120" cy="180" r="7.0" fill="#fff" fill-opacity=".4"/><circle cx="260" cy="190" r="24" fill="#5F9434" fill-opacity=".55"/><circle cx="260" cy="190" r="8.4" fill="#fff" fill-opacity=".4"/></svg></div><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>Observation Green</h3><ul class="chips"><li>Landscape &amp; Visual Assessments</li><li>Planting Plan</li></ul></div></a><a class="tile proj" href="08-bento/project.html?p=cracroft-great-south" data-f="eng survey res"><div class="media"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="2 Cracroft Road / 618-620 Great South Road project photo" width="1200" height="900" loading="lazy" decoding="async"><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>2 Cracroft Road / 618-620 Great South Road</h3><ul class="chips"><li>Engineering</li><li>Surveying</li></ul></div></a><a class="tile proj" href="08-bento/project.html?p=paknsave-henderson" data-f="eng com"><div class="media"><div><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#E2EEF6"/><g stroke="#2F6B8F" stroke-opacity=".12" stroke-width="1"><path d="M20 0 V300"/><path d="M60 0 V300"/><path d="M100 0 V300"/><path d="M140 0 V300"/><path d="M180 0 V300"/><path d="M220 0 V300"/><path d="M260 0 V300"/><path d="M300 0 V300"/><path d="M340 0 V300"/><path d="M380 0 V300"/><path d="M0 20 H400"/><path d="M0 60 H400"/><path d="M0 100 H400"/><path d="M0 140 H400"/><path d="M0 180 H400"/><path d="M0 220 H400"/><path d="M0 260 H400"/></g><path d="M40 150 H360" stroke="#fff" stroke-width="26" stroke-linecap="round"/><rect x="48" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#2F6B8F" stroke-width="2"/><rect x="48" y="172" width="54" height="70" rx="10" fill="#2F6B8F" fill-opacity="0.12" stroke="#2F6B8F" stroke-width="2"/><rect x="112" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#2F6B8F" stroke-width="2"/><rect x="112" y="172" width="54" height="70" rx="10" fill="#2F6B8F" fill-opacity="0.18" stroke="#2F6B8F" stroke-width="2"/><rect x="176" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#2F6B8F" stroke-width="2"/><rect x="176" y="172" width="54" height="70" rx="10" fill="#2F6B8F" fill-opacity="0.24" stroke="#2F6B8F" stroke-width="2"/><rect x="240" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#2F6B8F" stroke-width="2"/><rect x="240" y="172" width="54" height="70" rx="10" fill="#2F6B8F" fill-opacity="0.30" stroke="#2F6B8F" stroke-width="2"/><rect x="304" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#2F6B8F" stroke-width="2"/><rect x="304" y="172" width="54" height="70" rx="10" fill="#2F6B8F" fill-opacity="0.36" stroke="#2F6B8F" stroke-width="2"/></svg></div><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>PAK'nSAVE, Alderman Drive</h3><ul class="chips"><li>Commercial</li><li>Civil Engineering</li></ul></div></a><a class="tile proj" href="08-bento/project.html?p=scott-road" data-f="plan eng env"><div class="media"><div><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#ECE8F7"/><g stroke="#6151A8" stroke-opacity=".12" stroke-width="1"><path d="M20 0 V300"/><path d="M60 0 V300"/><path d="M100 0 V300"/><path d="M140 0 V300"/><path d="M180 0 V300"/><path d="M220 0 V300"/><path d="M260 0 V300"/><path d="M300 0 V300"/><path d="M340 0 V300"/><path d="M380 0 V300"/><path d="M0 20 H400"/><path d="M0 60 H400"/><path d="M0 100 H400"/><path d="M0 140 H400"/><path d="M0 180 H400"/><path d="M0 220 H400"/><path d="M0 260 H400"/></g><path d="M-10 220 C100 200 160 120 260 110 S380 60 420 50" stroke="#fff" stroke-width="34" fill="none"/><path d="M-10 220 C100 200 160 120 260 110 S380 60 420 50" stroke="#6151A8" stroke-width="2" stroke-dasharray="12 10" fill="none"/><circle cx="90" cy="110" r="22" fill="#6151A8" fill-opacity=".3"/><rect x="250" y="170" width="90" height="60" rx="12" fill="#6151A8" fill-opacity=".25"/></svg></div><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>Scott Road, Hobsonville</h3><ul class="chips"><li>Resource Consent</li><li>Traffic Engineering</li><li>Soil Testing</li></ul></div></a><a class="tile proj" href="08-bento/project.html?p=kokowai-apartments" data-f="land res"><div class="media"><div><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#FBF3D2"/><g stroke="#8A6A10" stroke-opacity=".12" stroke-width="1"><path d="M20 0 V300"/><path d="M60 0 V300"/><path d="M100 0 V300"/><path d="M140 0 V300"/><path d="M180 0 V300"/><path d="M220 0 V300"/><path d="M260 0 V300"/><path d="M300 0 V300"/><path d="M340 0 V300"/><path d="M380 0 V300"/><path d="M0 20 H400"/><path d="M0 60 H400"/><path d="M0 100 H400"/><path d="M0 140 H400"/><path d="M0 180 H400"/><path d="M0 220 H400"/><path d="M0 260 H400"/></g><path d="M30 230 C120 180 260 260 370 200" stroke="#fff" stroke-width="18" fill="none" stroke-linecap="round"/><circle cx="80" cy="110" r="34" fill="#8A6A10" fill-opacity=".55"/><circle cx="80" cy="110" r="11.9" fill="#fff" fill-opacity=".4"/><circle cx="150" cy="90" r="26" fill="#8A6A10" fill-opacity=".55"/><circle cx="150" cy="90" r="9.1" fill="#fff" fill-opacity=".4"/><circle cx="210" cy="130" r="40" fill="#8A6A10" fill-opacity=".55"/><circle cx="210" cy="130" r="14.0" fill="#fff" fill-opacity=".4"/><circle cx="290" cy="100" r="30" fill="#8A6A10" fill-opacity=".55"/><circle cx="290" cy="100" r="10.5" fill="#fff" fill-opacity=".4"/><circle cx="340" cy="150" r="22" fill="#8A6A10" fill-opacity=".55"/><circle cx="340" cy="150" r="7.7" fill="#fff" fill-opacity=".4"/><circle cx="120" cy="180" r="20" fill="#8A6A10" fill-opacity=".55"/><circle cx="120" cy="180" r="7.0" fill="#fff" fill-opacity=".4"/><circle cx="260" cy="190" r="24" fill="#8A6A10" fill-opacity=".55"/><circle cx="260" cy="190" r="8.4" fill="#fff" fill-opacity=".4"/></svg></div><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>GJ Gardner Kokowai Apartments</h3><ul class="chips"><li>Landscape Architecture</li></ul></div></a><a class="tile proj" href="08-bento/project.html?p=homes-of-choice" data-f="eng plan res"><div class="media"><div><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#E8F3DE"/><g stroke="#5F9434" stroke-opacity=".12" stroke-width="1"><path d="M20 0 V300"/><path d="M60 0 V300"/><path d="M100 0 V300"/><path d="M140 0 V300"/><path d="M180 0 V300"/><path d="M220 0 V300"/><path d="M260 0 V300"/><path d="M300 0 V300"/><path d="M340 0 V300"/><path d="M380 0 V300"/><path d="M0 20 H400"/><path d="M0 60 H400"/><path d="M0 100 H400"/><path d="M0 140 H400"/><path d="M0 180 H400"/><path d="M0 220 H400"/><path d="M0 260 H400"/></g><path d="M40 150 H360" stroke="#fff" stroke-width="26" stroke-linecap="round"/><rect x="48" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#5F9434" stroke-width="2"/><rect x="48" y="172" width="54" height="70" rx="10" fill="#5F9434" fill-opacity="0.12" stroke="#5F9434" stroke-width="2"/><rect x="112" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#5F9434" stroke-width="2"/><rect x="112" y="172" width="54" height="70" rx="10" fill="#5F9434" fill-opacity="0.18" stroke="#5F9434" stroke-width="2"/><rect x="176" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#5F9434" stroke-width="2"/><rect x="176" y="172" width="54" height="70" rx="10" fill="#5F9434" fill-opacity="0.24" stroke="#5F9434" stroke-width="2"/><rect x="240" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#5F9434" stroke-width="2"/><rect x="240" y="172" width="54" height="70" rx="10" fill="#5F9434" fill-opacity="0.30" stroke="#5F9434" stroke-width="2"/><rect x="304" y="60" width="54" height="70" rx="10" fill="#fff" stroke="#5F9434" stroke-width="2"/><rect x="304" y="172" width="54" height="70" rx="10" fill="#5F9434" fill-opacity="0.36" stroke="#5F9434" stroke-width="2"/></svg></div><span class="open" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#18221A" stroke-width="2.2" stroke-linecap="round"><path d="M3 8 H13 M9 4 L13 8 L9 12"/></svg></span></div><div class="info"><h3>Homes of Choice residential subdivision</h3><ul class="chips"><li>Engineering</li><li>Planning</li><li>Subdivision</li></ul></div></a></div>
-    <p style="margin-top:20px;text-align:center"><a class="more" href="08-bento/projects.html">View all projects &rarr;</a></p>
   </div>
 </section>
+<!-- CLIENTS -->
+<section class="section" aria-labelledby="trustT" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="pill"><i></i>Trusted &amp; accredited</span><h2 id="trustT">In good company</h2></div></div>
+    <div class="trust reveal-grid">
+      <div class="tile">
+        <h3>Clients</h3>
+        <div class="cloud"><span>Kāinga Ora</span><span>Auckland Transport</span><span>Watercare</span><span>Panuku</span><span>NZ Transport Agency</span><span>Ministry of Education</span><span>Waikato District Council</span><span>Rotorua Lakes Council</span><span>Hobsonville Point</span><span>Homes of Choice</span></div>
+      </div>
+      <div class="tile mint">
+        <h3>Accreditations</h3>
+        <div class="cloud"><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>ISO 45001</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>IANZ</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>Toitū Envirocare</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>Engineering NZ</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>Water NZ</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>Survey and Spatial NZ</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>NZ Planning Institute</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>NZILA</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>SiteSafe</span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>SiteWise</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- TESTIMONIALS -->
 <section class="section" id="testimonials" aria-labelledby="vT" style="padding-top:0">
@@ -805,55 +719,28 @@ html.pt-out .pt i{transform:scale(1.25)}
   </div>
 </section>
 
-<!-- CLIENTS -->
-<section class="section" aria-labelledby="trustT" style="padding-top:0">
+
+<section class="section" aria-labelledby="oT" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><div><span class="pill"><i></i>Trusted &amp; accredited</span><h2 id="trustT">In good company</h2></div></div>
-    <div class="trust reveal-grid">
-      <div class="tile">
-        <h3>Clients</h3>
-        <div class="cloud"><span>Kāinga Ora</span><span>Auckland Transport</span><span>Watercare</span><span>Panuku</span><span>NZ Transport Agency</span><span>Ministry of Education</span><span>Waikato District Council</span><span>Rotorua Lakes Council</span><span>Hobsonville Point</span><span>Homes of Choice</span></div>
-      </div>
-      <div class="tile mint">
-        <h3>Accreditations</h3>
-        <div class="cloud" id="accr"></div>
-      </div>
+    <div class="sec-head"><div><span class="pill"><i></i>Offices</span><h2 id="oT">Three bases, one team</h2></div></div>
+    <div class="offices">
+      <a class="tile sky rv" href="tel:+6498361804"><div class="lbl">Head Office</div><b>Auckland</b><span class="n">09 836 1804</span></a>
+      <a class="tile lilac rv" href="tel:+6498696070"><div class="lbl">Office</div><b>Manukau</b><span class="n">09 869 6070</span></a>
+      <div class="tile peach rv"><div class="lbl">Satellite office</div><b>Christchurch</b><span class="n" style="font-size:16px;color:var(--ink-2)">Serving Canterbury</span></div>
     </div>
   </div>
 </section>
-
-<!-- CONTACT -->
-<section class="section" id="contact" aria-labelledby="cT" style="padding-top:0">
-  <div class="wrap contact-grid reveal-grid">
-    <div class="tile c-cta">
-      <h2 id="cT">Let's chat about your land</h2>
-      <p>Book Your Free Development Consultation or a Complimentary Planner Meeting. We will be in touch soon.</p><dl class="details" style="color:#0F1E0A">
-          <dt>Auckland</dt><dd>Head Office · <a href="tel:+6498361804">09 836 1804</a></dd>
-          <dt>Manukau</dt><dd><a href="tel:+6498696070">09 869 6070</a></dd>
-          <dt>Christchurch</dt><dd>Satellite office</dd>
-          <dt>Clients</dt><dd><a href="https://portal.thomasconsultants.co.nz">Client portal</a></dd>
-        </dl>
+<section class="section" aria-labelledby="ctaT" style="padding-top:0">
+  <div class="wrap ctaband">
+    <div class="tile main rv">
+      <h2 id="ctaT">Let's talk about your site.</h2>
+      <p>Book Your Free Development Consultation or a Complimentary Planner Meeting. Tell us about your land and we will help you plan the next step.</p>
+      <div class="acts"><a href="contact.html" class="btn magnetic">Book a free consultation <span class="ar" aria-hidden="true">&rarr;</span></a><a href="contact.html#book" class="btn soft magnetic">Complimentary planner meeting</a></div>
     </div>
-    <a class="tile c-tel c-akl sky" href="tel:+6498361804"><small>Auckland · Head Office</small><span class="n">09 836 1804</span></a>
-    <a class="tile c-tel c-mnk lilac" href="tel:+6498696070"><small>Manukau</small><span class="n">09 869 6070</span></a>
-    <div class="tile c-tel c-chc peach"><small>Christchurch</small><span class="n" style="font-size:18px">Satellite office</span></div>
-    <a class="tile c-tel c-portal butter" href="https://portal.thomasconsultants.co.nz"><small>Existing clients</small><span class="n" style="font-size:18px">Client portal &rarr;</span></a>
-    <div class="tile c-form" id="cForm">
-      <form class="enq" id="enq" novalidate>
-        <h3>Send us an enquiry</h3>
-        <p class="lead">Tell us a little about your site and we will match you with the right specialist.</p>
-        <div class="frow">
-          <div class="field"><label for="enq-name">Name</label><input id="enq-name" name="name" autocomplete="name" data-req="Please tell us your name." aria-describedby="enq-name-err"><p class="err" id="enq-name-err"></p></div>
-          <div class="field"><label for="enq-phone">Phone <span class="optl">(optional)</span></label><input id="enq-phone" name="phone" type="tel" autocomplete="tel"></div>
-        </div>
-        <div class="field"><label for="enq-email">Email</label><input id="enq-email" name="email" type="email" autocomplete="email" data-req="Please enter your email address." aria-describedby="enq-email-err"><p class="err" id="enq-email-err"></p></div>
-        <div class="field"><label for="enq-service">Service</label><select id="enq-service" name="service" autocomplete="off"><option>Not sure yet</option><option>Free development consultation</option><option>Complimentary planner meeting</option><option>Land Surveying</option><option>RMA Planning</option><option>Engineering</option><option>Landscape Architecture</option><option>Environmental Services</option><option>Project Management</option></select></div>
-        <div class="field"><label for="enq-msg">Message</label><textarea id="enq-msg" name="message" rows="4" autocomplete="off" data-req="Please tell us a little about your site." aria-describedby="enq-msg-err"></textarea><p class="err" id="enq-msg-err"></p></div>
-        <div class="hp" aria-hidden="true"><label for="enq-web">Company website</label><input id="enq-web" name="company_website" tabindex="-1" autocomplete="off"></div>
-        <button class="btn green magnetic" type="submit">Send enquiry <span class="ar" aria-hidden="true">&rarr;</span></button>
-        <p class="status" role="status" aria-live="polite"></p>
-        <p class="note">We use your details only to reply to your enquiry.</p>
-      </form>
+    <div class="tile side mint rv">
+      <div class="lbl">Prefer to talk?</div>
+      <div><small style="font-weight:700;color:var(--muted)">Auckland Head Office</small><br><a class="n" href="tel:+6498361804">09 836 1804</a></div>
+      <div><small style="font-weight:700;color:var(--muted)">Manukau</small><br><a class="n" href="tel:+6498696070">09 869 6070</a></div>
     </div>
   </div>
 </section>
@@ -863,12 +750,12 @@ html.pt-out .pt i{transform:scale(1.25)}
   <div class="wrap">
     <div class="tile foot">
       <div>
-        <a class="brand" href="#top"><span class="mk"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 14 L7 6 L10 10 L12 7 L16 14Z" fill="#fff"/></svg></span>Thomas Consultants</a>
+        <a class="brand" href="../08-bento.html"><span class="mk"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 14 L7 6 L10 10 L12 7 L16 14Z" fill="#fff"/></svg></span>Thomas Consultants</a>
         <p>Land Development &amp; Subdivision Consultants. Creating Better Spaces Together.</p>
         <ul style="margin-top:12px"><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li>Christchurch satellite office</li></ul>
       </div>
-      <div><h4>Services</h4><ul><li><a href="08-bento/services.html#land-surveying">Land Surveying</a></li><li><a href="08-bento/services.html#rma-planning">RMA Planning</a></li><li><a href="08-bento/services.html#engineering">Engineering</a></li><li><a href="08-bento/services.html#landscape-architecture">Landscape Architecture</a></li><li><a href="08-bento/services.html#environmental-services">Environmental Services</a></li><li><a href="08-bento/services.html#project-management">Project Management</a></li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="#top">Home</a></li><li><a href="08-bento/projects.html">Projects</a></li><li><a href="08-bento/about.html">About</a></li><li><a href="08-bento/contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="services.html#land-surveying">Land Surveying</a></li><li><a href="services.html#rma-planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape-architecture">Landscape Architecture</a></li><li><a href="services.html#environmental-services">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="../08-bento.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
       <div><h4>Social</h4><ul><li><a href="https://www.facebook.com/thomasconsultantsltd">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd">LinkedIn</a></li></ul></div>
     </div>
     <div class="fine"><span class="legal"><span>&copy; 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span></span><span>Proudly designed by AMBS Solutions</span></div>
@@ -877,9 +764,8 @@ html.pt-out .pt i{transform:scale(1.25)}
 
 <div class="qbar" aria-label="Quick contact">
   <a href="tel:+6498361804"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call 09 836 1804</a>
-  <a href="08-bento/contact.html#book" class="book">Book a meeting</a>
+  <a href="contact.html#book" class="book">Book a meeting</a>
 </div>
-
 
 <script>
 /* ===== Concept 08 shared runtime: transitions, menu, forms, counters ===== */
@@ -994,23 +880,13 @@ TC.micro = function(){
 
 </script>
 <script>
+
+
 (function(){
   'use strict';
-  var IMG = {
-    banner:'https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp',
-    small:'https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp',
-    eng:'https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp'
-  };
   var animOn = document.documentElement.classList.contains('anim');
   var G = animOn ? window.gsap : null;
-
-  /* ---------- Accreditations ---------- */
-  var acc = ['ISO 45001','IANZ','Toitū Envirocare','Engineering NZ','Water NZ','Survey and Spatial NZ','NZ Planning Institute','NZILA','SiteSafe','SiteWise'];
-  document.getElementById('accr').innerHTML = acc.map(function(a){
-    return '<span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg>'+a+'</span>';
-  }).join('');
-
-  /* ---------- Filters ---------- */
+    /* ---------- Filters ---------- */
   var fBtns = document.querySelectorAll('.filters button');
   fBtns.forEach(function(b){
     b.addEventListener('click', function(){
@@ -1026,7 +902,14 @@ TC.micro = function(){
     });
   });
 
-  /* ---------- Quiz ---------- */
+
+  var fCount = document.getElementById('fcount');
+  if (fCount) document.querySelectorAll('.filters button').forEach(function(b){ b.addEventListener('click', function(){
+    var f = b.getAttribute('data-f'), all = document.querySelectorAll('.proj'), n = 0;
+    all.forEach(function(c){ if (f === 'all' || c.getAttribute('data-f').split(' ').indexOf(f) > -1) n++; });
+    fCount.textContent = 'Showing ' + n + ' of ' + all.length + ' projects';
+  }); });
+  if (document.getElementById('qStage')) {   /* ---------- Quiz ---------- */
   var SERVICES = {
     survey:{t:'Land Surveying', c:'#2F6B8F', bg:'var(--sky)', d:'Accurate and reliable data for your development: boundary redefinition, cross-lease to freehold, topographical surveys, set out, drone inspections and 3D laser scanning.', ic:'<path d="M18 6h8v6h-8z M22 12v4 M22 16 L14 38 M22 16 L30 38 M22 16 V38"/>'},
     planning:{t:'RMA Planning', c:'#6151A8', bg:'var(--lilac)', d:'Advice on zoning, land use and resource consent applications, from feasibility reports to hearings evidence and plan changes.', ic:'<path d="M12 6h14l6 6v26H12z M17 24l4 4 7-8"/>'},
@@ -1103,7 +986,8 @@ TC.micro = function(){
     if (step !== 0) show(0, -1);
   });
 
-  /* ---------- Testimonial stack ---------- */
+ }
+  if (document.getElementById('stack')) {   /* ---------- Testimonial stack ---------- */
   var stackEl = document.getElementById('stack');
   var cards = Array.prototype.slice.call(stackEl.querySelectorAll('.vcard'));
   var order = cards.slice(), idx = 0, busy = false;
@@ -1159,133 +1043,45 @@ TC.micro = function(){
   })();
   layout(true);
 
-  /* ---------- Tick ring ---------- */
-  var ticks = document.getElementById('ticks'), tickHtml = '';
-  for (var k=0;k<40;k++){ var a = k/40*Math.PI*2; tickHtml += '<line x1="'+(75+Math.cos(a)*52).toFixed(1)+'" y1="'+(75+Math.sin(a)*52).toFixed(1)+'" x2="'+(75+Math.cos(a)*64).toFixed(1)+'" y2="'+(75+Math.sin(a)*64).toFixed(1)+'"/>'; }
-  ticks.innerHTML = tickHtml;
-  var tickLines = ticks.querySelectorAll('line');
-
-  if (!animOn){ tickLines.forEach(function(l){ l.classList.add('on'); }); if (window.matchMedia('(hover: hover)').matches) TC.micro(); return; }
-
-  /* ================= MOTION ================= */
-  gsap.registerPlugin(ScrollTrigger);
-
-  /* Bento assembles itself */
-  var tiles = gsap.utils.toArray('#bento .tile');
-  var offs = {left:[-120,0], right:[120,0], top:[0,-90], bottom:[0,110]};
-  var intro = gsap.timeline({delay:.15});
-  tiles.forEach(function(t, i){
-    var o = offs[t.dataset.from] || [0,60];
-    intro.fromTo(t, {opacity:0, x:o[0], y:o[1], scale:.72, rotation:(i%2?4:-4)},
-      {opacity:1, x:0, y:0, scale:1, rotation:0, duration:.9, ease:'back.out(1.4)', clearProps:'transform'}, i * .085);
+ }
+  document.querySelectorAll('.faq details').forEach(function(d){
+    var sum = d.querySelector('summary'), ans = d.querySelector('.ans');
+    sum.addEventListener('click', function(e){
+      if (!G) return;
+      e.preventDefault();
+      if (d.open) G.to(ans, {height:0, opacity:0, duration:.3, ease:'power2.in', onComplete:function(){ d.open = false; G.set(ans, {clearProps:'all'}); }});
+      else { d.open = true; G.fromTo(ans, {height:0, opacity:0, y:-6}, {height:'auto', opacity:1, y:0, duration:.5, ease:'back.out(1.4)', clearProps:'height'}); }
+    });
   });
-  // headline words
-  var h1 = document.getElementById('h1');
-  (function splitWords(node){
-    Array.prototype.slice.call(node.childNodes).forEach(function(n){
-      if (n.nodeType === 3){
-        var frag = document.createDocumentFragment();
-        n.textContent.split(/(\s+)/).forEach(function(w){
-          if (!w) return;
-          if (/^\s+$/.test(w)) frag.appendChild(document.createTextNode(w));
-          else { var s = document.createElement('span'); s.className = 'w'; s.textContent = w; frag.appendChild(s); }
-        });
-        n.parentNode.replaceChild(frag, n);
-      } else if (n.nodeType === 1) splitWords(n);
-    });
-  })(h1);
-  intro.from('#h1 .w', {y:30, opacity:0, rotation:4, duration:.7, stagger:.04, ease:'back.out(2)'}, .25)
-       .from('.t-head .sub, .t-head .body, .t-head .ctas > *, .t-head .pill', {y:16, opacity:0, duration:.6, stagger:.08, ease:'power3.out'}, .6)
-       .add(startMinis, .9);
-
-  /* Live mini-animations */
-  function startMinis(){
-    // Theodolite: alidade rotates (3D-ish via scaleX), beam sweeps, bearing ticks
-    gsap.timeline({repeat:-1})
-      .to('#theoHead', {scaleX:-1, duration:1.6, ease:'sine.inOut'})
-      .to('#theoHead', {scaleX:1, duration:1.6, ease:'sine.inOut'});
-    gsap.fromTo('#beam', {rotation:-14}, {rotation:14, duration:3.2, ease:'sine.inOut', yoyo:true, repeat:-1});
-    var bearing = document.getElementById('bearing'), b = {v:127.2};
-    gsap.to(b, {v:131.9, duration:3.2, ease:'sine.inOut', yoyo:true, repeat:-1, onUpdate:function(){
-      var d = Math.floor(b.v), m = Math.floor((b.v - d) * 60);
-      bearing.textContent = d + '° ' + (m < 10 ? '0' : '') + m + '′';
-    }});
-
-    // Odometer counter 00 -> 25 + tick ring
-    var d1 = document.getElementById('d1'), d2 = document.getElementById('d2'), c = {v:0};
-    gsap.to(c, {v:25, duration:2.4, ease:'power2.out', onUpdate:function(){
-      var n = Math.floor(c.v), t = Math.floor(n/10), o = n % 10;
-      if (d1.textContent != t){ d1.textContent = t; gsap.fromTo(d1, {yPercent:-60, opacity:.2}, {yPercent:0, opacity:1, duration:.25}); }
-      if (d2.textContent != o){ d2.textContent = o; gsap.fromTo(d2, {yPercent:-60, opacity:.2}, {yPercent:0, opacity:1, duration:.18}); }
-    }});
-    var tk = 0;
-    setInterval(function(){ if (document.hidden) return; tickLines[tk % 40].classList.toggle('on', Math.floor(tk/40) % 2 === 0); tk++; }, 120);
-
-    // Stormwater pipe draws, rain falls
-    var run = document.getElementById('pipeRun'), L = run.getTotalLength();
-    gsap.set(run, {strokeDasharray:L});
-    gsap.timeline({repeat:-1, repeatDelay:1.4})
-      .fromTo(run, {strokeDashoffset:L}, {strokeDashoffset:0, duration:2, ease:'power2.inOut'})
-      .fromTo('#pipeFlow', {opacity:0}, {opacity:1, duration:.4}, '-=.2')
-      .to({}, {duration:2.4})
-      .to('#pipeFlow', {opacity:0, duration:.3});
-    gsap.fromTo('#rain path', {y:-10, opacity:0}, {y:34, opacity:1, duration:.9, stagger:{each:.25, repeat:-1}, ease:'power1.in'});
-
-    // Tree grows
-    var trunk = document.getElementById('trunk'), TL = trunk.getTotalLength();
-    gsap.set(trunk, {strokeDasharray:TL});
-    gsap.set('#canopy circle, #leaves circle', {transformOrigin:'50% 50%', transformBox:'fill-box'});
-    gsap.timeline({repeat:-1, repeatDelay:1.6})
-      .fromTo(trunk, {strokeDashoffset:TL}, {strokeDashoffset:0, duration:1.2, ease:'power2.out'})
-      .fromTo('#canopy circle', {scale:0}, {scale:1, duration:.7, stagger:.15, ease:'back.out(2.4)'}, '-=.3')
-      .fromTo('#leaves circle', {scale:0}, {scale:1, duration:.3, stagger:.06}, '-=.2')
-      .to('#canopy', {rotation:2, transformOrigin:'50% 100%', duration:.8, yoyo:true, repeat:3, ease:'sine.inOut'})
-      .to('#treeSvg #canopy circle, #leaves circle', {scale:0, duration:.4, stagger:.03, ease:'power2.in'})
-      .to(trunk, {strokeDashoffset:TL, duration:.5}, '-=.1');
-
-    // Consent checklist ticks off
-    var items = document.querySelectorAll('#checks li');
-    var stamp = document.getElementById('stamp');
-    var ctl = gsap.timeline({repeat:-1, repeatDelay:1.2});
-    ctl.add(function(){ items.forEach(function(li){ li.classList.remove('done'); }); gsap.set(stamp, {scale:0, opacity:0}); });
-    items.forEach(function(li, i){
-      ctl.add(function(){ li.classList.add('done'); gsap.fromTo(li.querySelector('svg'), {strokeDashoffset:16}, {strokeDashoffset:0, duration:.3}); gsap.fromTo(li, {x:-4}, {x:0, duration:.4, ease:'back.out(3)'}); }, '+=.55');
-    });
-    ctl.to(stamp, {scale:1, opacity:1, rotation:-8, duration:.5, ease:'back.out(3)'}, '+=.3').to({}, {duration:1.6});
-
-    // Gantt bars
-    gsap.timeline({repeat:-1, repeatDelay:1})
-      .fromTo('#gantt .bar', {scaleX:0}, {scaleX:1, duration:.7, stagger:.3, ease:'power3.out'})
-      .to('#gantt .bar', {scaleX:0, duration:.4, stagger:.08, ease:'power2.in', delay:1.6});
-
-    // Water drop + ripples + leaves sway
-    gsap.set('#ripples ellipse', {transformOrigin:'50% 50%', transformBox:'fill-box', opacity:0});
-    gsap.timeline({repeat:-1, repeatDelay:.4})
-      .fromTo('#drop', {y:-20, opacity:0, scale:.6, transformOrigin:'50% 50%'}, {y:0, opacity:1, scale:1, duration:.5, ease:'power2.out'})
-      .to('#drop', {y:30, scaleY:.6, opacity:0, duration:.45, ease:'power2.in'}, '+=.4')
-      .fromTo('#ripples ellipse', {scale:.3, opacity:.9}, {scale:2.4, opacity:0, duration:1.4, stagger:.25, ease:'power2.out'}, '-=.1');
-    gsap.to('#leafL', {rotation:-8, transformOrigin:'100% 100%', duration:1.8, yoyo:true, repeat:-1, ease:'sine.inOut'});
-    gsap.to('#leafR', {rotation:8, transformOrigin:'0% 100%', duration:2.1, yoyo:true, repeat:-1, ease:'sine.inOut'});
-  }
-
-  document.querySelectorAll('#bento .tile, .svc').forEach(function(el){ el.classList.add('tilt'); });
+  document.querySelectorAll('[data-pick]').forEach(function(a){
+    a.addEventListener('click', function(){ var sel = document.querySelector('form.enq select'); if (sel) sel.value = a.getAttribute('data-pick'); });
+  });
+  document.querySelectorAll('.pbento .tile, .sdet, .values .tile').forEach(function(el){ el.classList.add('tilt'); });
   TC.micro();
-
-  /* Scroll reveals for bento grids (staggered pop) */
-  gsap.utils.toArray('.reveal-grid').forEach(function(g){
-    gsap.from(g.children, {opacity:0, y:50, scale:.92, duration:.8, stagger:.08, ease:'back.out(1.4)', scrollTrigger:{trigger:g, start:'top 85%'}});
+  if (!animOn) return;
+  gsap.registerPlugin(ScrollTrigger);
+  /* hero bento assembles tile by tile */
+  var offs = {left:[-120,0], right:[120,0], top:[0,-90], bottom:[0,110]};
+  var tl = gsap.timeline({delay:.2});
+  gsap.utils.toArray('#pbento .tile').forEach(function(t, i){
+    var o = offs[t.getAttribute('data-from')] || [0, 80];
+    tl.fromTo(t, {opacity:0, x:o[0], y:o[1], scale:.72, rotation:(i % 2 ? 4 : -4)}, {opacity:1, x:0, y:0, scale:1, rotation:0, duration:.9, ease:'back.out(1.4)', clearProps:'transform'}, i * .1);
   });
-  gsap.utils.toArray('.sec-head h2, .proc-top h2').forEach(function(h){
-    gsap.from(h, {y:30, opacity:0, duration:.9, ease:'power3.out', scrollTrigger:{trigger:h, start:'top 88%'}});
-  });
-  gsap.from('.proj', {opacity:0, y:40, scale:.94, duration:.7, stagger:.07, ease:'back.out(1.4)', scrollTrigger:{trigger:'#projGrid', start:'top 85%'}});
-  gsap.from('.quiz > .tile', {opacity:0, y:50, duration:.9, stagger:.12, ease:'power3.out', scrollTrigger:{trigger:'.quiz', start:'top 85%'}});
-  gsap.from('#stack', {opacity:0, rotation:-6, y:60, duration:1, ease:'back.out(1.4)', scrollTrigger:{trigger:'#stack', start:'top 85%'}});
-  gsap.from('#accr span', {opacity:0, scale:.6, duration:.4, stagger:.05, ease:'back.out(2)', scrollTrigger:{trigger:'#accr', start:'top 90%'}});
-
-  gsap.fromTo('#gaugeBar', {scaleX:0}, {scaleX:.92, duration:1.8, ease:'power3.out', scrollTrigger:{trigger:'#gaugeBar', start:'top 92%'}});
-
-  /* Process: pinned, steps light up as progress bar fills */
+  var h1 = document.getElementById('pageTitle');
+  if (h1){
+    h1.setAttribute('aria-label', h1.textContent);
+    h1.innerHTML = h1.textContent.split(' ').map(function(w){ return '<span class="w" aria-hidden="true" style="display:inline-block">' + w.replace(/\.$/, '<span style="margin-left:-.12em">.</span>') + '</span>'; }).join(' ');
+    tl.from('#pageTitle .w', {y:30, opacity:0, rotation:4, duration:.7, stagger:.05, ease:'back.out(2)'}, .25)
+      .from('.ph-head .lede, .ph-head .crumbs, .ph-head .ctas > *', {y:16, opacity:0, duration:.6, stagger:.08, ease:'power3.out'}, .5);
+  }
+  ScrollTrigger.batch('.rv', {start:'top 90%', onEnter:function(b){ gsap.fromTo(b, {opacity:0, y:50, scale:.92}, {opacity:1, y:0, scale:1, duration:.8, stagger:.08, ease:'back.out(1.4)', overwrite:true}); }});
+  gsap.utils.toArray('.sec-head h2, .proc-top h2').forEach(function(h){ gsap.from(h, {y:30, opacity:0, duration:.9, ease:'power3.out', scrollTrigger:{trigger:h, start:'top 90%'}}); });
+  gsap.utils.toArray('.reveal-grid').forEach(function(g){ gsap.from(g.children, {opacity:0, y:50, scale:.92, duration:.8, stagger:.08, ease:'back.out(1.4)', scrollTrigger:{trigger:g, start:'top 88%'}}); });
+  gsap.utils.toArray('.chips').forEach(function(c){ gsap.from(c.children, {opacity:0, scale:.6, duration:.4, stagger:.04, ease:'back.out(2)', scrollTrigger:{trigger:c, start:'top 92%'}}); });
+  if (document.getElementById('projGrid')) gsap.from('#projGrid .proj', {opacity:0, y:40, scale:.94, duration:.7, stagger:.07, ease:'back.out(1.4)', scrollTrigger:{trigger:'#projGrid', start:'top 88%'}});
+  if (document.getElementById('stack')) gsap.from('#stack', {opacity:0, rotation:-6, y:60, duration:1, ease:'back.out(1.4)', scrollTrigger:{trigger:'#stack', start:'top 88%'}});
+  if (document.getElementById('gaugeBar')) gsap.fromTo('#gaugeBar', {scaleX:0}, {scaleX:.92, duration:1.8, ease:'power3.out', scrollTrigger:{trigger:'#gaugeBar', start:'top 92%'}});
+  if (document.getElementById('procPin')) {   /* Process: pinned, steps light up as progress bar fills */
   var procSteps = gsap.utils.toArray('.step');
   var mm = gsap.matchMedia();
   mm.add('(min-width: 1061px)', function(){
@@ -1307,8 +1103,10 @@ TC.micro = function(){
     });
   });
 
+ }
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 })();
+
 </script>
 </body>
 </html>
