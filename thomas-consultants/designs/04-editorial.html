@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thomas Consultants · Concept 04</title>
+<meta name="description" content="Thomas Consultants: land development and subdivision consultants. Surveying, planning, engineering, landscape and environmental services across Aotearoa.">
+<script>
+  document.documentElement.classList.add('js');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('reduced');
+  else document.documentElement.classList.add('anim');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3EFE6;
+  --paper-2:#EAE4D6;
+  --paper-3:#DFD8C6;
+  --ink:#1D2520;
+  --ink-soft:#4A5249;
+  --forest:#1E3828;
+  --forest-2:#27452F;
+  --olive:#6B7743;
+  --sage:#A6AF95;
+  --green:#5F9434;
+  --green-lt:#6DAB3C;
+  --rule:rgba(29,37,32,.16);
+  --rule-strong:rgba(29,37,32,.32);
+  --serif:'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --sans:'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter:clamp(16px, 4.5vw, 72px);
+  --max:1360px;
+  --ease:cubic-bezier(.22,.8,.18,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--forest);color:var(--paper);padding:10px 14px;z-index:300}
+.skip:focus{left:16px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--olive)}
+.serif{font-family:var(--serif)}
+.it{font-style:italic}
+
+/* grain */
+body::after{content:"";position:fixed;inset:-50%;z-index:250;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1s steps(4) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+
+/* links + buttons */
+.pill{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:14px 26px;border-radius:999px;background:var(--forest);color:var(--paper);text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.02em;border:1px solid var(--forest);overflow:hidden;isolation:isolate;cursor:pointer;will-change:transform}
+.pill::before{content:"";position:absolute;inset:0;background:var(--green);border-radius:inherit;transform:translateY(101%);transition:transform .55s var(--ease);z-index:-1}
+.pill:hover::before{transform:none}
+.pill--line{background:transparent;color:var(--forest)}
+.pill--line::before{background:var(--forest)}
+.pill--line:hover{color:var(--paper)}
+.pill--paper{background:var(--paper);color:var(--forest);border-color:var(--paper)}
+.pill--paper::before{background:var(--green-lt)}
+.pill--paper:hover{color:var(--paper)}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.tlink{position:relative;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.02em;padding:10px 0}
+.tlink::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:1px;background:currentColor;transform-origin:right;transition:transform .5s var(--ease)}
+.tlink:hover::after{transform:scaleX(0)}
+.tlink .ar{transition:transform .4s var(--ease)}
+.tlink:hover .ar{transform:translateX(5px)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:120;background:rgba(243,239,230,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);transition:transform .5s var(--ease)}
+.nav.hide{transform:translateY(-100%)}
+.nav__in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;height:72px}
+.brand{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:-.01em;text-decoration:none;line-height:1;white-space:nowrap}
+.brand i{color:var(--green);font-style:italic}
+.nav__links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav__links a{display:block;padding:10px 14px;text-decoration:none;font-size:13.5px;font-weight:500;color:var(--ink-soft);position:relative;transition:color .3s}
+.nav__links a::after{content:"";position:absolute;left:14px;right:14px;bottom:6px;height:1px;background:var(--forest);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav__links a:hover,.nav__links a[aria-current="page"]{color:var(--ink)}
+.nav__links a:hover::after,.nav__links a[aria-current="page"]::after{transform:none}
+.nav__right{display:flex;justify-content:flex-end;align-items:center;gap:10px}
+.nav__right .pill{min-height:44px;padding:10px 20px;font-size:13px}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--rule-strong);background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:15px;right:15px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease)}
+.burger span:nth-child(1){top:20px}.burger span:nth-child(2){top:26px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(3px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){transform:translateY(-3px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:110;background:var(--forest);color:var(--paper);padding:100px var(--gutter) 40px;display:flex;flex-direction:column;justify-content:space-between;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .7s var(--ease),visibility 0s .7s;overflow-y:auto}
+.mmenu.open{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path .7s var(--ease)}
+.mmenu nav a{display:flex;align-items:baseline;gap:14px;font-family:var(--serif);font-size:clamp(40px,11vw,64px);line-height:1.1;text-decoration:none;font-weight:300;padding:4px 0}
+.mmenu nav a small{font-family:var(--sans);font-size:12px;color:var(--sage);letter-spacing:.12em}
+.mmenu nav a[aria-current="page"]{font-style:italic;color:var(--green-lt)}
+.mmenu__ft{display:grid;gap:6px;font-size:14px;color:var(--sage);margin-top:30px}
+.mmenu__ft a{text-decoration:none;color:var(--paper);padding:6px 0}
+.nav.menu-open{background:transparent;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.nav.menu-open .brand{color:var(--paper)}
+.nav.menu-open .burger{border-color:rgba(243,239,230,.4)}
+.nav.menu-open .burger span{background:var(--paper)}
+
+/* hero */
+.hero{padding:clamp(28px,4vw,56px) 0 clamp(40px,6vw,80px)}
+.mast{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-bottom:16px;border-bottom:1px solid var(--rule-strong);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.mast span:nth-child(2){text-align:center}
+.mast span:nth-child(3){text-align:right}
+.hero__top{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:clamp(24px,4vw,64px);align-items:end;padding:clamp(32px,5vw,72px) 0 clamp(28px,4vw,48px)}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(42px,6.6vw,104px);line-height:.98;letter-spacing:-.03em;margin:0;font-variation-settings:"opsz" 144}
+.hero h1 em{font-style:italic;color:var(--olive)}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .12em;margin-bottom:-.12em;white-space:nowrap}
+.split .c{display:inline-block;will-change:transform}
+.hero__aside p{margin:0 0 22px;color:var(--ink-soft);font-size:16px}
+.hero__aside .sub{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2vw,28px);color:var(--forest);line-height:1.2;margin-bottom:16px}
+.hero__media{position:relative;height:clamp(340px,62vw,760px);background:linear-gradient(135deg,var(--olive),var(--forest));overflow:hidden;border-radius:2px}
+.hero__media img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;will-change:transform}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,32,24,.45));pointer-events:none}
+.hero__cap{position:absolute;left:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);bottom:clamp(16px,3vw,28px);z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;color:var(--paper)}
+.hero__cap .serif{font-style:italic;font-size:clamp(16px,1.6vw,20px)}
+.hero__cap small{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+
+/* intro */
+.intro{padding:clamp(72px,10vw,150px) 0;border-bottom:1px solid var(--rule)}
+.intro__grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(24px,5vw,80px)}
+.toc{list-style:none;margin:16px 0 0;padding:0;font-size:14px}
+.toc li{border-top:1px solid var(--rule)}
+.toc a{display:flex;justify-content:space-between;padding:10px 0;text-decoration:none;color:var(--ink-soft);transition:color .3s,padding .4s var(--ease)}
+.toc a:hover{color:var(--forest);padding-left:6px}
+.toc a span{font-family:var(--serif);font-style:italic}
+.lede{font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.7vw,40px);line-height:1.3;letter-spacing:-.012em;margin:0;color:var(--ink)}
+.lede::first-letter{float:left;font-size:4.1em;line-height:.82;padding:.06em .1em 0 0;color:var(--forest);font-weight:400}
+.intro__cols{columns:2;column-gap:40px;color:var(--ink-soft);margin-top:36px;font-size:16px}
+.intro__cols p{margin:0 0 14px;break-inside:avoid}
+
+/* section heads */
+.sec{padding:clamp(80px,11vw,160px) 0;position:relative}
+.sec__head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 64px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.sec__head h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5vw,76px);line-height:1;letter-spacing:-.025em;margin:14px 0 0}
+.sec__head h2 em{font-style:italic;color:var(--olive)}
+.sec__head p{margin:0;color:var(--ink-soft);max-width:52ch}
+
+/* services list */
+.svc{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-strong)}
+.svc li{border-bottom:1px solid var(--rule-strong)}
+.svc a{position:relative;display:grid;grid-template-columns:80px minmax(0,5fr) minmax(0,5fr) 48px;gap:24px;align-items:baseline;padding:clamp(22px,3vw,36px) 0;text-decoration:none;isolation:isolate}
+.svc a::before{content:"";position:absolute;inset:0 calc(var(--gutter) * -1);background:var(--paper-2);z-index:-1;transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease)}
+.svc a:hover::before,.svc a:focus-visible::before{transform:none}
+.svc .num{font-family:var(--serif);font-style:italic;color:var(--olive);font-size:18px}
+.svc h3{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.4vw,52px);line-height:1.05;letter-spacing:-.02em;margin:0;transition:transform .6s var(--ease)}
+.svc a:hover h3{transform:translateX(12px)}
+.svc .desc{color:var(--ink-soft);font-size:15.5px}
+.svc .desc em{display:block;font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:6px}
+.svc .go{justify-self:end;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule-strong);display:grid;place-items:center;transition:background .4s,color .4s,transform .5s var(--ease)}
+.svc a:hover .go{background:var(--forest);color:var(--paper);transform:rotate(-45deg)}
+.svc-more{display:flex;justify-content:flex-end;margin-top:28px}
+
+/* why */
+.why{background:var(--paper-2)}
+.statement{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.2vw,64px);line-height:1.14;letter-spacing:-.02em;margin:0 0 clamp(48px,7vw,96px);max-width:22ch}
+.statement .sw{display:inline}
+.why__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:center}
+.arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 4px 4px;overflow:hidden;background:linear-gradient(160deg,var(--sage),var(--olive))}
+.arch img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover}
+.why__body p{color:var(--ink-soft);margin:0 0 16px}
+.why__body .big{font-family:var(--serif);font-size:clamp(22px,2vw,28px);color:var(--ink);line-height:1.3;font-weight:300}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule-strong);margin-top:clamp(56px,7vw,100px)}
+.stat{padding:28px 20px 0 0;min-width:0}
+.stat + .stat{padding-left:20px;border-left:1px solid var(--rule)}
+.stat .n{font-family:var(--serif);font-weight:300;font-size:clamp(56px,7vw,112px);line-height:1;letter-spacing:-.04em;color:var(--forest);font-variant-numeric:lining-nums}
+.stat .n sup{font-size:.35em;font-style:italic;color:var(--olive);vertical-align:top;margin-left:4px;position:relative;top:.4em}
+.stat .l{font-size:13px;letter-spacing:.06em;color:var(--ink-soft);margin-top:10px}
+
+/* process */
+.proc__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px)}
+.proc__sticky{position:sticky;top:120px;align-self:start}
+.proc__big{font-family:var(--serif);font-weight:300;font-size:clamp(120px,16vw,240px);line-height:.85;color:var(--forest);letter-spacing:-.05em;margin:24px 0 0;height:1em;overflow:hidden;position:relative}
+.proc__big span{display:block}
+.proc__steps{position:relative;padding-left:40px}
+.proc__rail{position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--rule-strong)}
+.proc__rail i{position:absolute;inset:0;background:var(--green);transform-origin:top;transform:scaleY(var(--s,1))}
+.pstep{padding:0 0 clamp(48px,7vw,100px);position:relative}
+.pstep:last-child{padding-bottom:0}
+.pstep::before{content:"";position:absolute;left:-45px;top:12px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:1px solid var(--forest)}
+.pstep .eyebrow{display:block;margin-bottom:10px}
+.pstep h3{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0 0 14px;letter-spacing:-.02em}
+.pstep p{color:var(--ink-soft);margin:0;max-width:52ch}
+
+/* journal */
+.journal{background:var(--forest);color:var(--paper);padding:clamp(80px,10vw,140px) 0 clamp(60px,8vw,110px);overflow:hidden}
+.journal .sec__head h2 em{color:var(--sage)}
+.journal .sec__head p{color:rgba(243,239,230,.72)}
+.journal .eyebrow{color:var(--sage)}
+.jr{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jr::-webkit-scrollbar{display:none}
+.jr__track{display:flex;gap:clamp(20px,3vw,48px);padding:0 var(--gutter);width:max-content;align-items:flex-start}
+.jcard{flex:none;width:min(78vw,440px);text-decoration:none;scroll-snap-align:start;display:block}
+.jcard:nth-child(even){margin-top:clamp(0px,6vw,90px)}
+.jcard__img{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--forest-2);border-radius:2px}
+.jcard:nth-child(3n+2) .jcard__img{aspect-ratio:1/1}
+.jcard__img img,.jcard__img svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.jcard:hover .jcard__img img,.jcard:hover .jcard__img svg{transform:scale(1.05)}
+.jcard__no{position:absolute;left:16px;top:14px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--paper);z-index:2;mix-blend-mode:difference}
+.jcard__cap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;padding-top:16px;border-top:1px solid rgba(243,239,230,.25);margin-top:16px}
+.jcard__cap .k{font-family:var(--serif);font-style:italic;color:var(--sage);font-size:15px;grid-row:span 2}
+.jcard__cap h3{font-family:var(--serif);font-weight:300;font-size:clamp(22px,2vw,28px);line-height:1.15;margin:0;letter-spacing:-.01em}
+.jcard__cap p{margin:0;font-size:13px;color:rgba(243,239,230,.7);letter-spacing:.02em}
+.jend{flex:none;width:min(70vw,340px);align-self:center;padding:24px 0}
+.jend p{font-family:var(--serif);font-size:clamp(28px,3vw,40px);font-weight:300;line-height:1.1;margin:0 0 24px}
+.jbar{margin:clamp(36px,5vw,64px) var(--gutter) 0;height:1px;background:rgba(243,239,230,.2);position:relative}
+.jbar i{position:absolute;inset:0;background:var(--sage);transform-origin:left;transform:scaleX(0)}
+.jhint{display:flex;justify-content:space-between;margin:14px var(--gutter) 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,239,230,.6)}
+.ill{background:var(--paper-2)}
+.ill .l{fill:none;stroke:var(--olive);stroke-width:1.1}
+.ill .l2{fill:none;stroke:var(--forest);stroke-width:1.4}
+.ill .f{fill:rgba(107,119,67,.14)}
+
+/* testimonials */
+.tst{text-align:center}
+.tst__stage{position:relative;max-width:980px;margin:0 auto;display:grid}
+.tq{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transition:opacity 1s var(--ease),visibility 0s 1s}
+.tq.on{opacity:1;visibility:visible;transition:opacity 1s var(--ease) .2s}
+.tq p{font-family:var(--serif);font-weight:300;font-size:clamp(24px,3vw,44px);line-height:1.28;letter-spacing:-.015em;margin:0 0 30px;text-align:left}
+.tq p::first-letter{float:left;font-size:3.6em;line-height:.8;padding:.08em .12em 0 0;color:var(--olive);font-weight:400;font-style:italic}
+.tq footer{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-align:left}
+.tq footer b{color:var(--forest);font-weight:700}
+.tst__ctl{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:44px}
+.tst__ctl button{width:50px;height:50px;border-radius:50%;border:1px solid var(--rule-strong);background:transparent;cursor:pointer;transition:background .3s,color .3s}
+.tst__ctl button:hover{background:var(--forest);color:var(--paper)}
+.tst__n{font-family:var(--serif);font-style:italic;font-size:18px;min-width:70px}
+
+/* clients */
+.clients{border-top:1px solid var(--rule)}
+.clients__grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,96px)}
+.clist{font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,44px);line-height:1.3;letter-spacing:-.015em;margin:18px 0 0}
+.clist span{transition:color .3s,font-style .3s}
+.clist span:hover{color:var(--olive);font-style:italic}
+.clist i{font-style:normal;color:var(--sage);margin:0 .3em}
+.acc{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+.acc li{border-top:1px solid var(--rule);padding:12px 0;font-size:14.5px;display:flex;gap:12px}
+.acc li span{font-family:var(--serif);font-style:italic;color:var(--olive);min-width:22px}
+
+/* contact */
+.cta{background:var(--forest);color:var(--paper);overflow:hidden;position:relative}
+.cta__grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:start}
+.cta h2{font-family:var(--serif);font-weight:300;font-size:clamp(44px,6.4vw,104px);line-height:.98;letter-spacing:-.03em;margin:16px 0 28px}
+.cta h2 em{font-style:italic;color:var(--sage)}
+.cta .eyebrow{color:var(--sage)}
+.cta p{color:rgba(243,239,230,.78);max-width:46ch}
+.offices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:36px 0 32px}
+.office{border-top:1px solid rgba(243,239,230,.3);padding-top:14px}
+.office h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 4px}
+.office small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+.office a{display:inline-block;font-size:18px;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(243,239,230,.4);margin-top:6px}
+.office a:hover{border-color:var(--paper)}
+.cta__ctas{display:flex;flex-wrap:wrap;gap:12px}
+.qform{background:var(--paper);color:var(--ink);padding:clamp(24px,3vw,40px);border-radius:2px}
+.qform h3{font-family:var(--serif);font-weight:300;font-size:30px;margin:0 0 6px}
+.qform > p{color:var(--ink-soft);margin:0 0 20px;font-size:15px}
+.fld{position:relative;margin-bottom:18px}
+.fld label{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-bottom:4px}
+.fld input,.fld textarea,.fld select{width:100%;border:0;border-bottom:1px solid var(--rule-strong);background:transparent;padding:10px 0;min-height:46px;font-size:16px;border-radius:0;transition:border-color .3s}
+.fld textarea{min-height:90px;resize:vertical}
+.fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;border-color:var(--forest);box-shadow:0 1px 0 0 var(--forest)}
+.fld .err{display:block;font-size:12.5px;color:#9B3B22;margin-top:4px;min-height:0}
+.fld.bad input,.fld.bad textarea{border-color:#9B3B22}
+.qthanks{display:none}
+.qthanks.on{display:block}
+.qthanks h3{font-style:italic}
+
+/* footer */
+.foot{background:var(--paper);padding:clamp(56px,7vw,96px) 0 90px}
+.foot__word{font-family:var(--serif);font-weight:300;font-size:clamp(48px,11vw,180px);line-height:.9;letter-spacing:-.045em;margin:0 0 clamp(32px,5vw,64px);color:var(--forest)}
+.foot__word em{color:var(--olive)}
+.foot__grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:24px;border-top:1px solid var(--rule-strong);padding-top:24px}
+.foot ul{list-style:none;margin:10px 0 0;padding:0}
+.foot li a{display:inline-block;padding:5px 0;text-decoration:none;color:var(--ink-soft);font-size:15px;transition:color .3s}
+.foot li a:hover{color:var(--forest)}
+.foot__base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:40px;font-size:12.5px;color:var(--ink-soft)}
+
+/* badge, cursor, transition */
+.badge{position:fixed;left:12px;bottom:12px;z-index:200;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:7px 12px;border-radius:999px;background:rgba(243,239,230,.88);border:1px solid var(--rule-strong);color:var(--ink-soft);pointer-events:none}
+.badge em{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;font-weight:400;color:var(--forest);font-size:13px}
+.cur{position:fixed;left:0;top:0;z-index:240;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--forest);pointer-events:none;display:none;align-items:center;justify-content:center;color:var(--paper);font-family:var(--serif);font-style:italic;font-size:15px;transition:width .45s var(--ease),height .45s var(--ease),margin .45s var(--ease),background .3s}
+.has-cur .cur{display:flex}
+.cur span{opacity:0;transition:opacity .3s}
+.cur.view{width:86px;height:86px;margin:-43px 0 0 -43px;background:var(--green)}
+.cur.view span{opacity:1}
+.cur.link{width:36px;height:36px;margin:-18px 0 0 -18px;background:rgba(95,148,52,.25)}
+.pt{position:fixed;inset:0;z-index:400;background:var(--forest);color:var(--paper);display:flex;align-items:center;justify-content:center;pointer-events:none;clip-path:inset(100% 0 0 0)}
+.pt span{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(28px,4vw,52px);opacity:0;transition:opacity .4s}
+.js.anim .pt{clip-path:inset(0 0 0 0);transition:clip-path .9s var(--ease)}
+.js.anim.pt-in .pt{clip-path:inset(0 0 100% 0)}
+.js.anim.pt-out .pt{clip-path:inset(0 0 0 0);transition:clip-path .7s var(--ease)}
+.js.anim.pt-out .pt span{opacity:1}
+.pt-out.pt-from-bottom .pt{}
+
+/* initial states (JS + motion only) */
+.anim [data-rv]{opacity:0;transform:translateY(30px)}
+.anim .hero__media{clip-path:inset(18% 12% 18% 12%)}
+.anim .hero__aside,.anim .mast,.anim .hero__cap{opacity:0}
+.anim .hero h1{visibility:hidden}
+
+/* responsive */
+@media (max-width:1060px){
+  .nav__links{display:none}
+  .burger{display:block}
+  .nav__in{grid-template-columns:1fr auto}
+  .nav__right .pill{display:none}
+  .hero__top,.intro__grid,.sec__head,.why__grid,.proc__grid,.clients__grid,.cta__grid{grid-template-columns:minmax(0,1fr)}
+  .proc__sticky{position:relative;top:0}
+  .proc__big{font-size:110px}
+  .svc a{grid-template-columns:56px minmax(0,1fr) 44px}
+  .svc .desc{grid-column:2;grid-row:2}
+  .svc .go{grid-column:3;grid-row:1}
+  .arch{max-width:480px}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .mast{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .mast span:nth-child(2){display:none}
+  .intro__cols{columns:1}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat{padding-bottom:20px}
+  .acc{grid-template-columns:minmax(0,1fr)}
+  .offices{grid-template-columns:minmax(0,1fr)}
+  .foot__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot__grid > div:first-child{grid-column:1/-1}
+  .svc a{grid-template-columns:40px minmax(0,1fr) 44px;gap:14px}
+  .hero__cap{flex-direction:column;align-items:flex-start}
+  .tq p::first-letter{font-size:3em}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .tq{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="pt" aria-hidden="true"><span>Thomas Consultants</span></div>
+
+<header class="nav" id="top">
+  <div class="wrap nav__in">
+    <a class="brand" href="04-editorial.html" aria-label="Thomas Consultants, home">Thomas <i>Consultants</i></a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="04-editorial.html" aria-current="page">Home</a></li>
+        <li><a href="04-editorial/services.html">Services</a></li>
+        <li><a href="04-editorial/projects.html">Projects</a></li>
+        <li><a href="04-editorial/about.html">About</a></li>
+        <li><a href="04-editorial/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <a class="pill magnetic" href="04-editorial/contact.html"><span class="dot"></span>Book a consultation</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mmenu" id="mmenu">
+  <nav aria-label="Mobile">
+    <a href="04-editorial.html" aria-current="page"><small>01</small>Home</a>
+    <a href="04-editorial/services.html"><small>02</small>Services</a>
+    <a href="04-editorial/projects.html"><small>03</small>Projects</a>
+    <a href="04-editorial/about.html"><small>04</small>About</a>
+    <a href="04-editorial/contact.html"><small>05</small>Contact</a>
+  </nav>
+  <div class="mmenu__ft">
+    <a href="tel:+6498361804">Auckland · 09 836 1804</a>
+    <a href="tel:+6498696070">Manukau · 09 869 6070</a>
+    <a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal ↗</a>
+  </div>
+</div>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div class="mast"><span>Field Notes · No. 25</span><span>Land Development &amp; Subdivision</span><span>Aotearoa New Zealand</span></div>
+    <div class="hero__top">
+      <h1 id="hero-h" class="split">Your Trusted Partner for <em>End-to-End</em> Land Development Support</h1>
+      <div class="hero__aside">
+        <p class="sub">Creating Better Spaces Together</p>
+        <p>Engineers, planners, surveyors, landscape architects, ecologists and contamination experts, supporting you from site assessment to final delivery.</p>
+        <div class="hero__ctas">
+          <a class="pill magnetic" href="04-editorial/contact.html"><span class="dot"></span>Book Your Free Development Consultation</a>
+          <a class="tlink" href="04-editorial/contact.html#planner">Complimentary Planner Meeting <span class="ar">→</span></a>
+        </div>
+      </div>
+    </div>
+    <figure class="hero__media" style="margin:0">
+      <img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="A Thomas Consultants land development project in its landscape" width="1920" height="900" fetchpriority="high">
+      <figcaption class="hero__cap"><span class="serif">Plate I. Land shaped with care, for the people who will live on it.</span><small>Tāmaki Makaurau</small></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" aria-label="Introduction">
+  <div class="wrap intro__grid">
+    <div>
+      <span class="eyebrow">In this issue</span>
+      <ol class="toc">
+        <li><a href="#services">Six disciplines <span>i.</span></a></li>
+        <li><a href="#why">Twenty-five years <span>ii.</span></a></li>
+        <li><a href="#process">The journey <span>iii.</span></a></li>
+        <li><a href="#journal">Project journal <span>iv.</span></a></li>
+        <li><a href="#words">Kind words <span>v.</span></a></li>
+        <li><a href="#contact">Begin <span>vi.</span></a></li>
+      </ol>
+    </div>
+    <div>
+      <p class="lede" data-rv>As experienced land development specialists, we work closely with our clients to understand their vision and help them create smarter, more sustainable spaces.</p>
+      <div class="intro__cols" data-rv>
+        <p>Our team of engineers, planners, surveyors, landscape architects, ecologists, and contamination experts ensure you are supported throughout the entire journey, from site assessments to final delivery.</p>
+        <p>From head office in Auckland, our Manukau office and a satellite office in Christchurch, we bring quality civil engineering, resource consents and planning to projects of every scale, for councils, agencies, developers and families alike.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="sec__head">
+      <div><span class="eyebrow">i. Services</span><h2 id="svc-h" data-rv>Six disciplines, <em>one</em> considered team.</h2></div>
+      <p data-rv>Each discipline is practised in-house and brought together by a single project lead, so your land is understood as a whole, not in fragments.</p>
+    </div>
+    <ul class="svc">
+      <li data-rv><a href="04-editorial/services.html#surveying"><span class="num">i.</span><h3>Land Surveying</h3><span class="desc"><em>Accurate and reliable data for your development projects.</em>Boundary redefinition, cross-lease to freehold, topographical, set out, drone inspections, 3D laser scanning.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li data-rv><a href="04-editorial/services.html#planning"><span class="num">ii.</span><h3>RMA Planning</h3><span class="desc"><em>Advice on zoning, land use and resource consent applications.</em>Feasibility reports, hearings evidence, plan changes.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li data-rv><a href="04-editorial/services.html#engineering"><span class="num">iii.</span><h3>Engineering</h3><span class="desc"><em>Infrastructure that is robust and compliant.</em>Roads, stormwater, three waters, earthworks, flood engineering, construction monitoring.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li data-rv><a href="04-editorial/services.html#landscape"><span class="num">iv.</span><h3>Landscape Architecture</h3><span class="desc"><em>Every aspect of the outdoor design process.</em>Open space design, landscape &amp; visual assessments, planting plans.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li data-rv><a href="04-editorial/services.html#environmental"><span class="num">v.</span><h3>Environmental Services</h3><span class="desc"><em>Care for the ground beneath every project.</em>Environmental Management Plans, ecology, soil &amp; water contamination testing, asbestos.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li data-rv><a href="04-editorial/services.html#project-management"><span class="num">vi.</span><h3>Project Management</h3><span class="desc"><em>From concept to completion.</em>We oversee the entire process, so every consultant, contractor and council step stays aligned.</span><span class="go" aria-hidden="true">→</span></a></li>
+    </ul>
+    <div class="svc-more"><a class="tlink" href="04-editorial/services.html">Explore all services <span class="ar">→</span></a></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec why" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <span class="eyebrow">ii. Twenty-five years</span>
+    <h2 id="why-h" class="statement js-words">After 25 years of delivering multi-faceted land development and infrastructure projects, our expertise is second to none.</h2>
+    <div class="why__grid">
+      <figure class="arch" style="margin:0" data-rv>
+        <img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Landscape and development work by Thomas Consultants" loading="lazy" width="800" height="650">
+      </figure>
+      <div class="why__body">
+        <p class="big" data-rv>We are committed to environmentally responsible and sustainable development.</p>
+        <p data-rv>With transparent communication and seamless project management, we deliver timely results that are on budget and aligned with your vision. One team holds the thread from the first site walk to the final title.</p>
+        <p data-rv>It is a quieter kind of expertise: listening first, measuring carefully, and leaving land better than we found it.</p>
+        <a class="tlink" href="04-editorial/about.html" data-rv>Read our story <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n"><span class="count" data-to="25">25</span></div><div class="l">Years of practice</div></div>
+      <div class="stat"><div class="n"><span class="count" data-to="6">6</span></div><div class="l">Disciplines in-house</div></div>
+      <div class="stat"><div class="n"><span class="count" data-to="3">3</span></div><div class="l">Offices: Auckland, Manukau, Christchurch</div></div>
+      <div class="stat"><div class="n"><span class="count" data-to="10">10</span></div><div class="l">Industry accreditations</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process" aria-labelledby="proc-h">
+  <div class="wrap proc__grid">
+    <div class="proc__sticky">
+      <span class="eyebrow">iii. The journey</span>
+      <h2 id="proc-h" class="serif" style="font-weight:300;font-size:clamp(36px,4.4vw,64px);line-height:1.02;letter-spacing:-.025em;margin:14px 0 0">Four chapters, <em style="color:var(--olive)">one</em> story.</h2>
+      <div class="proc__big" aria-hidden="true"><span class="js-pnum">01</span></div>
+    </div>
+    <div class="proc__steps">
+      <div class="proc__rail" aria-hidden="true"><i></i></div>
+      <article class="pstep" data-rv><span class="eyebrow">Chapter one</span><h3>Site assessment</h3><p>We begin on the ground: survey, ecology and soil testing reveal what your land can carry, and where its opportunities and constraints lie.</p></article>
+      <article class="pstep" data-rv><span class="eyebrow">Chapter two</span><h3>Consent</h3><p>Our planners shape a clear, well-evidenced resource consent application and guide it through council, including hearings if needed.</p></article>
+      <article class="pstep" data-rv><span class="eyebrow">Chapter three</span><h3>Design</h3><p>Engineers and landscape architects resolve roads, three waters, earthworks and planting into one coordinated, buildable design.</p></article>
+      <article class="pstep" data-rv><span class="eyebrow">Chapter four</span><h3>Delivery</h3><p>We set out, monitor construction and manage the programme through to completion, keeping you informed at every turn.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section class="journal" id="journal" aria-labelledby="jr-h">
+  <div class="wrap">
+    <div class="sec__head">
+      <div><span class="eyebrow">iv. Project journal</span><h2 id="jr-h" data-rv>Places we have <em>helped shape.</em></h2></div>
+      <p data-rv>Parks and lookouts, homes for Kāinga Ora, commercial sites and new neighbourhoods. A few entries from the journal.</p>
+    </div>
+  </div>
+  <div class="jr" tabindex="0" aria-label="Project journal, scroll horizontally">
+    <div class="jr__track">
+      <a class="jcard" href="04-editorial/project.html?p=fearon-park">
+        <div class="jcard__img"><span class="jcard__no">No. 01</span><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Open space development at Fearon Park" loading="lazy"></div>
+        <div class="jcard__cap"><span class="k">01</span><h3>Open Space Development, Fearon Park</h3><p>Mount Roskill · Project Management, Contaminated Sites</p></div>
+      </a>
+      <a class="jcard" href="04-editorial/project.html?p=mcmillan-lockwood">
+        <div class="jcard__img ill"><span class="jcard__no" style="color:var(--forest);mix-blend-mode:normal">No. 02</span>
+          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="f" x="60" y="80" width="120" height="90"/><rect class="l2" x="60" y="80" width="120" height="90"/><rect class="l2" x="200" y="80" width="140" height="90"/><rect class="l2" x="60" y="190" width="90" height="120"/><rect class="f" x="170" y="190" width="170" height="120"/><rect class="l2" x="170" y="190" width="170" height="120"/><path class="l" d="M20 350 L380 350 M40 40 L40 360"/><path class="l" d="M0 30 C100 10 200 50 400 20"/></svg></div>
+        <div class="jcard__cap"><span class="k">02</span><h3>McMillan and Lockwood</h3><p>Kāinga Ora · Construction Monitoring, Engineering, Residential</p></div>
+      </a>
+      <a class="jcard" href="04-editorial/project.html?p=churchill-park">
+        <div class="jcard__img"><span class="jcard__no">No. 03</span><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Churchill Park Lookout landscape" loading="lazy"></div>
+        <div class="jcard__cap"><span class="k">03</span><h3>Churchill Park Lookout</h3><p>Landscape Architecture, Open Space Design</p></div>
+      </a>
+      <a class="jcard" href="04-editorial/project.html?p=observation-green">
+        <div class="jcard__img ill"><span class="jcard__no" style="color:var(--forest);mix-blend-mode:normal">No. 04</span>
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="l" d="M-10 120 C80 90 160 150 250 110 S380 80 420 100"/><path class="l" d="M-10 180 C90 150 170 210 260 170 S380 140 420 160"/><path class="l" d="M-10 240 C100 210 180 270 270 230 S380 200 420 220"/><path class="l" d="M-10 300 C110 270 190 330 280 290 S380 260 420 280"/><circle class="f" cx="120" cy="360" r="40"/><circle class="l2" cx="120" cy="360" r="40"/><circle class="l2" cx="210" cy="400" r="26"/><circle class="f" cx="290" cy="350" r="34"/><circle class="l2" cx="290" cy="350" r="34"/><path class="l2" d="M40 460 C140 420 260 470 380 430"/></svg></div>
+        <div class="jcard__cap"><span class="k">04</span><h3>Observation Green</h3><p>Landscape &amp; Visual Assessments, Planting Plan</p></div>
+      </a>
+      <a class="jcard" href="04-editorial/project.html?p=cracroft-road">
+        <div class="jcard__img"><span class="jcard__no">No. 05</span><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Civil engineer on a Kāinga Ora construction site" loading="lazy"></div>
+        <div class="jcard__cap"><span class="k">05</span><h3>2 Cracroft Road / 618-620 Great South Road</h3><p>Kāinga Ora · Engineering, Surveying</p></div>
+      </a>
+      <a class="jcard" href="04-editorial/project.html?p=paknsave-henderson">
+        <div class="jcard__img ill"><span class="jcard__no" style="color:var(--forest);mix-blend-mode:normal">No. 06</span>
+          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="f" x="70" y="70" width="260" height="120"/><rect class="l2" x="70" y="70" width="260" height="120"/><path class="l" d="M70 230 L330 230 M70 260 L330 260 M70 290 L330 290 M70 320 L330 320"/><path class="l" d="M100 220 L100 330 M140 220 L140 330 M180 220 L180 330 M220 220 L220 330 M260 220 L260 330 M300 220 L300 330"/><path class="l2" d="M20 370 L380 370"/></svg></div>
+        <div class="jcard__cap"><span class="k">06</span><h3>PAK'nSAVE, Alderman Drive</h3><p>Henderson · Commercial, Civil Engineering</p></div>
+      </a>
+      <a class="jcard" href="04-editorial/project.html?p=scott-road">
+        <div class="jcard__img"><span class="jcard__no">No. 07</span><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Scott Road, Hobsonville" loading="lazy" style="object-position:70% 50%"></div>
+        <div class="jcard__cap"><span class="k">07</span><h3>Scott Road, Hobsonville</h3><p>Resource Consent, Traffic Engineering, Soil Testing</p></div>
+      </a>
+      <a class="jcard" href="04-editorial/project.html?p=kokowai">
+        <div class="jcard__img ill"><span class="jcard__no" style="color:var(--forest);mix-blend-mode:normal">No. 08</span>
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="l2" x="90" y="90" width="220" height="300"/><path class="l" d="M90 165 L310 165 M90 240 L310 240 M90 315 L310 315 M200 90 L200 390"/><circle class="f" cx="60" cy="420" r="34"/><circle class="l2" cx="60" cy="420" r="34"/><circle class="l2" cx="340" cy="430" r="28"/><circle class="f" cx="200" cy="450" r="22"/></svg></div>
+        <div class="jcard__cap"><span class="k">08</span><h3>GJ Gardner Kokowai Apartments</h3><p>Hobsonville Point · Landscape Architecture</p></div>
+      </a>
+      <a class="jcard" href="04-editorial/project.html?p=homes-of-choice">
+        <div class="jcard__img"><span class="jcard__no">No. 09</span><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Homes of Choice residential subdivision" loading="lazy" style="object-position:30% 50%"></div>
+        <div class="jcard__cap"><span class="k">09</span><h3>Homes of Choice residential subdivision</h3><p>Engineering, Planning, Subdivision</p></div>
+      </a>
+      <div class="jend"><p>Every project begins with a <em>conversation.</em></p><a class="pill pill--paper magnetic" href="04-editorial/projects.html"><span class="dot"></span>View the full journal</a></div>
+    </div>
+  </div>
+  <div class="jbar" aria-hidden="true"><i></i></div>
+  <div class="jhint" aria-hidden="true"><span>Scroll</span><span>09 entries</span></div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec tst" id="words" aria-labelledby="tst-h">
+  <div class="wrap">
+    <span class="eyebrow">v. Kind words</span>
+    <h2 id="tst-h" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Testimonials</h2>
+    <div class="tst__stage" aria-live="polite" style="margin-top:36px">
+      <blockquote class="tq on"><p>I have to say – this looks amazing. I think this is the first time I received a first concept that fully met the brief and looks exactly how I imagined it.</p><footer><b>Barbara Heise</b> · Auckland Council</footer></blockquote>
+      <blockquote class="tq"><p>Outstanding customer service, responsive and very professional. Despite the logistical challenges of extended lockdowns, Brett from Thomas Consultants went above and beyond to help with our environmental property needs.</p><footer><b>Marie CK</b> · Private Client</footer></blockquote>
+      <blockquote class="tq"><p>You have been timely, pro-active in your communications with us, given us a cost-effective outcome, and I have found Thomas Consultants very easy to deal with.</p><footer><b>Nigel</b> · New Plymouth District Council</footer></blockquote>
+      <blockquote class="tq"><p>I want to say thank you very much for all the hard work you put in on this job. Couldn't be happier with the outcome!</p><footer><b>Private Client</b> · Resource Consent, Mission Bay</footer></blockquote>
+    </div>
+    <div class="tst__ctl">
+      <button type="button" class="js-tprev" aria-label="Previous testimonial">←</button>
+      <span class="tst__n"><span class="js-tn">01</span> / 04</span>
+      <button type="button" class="js-tnext" aria-label="Next testimonial">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="sec clients" aria-labelledby="cl-h">
+  <div class="wrap clients__grid">
+    <div>
+      <span class="eyebrow">With thanks to</span>
+      <h2 id="cl-h" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Clients and accreditations</h2>
+      <p class="clist" data-rv><span>Kāinga Ora</span><i>·</i><span>Auckland Transport</span><i>·</i><span>Watercare</span><i>·</i><span>Panuku</span><i>·</i><span>NZ Transport Agency</span><i>·</i><span>Ministry of Education</span><i>·</i><span>Waikato District Council</span><i>·</i><span>Rotorua Lakes Council</span><i>·</i><span>Hobsonville Point</span><i>·</i><span>Homes of Choice</span></p>
+    </div>
+    <div>
+      <span class="eyebrow">Accreditations &amp; memberships</span>
+      <ul class="acc">
+        <li data-rv><span>i</span>ISO 45001</li><li data-rv><span>ii</span>IANZ</li>
+        <li data-rv><span>iii</span>Toitū Envirocare</li><li data-rv><span>iv</span>Engineering NZ</li>
+        <li data-rv><span>v</span>Water NZ</li><li data-rv><span>vi</span>Survey and Spatial NZ</li>
+        <li data-rv><span>vii</span>NZ Planning Institute</li><li data-rv><span>viii</span>NZILA</li>
+        <li data-rv><span>ix</span>SiteSafe</li><li data-rv><span>x</span>SiteWise</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec cta" id="contact" aria-labelledby="ct-h">
+  <div class="wrap cta__grid">
+    <div>
+      <span class="eyebrow">vi. Begin</span>
+      <h2 id="ct-h" class="split-soft">Let’s begin with a <em>conversation.</em></h2>
+      <p>Book your free development consultation, or a complimentary meeting with one of our planners. We will listen first, then map out the clearest path forward.</p>
+      <div class="offices">
+        <div class="office"><small>Head office</small><h3>Auckland</h3><a href="tel:+6498361804">09 836 1804</a></div>
+        <div class="office"><small>South Auckland</small><h3>Manukau</h3><a href="tel:+6498696070">09 869 6070</a></div>
+      </div>
+      <p style="font-size:14px">Plus a satellite office in Christchurch.</p>
+      <div class="cta__ctas">
+        <a class="pill pill--paper magnetic" href="04-editorial/contact.html"><span class="dot"></span>Book Your Free Development Consultation</a>
+        <a class="pill pill--line magnetic" style="color:var(--paper);border-color:rgba(243,239,230,.5)" href="04-editorial/contact.html#planner">Complimentary Planner Meeting</a>
+      </div>
+    </div>
+    <div class="qform" data-rv>
+      <form id="qf" novalidate>
+        <h3>Write to us</h3>
+        <p>A short note is all we need to begin.</p>
+        <div class="fld"><label for="q-name">Your name</label><input id="q-name" name="name" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+        <div class="fld"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+        <div class="fld"><label for="q-msg">About your land or project</label><textarea id="q-msg" name="msg"></textarea></div>
+        <button class="pill magnetic" type="submit"><span class="dot"></span>Send note</button>
+      </form>
+      <div class="qthanks" role="status" aria-live="polite"><h3>Thank you.</h3><p style="color:var(--ink-soft)">Your note has arrived. One of our team will be in touch within one business day.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__word" aria-hidden="true">Thomas <em>Consultants</em></p>
+    <div class="foot__grid">
+      <div><span class="eyebrow">Thomas Consultants Ltd</span><p style="color:var(--ink-soft);margin:10px 0 0;max-width:36ch;font-size:15px">Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p></div>
+      <div><span class="eyebrow">Pages</span><ul><li><a href="04-editorial/services.html">Services</a></li><li><a href="04-editorial/projects.html">Projects</a></li><li><a href="04-editorial/about.html">About</a></li><li><a href="04-editorial/contact.html">Contact</a></li></ul></div>
+      <div><span class="eyebrow">Call</span><ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal ↗</a></li></ul></div>
+      <div><span class="eyebrow">Follow</span><ul><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>© Thomas Consultants Ltd</span><a href="#top" style="text-decoration:none">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<div class="badge">Concept 04 · <em>Field Notes</em></div>
+<div class="cur" aria-hidden="true"><span>View</span></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var root = document.documentElement;
+  var reduced = root.classList.contains('reduced');
+  var hasGsap = !!(window.gsap && window.ScrollTrigger);
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!hasGsap) root.classList.remove('anim');
+  var motion = hasGsap && !reduced;
+
+  /* ---------- Page transition ---------- */
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ root.classList.add('pt-in'); }); });
+  window.addEventListener('pageshow', function(e){ if (e.persisted){ root.classList.remove('pt-out'); root.classList.add('pt-in'); } });
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if (!a || !motion || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    var href = a.getAttribute('href') || '';
+    if (a.target === '_blank' || /^(#|tel:|mailto:|https?:)/.test(href)) return;
+    var url = new URL(a.href, location.href);
+    if (url.pathname === location.pathname && url.hash) return;
+    e.preventDefault();
+    root.classList.remove('pt-in'); root.classList.add('pt-out');
+    setTimeout(function(){ location.href = a.href; }, 650);
+  });
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.querySelector('.burger'), mmenu = document.getElementById('mmenu'), nav = document.querySelector('.nav');
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mmenu.classList.toggle('open', open); nav.classList.toggle('menu-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open && motion) gsap.fromTo(mmenu.querySelectorAll('nav a'), {yPercent:60, opacity:0}, {yPercent:0, opacity:1, stagger:.06, duration:.8, ease:'expo.out', delay:.2});
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && mmenu.classList.contains('open')){ setMenu(false); burger.focus(); } });
+
+  /* ---------- Quick form ---------- */
+  var qf = document.getElementById('qf');
+  qf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok = true;
+    [['q-name', function(v){ return v.trim().length > 1; }, 'Please tell us your name.'],
+     ['q-email', function(v){ return /^\S+@\S+\.\S+$/.test(v); }, 'Please enter a valid email address.']].forEach(function(r){
+      var el = document.getElementById(r[0]), f = el.parentNode, err = f.querySelector('.err');
+      if (!r[1](el.value)){ f.classList.add('bad'); err.textContent = r[2]; el.setAttribute('aria-invalid','true'); if (ok) el.focus(); ok = false; }
+      else { f.classList.remove('bad'); err.textContent = ''; el.removeAttribute('aria-invalid'); }
+    });
+    if (!ok) return;
+    qf.style.display = 'none';
+    var t = document.querySelector('.qthanks'); t.classList.add('on');
+    if (motion) gsap.from(t.children, {y:20, opacity:0, stagger:.1, duration:.8, ease:'expo.out'});
+  });
+
+  /* ---------- Testimonials crossfade ---------- */
+  var tqs = document.querySelectorAll('.tq'), tn = document.querySelector('.js-tn'), ti = 0, timer;
+  function tshow(i){
+    ti = (i + tqs.length) % tqs.length;
+    tqs.forEach(function(q, k){ q.classList.toggle('on', k === ti); });
+    tn.textContent = ('0' + (ti + 1)).slice(-2);
+    if (motion){
+      var p = tqs[ti].querySelector('p');
+      gsap.fromTo(p, {y:16, filter:'blur(6px)'}, {y:0, filter:'blur(0px)', duration:1.2, ease:'expo.out', delay:.15});
+    }
+    clearTimeout(timer);
+    if (!reduced) timer = setTimeout(function(){ tshow(ti + 1); }, 7500);
+  }
+  document.querySelector('.js-tprev').addEventListener('click', function(){ tshow(ti - 1); });
+  document.querySelector('.js-tnext').addEventListener('click', function(){ tshow(ti + 1); });
+  tshow(0);
+
+  /* ---------- Cursor ---------- */
+  if (fine && motion){
+    root.classList.add('has-cur');
+    var cur = document.querySelector('.cur');
+    var cx = gsap.quickTo(cur, 'x', {duration:.45, ease:'power3'}), cy = gsap.quickTo(cur, 'y', {duration:.45, ease:'power3'});
+    document.addEventListener('pointermove', function(e){ cx(e.clientX); cy(e.clientY); }, {passive:true});
+    document.addEventListener('pointerover', function(e){
+      var card = e.target.closest('.jcard'), link = e.target.closest('a,button,input,textarea,select');
+      cur.classList.toggle('view', !!card); cur.classList.toggle('link', !card && !!link);
+    });
+  }
+
+  if (!motion) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- Lenis smooth scroll ---------- */
+  var lenis = null;
+  if (window.Lenis){
+    lenis = new Lenis({duration:1.25, smoothWheel:true});
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id = a.getAttribute('href'); if (id.length < 2) return;
+        var t = document.querySelector(id); if (!t) return;
+        e.preventDefault(); lenis.scrollTo(t, {offset:-72});
+      });
+    });
+  }
+
+  /* ---------- Hide nav on scroll down ---------- */
+  var lastY = 0;
+  ScrollTrigger.create({start:0, end:'max', onUpdate:function(self){
+    var y = self.scroll(); if (mmenu.classList.contains('open')) return;
+    nav.classList.toggle('hide', y > 300 && y > lastY); lastY = y;
+  }});
+
+  /* ---------- Split letters ---------- */
+  function splitChars(el){
+    el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
+    var html = [];
+    el.childNodes.forEach(function(n){
+      var isEm = n.nodeType === 1;
+      n.textContent.split(/\s+/).filter(Boolean).forEach(function(w){
+        var chars = Array.from(w).map(function(c){ return '<span class="c">' + c + '</span>'; }).join('');
+        html.push('<span class="w" aria-hidden="true">' + (isEm ? '<em>' + chars + '</em>' : chars) + '</span>');
+      });
+    });
+    el.innerHTML = html.join(' ');
+    return el.querySelectorAll('.c');
+  }
+  var h1 = document.querySelector('.hero h1');
+  var chars = splitChars(h1);
+  gsap.set(h1, {visibility:'visible'});
+
+  /* ---------- Hero sequence ---------- */
+  var tl = gsap.timeline({delay:.55});
+  tl.to('.mast', {opacity:1, duration:.8, ease:'power2.out'})
+    .from(chars, {yPercent:115, rotate:6, opacity:0, duration:1.1, ease:'expo.out', stagger:.022}, '<.1')
+    .to('.hero__media', {clipPath:'inset(0% 0% 0% 0%)', duration:1.8, ease:'expo.inOut'}, '<.35')
+    .from('.hero__media img', {scale:1.35, duration:2.4, ease:'expo.out'}, '<')
+    .to('.hero__aside', {opacity:1, duration:1, ease:'power2.out'}, '-=1.4')
+    .from('.hero__aside > *', {y:24, stagger:.1, duration:1, ease:'expo.out'}, '<')
+    .to('.hero__cap', {opacity:1, duration:.8}, '-=.6');
+  gsap.to('.hero__media img', {yPercent:14, ease:'none', scrollTrigger:{trigger:'.hero__media', start:'top top+=72', end:'bottom top', scrub:true}});
+
+  /* ---------- Reveals ---------- */
+  gsap.utils.toArray('[data-rv]').forEach(function(el){
+    gsap.to(el, {opacity:1, y:0, duration:1.3, ease:'expo.out', scrollTrigger:{trigger:el, start:'top 90%', once:true}});
+  });
+
+  /* ---------- Word-by-word statement scrub ---------- */
+  var st = document.querySelector('.js-words');
+  st.setAttribute('aria-label', st.textContent);
+  st.innerHTML = st.textContent.split(' ').map(function(w){ return '<span class="sw" aria-hidden="true">' + w + '</span>'; }).join(' ');
+  gsap.fromTo(st.querySelectorAll('.sw'), {opacity:.14}, {opacity:1, stagger:.1, ease:'none', scrollTrigger:{trigger:st, start:'top 80%', end:'bottom 45%', scrub:true}});
+  gsap.fromTo('.arch', {clipPath:'inset(30% 0% 0% 0% round 999px 999px 4px 4px)'}, {clipPath:'inset(0% 0% 0% 0% round 999px 999px 4px 4px)', ease:'none', scrollTrigger:{trigger:'.arch', start:'top 90%', end:'top 30%', scrub:true}});
+  gsap.fromTo('.arch img', {yPercent:-6}, {yPercent:6, ease:'none', scrollTrigger:{trigger:'.arch', scrub:true}});
+
+  /* ---------- Counters ---------- */
+  gsap.utils.toArray('.count').forEach(function(el){
+    var to = +el.dataset.to, o = {v:0};
+    el.textContent = '0';
+    gsap.to(o, {v:to, duration:2.4, ease:'expo.out', scrollTrigger:{trigger:el, start:'top 88%', once:true}, onUpdate:function(){ el.textContent = Math.round(o.v); }});
+  });
+
+  /* ---------- Process rail + chapter number ---------- */
+  var pnum = document.querySelector('.js-pnum');
+  gsap.fromTo('.proc__rail i', {scaleY:0}, {scaleY:1, ease:'none', scrollTrigger:{trigger:'.proc__steps', start:'top 70%', end:'bottom 70%', scrub:true}});
+  gsap.utils.toArray('.pstep').forEach(function(s, i){
+    ScrollTrigger.create({trigger:s, start:'top 60%', end:'bottom 60%', onToggle:function(self){
+      if (self.isActive && pnum.textContent !== '0' + (i + 1)){
+        gsap.fromTo(pnum, {yPercent:100}, {yPercent:0, duration:.8, ease:'expo.out'});
+        pnum.textContent = '0' + (i + 1);
+      }
+    }});
+  });
+
+  /* ---------- Journal: pinned horizontal scroll ---------- */
+  var mm = gsap.matchMedia();
+  mm.add('(min-width: 900px)', function(){
+    var jr = document.querySelector('.jr'), track = document.querySelector('.jr__track');
+    jr.style.overflow = 'visible';
+    var dist = function(){ return Math.max(0, track.scrollWidth - innerWidth); };
+    var tw = gsap.to(track, {x:function(){ return -dist(); }, ease:'none', scrollTrigger:{
+      trigger:'.journal', start:'top top', end:function(){ return '+=' + dist(); }, pin:true, scrub:1, invalidateOnRefresh:true,
+      onUpdate:function(self){ gsap.set('.jbar i', {scaleX:self.progress}); }
+    }});
+    gsap.utils.toArray('.jcard').forEach(function(c){
+      var img = c.querySelector('img, svg');
+      gsap.fromTo(c.querySelector('.jcard__img'), {clipPath:'inset(0 0 100% 0)'}, {clipPath:'inset(0 0 0% 0)', ease:'none', scrollTrigger:{trigger:c, containerAnimation:tw, start:'left 95%', end:'left 55%', scrub:true}});
+      if (img) gsap.fromTo(img, {xPercent:-8, scale:1.15}, {xPercent:8, scale:1.15, ease:'none', scrollTrigger:{trigger:c, containerAnimation:tw, start:'left right', end:'right left', scrub:true}});
+    });
+    return function(){ jr.style.overflow = ''; };
+  });
+  mm.add('(max-width: 899px)', function(){
+    var jr = document.querySelector('.jr');
+    function upd(){ var m = jr.scrollWidth - jr.clientWidth; gsap.set('.jbar i', {scaleX: m > 0 ? jr.scrollLeft / m : 0}); }
+    jr.addEventListener('scroll', upd, {passive:true}); upd();
+  });
+
+  /* ---------- Contact heading reveal ---------- */
+  var cth = document.querySelector('.split-soft');
+  var cchars = splitChars(cth);
+  gsap.from(cchars, {yPercent:110, opacity:0, duration:1, ease:'expo.out', stagger:.018, scrollTrigger:{trigger:cth, start:'top 85%', once:true}});
+
+  /* ---------- Magnetic ---------- */
+  if (fine){
+    document.querySelectorAll('.magnetic').forEach(function(b){
+      var qx = gsap.quickTo(b, 'x', {duration:.6, ease:'elastic.out(1,.5)'}), qy = gsap.quickTo(b, 'y', {duration:.6, ease:'elastic.out(1,.5)'});
+      b.addEventListener('pointermove', function(e){ var r = b.getBoundingClientRect(); qx((e.clientX - r.left - r.width/2) * .3); qy((e.clientY - r.top - r.height/2) * .4); });
+      b.addEventListener('pointerleave', function(){ qx(0); qy(0); });
+    });
+  }
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>

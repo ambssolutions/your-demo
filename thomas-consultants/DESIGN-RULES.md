@@ -52,3 +52,20 @@ Each concept becomes a full multi-page site in its own design language (same fon
 - Page transitions: add a tasteful transition between pages consistent with the concept (e.g. overlay wipe on link click then navigate; reveal on load). Must not break back/forward (handle `pageshow` with persisted to remove overlay).
 - Same motion quality on inner pages as on home (hero reveal, scroll reveals, micro-interactions).
 - No console errors, no horizontal overflow at 390px and 1440px on any page.
+
+# Phase 3: apply the AMBS house method (read ../AMBS-METHOD.md)
+
+Apply to every page of your concepts (keep each concept's own visual language and signature motion):
+- `<html lang="en-NZ">`, meta description, Open Graph tags, theme-color, JSON-LD `ProfessionalService` (both offices + phones) on home, `BreadcrumbList` on inner pages, `FAQPage` on services.html FAQ.
+- Title: home "Thomas Consultants | Land Development Consultants, Auckland · Concept NN", inner "Services | Thomas Consultants · Concept NN".
+- Skip link to `#main`; menu button with `aria-expanded` + `aria-controls`, 44px; menu closes on link click; `scroll-padding-top` for sticky header.
+- Inner page heroes: breadcrumbs (Home / Page), full-sentence h1 ending in a full stop (e.g. "Six disciplines. One integrated team."), short lede. Every inner page ends with a CTA band.
+- Mobile (<=760px): fixed bottom quick bar with "Call 09 836 1804" + "Book a meeting", using env(safe-area-inset-bottom); pad the footer so it isn't covered.
+- Process uses the four stages: Understand the site → Design & consent → Deliver on site → Complete & hand over.
+- Forms: `novalidate`, JS validation, hidden honeypot field (`name="company_website"`, tabindex -1, aria-hidden wrapper), `<p role="status" aria-live="polite">`, "(optional)" markers, `autocomplete` on fields; success text "Thank you. We have your enquiry and will be in touch soon."; note under form "We use your details only to reply to your enquiry."
+- Contact details as a `<dl>`; add "What to tell us": your site, your idea, timing, budget ("A guess is fine.").
+- Counters ease with 1-(1-p)^3. Lenis only when `matchMedia('(pointer:fine)')` and no reduced motion. No unconditional `animation:none`.
+- Images: width/height attributes, `loading="lazy" decoding="async"` (hero: `fetchpriority="high"`, not lazy).
+- Copy: NZ English, short plain sentences. NO em dashes (—) anywhere in visible copy, no exclamation marks (except inside verbatim client testimonials), no hype words (seamless, unlock, revolutionise, leverage, cutting-edge). Do not invent stats, awards or testimonials beyond BRIEF.md (25 years, 6 disciplines, 3 offices, project count are fine).
+- Footer: Services + Explore columns, legal line "© 2026 Thomas Consultants Ltd", "Some images may be stock images or illustrative renders.", "Proudly designed by AMBS Solutions".
+- REMOVE the "Concept NN" bottom-left badge: the gallery will inject a shared concept switcher (`../assets/concepts.js` style) at the end; just leave `<html data-concept="NN-slug">` on every page.

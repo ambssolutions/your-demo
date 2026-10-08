@@ -109,8 +109,8 @@ h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.025em;margin:0}
 .hero-grid-lines{position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%);clip-path:polygon(0 0,100% 0,100% 64%,0 100%)}
 .hero-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
 .pill{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border-radius:999px;background:rgba(255,255,255,.55);backdrop-filter:blur(10px);font-size:14px;font-weight:500;color:var(--navy);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
-.pill b{background:var(--navy);color:#fff;font-size:12px;padding:3px 10px;border-radius:999px;font-weight:600}
-.hero h1{font-size:clamp(40px,5.8vw,80px);line-height:1.02;font-weight:700;letter-spacing:-.04em;margin:22px 0 0;color:var(--navy)}
+.pill b{white-space:nowrap;background:var(--navy);color:#fff;font-size:12px;padding:3px 10px;border-radius:999px;font-weight:600}
+.hero h1{font-size:clamp(38px,4.6vw,66px);line-height:1.02;font-weight:700;letter-spacing:-.04em;margin:22px 0 0;color:var(--navy)}
 .hero h1 .word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .word > span{display:inline-block}
 .hero-sub{font-family:var(--display);font-size:clamp(18px,1.6vw,22px);font-weight:500;margin:22px 0 0;color:var(--navy-2)}
@@ -343,7 +343,8 @@ html.anim .pill,html.anim .hero-sub,html.anim .hero-body,html.anim .hero-ctas,ht
   .nav-right .btn{display:none}
   .hero{padding:120px 0 90px}
   .mesh,.hero-grid-lines{clip-path:polygon(0 0,100% 0,100% 80%,0 100%)}
-  .hero-ctas .btn{width:100%}
+  .hero-ctas .btn{width:100%;text-align:center;padding:12px 22px}
+  .pill{font-size:13px}
   .ui-stack{height:400px}
   .ui-main{width:calc(100% - 20px);transform:none;top:0}
   .ui-mini{bottom:16px;width:200px}

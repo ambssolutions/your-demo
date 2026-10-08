@@ -141,7 +141,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- Statement (word scrub) ---------- */
 .statement{padding:22vh 0}
-.statement p{font-size:clamp(30px,4.6vw,72px);line-height:1.06;letter-spacing:-.045em;font-weight:600;margin:0;max-width:20ch}
+.statement #scrubText{font-size:clamp(30px,4.6vw,72px);line-height:1.06;letter-spacing:-.045em;font-weight:600;margin:0;max-width:20ch}
 .statement .w{display:inline-block;transition:color .2s}
 html.anim .statement .w{opacity:.14}
 .statement .w.hl{color:var(--green)}
@@ -950,7 +950,7 @@ html.anim .hero-kicker,html.anim .hero-sub,html.anim .hero-ctas,html.anim .hero-
   }
 
   /* ---------- Hero intro (load) ---------- */
-  gsap.set(heroPaths, {strokeDasharray:1, strokeDashoffset:1});
+  heroPaths.forEach(function(p){ p.style.strokeDasharray='1'; p.style.strokeDashoffset='1'; });
   var intro = gsap.timeline({defaults:{ease:'expo.out'}});
   intro.to(heroPaths, {strokeDashoffset:0.55, duration:2.6, ease:'power2.inOut', stagger:{each:.03, from:'start'}}, 0)
        .to('.hero h1 .line > span', {y:0, duration:1.3, stagger:.09}, .25)
@@ -965,7 +965,7 @@ html.anim .hero-kicker,html.anim .hero-sub,html.anim .hero-ctas,html.anim .hero-
   var heroTl = gsap.timeline({
     scrollTrigger:{trigger:'.hero', start:'top top', end:'+=260%', pin:true, scrub:1, anticipatePin:1}
   });
-  heroTl.to(heroPaths, {strokeDashoffset:0, ease:'none', duration:1, stagger:{each:.006}}, 0)
+  heroTl.fromTo(heroPaths, {strokeDashoffset:0.55}, {strokeDashoffset:0, ease:'none', duration:1, stagger:{each:.006}, immediateRender:false}, 0)
         .to('#heroInner', {y:-90, opacity:0, ease:'power2.in', duration:.7}, .1)
         .to('.hero-meta', {opacity:0, duration:.3}, .1)
         .to('.hero-fade', {opacity:0, duration:.6}, .2)
