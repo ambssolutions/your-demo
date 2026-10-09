@@ -159,6 +159,7 @@ async function testConcept(slug) {
           ok(`${slug} contact form blocks empty submit`, blocked);
           for (const f of await form.locator("input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=submit]), textarea").all()) {
             if (!(await f.isVisible())) continue;
+            if (await f.evaluate(el => !!el.closest('[aria-hidden="true"], .hp, .honeypot') || /company_website|honeypot|website_url/.test(el.name) || el.tabIndex < 0)) continue; // spam trap
             const t = (await f.getAttribute("type")) || "text";
             await f.fill(t === "email" ? "client@example.com" : t === "tel" ? "021 555 0123" : t === "number" ? "1" : "Test enquiry about a subdivision");
           }
