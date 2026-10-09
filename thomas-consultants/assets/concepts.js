@@ -36,6 +36,7 @@
     'backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:999px;' +
     'padding:4px;box-shadow:0 12px 32px -12px rgba(0,0,0,.5);transition:opacity .3s,transform .3s}' +
     '.bar.tuck{opacity:.35}.bar:hover,.bar:focus-within{opacity:1}' +
+    '.bar.gone{opacity:0;pointer-events:none;transform:translate(-50%,24px)}' +
     'a,button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:999px;color:#fff;white-space:nowrap}' +
     'a:hover,button:hover{background:rgba(255,255,255,.12)}' +
     'a:focus-visible,button:focus-visible{outline:2px solid #8BC75A;outline-offset:1px}' +
@@ -105,10 +106,20 @@
   if (framed) return;
 
   // fade a little while scrolling down so it never blocks content
-  var lastY = scrollY;
-  addEventListener('scroll', function () { bar.classList.toggle('tuck', scrollY > lastY && scrollY > 200); lastY = scrollY; }, { passive: true });
+  // hide while scrolling down (fully on phones, faded on desktop); show again on scroll up or near the end
+  var lastY = scrollY, ticking = false, phone = matchMedia('(max-width:760px)');
+  addEventListener('scroll', function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () {
+      var y = scrollY, down = y > lastY && y > 200, nearEnd = innerHeight + y > document.documentElement.scrollHeight - 160;
+      bar.classList.toggle(phone.matches ? 'gone' : 'tuck', down && !nearEnd);
+      if (!phone.matches) bar.classList.remove('gone');
+      lastY = y; ticking = false;
+    });
+  }, { passive: true });
 
-  (document.body ? Promise.resolve() : new Promise(function (r) { addEventListener('DOMContentLoaded', r); })).then(function () {
-    document.body.appendChild(host);
-  });
+  // mount after the page has loaded and gone idle so it never competes with the page's own first paint
+  function mount() { document.body.appendChild(host); }
+  function idle() { ('requestIdleCallback' in window) ? requestIdleCallback(mount, { timeout: 2500 }) : setTimeout(mount, 1200); }
+  if (document.readyState === 'complete') idle(); else addEventListener('load', idle);
 })();

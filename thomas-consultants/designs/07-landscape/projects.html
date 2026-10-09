@@ -16,14 +16,14 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thomasconsultants.co.nz/"}, {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.thomasconsultants.co.nz/projects"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" imagesrcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" imagesizes="(max-width: 760px) 200vw, 100vw" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap">
-<script>(function(){var h=document.documentElement;try{if(sessionStorage.getItem('tc-pt')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('pt-in');sessionStorage.removeItem('tc-pt')}catch(e){}})();</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<link rel="preload" as="image" imagesrcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUZiZSSShiA.woff2" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap">
+<script>(function(){var h=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;if(!rm&&matchMedia('(pointer:fine)').matches)h.classList.add('gs');try{if(sessionStorage.getItem('tc-pt')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('pt-in');sessionStorage.removeItem('tc-pt')}catch(e){}})();</script>
 <style>
+@font-face{font-family:'Oswald fb';src:local('Arial'),local('Liberation Sans'),local('Helvetica'),local('Roboto');size-adjust:79%}
 :root{--forest:#15281E;--forest2:#1E3829;--moss:#3F6B2E;--thomas:#6DAB3C;--thomas-dk:#4F8A2A;--fern:#8BC45A;--sand:#EADFC8;--paper:#F5EFE2;--white:#FFFDF8;--clay:#B9763C;--ink:#14201A;--muted:#55645A;--line:rgba(20,32,26,.14);
---display:'Oswald','Arial Narrow','Roboto Condensed',sans-serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--pad:clamp(16px,5vw,64px);--r:22px;--ease:cubic-bezier(.2,.7,.1,1)}
+--display:'Oswald','Oswald fb',sans-serif;--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--pad:clamp(16px,5vw,64px);--r:22px;--ease:cubic-bezier(.2,.7,.1,1)}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
@@ -38,18 +38,18 @@ p{margin:0 0 1em}
 .wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--pad)}
 .skip{position:absolute;left:-9999px;top:8px;z-index:300;background:var(--forest);color:#fff;padding:10px 16px;border-radius:10px}
 .skip:focus{left:16px}
-.eyebrow{display:inline-flex;align-items:center;gap:12px;font:500 13px/1.2 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--thomas-dk);margin:0 0 16px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font:700 13px/1.2 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--thomas-dk);margin:0 0 16px}
 .eyebrow::before{content:"";width:26px;height:2px;background:currentColor}
 .dark .eyebrow,.on-dark .eyebrow{color:var(--fern)}
 .lede{font-size:clamp(18px,1.5vw,21px);color:var(--muted);max-width:620px}
 .dark .lede{color:#C5D3C2}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;border:0;cursor:pointer;background:var(--thomas);color:#0E1A10;font:500 15px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .4s var(--ease)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;border:0;cursor:pointer;background:var(--thomas);color:#0E1A10;font:700 15px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .4s var(--ease)}
 .btn:hover{background:var(--fern)}
-.btn.ghost{background:rgba(255,255,255,.1);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.btn.ghost{background:rgba(21,40,30,.35);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
 .btn.ghost:hover{background:rgba(255,255,255,.2)}
 .btn.dark{background:var(--forest);color:#fff}
 .btn.dark:hover{background:var(--moss)}
-.more{display:inline-flex;align-items:center;gap:10px;min-height:44px;font:500 14px var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--forest);border-bottom:2px solid var(--thomas)}
+.more{display:inline-flex;align-items:center;gap:10px;min-height:44px;font:700 14px var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--forest);border-bottom:2px solid var(--thomas)}
 .dark .more{color:#fff}
 .ticks{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
 .ticks li{display:flex;gap:12px;align-items:flex-start}
@@ -60,7 +60,7 @@ p{margin:0 0 1em}
 .nav.solid{background:rgba(21,40,30,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 19px var(--display);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
 .navl{display:flex;gap:2px;list-style:none;margin:0;padding:0}
-.navl a{display:block;padding:10px 14px;border-radius:999px;text-decoration:none;font:500 14px var(--display);letter-spacing:.12em;text-transform:uppercase}
+.navl a{display:block;padding:10px 14px;border-radius:999px;text-decoration:none;font:700 14px var(--display);letter-spacing:.12em;text-transform:uppercase}
 .navl a:hover{background:rgba(255,255,255,.12)}
 .navl a[aria-current]{background:rgba(139,196,90,.28)}
 .nav .btn{min-height:46px;padding:0 20px;font-size:13px}
@@ -94,14 +94,16 @@ p{margin:0 0 1em}
 @keyframes hup{from{opacity:0;translate:0 30px}}
 .hcopy{position:absolute;z-index:2;left:0;right:0;bottom:clamp(120px,19vw,250px)}
 .hero h1{font-size:clamp(44px,min(7.2vw,11vh),108px);line-height:.94;max-width:13ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
-.phero h1{font-size:clamp(38px,6vw,88px);max-width:16ch}
+.phero h1{font-size:clamp(36px,min(5vw,8vh),76px);max-width:18ch}
+.phero .hcopy{bottom:clamp(110px,12vw,170px)}
+.phero{min-height:620px}
 .rot{display:inline-grid;vertical-align:top;color:var(--fern)}
 .rot>span{grid-area:1/1;opacity:0;transform:translateY(.35em);transition:opacity .6s,transform .7s var(--ease)}
 .rot>span.on{opacity:1;transform:none}
 .hcopy .eyebrow{color:#DDEBD2}
 .hcopy .lede{color:#E6EEE2;margin:18px 0 26px}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.smeta{position:absolute;z-index:4;right:var(--pad);bottom:calc(clamp(110px,16vw,220px) - 20px);width:min(300px,40vw);font:500 12px var(--display);letter-spacing:.18em;text-transform:uppercase;color:#E6EEE2}
+.smeta{position:absolute;z-index:4;right:var(--pad);bottom:calc(clamp(110px,16vw,220px) - 20px);width:min(300px,40vw);font:700 12px var(--display);letter-spacing:.18em;text-transform:uppercase;color:#E6EEE2}
 .scaps{position:relative;height:18px}
 .scap{position:absolute;inset:0;opacity:0;transition:opacity .6s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .scap.on{opacity:1}
@@ -109,7 +111,7 @@ p{margin:0 0 1em}
 .sprog::after{content:"";display:block;height:100%;background:var(--fern);transform:scaleX(0);transform-origin:left}
 .sprog.run::after{animation:sp 6s linear forwards}
 @keyframes sp{to{transform:scaleX(1)}}
-.crumbs ol{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:8px;font:500 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:#DDEBD2}
+.crumbs ol{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:8px;font:700 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:#DDEBD2}
 .crumbs li+li::before{content:"/";margin-right:8px;opacity:.6}
 .crumbs a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
 /* ticker */
@@ -139,16 +141,17 @@ p{margin:0 0 1em}
 .dtab.done i::after{transform:scaleX(1);background:var(--thomas)}
 .run .dtab.on i::after{animation:sp 7s linear forwards}
 .paused .dtab.on i::after{transform:scaleX(1);background:var(--thomas)}
-.dtab b{font:500 12px var(--display);letter-spacing:.14em;color:var(--clay);margin-right:6px}
+.dtab b{font:700 12px var(--display);letter-spacing:.14em;color:var(--clay);margin-right:6px}
 .dtab.on{color:var(--ink)}
 .dtrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:28px}
 .dtrack::-webkit-scrollbar{display:none}
+.dpanel+.dpanel{content-visibility:auto;contain-intrinsic-size:auto 1200px auto 480px}
 .dpanel{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.1fr 1fr;background:var(--white);border-radius:28px;overflow:hidden;min-height:480px;border:1px solid var(--line)}
 .dpanel .ph{position:relative;overflow:hidden;background:var(--moss)}
 .dpanel .ph img{width:100%;height:100%;object-fit:cover}
-.dpanel .ph .tag{position:absolute;left:18px;bottom:18px;background:rgba(21,40,30,.78);color:#fff;font:500 12px var(--display);letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+.dpanel .ph .tag{position:absolute;left:18px;bottom:18px;background:rgba(21,40,30,.78);color:#fff;font:700 12px var(--display);letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}
 .dpanel .tx{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center}
-.dpanel .k{font:500 12px var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.dpanel .k{font:700 12px var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
 .dpanel h3{font-size:clamp(32px,3.6vw,52px);margin:12px 0 12px;color:var(--forest)}
 .dpanel p{color:var(--muted);margin:0}
 .dpanel .more{margin-top:26px;align-self:flex-start}
@@ -156,7 +159,7 @@ p{margin:0 0 1em}
 .cbtn{width:52px;height:52px;border-radius:50%;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer;display:grid;place-items:center;transition:background .3s,color .3s}
 .cbtn:hover{background:var(--forest);color:#fff;border-color:var(--forest)}
 .dark .cbtn:hover{background:#fff;color:var(--forest)}
-.dcount,.ccount{font:500 14px var(--display);letter-spacing:.2em}
+.dcount,.ccount{font:700 14px var(--display);letter-spacing:.2em}
 .dctrl .g{display:flex;gap:10px}
 /* people / why */
 .why{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
@@ -170,10 +173,10 @@ p{margin:0 0 1em}
 .stat{padding:22px 14px 0 0}
 .stat .n{font:700 clamp(48px,5vw,76px)/.95 var(--display);color:var(--sand)}
 .stat .n sup{font-size:.4em;color:var(--fern)}
-.stat .l{font:500 12px var(--display);letter-spacing:.16em;text-transform:uppercase;color:#C5D3C2;margin-top:8px}
+.stat .l{font:700 12px var(--display);letter-spacing:.16em;text-transform:uppercase;color:#C5D3C2;margin-top:8px}
 .whyl{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .whyl li{padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
-.whyl b{display:block;font:500 17px var(--display);letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-bottom:4px}
+.whyl b{display:block;font:700 17px var(--display);letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-bottom:4px}
 .whyl span{font-size:15px;color:#C5D3C2}
 #why{overflow:hidden}
 .contour{position:absolute;right:-60px;top:40px;width:520px;opacity:.12;pointer-events:none}
@@ -185,15 +188,15 @@ p{margin:0 0 1em}
 .korubox svg{position:absolute;inset:6% 8%;width:84%;height:88%;z-index:2}
 .pillars{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
 .pillars li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.7)}
-.pillars .d{width:44px;height:44px;border-radius:50%;background:var(--forest);color:var(--fern);display:grid;place-items:center;font:500 14px var(--display)}
-.pillars b{display:block;font:500 16px var(--display);letter-spacing:.05em;text-transform:uppercase;color:var(--forest)}
+.pillars .d{width:44px;height:44px;border-radius:50%;background:var(--forest);color:var(--fern);display:grid;place-items:center;font:700 14px var(--display)}
+.pillars b{display:block;font:700 16px var(--display);letter-spacing:.05em;text-transform:uppercase;color:var(--forest)}
 .pillars span{font-size:15px;color:var(--muted)}
 /* process (sticky stacked) */
 .stack{display:grid;gap:26px}
 .stage{position:sticky;top:calc(92px + var(--n) * 18px);display:grid;grid-template-columns:1.2fr 1fr;min-height:clamp(380px,46vh,460px);border-radius:28px;overflow:hidden;box-shadow:0 -14px 40px -24px rgba(0,0,0,.35)}
 .stage .tx{padding:clamp(26px,3.6vw,50px);display:flex;flex-direction:column}
 .stage .no{font:700 clamp(70px,8vw,120px)/.85 var(--display);opacity:.9}
-.stage .k{font:500 12px var(--display);letter-spacing:.2em;text-transform:uppercase;margin:14px 0 8px;opacity:.8}
+.stage .k{font:700 12px var(--display);letter-spacing:.2em;text-transform:uppercase;margin:14px 0 8px;opacity:.8}
 .stage h3{font-size:clamp(28px,3vw,44px);margin-bottom:10px}
 .stage p{margin:0;opacity:.85}
 .stage .ph{position:relative;background:var(--moss)}
@@ -227,9 +230,9 @@ p{margin:0 0 1em}
 #projGrid .pcard{animation:pin .6s var(--ease) both;animation-delay:var(--rd,0ms)}
 @keyframes pin{from{opacity:0;transform:translateY(16px)}}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.filters button{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);color:var(--forest);cursor:pointer;font:500 14px var(--display);letter-spacing:.08em;text-transform:uppercase}
+.filters button{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);color:var(--forest);cursor:pointer;font:700 14px var(--display);letter-spacing:.08em;text-transform:uppercase}
 .filters button[aria-pressed="true"]{background:var(--forest);color:#fff;border-color:var(--forest)}
-.fcount{font:500 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 26px}
+.fcount{font:700 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 26px}
 /* carousel */
 .ctrack{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 0 6px}
 .ctrack::-webkit-scrollbar{display:none}
@@ -248,7 +251,7 @@ p{margin:0 0 1em}
 .vcard{flex:0 0 min(86vw,560px);scroll-snap-align:start;margin:0;background:var(--paper);border-radius:24px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
 .vcard blockquote{margin:0;font-size:clamp(19px,1.6vw,23px);line-height:1.5;color:var(--ink)}
 .vcard blockquote::before{content:"\201C";display:block;font:700 70px/.6 var(--display);color:var(--thomas);height:34px}
-.vcard cite{font:500 15px var(--display);letter-spacing:.1em;text-transform:uppercase;font-style:normal;color:var(--forest)}
+.vcard cite{font:700 15px var(--display);letter-spacing:.1em;text-transform:uppercase;font-style:normal;color:var(--forest)}
 .vcard cite small{display:block;font:400 14px var(--sans);letter-spacing:0;text-transform:none;color:var(--muted)}
 /* marquees */
 .mq{overflow:hidden;border-block:1px solid var(--line);padding:20px 0}
@@ -266,7 +269,7 @@ p{margin:0 0 1em}
 .bookcard h3{font-size:clamp(28px,2.6vw,38px);margin-bottom:8px}
 .bookcard p{color:#E6EEE2;margin:0 0 18px}
 .details{margin:26px 0 0;display:grid;grid-template-columns:auto 1fr;gap:10px 22px}
-.details dt{font:500 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--fern);padding-top:3px}
+.details dt{font:700 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--fern);padding-top:3px}
 .details dd{margin:0}
 .details a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
 .light .details dt{color:var(--thomas-dk)}.light .details a{border-color:var(--line)}
@@ -304,7 +307,7 @@ p{margin:0 0 1em}
 /* faq */
 .faq{display:grid;gap:12px;max-width:940px}
 .faq details{background:var(--white);border-radius:18px;border:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 22px;font:500 clamp(18px,1.8vw,23px) var(--display);text-transform:uppercase;color:var(--forest);min-height:44px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 22px;font:700 clamp(18px,1.8vw,23px) var(--display);text-transform:uppercase;color:var(--forest);min-height:44px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary i{flex:0 0 36px;height:36px;border-radius:50%;background:var(--paper);position:relative;transition:transform .4s var(--ease),background .3s}
 .faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--forest);transform:translate(-50%,-50%)}
@@ -316,7 +319,7 @@ p{margin:0 0 1em}
 /* service detail */
 .sdet{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center;padding:clamp(40px,5vw,70px) 0;border-top:1px solid var(--line)}
 .sdet:nth-child(even) .pics{order:-1}
-.sdet .k{font:500 13px var(--display);letter-spacing:.2em;color:var(--clay)}
+.sdet .k{font:700 13px var(--display);letter-spacing:.2em;color:var(--clay)}
 .sdet h2{font-size:clamp(36px,4.4vw,62px);color:var(--forest);margin:10px 0 14px}
 .sdet .d{font-weight:600;color:var(--forest);font-size:19px}
 .sdet p{color:var(--muted)}
@@ -325,7 +328,7 @@ p{margin:0 0 1em}
 .pics .b{position:absolute;right:-4%;bottom:0;width:46%;border-radius:18px;overflow:hidden;aspect-ratio:1/1;border:6px solid var(--paper);background:var(--moss)}
 .pics img{width:100%;height:100%;object-fit:cover}
 .jump{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 30px;padding:0}
-.jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);text-decoration:none;font:500 14px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--forest);background:var(--white)}
+.jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);text-decoration:none;font:700 14px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--forest);background:var(--white)}
 /* about extras */
 .values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .value{background:var(--white);border-radius:22px;padding:28px;border:1px solid var(--line)}
@@ -340,23 +343,23 @@ p{margin:0 0 1em}
 .office img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:transform 1.2s var(--ease)}
 a.office:hover img{transform:scale(1.06)}
 .office>*:not(img){position:relative}
-.office small{font:500 12px var(--display);letter-spacing:.18em;text-transform:uppercase;color:#DDEBD2}
+.office small{font:700 12px var(--display);letter-spacing:.18em;text-transform:uppercase;color:#DDEBD2}
 .office b{font:700 32px var(--display);text-transform:uppercase}
-.office .n{font:500 22px var(--display);color:var(--fern)}
+.office .n{font:700 22px var(--display);color:var(--fern)}
 /* project detail */
 .facts{margin:0;border-top:1px solid var(--line)}
 .facts div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.facts dt{font:500 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--thomas-dk)}
+.facts dt{font:700 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--thomas-dk)}
 .facts dd{margin:0;font-weight:600;color:var(--forest)}
 .role{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
 .role li{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
-.role b{display:block;font:500 17px var(--display);letter-spacing:.05em;text-transform:uppercase;color:var(--forest)}
+.role b{display:block;font:700 17px var(--display);letter-spacing:.05em;text-transform:uppercase;color:var(--forest)}
 .role a{color:var(--thomas-dk);font-weight:600}
 .pnav{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:40px}
 /* footer */
-footer{background:#0F1E16;color:#B7C6B4;padding:70px 0 40px;font-size:15px}
+footer{background:#0F1E16;color:#B7C6B4;padding:70px 0 40px;font-size:15px;content-visibility:auto;contain-intrinsic-size:auto 600px}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
-footer h4{font:500 14px var(--display);letter-spacing:.16em;text-transform:uppercase;color:#fff;margin:0 0 12px}
+footer h4{font:700 14px var(--display);letter-spacing:.16em;text-transform:uppercase;color:#fff;margin:0 0 12px}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
 footer a{text-decoration:none}
 footer a:hover{color:var(--fern)}
@@ -365,13 +368,23 @@ footer .brand{color:#fff;margin-bottom:14px}
 .fbase span{display:block}
 /* quick bar + transitions */
 .qbar{display:none}
-.pt{position:fixed;left:0;right:0;top:-14vh;height:128vh;z-index:500;pointer-events:none;transform:translateY(105%);transition:transform .56s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column}
+.pt{position:fixed;left:0;right:0;top:-14vh;height:128vh;z-index:500;pointer-events:none;transform:translateY(105%);transition:transform .56s cubic-bezier(.7,0,.2,1);display:none;flex-direction:column}
+html.pt-in .pt,html.pt-out .pt,html.pt-done .pt,html.pt-arm .pt{display:flex}
 .pt svg{height:14vh;width:100%}
 .pt div{flex:1;background:var(--forest)}
 html.pt-in .pt{transform:none;transition:none;animation:pts .01s 2.4s forwards}
 html.pt-done .pt{transform:translateY(-105%)}
 html.pt-out .pt{transform:none}
 @keyframes pts{to{transform:translateY(-105%)}}
+@supports (animation-timeline: scroll()){
+  html:not(.gs) .hero .r1{animation:pr1 linear both;animation-timeline:scroll(root);animation-range:0 100vh}
+  html:not(.gs) .hero .r2{animation:pr2 linear both;animation-timeline:scroll(root);animation-range:0 100vh}
+  html:not(.gs) .hero .r3{animation:pr3 linear both;animation-timeline:scroll(root);animation-range:0 100vh}
+  html:not(.gs) .hero .hcopy{animation:prc linear both;animation-timeline:scroll(root);animation-range:0 90vh}
+  @keyframes pr1{to{translate:0 -6vh}}@keyframes pr2{to{translate:0 8vh}}@keyframes pr3{to{translate:0 19vh}}
+  @keyframes prc{to{translate:0 -16vh;opacity:0}}
+  @keyframes kd{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes kl{from{opacity:0}to{opacity:.9}}
+}
 @media (max-width:1080px){
   .navl,.nav .btn{display:none}.burger{display:grid}
   .foot{grid-template-columns:1fr 1fr}
@@ -392,13 +405,13 @@ html.pt-out .pt{transform:none}
   .spl{aspect-ratio:3/4}
 }
 @media (max-width:760px){
-  .qbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:110;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(21,40,30,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-  .qbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;text-decoration:none;font:500 14px var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+  .qbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:110;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#15281E}
+  .qbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;text-decoration:none;font:700 14px var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
   .qbar a.b{background:var(--thomas);color:#0E1A10;box-shadow:none}
   footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   .menu-open .qbar{display:none}
-  .hcopy{bottom:calc(96px + env(safe-area-inset-bottom))}
-  .phero .hcopy{bottom:110px}
+  .hcopy{bottom:calc(150px + env(safe-area-inset-bottom))}
+  .phero .hcopy{bottom:130px}
   .ctas .btn{width:100%}
   .smeta{left:var(--pad);right:auto;width:auto;bottom:auto;top:96px}
   .split{grid-template-columns:1fr;gap:12px}.spl{aspect-ratio:16/10}
@@ -412,7 +425,7 @@ html.pt-out .pt{transform:none}
   body{font-size:17px}
 }
 @media (prefers-reduced-motion:reduce){
-  .ridges .rl svg,.hcopy .wrap>*,.slide.on img,.ticker .row,.mq .row,.sprog.run::after,.run .dtab.on i::after{animation:none}
+  .hero .rl,.hero .hcopy,#koruStem,#koruLeaves,.ridges .rl svg,.hcopy .wrap>*,.slide.on img,.ticker .row,.mq .row,.sprog.run::after,.run .dtab.on i::after{animation:none}
   .io .rv{opacity:1;transform:none;transition:none}
 }
 </style>
@@ -429,7 +442,7 @@ html.pt-out .pt{transform:none}
 <nav id="menu" aria-label="Mobile" aria-hidden="true"><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html" aria-current="page">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a><div class="ph"><a href="tel:+6498361804">Auckland · 09 836 1804</a><a href="tel:+6498696070">Manukau · 09 869 6070</a></div></nav>
 <main id="main">
 <section class="hero phero" id="top" aria-labelledby="h1">
-  <div class="slide on"><img src="../../assets/img/aerial-harbour-800.webp" srcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" sizes="(max-width: 760px) 200vw, 100vw" width="1600" height="899" alt="Aerial view of new housing with the harbour behind" fetchpriority="high" decoding="async"></div>
+  <div class="slide on"><img src="../../assets/img/aerial-harbour-800.webp" srcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" sizes="100vw" width="1600" height="899" alt="Aerial view of new housing with the harbour behind" fetchpriority="high" decoding="async"></div>
   <div class="shade" aria-hidden="true"></div>
   <div class="hcopy"><div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Projects</span></li></ol></nav>
@@ -442,7 +455,7 @@ html.pt-out .pt{transform:none}
   <div class="rl r3"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 220V184C200 160 360 176 560 182S900 150 1100 166S1340 188 1440 176V220Z" fill="#F5EFE2"/></svg></div>
 </div>
 </section>
-<section class="sheet paper" aria-labelledby="pl">
+<section class="sheet cv paper" aria-labelledby="pl">
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Field notes</p><h2 id="pl">All projects.</h2></div><p class="lede">For councils, Kāinga Ora, developers and private clients.</p></div>
     <div class="split"><a class="spl rv" style="--rd:0ms" href="projects.html#res"><img src="../../assets/img/townhouses-new-800.webp" srcset="../../assets/img/townhouses-new-800.webp 800w, ../../assets/img/townhouses-new-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 31vw" width="1600" height="1200" alt="New two-storey townhouses with fresh landscaping" loading="lazy" decoding="async"><div class="c"><b>Residential</b><span>7 projects · homes and subdivisions</span></div></a><a class="spl rv" style="--rd:90ms" href="projects.html#eng"><img src="../../assets/img/new-road-800.webp" srcset="../../assets/img/new-road-800.webp 800w, ../../assets/img/new-road-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 31vw" width="1600" height="758" alt="Freshly sealed road in a new development" loading="lazy" decoding="async"><div class="c"><b>Infrastructure</b><span>8 projects · roads, stormwater and three waters</span></div></a><a class="spl rv" style="--rd:180ms" href="projects.html#pub"><img src="../../assets/img/playground-aerial-800.webp" srcset="../../assets/img/playground-aerial-800.webp 800w, ../../assets/img/playground-aerial-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 31vw" width="1600" height="784" alt="Aerial view of a new playground and plaza" loading="lazy" decoding="async"><div class="c"><b>Public spaces</b><span>7 projects · parks, reserves and play</span></div></a></div>
@@ -451,7 +464,7 @@ html.pt-out .pt{transform:none}
     <div class="pgrid" id="projGrid"><a class="pcard rv" href="project.html?p=mcmillan-lockwood" data-cats="eng res"><div class="ph"><img src="../../assets/img/aerial-apartments-800.webp" srcset="../../assets/img/aerial-apartments-800.webp 800w, ../../assets/img/aerial-apartments-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="898" alt="Aerial view of a four-storey apartment building in an Auckland suburb" loading="lazy" decoding="async"><div class="tags"><span>Engineering</span><span>Construction Monitoring</span></div></div><h3>McMillan and Lockwood</h3><p class="loc">Auckland</p></a><a class="pcard rv" href="project.html?p=cracroft-great-south" data-cats="eng survey res"><div class="ph"><img src="../../assets/img/apartments-colour-800.webp" srcset="../../assets/img/apartments-colour-800.webp 800w, ../../assets/img/apartments-colour-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="1066" alt="Four-storey apartment building with orange panels" loading="lazy" decoding="async"><div class="tags"><span>Engineering</span><span>Surveying</span></div></div><h3>2 Cracroft Road / 618-620 Great South Road</h3><p class="loc">Auckland</p></a><a class="pcard rv" href="project.html?p=churchill-park-lookout" data-cats="land pub"><div class="ph"><img src="../../assets/img/lookout-seat-800.webp" srcset="../../assets/img/lookout-seat-800.webp 800w, ../../assets/img/lookout-seat-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="1067" alt="Curved bench at a park lookout with harbour views" loading="lazy" decoding="async"><div class="tags"><span>Landscape Architecture</span><span>Open Space Design</span></div></div><h3>Churchill Park Lookout</h3><p class="loc">Auckland</p></a><a class="pcard rv" href="project.html?p=observation-green" data-cats="land pub"><div class="ph"><img src="../../assets/img/play-space-800.webp" srcset="../../assets/img/play-space-800.webp 800w, ../../assets/img/play-space-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="1067" alt="Play space with rope fencing and native grasses" loading="lazy" decoding="async"><div class="tags"><span>Landscape &amp; Visual Assessments</span><span>Planting Plan</span></div></div><h3>Observation Green</h3><p class="loc">Auckland</p></a><a class="pcard rv" href="project.html?p=fearon-park" data-cats="plan env pub"><div class="ph"><img src="../../assets/img/plaza-path-800.webp" srcset="../../assets/img/plaza-path-800.webp 800w, ../../assets/img/plaza-path-1024.webp 1024w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1024" height="683" alt="Landscaped plaza with pathways and planting" loading="lazy" decoding="async"><div class="tags"><span>Project Management</span><span>Contaminated Sites</span></div></div><h3>Open Space, Fearon Park</h3><p class="loc">Mount Roskill, Auckland</p></a><a class="pcard rv" href="project.html?p=taurus-crescent" data-cats="eng survey res"><div class="ph"><img src="../../assets/img/aerial-subdivision-800.webp" srcset="../../assets/img/aerial-subdivision-800.webp 800w, ../../assets/img/aerial-subdivision-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="898" alt="Drone view of a completed residential subdivision" loading="lazy" decoding="async"><div class="tags"><span>Engineering</span><span>Surveying</span></div></div><h3>Taurus Crescent</h3><p class="loc">Auckland</p></a><a class="pcard rv" href="project.html?p=thom-street" data-cats="eng res"><div class="ph"><img src="../../assets/img/apartments-bright-800.webp" srcset="../../assets/img/apartments-bright-800.webp 800w, ../../assets/img/apartments-bright-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="1069" alt="Apartment terrace with orange and yellow accents" loading="lazy" decoding="async"><div class="tags"><span>Engineering Design</span><span>Construction Monitoring</span></div></div><h3>Thom Street, New Lynn</h3><p class="loc">New Lynn, Auckland</p></a><a class="pcard rv" href="project.html?p=tasman-avenue" data-cats="eng survey res"><div class="ph"><img src="../../assets/img/house-dusk-800.webp" srcset="../../assets/img/house-dusk-800.webp 800w, ../../assets/img/house-dusk-1500.webp 1500w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1500" height="1028" alt="Contemporary home lit at dusk" loading="lazy" decoding="async"><div class="tags"><span>Engineering</span><span>Surveying</span></div></div><h3>Tasman Avenue, Mt Albert</h3><p class="loc">Mt Albert, Auckland</p></a><a class="pcard rv" href="project.html?p=signature-homes" data-cats="eng plan res"><div class="ph"><img src="../../assets/img/aerial-harbour-800.webp" srcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="899" alt="Aerial view of new housing with the harbour behind" loading="lazy" decoding="async"><div class="tags"><span>Engineering</span><span>Planning</span></div></div><h3>Signature Homes &amp; Kāinga Ora</h3><p class="loc">Auckland</p></a><a class="pcard rv" href="project.html?p=kaimai-avenue" data-cats="res"><div class="ph"><img src="../../assets/img/townhouses-new-800.webp" srcset="../../assets/img/townhouses-new-800.webp 800w, ../../assets/img/townhouses-new-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="1200" alt="New two-storey townhouses with fresh landscaping" loading="lazy" decoding="async"><div class="tags"><span>Terraced Housing</span><span>Residential</span></div></div><h3>Kaimai Avenue, Massey</h3><p class="loc">Massey, Auckland</p></a><a class="pcard rv" href="project.html?p=elliott-reserve" data-cats="plan pub"><div class="ph"><img src="../../assets/img/playground-800.webp" srcset="../../assets/img/playground-800.webp 800w, ../../assets/img/playground-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="1069" alt="Nature playground with timber play structures" loading="lazy" decoding="async"><div class="tags"><span>Project Management</span></div></div><h3>Elliott Reserve Playground</h3><p class="loc">Glenfield, Auckland</p></a><a class="pcard rv" href="project.html?p=kauri-glen" data-cats="env pub"><div class="ph"><img src="../../assets/img/bush-800.webp" srcset="../../assets/img/bush-800.webp 800w, ../../assets/img/bush-1512.webp 1512w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1512" height="2016" alt="Native bush on a hillside" loading="lazy" decoding="async"><div class="tags"><span>Ecological Assessment</span></div></div><h3>Kauri Glen Reserve</h3><p class="loc">Northcote, Auckland</p></a><a class="pcard rv" href="project.html?p=withers-reserve" data-cats="env pub"><div class="ph"><img src="../../assets/img/boardwalk-800.webp" srcset="../../assets/img/boardwalk-800.webp 800w, ../../assets/img/boardwalk-1280.webp 1280w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1280" height="960" alt="Timber boardwalk through native bush" loading="lazy" decoding="async"><div class="tags"><span>Environmental</span></div></div><h3>Withers Reserve</h3><p class="loc">Auckland</p></a><a class="pcard rv" href="project.html?p=rural-subdivision" data-cats="eng env"><div class="ph"><img src="../../assets/img/stream-800.webp" srcset="../../assets/img/stream-800.webp 800w, ../../assets/img/stream-1024.webp 1024w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1024" height="683" alt="Stream with a culvert and native bush" loading="lazy" decoding="async"><div class="tags"><span>Stormwater</span><span>Ecology</span></div></div><h3>Rural subdivision</h3><p class="loc">Rural site</p></a><a class="pcard rv" href="project.html?p=henderson-high" data-cats="land pub"><div class="ph"><img src="../../assets/img/render-park-800.webp" srcset="../../assets/img/render-park-800.webp 800w, ../../assets/img/render-park-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="900" alt="Landscape render of a park with shade sails" loading="lazy" decoding="async"><div class="tags"><span>Landscape Architecture</span></div></div><h3>Henderson High School Heart Space</h3><p class="loc">Henderson, Auckland</p></a><a class="pcard rv" href="project.html?p=scott-road" data-cats="plan eng env"><div class="ph"><img src="../../assets/img/plan-engineering-800.webp" srcset="../../assets/img/plan-engineering-800.webp 800w, ../../assets/img/plan-engineering-1600.webp 1600w, ../../assets/img/plan-engineering-2400.webp 2400w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="2400" height="1696" alt="Engineering layout plan for a residential development" loading="lazy" decoding="async"><div class="tags"><span>Resource Consent</span><span>Traffic Engineering</span></div></div><h3>Scott Road, Hobsonville</h3><p class="loc">Hobsonville, Auckland</p></a></div>
   </div>
 </section>
-<section class="sheet ctaband cv" aria-labelledby="ctaT">
+<section class="sheet cv ctaband cv" aria-labelledby="ctaT">
   <img src="../../assets/img/aerial-townhouses-800.webp" srcset="../../assets/img/aerial-townhouses-800.webp 800w, ../../assets/img/aerial-townhouses-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Aerial view of a new townhouse development with landscaped yards" loading="lazy" decoding="async">
   <div class="wrap"><div class="rv"><p class="eyebrow">Start the journey</p><h2 id="ctaT">Your project <em>next</em>.</h2><p style="margin-top:16px">Tell us about your site. We will help you plan the route from idea to completion.</p></div>
   <div class="ctas rv"><a class="btn magnetic" href="contact.html#book">Book a free consultation</a><a class="btn ghost magnetic" href="tel:+6498361804">Call 09 836 1804</a></div></div>
@@ -480,7 +493,7 @@ TC.fine = matchMedia('(pointer:fine)').matches;
 TC.lite = !TC.fine || (navigator.hardwareConcurrency || 8) <= 4;
 
 /* page transitions: only between our own pages, never on first visit */
-function reveal(){ html.classList.remove('pt-in', 'pt-out'); html.classList.add('pt-done'); }
+function reveal(){ if (!html.classList.contains('pt-in') && !html.classList.contains('pt-out')) return; html.classList.remove('pt-in', 'pt-out', 'pt-arm'); html.classList.add('pt-done'); setTimeout(function(){ html.classList.remove('pt-done'); }, 900); }
 if (html.classList.contains('pt-in')) requestAnimationFrame(function(){ requestAnimationFrame(reveal); });
 addEventListener('pageshow', function(e){ if (e.persisted) reveal(); });
 document.addEventListener('click', function(e){
@@ -491,7 +504,8 @@ document.addEventListener('click', function(e){
   if (u.pathname === location.pathname && u.search === location.search) return;
   e.preventDefault();
   try { sessionStorage.setItem('tc-pt', '1'); } catch (err) {}
-  html.classList.remove('pt-done'); void html.offsetWidth; html.classList.add('pt-out');
+  html.classList.remove('pt-done'); html.classList.add('pt-arm');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ html.classList.add('pt-out'); }); });
   setTimeout(function(){ location.href = u.href; }, 560);
 });
 
@@ -541,12 +555,13 @@ document.querySelectorAll('[data-slides]').forEach(function(box){
   var slides = box.querySelectorAll('.slide'), words = box.querySelectorAll('.rot > span'), caps = box.querySelectorAll('.scap'), bar = box.querySelector('.sprog');
   var i = 0, timer = null, on = true, DUR = 6000;
   function load(){ box.querySelectorAll('img[data-srcset]').forEach(function(im){ im.srcset = im.getAttribute('data-srcset'); im.src = im.getAttribute('data-src'); im.removeAttribute('data-srcset'); }); }
-  if (document.readyState === 'complete') setTimeout(load, 1200); else addEventListener('load', function(){ setTimeout(load, 1200); });
+  function later(){ setTimeout(function(){ ('requestIdleCallback' in window) ? requestIdleCallback(load, {timeout:2000}) : load(); }, 3000); }
+  if (document.readyState === 'complete') later(); else addEventListener('load', later);
   function show(n){
     slides[i].classList.remove('on'); if (words[i % words.length]) words[i % words.length].classList.remove('on'); if (caps[i]) caps[i].classList.remove('on');
     i = n % slides.length;
     slides[i].classList.add('on'); if (words.length) words[i % words.length].classList.add('on'); if (caps[i]) caps[i].classList.add('on');
-    if (bar){ bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run'); }
+    if (bar){ bar.classList.remove('run'); requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.classList.add('run'); }); }); }
   }
   function tick(){ clearTimeout(timer); if (!on || document.hidden || TC.reduce) return; timer = setTimeout(function(){ if (slides[(i + 1) % slides.length].querySelector('img[data-srcset]')) return tick(); show(i + 1); tick(); }, DUR); }
   TC.vis(box, function(v){ on = v; tick(); });
@@ -562,7 +577,7 @@ document.querySelectorAll('[data-disc]').forEach(function(box){
     i = n;
     tabs.forEach(function(t, k){ t.classList.toggle('on', k === n); t.setAttribute('aria-selected', k === n ? 'true' : 'false'); t.classList.toggle('done', k < n); });
     if (cnt) cnt.textContent = String(n + 1).padStart(2, '0') + ' / ' + String(panels.length).padStart(2, '0');
-    box.classList.remove('run'); void box.offsetWidth; if (!paused && inView) box.classList.add('run');
+    box.classList.remove('run'); requestAnimationFrame(function(){ requestAnimationFrame(function(){ if (!paused && inView && !hold) box.classList.add('run'); }); });
   }
   function go(n){ n = (n + panels.length) % panels.length; track.scrollTo({left: panels[n].offsetLeft - track.offsetLeft, behavior: TC.reduce ? 'auto' : 'smooth'}); mark(n); sched(); }
   function sched(){ clearTimeout(timer); box.classList.toggle('paused', paused); if (paused || hold || !inView || document.hidden) { box.classList.remove('run'); return; } box.classList.add('run'); timer = setTimeout(function(){ go(i + 1); }, DUR); }
@@ -652,6 +667,20 @@ if (TC.fine && !TC.reduce) document.querySelectorAll('.magnetic').forEach(functi
   b.addEventListener('pointerleave', function(){ b.style.transform = ''; });
 });
 
+/* GSAP + ScrollTrigger: desktop-class devices only, injected (deferred) after load so it never blocks rendering.
+   Phones and low-core devices get CSS scroll-driven animations instead (see @supports blocks). */
+TC.gsapOK = html.classList.contains('gs');
+TC.loadGsap = function(cb){
+  if (!TC.gsapOK) return;
+  function add(src, next){ var s = document.createElement('script'); s.src = src; s.defer = true; s.onload = next; document.head.appendChild(s); }
+  function go(){ add('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', function(){ add('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', function(){
+    gsap.registerPlugin(ScrollTrigger); cb();
+    var t = 0; if ('ResizeObserver' in window) new ResizeObserver(function(){ clearTimeout(t); t = setTimeout(function(){ ScrollTrigger.refresh(); }, 250); }).observe(document.body);
+    TC.lenis();
+  }); }); }
+  function idle(){ ('requestIdleCallback' in window) ? requestIdleCallback(go, {timeout:1500}) : setTimeout(go, 300); }
+  if (document.readyState === 'complete') idle(); else addEventListener('load', idle);
+};
 /* Lenis: fine pointer only, after load */
 TC.lenis = function(){
   if (!TC.fine || TC.reduce || !window.gsap || !window.ScrollTrigger) return;
@@ -666,8 +695,8 @@ TC.lenis = function(){
 document.addEventListener('DOMContentLoaded', function(){
 
 
-  if (!window.gsap || !window.ScrollTrigger || TC.reduce) { if (window.KORU) KORU.render(1); return; }
-  gsap.registerPlugin(ScrollTrigger);
+  if (window.KORU) KORU.render(1);
+  TC.loadGsap(function(){
   var hero = document.querySelector('.hero');
   if (hero){
     var sp = {'.ridges .r1':-0.04, '.ridges .r2':0.05, '.ridges .r3':0.12, '.hcopy':-0.1};
@@ -677,17 +706,16 @@ document.addEventListener('DOMContentLoaded', function(){
   if (window.KORU){
     var box = document.querySelector('.korubox');
     if (TC.lite){
-      KORU.render(1);
-      var st = document.getElementById('koruStem'), L = st.getTotalLength();
-      gsap.fromTo(st, {strokeDasharray:L, strokeDashoffset:L}, {strokeDashoffset:0, ease:'none', scrollTrigger:{trigger:box, start:'top 85%', end:'bottom 45%', scrub:true}});
-      gsap.from('#koruLeaves', {opacity:0, scrollTrigger:{trigger:box, start:'top 50%', end:'bottom 40%', scrub:true}});
+      gsap.fromTo('#koruStem', {strokeDasharray:1, strokeDashoffset:1}, {strokeDashoffset:0, ease:'none', scrollTrigger:{trigger:box, start:'top 85%', end:'bottom 45%', scrub:true}});
+      gsap.fromTo('#koruLeaves', {opacity:0}, {opacity:.9, ease:'none', scrollTrigger:{trigger:box, start:'top 50%', end:'bottom 40%', scrub:true}});
     } else {
-      var s = {p:0}; KORU.render(0);
+      var s = {p:0}; KORU.render(0); document.getElementById('koruStem').removeAttribute('pathLength');
       gsap.to(s, {p:1, ease:'none', scrollTrigger:{trigger:box, start:'top 85%', end:'bottom 40%', scrub:.6}, onUpdate:function(){ KORU.render(s.p); }});
     }
   }
   document.querySelectorAll('[data-par]').forEach(function(el){ gsap.fromTo(el, {yPercent:-6}, {yPercent:6, ease:'none', scrollTrigger:{trigger:el.parentNode, start:'top bottom', end:'bottom top', scrub:true}}); });
-  addEventListener('load', function(){ ScrollTrigger.refresh(); TC.lenis(); });
+  ScrollTrigger.refresh();
+  });
 
 });
 </script>
