@@ -646,6 +646,94 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
   .contents p{grid-column:2;grid-row:2}
   .landmarks{columns:1}
 }
+
+/* ---- Phase 7: magazine surfaces, running heads, colophon ---- */
+:root{--r:0px!important}
+.sheet{border-top:1px solid var(--rule)}
+.sheet.forest{border-top-color:var(--forest)}
+.foot{border-radius:0;margin-top:0}
+h2.h em,.forest h2.h em,.planner__txt h2 em,.phero h1 em,.foot__word em{font-style:normal;color:inherit}
+.pill{border-radius:2px;min-height:52px}
+.pill .dot{display:none}
+.book,.qbar a{border-radius:2px}
+.book__ic{border-radius:2px}
+.cform,.planner,.office-img,.commit__img,.gal__item,.mosaic figure,.pc,.pc__img{border-radius:0}
+.subnav a,.filters button,.dl dd .social a{border-radius:0;border-width:0 0 1px;padding:0 2px;margin-right:18px;background:none!important;min-height:44px}
+.subnav a:hover{color:var(--forest)}
+.filters button[aria-pressed="true"]{color:var(--forest);border-color:var(--forest);border-bottom-width:2px}
+.kicker,.kick{display:block;font:italic 400 17px/1.35 var(--serif)!important;letter-spacing:0!important;text-transform:none!important}
+.cover .kicker{color:rgba(243,239,230,.9);margin-bottom:10px}
+/* running heads: the magazine's top-of-page line, with a folio */
+.rh{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule-2);padding-bottom:10px;margin:0 0 clamp(36px,5vw,64px);font:400 13px/1.3 var(--sans);letter-spacing:.01em;color:var(--soft)}
+.rh b{font:italic 400 16px/1.2 var(--serif);color:var(--ink);text-align:center}
+.rh i{font:italic 400 16px/1.2 var(--serif);text-align:right;color:var(--ink);font-variant-numeric:oldstyle-nums}
+.forest .rh{border-color:var(--prule);color:rgba(243,239,230,.7)}
+.forest .rh b,.forest .rh i{color:var(--paper)}
+.journal .rh{margin-bottom:clamp(18px,3vh,40px)}
+@media (max-width:600px){.rh{grid-template-columns:1fr auto}.rh span{display:none}.rh b{text-align:left}}
+.feat h3 b{color:inherit!important;font-style:inherit!important}
+.lab{font:italic 400 19px/1.3 var(--serif);margin:0 0 6px;color:inherit}
+/* services: the feature in parts */
+.parts{border-top:1px solid var(--prule)}
+.part{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,6fr) minmax(0,4fr);gap:20px clamp(24px,4vw,64px);padding:clamp(28px,4vw,48px) 0;border-bottom:1px solid var(--prule);align-items:start}
+.part__no{font:300 clamp(56px,6vw,96px)/.8 var(--serif);font-style:italic;color:var(--sage)}
+.part h3{font:300 clamp(28px,2.8vw,40px)/1.08 var(--serif);letter-spacing:-.02em;margin:0 0 12px}
+.part p{margin:0 0 12px;color:rgba(243,239,230,.8);max-width:58ch}
+.part .note{font:italic 400 17px/1.45 var(--serif);color:var(--paper);border-left:1px solid var(--prule);padding-left:18px;margin:0}
+.part .note b{display:block;font:600 13px var(--sans);letter-spacing:.02em;color:var(--sage);margin-bottom:6px;font-style:normal}
+.svc .links{display:flex;flex-wrap:wrap;gap:4px 28px;margin:36px 0 0}
+/* about: the essay */
+.essay{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr) minmax(0,2fr);gap:clamp(24px,4vw,64px);align-items:start}
+.essay__side{position:sticky;top:110px;font-size:14.5px;color:var(--soft)}
+.essay__side ol{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--rule-2)}
+.essay__side li a{display:grid;grid-template-columns:34px 1fr;padding:10px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.essay__side li a em{font:italic 400 16px var(--serif);color:var(--olive)}
+.essay__side li a:hover{color:var(--forest)}
+.essay h2.h{margin:0 0 18px;font-size:clamp(38px,4.6vw,66px)}
+.essay .stand{font:italic 300 clamp(21px,2vw,27px)/1.38 var(--serif);color:var(--forest);margin:0 0 12px}
+.essay .by{font-size:14px;color:var(--soft);margin:0 0 clamp(32px,4vw,48px);padding-bottom:18px;border-bottom:1px solid var(--rule-2)}
+.essay__body{font-size:18px;line-height:1.72}
+.essay__body p{margin:0 0 1.1em;max-width:66ch}
+.essay__body > p.first::first-letter{float:left;font:400 4.6em/.8 var(--serif);padding:.05em .1em 0 0;color:var(--forest)}
+.essay__body h3{font:300 clamp(26px,2.4vw,34px)/1.15 var(--serif);margin:clamp(40px,5vw,64px) 0 16px;scroll-margin-top:110px}
+.essay__body h3 em{font-style:italic;color:var(--olive);margin-right:.35em}
+.essay__fig{margin:clamp(28px,4vw,44px) 0}
+.essay__fig img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--paper-3)}
+.essay__fig figcaption{font:italic 400 15px/1.4 var(--serif);color:var(--soft);margin-top:10px;padding-top:10px;border-top:1px solid var(--rule)}
+.essay__body blockquote{margin:clamp(28px,4vw,44px) 0;padding:22px 0;border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2)}
+.essay__body blockquote p{font:300 clamp(23px,2.3vw,31px)/1.3 var(--serif);color:var(--forest);margin:0 0 12px;max-width:none}
+.essay__body blockquote footer{font-size:14px;color:var(--soft)}
+.essay__body .end::after{content:"";display:inline-block;width:.6em;height:.6em;background:var(--forest);margin-left:.4em;vertical-align:baseline}
+.essay__margin{font-size:14px;color:var(--soft);display:grid;gap:22px;padding-top:6px}
+.essay__margin p{margin:0;border-top:1px solid var(--rule-2);padding-top:10px}
+.essay__margin b{display:block;font:300 34px/1 var(--serif);color:var(--forest);margin-bottom:4px}
+.contrib{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,44px) clamp(20px,3vw,40px)}
+.contrib figure{margin:0}
+.contrib .ph{aspect-ratio:4/3;overflow:hidden;background:var(--paper-3)}
+.contrib img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
+.contrib figcaption{padding-top:12px;margin-top:12px;border-top:1px solid var(--rule-2)}
+.contrib h3{font:300 clamp(23px,2vw,28px)/1.15 var(--serif);margin:0 0 6px}
+.contrib p{margin:0;color:var(--soft);font-size:15.5px}
+.ack{font:300 clamp(22px,2.3vw,31px)/1.45 var(--serif);max-width:44ch;margin:0}
+.ack + .ack{margin-top:1em}
+/* colophon footer */
+.colo{padding-top:clamp(56px,7vw,96px)}
+.colo__head{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:end;border-bottom:3px double var(--rule-2);padding-bottom:18px}
+.colo__head .foot__logo{margin:0}
+.colo__head .foot__logo img{height:clamp(40px,4.4vw,56px)}
+.foot .colo__title{max-width:none;font:300 clamp(28px,3vw,44px)/1 var(--serif);letter-spacing:-.02em;margin:0;color:var(--forest)}
+.colo__title em{font-style:italic}
+.foot .colo__issue{max-width:none;font:italic 400 16px var(--serif);color:var(--soft);margin:0;text-align:right}
+.colo__grid{display:grid;grid-template-columns:minmax(0,5fr) repeat(3,minmax(0,2fr));gap:28px clamp(24px,3vw,48px);padding-top:26px}
+.colo__grid h3{font:italic 400 17px var(--serif);letter-spacing:0;text-transform:none;color:var(--forest);margin:0 0 8px}
+.colo__grid p{max-width:46ch}
+.colo__grid dl{margin:0}
+.colo__grid dt{font-size:13px;color:var(--soft)}
+.colo__grid dd{margin:0 0 10px}
+.colo__grid dd a{text-decoration:none;font:400 19px var(--serif);color:var(--forest)}
+@media (max-width:1100px){.essay{grid-template-columns:minmax(0,3fr) minmax(0,7fr)}.essay__margin{grid-column:2;grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:860px){.part{grid-template-columns:minmax(0,1fr)}.part__no{font-size:56px}.essay{grid-template-columns:minmax(0,1fr)}.essay__side{position:static}.essay__margin{grid-column:auto;grid-template-columns:minmax(0,1fr)}.contrib{grid-template-columns:repeat(2,minmax(0,1fr))}.colo__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.colo__grid > div:first-child{grid-column:1/-1}.colo__head{grid-template-columns:1fr auto}.colo__issue{display:none}}
+@media (max-width:600px){.contrib{grid-template-columns:minmax(0,1fr)}.colo__grid{grid-template-columns:minmax(0,1fr)}.essay__body{font-size:17px}.svc .links{flex-direction:column}}
 </style>
 
 </head>
@@ -672,24 +760,25 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
     <h1 id="hero-h" data-h style="--hd:160ms">The view from <em>Churchill Park.</em></h1>
     <div class="cover__row">
       <div data-h style="--hd:280ms"><p class="stand">On the highest point of a former golf course in Glendowie, a new lookout opens up 360° views, from Rangitoto Island to the city.</p>
-        <div class="hero__ctas"><a class="pill pill--paper mag" href="#lead"><span class="dot"></span>Read the lead feature</a><a class="pill pill--ghost mag" href="contact.html">Book Your Free Development Consultation</a></div></div>
+        <div class="hero__ctas"><a class="pill pill--paper mag" href="#lead">Read the lead feature</a><a class="tlink" href="contact.html">Book a free development consultation <span class="ar">→</span></a></div></div>
       <nav class="cover__lines" data-h style="--hd:400ms" aria-label="Also in this issue"><b>Also in this issue</b><a href="#thom">82 new homes at Thom Street, New Lynn</a><a href="#kauri">Kauri Glen: walking among 400-year-old trees</a><a href="#archive">From the archive</a></nav>
     </div>
   </div>
 </section>
 
 <section class="sheet paper cv" id="lead" aria-labelledby="lead-h" style="margin-top:calc(var(--r) * -1)">
+  <div class="wrap"><div class="rh" aria-hidden="true"><span>Field Notes</span><b>Lead feature: Churchill Park</b><i>4</i></div></div>
   <div class="wrap article">
-    <aside class="article__side"><span class="eyebrow">Lead feature</span>
+    <aside class="article__side">
       <p style="font:italic 400 18px/1.4 var(--serif);color:var(--forest);margin:14px 0 18px">Landscape architecture for Auckland Council and the Ōrakei Local Board.</p>
       <dl class="dl"><div><dt>Client</dt><dd>Auckland Council and Ōrakei Local Board</dd></div><div><dt>Site</dt><dd>320-336 Riddell Road, Glendowie</dd></div><div><dt>Our role</dt><dd>Detailed landscape design and construction delivery</dd></div></dl>
       <a class="tlink" href="project.html?p=churchill-park">Read the case study <span class="ar">→</span></a></aside>
     <article class="article__body">
-      <h2 id="lead-h" class="rv">A place to rest, look out <em>and remember.</em></h2>
+      <h2 id="lead-h" class="rv">Seating, shade and a 360° view</h2>
       <p>Auckland Council asked us to deliver the design for a lookout at Churchill Park, a large park in Glendowie with a rich history. Once a golf course, the park is now an urban farm. A club house used to stand on its highest point.</p>
       <p>The brief was a space that shows off the 360° views and tells visitors about the site's history, with seating, shade and a place to rest. The view takes in Karaka Bay, Rangitoto Island, Motukorea (Browns Island), Musick Point, Tahuna Torea Nature Reserve, Maungarei (Mount Wellington) and the city.</p>
       <div class="cvi"><figure class="article__fig mask"><img src="../../assets/img/park-seating-800.webp" srcset="../../assets/img/park-seating-800.webp 800w, ../../assets/img/park-seating-1600.webp 1600w" sizes="(min-width: 1100px) 720px, 92vw" width="1600" height="900" alt="Curved timber seating around a new planted garden" loading="lazy" decoding="async"><figcaption>Curved timber seating around new planting at the lookout.</figcaption></figure>
-      <h3 class="eyebrow" style="margin:0 0 6px">What you can see from the lookout</h3>
+      <h3 class="lab">What you can see from the lookout</h3>
       <ul class="landmarks"><li>Karaka Bay</li><li>Rangitoto Island</li><li>Motukorea (Browns Island)</li><li>Musick Point</li><li>Tahuna Torea Nature Reserve</li><li>Maungarei (Mount Wellington)</li><li>Auckland's city centre</li></ul>
       <p>We picked the project up at developed design, after it had been workshopped with the Ōrakei Local Board, and consulted with mana whenua as partners through each stage. Our landscape architects carried it through detailed design and construction delivery.</p>
       <blockquote class="pull"><p>Locals and visitors now use the lookout as a place to reflect and enjoy the views.</p></blockquote>
@@ -699,14 +788,15 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
 </section>
 
 <section class="sheet sand cv" id="features" aria-labelledby="ft-h">
+  <div class="wrap"><div class="rh" aria-hidden="true"><span>Field Notes</span><b>Features</b><i>12</i></div></div>
   <div class="wrap">
-    <div class="head"><div><span class="eyebrow">Features</span><h2 class="h rv" id="ft-h">Homes for Kāinga Ora, <em>and a kauri forest.</em></h2></div>
+    <div class="head"><div><h2 class="h rv" id="ft-h">Homes for Kāinga Ora, and a kauri forest</h2></div>
       <p class="lede rv">Two projects at opposite ends of our work: a new street of homes in New Lynn, and an ecological assessment in one of Auckland's oldest stands of kauri.</p></div>
     <div class="feats">
       <article class="feat" id="thom">
         <figure class="feat__img mask"><img src="../../assets/img/street-new-800.webp" srcset="../../assets/img/street-new-800.webp 800w, ../../assets/img/street-new-1600.webp 1600w" sizes="(min-width: 861px) 44vw, 92vw" width="1600" height="1069" alt="A newly completed street of townhouses" loading="lazy" decoding="async"></figure>
         <span class="kick">Engineering · Kāinga Ora</span>
-        <h3><b>82</b> homes at Thom Street, New Lynn.</h3>
+        <h3><b>82</b> homes at Thom Street, New Lynn</h3>
         <p class="stand">Terrace houses and apartments for about 300 tenants, on an 11,046 m² site.</p>
         <p>We did the engineering design and construction monitoring for the public infrastructure, from earthworks and three waters to a new public road. The site opened in November 2020, on time and on budget.</p>
         <a class="tlink" href="project.html?p=thom-street">Read the story <span class="ar">→</span></a>
@@ -714,7 +804,7 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
       <article class="feat" id="kauri">
         <figure class="feat__img mask"><img src="../../assets/img/bush-800.webp" srcset="../../assets/img/bush-800.webp 800w, ../../assets/img/bush-1512.webp 1512w" sizes="(min-width: 861px) 44vw, 92vw" width="1512" height="2016" alt="Native bush on a hillside" loading="lazy" decoding="async"></figure>
         <span class="kick">Ecology · Auckland Council</span>
-        <h3>Kauri Glen: trees <b>300 to 400</b> years old.</h3>
+        <h3>Kauri Glen: trees <b>300 to 400</b> years old</h3>
         <p class="stand">An ecological assessment for track renewals in a Significant Ecological Area.</p>
         <p>To protect the kauri from dieback, the council rebuilt the walking tracks and an 18 m high bridge. We assessed the impact of 5,905 m of repaired track and 490 m of new track, and found it would be small and temporary.</p>
         <a class="tlink" href="project.html?p=kauri-glen">Read the story <span class="ar">→</span></a>
@@ -724,73 +814,77 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
 </section>
 
 <section class="sheet forest journal" id="archive" aria-labelledby="jr-h">
-  <div class="wrap"><div class="head"><div><span class="eyebrow">From the archive</span><h2 class="h rv" id="jr-h">More places we have <em>helped shape.</em></h2></div>
+  <div class="wrap"><div class="rh" aria-hidden="true"><span>Field Notes</span><b>From the archive</b><i>20</i></div></div>
+  <div class="wrap"><div class="head"><div><h2 class="h rv" id="jr-h">Also in the journal</h2></div>
     <p class="lede rv">Housing for Kāinga Ora and private developers, school spaces, playgrounds, reserves and rural subdivisions.</p></div></div>
   <div class="jr" data-carousel aria-roledescription="carousel" aria-label="Project archive">
     <div class="track jtrack" data-track><a class="jcard" href="project.html?p=taurus-crescent" data-cats="engineering surveying planning res-com">
-  <div class="jcard__img mask"><span class="jcard__no">No. 02</span><img src="../../assets/img/aerial-subdivision-800.webp" srcset="../../assets/img/aerial-subdivision-800.webp 800w, ../../assets/img/aerial-subdivision-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="898" alt="Drone view of a completed residential subdivision" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">02</span><h3>Taurus Crescent, Beach Haven</h3><p>Kāinga Ora · Engineering, Surveying</p><p class="jcard__sum">Engineering, surveying and planning for 21 new homes for Kāinga Ora.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 02</span><img src="../../assets/img/aerial-subdivision-800.webp" srcset="../../assets/img/aerial-subdivision-800.webp 800w, ../../assets/img/aerial-subdivision-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="898" alt="Drone view of a completed residential subdivision" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">02</span><h3>Taurus Crescent, Beach Haven</h3><p>Kāinga Ora · Engineering, Surveying</p><p class="jcard__sum">Engineering, surveying and planning for 21 new homes for Kāinga Ora.</p></div>
 </a><a class="jcard" href="project.html?p=observation-green" data-cats="landscape public">
-  <div class="jcard__img mask"><span class="jcard__no">No. 04</span><img src="../../assets/img/play-space-800.webp" srcset="../../assets/img/play-space-800.webp 800w, ../../assets/img/play-space-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="1067" alt="Play space with rope fencing and native grasses" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">04</span><h3>Observation Green, Hobsonville</h3><p>Auckland Council and Upper Harbour Local Board · Landscape architecture</p><p class="jcard__sum">A new neighbourhood park at Scott Point, with nature play, a fitness course and a learn-to-ride track.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 04</span><img src="../../assets/img/play-space-800.webp" srcset="../../assets/img/play-space-800.webp 800w, ../../assets/img/play-space-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="1067" alt="Play space with rope fencing and native grasses" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">04</span><h3>Observation Green, Hobsonville</h3><p>Auckland Council and Upper Harbour Local Board · Landscape architecture</p><p class="jcard__sum">A new neighbourhood park at Scott Point, with nature play, a fitness course and a learn-to-ride track.</p></div>
 </a><a class="jcard" href="project.html?p=fearon-park" data-cats="environmental public">
-  <div class="jcard__img mask"><span class="jcard__no">No. 05</span><img src="../../assets/img/plaza-path-800.webp" srcset="../../assets/img/plaza-path-800.webp 800w, ../../assets/img/plaza-path-1024.webp 1024w" sizes="(min-width: 900px) 420px, 80vw" width="1024" height="683" alt="Landscaped plaza with pathways and planting" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">05</span><h3>Fearon Park, Mount Roskill</h3><p>Public open space · Project management, Contaminated soil</p><p class="jcard__sum">Client-side project management of a multi-year open space programme worth about $4.3m.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 05</span><img src="../../assets/img/plaza-path-800.webp" srcset="../../assets/img/plaza-path-800.webp 800w, ../../assets/img/plaza-path-1024.webp 1024w" sizes="(min-width: 900px) 420px, 80vw" width="1024" height="683" alt="Landscaped plaza with pathways and planting" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">05</span><h3>Fearon Park, Mount Roskill</h3><p>Public open space · Project management, Contaminated soil</p><p class="jcard__sum">Client-side project management of a multi-year open space programme worth about $4.3m.</p></div>
 </a><a class="jcard" href="project.html?p=banff-avenue" data-cats="engineering res-com">
-  <div class="jcard__img mask"><span class="jcard__no">No. 06</span><img src="../../assets/img/aerial-apartments-800.webp" srcset="../../assets/img/aerial-apartments-800.webp 800w, ../../assets/img/aerial-apartments-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="898" alt="Aerial view of a four-storey apartment building in an Auckland suburb" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">06</span><h3>6 Banff Avenue, Epsom</h3><p>McMillan &amp; Lockwood for Kāinga Ora · Engineering, Construction monitoring</p><p class="jcard__sum">Infrastructure assessment, design and monitoring for 25 apartments in a five-storey building.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 06</span><img src="../../assets/img/aerial-apartments-800.webp" srcset="../../assets/img/aerial-apartments-800.webp 800w, ../../assets/img/aerial-apartments-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="898" alt="Aerial view of a four-storey apartment building in an Auckland suburb" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">06</span><h3>6 Banff Avenue, Epsom</h3><p>McMillan &amp; Lockwood for Kāinga Ora · Engineering, Construction monitoring</p><p class="jcard__sum">Infrastructure assessment, design and monitoring for 25 apartments in a five-storey building.</p></div>
 </a><a class="jcard" href="project.html?p=cracroft-street" data-cats="engineering surveying res-com">
-  <div class="jcard__img mask"><span class="jcard__no">No. 07</span><img src="../../assets/img/apartments-colour-800.webp" srcset="../../assets/img/apartments-colour-800.webp 800w, ../../assets/img/apartments-colour-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="1066" alt="Four-storey apartment building with orange panels" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">07</span><h3>Cracroft Street and Great South Road</h3><p>Kāinga Ora · Engineering, Surveying</p><p class="jcard__sum">Design and monitoring of a five-storey block of 28 apartments for Kāinga Ora.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 07</span><img src="../../assets/img/apartments-colour-800.webp" srcset="../../assets/img/apartments-colour-800.webp 800w, ../../assets/img/apartments-colour-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="1066" alt="Four-storey apartment building with orange panels" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">07</span><h3>Cracroft Street and Great South Road</h3><p>Kāinga Ora · Engineering, Surveying</p><p class="jcard__sum">Design and monitoring of a five-storey block of 28 apartments for Kāinga Ora.</p></div>
 </a><a class="jcard" href="project.html?p=walmer-moa" data-cats="planning engineering res-com">
-  <div class="jcard__img mask"><span class="jcard__no">No. 08</span><img src="../../assets/img/aerial-harbour-800.webp" srcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="899" alt="Aerial view of new housing with the harbour behind" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">08</span><h3>Walmer Road and Moa Road, Pt Chevalier</h3><p>Signature Homes and Kāinga Ora · Planning, Engineering</p><p class="jcard__sum">Planning, engineering design and monitoring for 10 new homes.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 08</span><img src="../../assets/img/aerial-harbour-800.webp" srcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="899" alt="Aerial view of new housing with the harbour behind" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">08</span><h3>Walmer Road and Moa Road, Pt Chevalier</h3><p>Signature Homes and Kāinga Ora · Planning, Engineering</p><p class="jcard__sum">Planning, engineering design and monitoring for 10 new homes.</p></div>
 </a><a class="jcard" href="project.html?p=tasman-avenue" data-cats="engineering surveying res-com">
-  <div class="jcard__img mask"><span class="jcard__no">No. 09</span><img src="../../assets/img/house-dusk-800.webp" srcset="../../assets/img/house-dusk-800.webp 800w, ../../assets/img/house-dusk-1500.webp 1500w" sizes="(min-width: 900px) 420px, 80vw" width="1500" height="1028" alt="Contemporary home lit at dusk" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">09</span><h3>Tasman Avenue, Mount Albert</h3><p>Private client · Engineering, Surveying</p><p class="jcard__sum">Three new homes and a four-lot fee simple subdivision with a jointly owned access lot.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 09</span><img src="../../assets/img/house-dusk-800.webp" srcset="../../assets/img/house-dusk-800.webp 800w, ../../assets/img/house-dusk-1500.webp 1500w" sizes="(min-width: 900px) 420px, 80vw" width="1500" height="1028" alt="Contemporary home lit at dusk" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">09</span><h3>Tasman Avenue, Mount Albert</h3><p>Private client · Engineering, Surveying</p><p class="jcard__sum">Three new homes and a four-lot fee simple subdivision with a jointly owned access lot.</p></div>
 </a><a class="jcard" href="project.html?p=kaimai-avenue" data-cats="planning engineering res-com">
-  <div class="jcard__img mask"><span class="jcard__no">No. 10</span><img src="../../assets/img/townhouses-new-800.webp" srcset="../../assets/img/townhouses-new-800.webp 800w, ../../assets/img/townhouses-new-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="1200" alt="New two-storey townhouses with fresh landscaping" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">10</span><h3>3 Kaimai Avenue, Massey</h3><p>Jebel Construction · Planning, Engineering</p><p class="jcard__sum">Consent and engineering for seven terrace homes.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 10</span><img src="../../assets/img/townhouses-new-800.webp" srcset="../../assets/img/townhouses-new-800.webp 800w, ../../assets/img/townhouses-new-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="1200" alt="New two-storey townhouses with fresh landscaping" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">10</span><h3>3 Kaimai Avenue, Massey</h3><p>Jebel Construction · Planning, Engineering</p><p class="jcard__sum">Consent and engineering for seven terrace homes.</p></div>
 </a><a class="jcard" href="project.html?p=elliott-reserve" data-cats="public">
-  <div class="jcard__img mask"><span class="jcard__no">No. 11</span><img src="../../assets/img/playground-800.webp" srcset="../../assets/img/playground-800.webp 800w, ../../assets/img/playground-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="1069" alt="Nature playground with timber play structures" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">11</span><h3>Elliott Reserve playground, Glenfield</h3><p>Public open space · Project management</p><p class="jcard__sum">One larger play space to replace two failing ones.</p></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 11</span><img src="../../assets/img/playground-800.webp" srcset="../../assets/img/playground-800.webp 800w, ../../assets/img/playground-1600.webp 1600w" sizes="(min-width: 900px) 420px, 80vw" width="1600" height="1069" alt="Nature playground with timber play structures" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">11</span><h3>Elliott Reserve playground, Glenfield</h3><p>Public open space · Project management</p><p class="jcard__sum">One larger play space to replace two failing ones.</p></div>
 </a><a class="jcard" href="project.html?p=withers-reserve" data-cats="engineering environmental public">
-  <div class="jcard__img mask"><span class="jcard__no">No. 13</span><img src="../../assets/img/boardwalk-800.webp" srcset="../../assets/img/boardwalk-800.webp 800w, ../../assets/img/boardwalk-1280.webp 1280w" sizes="(min-width: 900px) 420px, 80vw" width="1280" height="960" alt="Timber boardwalk through native bush" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">13</span><h3>Withers Reserve footbridge</h3><p>Auckland Council · Engineering, Ecology</p><p class="jcard__sum">Civil engineering, survey and ecology for a new footbridge after flood damage.</p></div>
-</a><div class="jend"><p>The full journal has <em>sixteen</em> projects.</p><a class="pill pill--paper mag" href="projects.html"><span class="dot"></span>Open the journal</a></div></div>
+  <div class="jcard__img mask"><span class="jcard__no" aria-hidden="true">No. 13</span><img src="../../assets/img/boardwalk-800.webp" srcset="../../assets/img/boardwalk-800.webp 800w, ../../assets/img/boardwalk-1280.webp 1280w" sizes="(min-width: 900px) 420px, 80vw" width="1280" height="960" alt="Timber boardwalk through native bush" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k" aria-hidden="true">13</span><h3>Withers Reserve footbridge</h3><p>Auckland Council · Engineering, Ecology</p><p class="jcard__sum">Civil engineering, survey and ecology for a new footbridge after flood damage.</p></div>
+</a><div class="jend"><p>The full journal has <em>sixteen</em> projects.</p><a class="tlink" href="projects.html">Open the journal <span class="ar">→</span></a></div></div>
     <div class="jbar" aria-hidden="true"><i></i></div>
   </div>
 </section>
 
 <section class="sheet paper cv" id="contents" aria-labelledby="ct2-h">
+  <div class="wrap"><div class="rh" aria-hidden="true"><span>Field Notes</span><b>Contents</b><i>28</i></div></div>
   <div class="wrap">
-    <div class="head"><div><span class="eyebrow">Contents</span><h2 class="h rv" id="ct2-h">What we do, <em>under one roof.</em></h2></div>
-      <p class="lede rv">Quality civil engineering, resource consents and planning, with surveying, landscape architecture and environmental services alongside. One team, from site assessments to final delivery.</p></div>
+    <div class="head"><div><h2 class="h rv" id="ct2-h">Services</h2></div>
+      <p class="lede rv">Quality civil engineering, resource consents and planning, with surveying, landscape architecture and environmental work done by the same team. Each entry opens the full service.</p></div>
     <nav class="contents" aria-label="Services"><a class="rv" href="services.html#surveying"><em>i.</em><h3>Land Surveying</h3><p>Accurate and reliable data for your development projects.</p><span class="ar" aria-hidden="true">→</span></a><a class="rv" href="services.html#planning"><em>ii.</em><h3>RMA Planning</h3><p>Advice on zoning, land use and resource consent applications.</p><span class="ar" aria-hidden="true">→</span></a><a class="rv" href="services.html#engineering"><em>iii.</em><h3>Engineering</h3><p>Infrastructure that is robust and compliant.</p><span class="ar" aria-hidden="true">→</span></a><a class="rv" href="services.html#landscape"><em>iv.</em><h3>Landscape Architecture</h3><p>Every aspect of the outdoor design process.</p><span class="ar" aria-hidden="true">→</span></a><a class="rv" href="services.html#environmental"><em>v.</em><h3>Environmental Services</h3><p>Management plans, ecology, soil and water testing, and asbestos.</p><span class="ar" aria-hidden="true">→</span></a><a class="rv" href="services.html#project-management"><em>vi.</em><h3>Project Management</h3><p>From concept to completion, we oversee the entire process.</p><span class="ar" aria-hidden="true">→</span></a></nav>
   </div>
 </section>
 
 <section class="sheet forest tst cv" id="letters" aria-labelledby="tst-h">
+  <div class="wrap"><div class="rh" aria-hidden="true"><span>Field Notes</span><b>Letters</b><i>30</i></div></div>
   <div class="wrap letter">
-    <span class="eyebrow">Letters</span><h2 class="sr" id="tst-h">Letters from clients</h2>
-    <div style="margin-top:32px"><div data-tabs data-auto="8000"><div class="tst__stage" aria-live="polite"><blockquote class="tq on" id="tp-0" role="tabpanel" aria-labelledby="tq-0"><p>We have all been commenting in the office how well the team have performed on this job. It's much appreciated.</p><footer><b>Gareth Ready</b> · CEO, Signature Homes</footer></blockquote><blockquote class="tq" id="tp-1" role="tabpanel" aria-labelledby="tq-1" hidden><p>I have to say – this looks amazing. I think this is the first time I received a first concept that fully met the brief and looks exactly how I imagined it.</p><footer><b>Barbara Heise</b> · Auckland Council</footer></blockquote><blockquote class="tq" id="tp-2" role="tabpanel" aria-labelledby="tq-2" hidden><p>You have been timely, pro-active in your communications with us, given us a cost-effective outcome, and I have found Thomas Consultants very easy to deal with.</p><footer><b>Nigel</b> · New Plymouth District Council</footer></blockquote><blockquote class="tq" id="tp-3" role="tabpanel" aria-labelledby="tq-3" hidden><p>Outstanding customer service, responsive and very professional. Despite the logistical challenges of extended lockdowns, Brett from Thomas Consultants went above and beyond to help with our environmental property needs.</p><footer><b>Marie CK</b> · Private Client</footer></blockquote></div>
-<div class="tst__ctl"><button class="cbtn" type="button" data-tprev aria-label="Previous testimonial">←</button><div role="tablist" aria-label="Testimonials"><button role="tab" id="tq-0" aria-controls="tp-0" aria-selected="true" aria-label="Testimonial 1">i</button><button role="tab" id="tq-1" aria-controls="tp-1" aria-selected="false" tabindex="-1" aria-label="Testimonial 2">ii</button><button role="tab" id="tq-2" aria-controls="tp-2" aria-selected="false" tabindex="-1" aria-label="Testimonial 3">iii</button><button role="tab" id="tq-3" aria-controls="tp-3" aria-selected="false" tabindex="-1" aria-label="Testimonial 4">iv</button></div><button class="cbtn" type="button" data-tnext aria-label="Next testimonial">→</button></div></div></div>
+    <h2 class="sr" id="tst-h">Letters from clients</h2>
+    <div style="margin-top:32px"><div data-tabs data-auto="8000"><div class="tst__stage" aria-live="polite"><blockquote class="tq on" id="tp-0" role="tabpanel" aria-labelledby="tq-0"><p>We have all been commenting in the office how well the team have performed on this job. It's much appreciated.</p><footer><b>Gareth Ready</b> · CEO, Signature Homes</footer></blockquote><blockquote class="tq" id="tp-1" role="tabpanel" aria-labelledby="tq-1" hidden><p>Outstanding customer service, responsive and very professional. Despite the logistical challenges of extended lockdowns, Brett from Thomas Consultants went above and beyond to help with our environmental property needs.</p><footer><b>Marie CK</b> · Private Client</footer></blockquote></div>
+<div class="tst__ctl"><button class="cbtn" type="button" data-tprev aria-label="Previous testimonial">←</button><div role="tablist" aria-label="Testimonials"><button role="tab" id="tq-0" aria-controls="tp-0" aria-selected="true" aria-label="Testimonial 1">i</button><button role="tab" id="tq-1" aria-controls="tp-1" aria-selected="false" tabindex="-1" aria-label="Testimonial 2">ii</button></div><button class="cbtn" type="button" data-tnext aria-label="Next testimonial">→</button></div></div></div>
   </div>
 </section>
 
-<section class="sheet paper cv" id="colophon" aria-labelledby="cl-h">
+<section class="sheet paper cv" id="thanks" aria-labelledby="cl-h">
+  <div class="wrap"><div class="rh" aria-hidden="true"><span>Field Notes</span><b>Acknowledgements</b><i>31</i></div></div>
   <div class="wrap">
-    <h2 class="sr" id="cl-h">Clients and accreditations</h2>
-    <div class="cgrid2"><div><span class="eyebrow">With thanks to</span><p class="clist rv"><span>Kāinga Ora</span><i>·</i><span>Auckland Transport</span><i>·</i><span>Watercare</span><i>·</i><span>Panuku</span><i>·</i><span>NZ Transport Agency</span><i>·</i><span>Ministry of Education</span><i>·</i><span>Waikato District Council</span><i>·</i><span>Rotorua Lakes Council</span><i>·</i><span>Hobsonville Point</span><i>·</i><span>Homes of Choice</span></p></div><div><span class="eyebrow">Accreditations &amp; memberships</span><ul class="acc-list rv"><li><span>i.</span>ISO 45001</li><li><span>ii.</span>IANZ</li><li><span>iii.</span>Toitū Envirocare</li><li><span>iv.</span>Engineering NZ</li><li><span>v.</span>Water NZ</li><li><span>vi.</span>Survey and Spatial NZ</li><li><span>vii.</span>NZ Planning Institute</li><li><span>viii.</span>NZILA</li><li><span>ix.</span>SiteSafe</li><li><span>x.</span>SiteWise</li></ul></div></div>
+    <h2 class="sr" id="cl-h">Acknowledgements</h2>
+    <div class="cgrid2"><div><h3 class="lab">With thanks to our clients</h3><p class="clist rv"><span>Kāinga Ora</span><i>·</i><span>Auckland Transport</span><i>·</i><span>Watercare</span><i>·</i><span>Panuku</span><i>·</i><span>NZ Transport Agency</span><i>·</i><span>Ministry of Education</span><i>·</i><span>Waikato District Council</span><i>·</i><span>Rotorua Lakes Council</span><i>·</i><span>Hobsonville Point</span><i>·</i><span>Homes of Choice</span></p></div><div><h3 class="lab">Accreditations</h3><ul class="acc-list rv"><li><span>i.</span>ISO 45001</li><li><span>ii.</span>IANZ</li><li><span>iii.</span>Toitū Envirocare</li><li><span>iv.</span>Engineering NZ</li><li><span>v.</span>Water NZ</li><li><span>vi.</span>Survey and Spatial NZ</li><li><span>vii.</span>NZ Planning Institute</li><li><span>viii.</span>NZILA</li><li><span>ix.</span>SiteSafe</li><li><span>x.</span>SiteWise</li></ul></div></div>
   </div>
 </section>
 
 <section class="sheet sand cv" id="contact" aria-labelledby="ct-h">
+  <div class="wrap"><div class="rh" aria-hidden="true"><span>Field Notes</span><b>Correspondence</b><i>32</i></div></div>
   <div class="wrap contact">
     <div>
-      <span class="eyebrow">Write to us</span>
-      <h2 class="h rv" id="ct-h">Tell us about <em>your land.</em></h2>
-      <p class="lede rv">Book a free development consultation, or a complimentary meeting with one of our planners. We will listen first, then set out the clearest path forward.</p>
+      <h2 class="h rv" id="ct-h">Send us a note about your site</h2>
+      <p class="lede rv">Book a free development consultation, or a complimentary meeting with one of our planners. If you would rather write, use the form and the right person will reply.</p>
       <a class="book rv" href="contact.html"><span class="book__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span><b>Book a meeting</b><small>Free development consultation</small></span></a>
       <a class="book book--alt rv" href="contact.html#planner"><span class="book__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l8-8"/></svg></span><span><b>Meet a planner</b><small>Complimentary planner meeting</small></span></a>
       <dl class="dl">
@@ -800,7 +894,7 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
 </dl>
     </div>
     <div><div class="cform rv">
-  <h3 id="form-h">Write to us</h3><p>A short note is all we need to begin.</p>
+  <h3 id="form-h">Enquiry</h3><p>A few lines about the land and what you have in mind is enough.</p>
   <form id="enquiry" data-validate novalidate aria-labelledby="form-h">
     <div class="frow">
       <div class="fld" data-field><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" data-req="text" data-msg="Please tell us your name."><span class="err" aria-live="polite"></span></div>
@@ -819,15 +913,14 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
   </div>
 </section>
 </main>
-<footer class="foot">
+<footer class="foot colo">
   <div class="wrap">
-    <a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="319" height="84"></a>
-    <div class="foot__grid">
-      <div><h3>Thomas Consultants Ltd</h3><p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p>
-        <ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul></div>
+    <div class="colo__head"><a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="319" height="84" loading="lazy" decoding="async"></a><p class="colo__title">Field Notes</p><p class="colo__issue">Issue No. 25, for 25 years in practice</p></div>
+    <div class="colo__grid">
+      <div><h3>Colophon</h3><p>Field Notes is the project journal of Thomas Consultants Ltd, land development and subdivision consultants. Quality civil engineering, resource consents and planning, with surveying, landscape architecture and environmental services in the same team.</p><p>Set in Fraunces and Manrope. Published from Auckland.</p></div>
+      <div><h3>Offices</h3><dl><dt>Auckland Head Office</dt><dd><a href="tel:+6498361804">09 836 1804</a></dd><dt>Manukau</dt><dd><a href="tel:+6498696070">09 869 6070</a></dd><dt>Christchurch</dt><dd>Satellite office</dd></dl></div>
       <div><h3>Services</h3><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
-      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal ↗</a></li></ul></div>
-      <div><h3>Follow</h3><ul><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal ↗</a></li><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
     </div>
     <div class="foot__legal"><span>© 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span><span>Proudly designed by AMBS Solutions</span><a href="#top">Back to top ↑</a></div>
   </div>

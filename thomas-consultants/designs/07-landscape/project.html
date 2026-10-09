@@ -462,6 +462,91 @@ html.pt-out .pt{transform:none}
   .hero .rl,.hero .hcopy,#koruStem,#koruLeaves,.ridges .rl svg,.hcopy .wrap>*,.slide.on img,.ticker .row,.mq .row,.sprog.run::after,.run .dtab.on i::after{animation:none}
   .io .rv{opacity:1;transform:none;transition:none}
 }
+
+/* Phase 7: Aotearoa surface. Flat bands instead of rounded sheets, signage corners,
+   trail markers and a map legend used sparingly, fingerpost footer. */
+:root{--marker:#E0792B;--signgreen:#2F5233}
+.sheet{border-radius:0!important;margin-top:0!important}
+.btn{border-radius:6px}
+.navl a{border-radius:6px}
+.bigfig img,.mosaic figure,.korubox,.dtrack,.dpanel,.pcard .ph,.bookcard,.office,.faq details,.spl,.vcard,.form,.stage,.ph,.pics img,.citem img,.citem{border-radius:8px}
+.pcard .tags span,.mosaic figcaption{border-radius:4px}
+.tlink{display:inline-flex;align-items:center;gap:10px;min-height:44px;font:700 15px var(--display);letter-spacing:.04em;color:inherit;text-decoration:none;border-bottom:2px solid var(--marker)}
+.tlink:hover{color:var(--fern)}
+.paper .tlink:hover,.white .tlink:hover{color:var(--thomas-dk)}
+.mk{display:inline-block;flex:none;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid var(--marker);vertical-align:1px;margin-right:10px}
+.smeta .scap{padding-left:22px}.smeta .scap::before{content:"";position:absolute;left:0;top:2px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid var(--marker)}
+/* map legend */
+.legend{list-style:none;margin:0;padding:18px 20px;display:grid;gap:10px;border:1.5px solid var(--forest);border-radius:4px;background:var(--white);max-width:460px;font-size:15px;color:var(--forest)}
+.legend li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:baseline}
+.legend b{font:700 15px var(--display);letter-spacing:.02em}
+.legend span{color:var(--muted)}
+.legend .pin{width:24px;height:24px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font:700 12px var(--display);transform:translateY(5px)}
+.legend--dark{background:transparent;border-color:rgba(255,255,255,.35);color:#EAF1E6}
+.legend--dark span{color:#C5D3C2}.legend--dark .pin{background:var(--marker);color:#1d1206}
+.pinlab{position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font:700 13px var(--display);z-index:2;box-shadow:0 0 0 3px var(--white)}
+.bigfig{position:relative}
+.bign .count{display:inline-block;line-height:.9;vertical-align:top;font-variant-numeric:tabular-nums;min-width:3.4ch;text-align:right}
+/* plain sub-lists (clients / memberships) */
+.plainlist{margin:26px 0 0;display:grid;grid-template-columns:auto 1fr;gap:12px 22px;font-size:15.5px}
+.plainlist dt{font:700 14px var(--display);letter-spacing:.06em;color:#fff}
+.plainlist dd{margin:0;color:#C5D3C2}
+.paper .plainlist dt,.white .plainlist dt{color:var(--forest)}.paper .plainlist dd,.white .plainlist dd{color:var(--muted)}
+/* services: trail of stages */
+.trail{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:0;max-width:1040px}
+.trail::before{content:"";position:absolute;left:19px;top:24px;bottom:24px;border-left:3px dashed rgba(5,44,49,.35)}
+.trail li{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr) minmax(0,1fr) 180px;gap:clamp(16px,3vw,40px);align-items:start;padding:26px 0;border-bottom:1px solid var(--line)}
+.trail li:last-child{border-bottom:0}
+.trail .tm{position:relative;z-index:1;width:40px;height:40px;display:grid;place-items:center}
+.trail .tm::before{content:"";position:absolute;inset:0;margin:auto;width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-bottom:34px solid var(--marker)}
+.trail .tm b{position:relative;font:700 13px var(--display);color:#1d1206;transform:translateY(5px)}
+.trail h3{font-size:clamp(22px,2.1vw,30px);color:var(--forest);margin:4px 0 6px}
+.trail .who{margin:0;font:600 14px var(--sans);color:var(--thomas-dk)}
+.trail p{margin:0;color:var(--muted)}
+.trail .tph{aspect-ratio:4/3;overflow:hidden;border-radius:6px;background:var(--moss)}
+.trail .tph img{width:100%;height:100%;object-fit:cover}
+/* about: places */
+.places{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,72px);align-items:start}
+.places p{color:var(--muted)}
+.placelist{list-style:none;margin:22px 0 0;padding:0;columns:2;column-gap:28px}
+.placelist li{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.placelist li b{display:block;font:700 15px var(--display);color:var(--forest)}
+.placelist li span{color:var(--muted);font-size:14.5px}
+.prose{max-width:62ch}
+.prose h3{font-size:clamp(22px,2vw,28px);color:var(--forest);margin:28px 0 6px}
+.prose h3:first-child{margin-top:0}
+.prose p{color:var(--muted);margin:0}
+.aquote{margin:0;padding:26px 0 0;border-top:3px solid var(--forest)}
+.aquote blockquote{margin:0;font:700 clamp(22px,2.1vw,30px)/1.3 var(--display);color:var(--forest)}
+.aquote figcaption{margin-top:16px;color:var(--muted)}
+/* fingerpost footer */
+.tfoot__top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:end}
+.signpost{position:relative;padding-left:26px;display:grid;gap:12px;max-width:620px}
+.signpost::before{content:"";position:absolute;left:0;top:-14px;bottom:-40px;width:14px;border-radius:3px;background:linear-gradient(90deg,#6b4a2b,#8a6340 55%,#5d4026)}
+.fp{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;padding:12px 44px 12px 18px;background:var(--signgreen);color:#F5EFE2;text-decoration:none;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%);box-shadow:inset 0 0 0 2px rgba(245,239,226,.25);transition:transform .35s var(--ease),background .3s}
+.fp span{font:700 clamp(15px,1.4vw,18px) var(--display);letter-spacing:.06em;text-transform:uppercase}
+.fp b{font:700 clamp(17px,1.7vw,22px) var(--display);letter-spacing:.02em;color:#F2D7A6;white-space:nowrap}
+a.fp:hover,a.fp:focus-visible{transform:translateX(8px);background:#3A6640;color:#fff}
+.fp--l{clip-path:polygon(26px 0,100% 0,100% 100%,26px 100%,0 50%);padding:12px 18px 12px 44px;margin-left:-26px}
+.tfoot__brand p{margin:14px 0 0;max-width:36ch}
+.tfoot__cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin-top:64px;padding-top:34px;border-top:1px solid rgba(255,255,255,.1)}
+.tfoot__cols .soc{display:flex;flex-wrap:wrap;gap:4px 18px}
+@media (max-width:860px){
+  .trail li{grid-template-columns:40px minmax(0,1fr)}
+  .trail li>p,.trail .tph{grid-column:2}
+  .trail .tph{max-width:340px}
+  .places{grid-template-columns:minmax(0,1fr)}
+  .tfoot__top{grid-template-columns:minmax(0,1fr)}
+  .fp--l{margin-left:0}
+  .signpost::before{bottom:-12px}
+}
+@media (max-width:560px){
+  .placelist{columns:1}
+  .tfoot__cols{grid-template-columns:1fr 1fr}
+  .fp{grid-template-columns:minmax(0,1fr);gap:2px}
+  .plainlist{grid-template-columns:minmax(0,1fr);gap:2px}
+  .plainlist dd{margin-bottom:10px}
+}
 </style>
 </head>
 <body>
@@ -491,13 +576,13 @@ html.pt-out .pt{transform:none}
 <section class="sheet paper" aria-label="Project details">
   <div class="wrap two">
     <div class="rv casebody" id="pdBody"><p>Thomas Consultants provided its full range of land development services for a 67-dwelling development in Hobsonville, with the aim of obtaining resource consent.</p><p>The scope included earthworks over 14,096 m² to prepare the site for homes and roads, several retaining walls and the groundwater diversion that comes with them.</p><p>Planning, surveying, engineering, landscape architecture, traffic engineering and soil testing all came from our team. The consent was approved on 9 February 2022.</p><h3 class="caseh">What we did</h3><ul class="ticks"><li>Planning and resource consent</li><li>Earthworks and retaining design</li><li>Traffic engineering</li><li>Soil testing</li><li>Landscape architecture</li></ul></div>
-    <div class="rv"><p class="eyebrow">Project facts</p><dl class="facts" id="pdFacts"><div><dt>Site</dt><dd>Scott Road, Hobsonville, Auckland</dd></div><div><dt>Client</dt><dd>Nade Investments Ltd</dd></div><div><dt>Services</dt><dd>Resource Consent, Traffic Engineering, Soil Testing</dd></div><div><dt>Milestone</dt><dd>Consent approved 9 February 2022</dd></div><div><dt>Partners</dt><dd>OZAC Architects</dd></div></dl>
+    <div class="rv"><dl class="facts" id="pdFacts"><div><dt>Site</dt><dd>Scott Road, Hobsonville, Auckland</dd></div><div><dt>Client</dt><dd>Nade Investments Ltd</dd></div><div><dt>Services</dt><dd>Resource Consent, Traffic Engineering, Soil Testing</dd></div><div><dt>Milestone</dt><dd>Consent approved 9 February 2022</dd></div><div><dt>Partners</dt><dd>OZAC Architects</dd></div></dl>
       <p style="margin-top:26px"><a class="btn dark magnetic" href="contact.html#book">Talk to us about a similar project</a></p></div>
   </div>
 </section>
 <section class="sheet dark" aria-labelledby="gT">
   <div class="wrap" data-car id="pdCar">
-    <div class="head"><div><p class="eyebrow">Gallery</p><h2 id="gT">On the ground.</h2></div></div>
+    <div class="head"><div><h2 id="gT">Photos and plans</h2></div></div>
     <div class="ctrack" id="pdGal" tabindex="0" aria-label="Project photos"><figure class="citem"><img src="../../assets/img/plan-engineering-800.webp" srcset="../../assets/img/plan-engineering-800.webp 800w, ../../assets/img/plan-engineering-1600.webp 1600w, ../../assets/img/plan-engineering-2400.webp 2400w" sizes="(max-width: 760px) 78vw, 440px" width="2400" height="1696" alt="Engineering layout plan for a residential development" loading="lazy" decoding="async"><figcaption><span>Engineering layout plan for a residential development</span></figcaption></figure></div>
     <div class="cctrl"><div class="cdots" aria-hidden="true"></div><div style="display:flex;align-items:center;gap:12px"><span class="ccount">1 / 1</span>
   <button class="cbtn cprev" type="button" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4L6 10l6 6"/></svg></button>
@@ -506,22 +591,29 @@ html.pt-out .pt{transform:none}
   </div>
 </section>
 <section class="sheet white cv" aria-labelledby="rT">
-  <div class="wrap"><div class="head"><div><p class="eyebrow">Related</p><h2 id="rT">More projects.</h2></div></div>
+  <div class="wrap"><div class="head"><div><h2 id="rT">Related projects</h2></div></div>
   <div class="pgrid" id="pdRel"><a class="pcard rv" href="project.html?p=mcmillan-lockwood" data-cats="eng res"><div class="ph"><img src="../../assets/img/aerial-apartments-800.webp" srcset="../../assets/img/aerial-apartments-800.webp 800w, ../../assets/img/aerial-apartments-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="898" alt="Aerial view of a four-storey apartment building in an Auckland suburb" loading="lazy" decoding="async"><div class="tags"><span>Engineering</span><span>Construction Monitoring</span></div></div><h3>6 Banff Avenue, Epsom</h3><p class="loc">6 Banff Avenue, Epsom, Auckland</p></a><a class="pcard rv" href="project.html?p=cracroft-great-south" data-cats="eng survey res"><div class="ph"><img src="../../assets/img/apartments-colour-800.webp" srcset="../../assets/img/apartments-colour-800.webp 800w, ../../assets/img/apartments-colour-1600.webp 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1600" height="1066" alt="Four-storey apartment building with orange panels" loading="lazy" decoding="async"><div class="tags"><span>Engineering</span><span>Surveying</span></div></div><h3>Cracroft Street and Great South Road</h3><p class="loc">Auckland</p></a><a class="pcard rv" href="project.html?p=fearon-park" data-cats="plan env pub"><div class="ph"><img src="../../assets/img/plaza-path-800.webp" srcset="../../assets/img/plaza-path-800.webp 800w, ../../assets/img/plaza-path-1024.webp 1024w" sizes="(max-width: 760px) 92vw, (max-width: 1080px) 46vw, 30vw" width="1024" height="683" alt="Landscaped plaza with pathways and planting" loading="lazy" decoding="async"><div class="tags"><span>Project Management</span><span>Contaminated Sites</span></div></div><h3>Open Space, Fearon Park</h3><p class="loc">Fearon Park, Mount Roskill, Auckland</p></a></div></div>
 </section>
 <section class="sheet cv ctaband cv" aria-labelledby="ctaT">
   <img src="../../assets/img/earthworks-sunset-800.webp" srcset="../../assets/img/earthworks-sunset-800.webp 800w, ../../assets/img/earthworks-sunset-1600.webp 1600w" sizes="100vw" width="1600" height="757" alt="Earthworks site at sunset" loading="lazy" decoding="async">
-  <div class="wrap"><div class="rv"><p class="eyebrow">Start the journey</p><h2 id="ctaT">Planning something <em>similar</em>?</h2><p style="margin-top:16px">Tell us about your site. We will put the right specialists on it from day one.</p></div>
-  <div class="ctas rv"><a class="btn magnetic" href="contact.html#book">Book a free consultation</a><a class="btn ghost magnetic" href="tel:+6498361804">Call 09 836 1804</a></div></div>
+  <div class="wrap"><div class="rv"><h2 id="ctaT">Planning something similar?</h2><p style="margin-top:16px">Send us the address and what you would like to do. We will put the right specialists on it from the start.</p></div>
+  <div class="ctas rv"><a class="btn magnetic" href="contact.html#book">Book Your Free Development Consultation</a><a class="tlink" href="tel:+6498361804">Or call 09 836 1804 &#8594;</a></div></div>
 </section>
 </main>
-<footer><div class="wrap">
-  <div class="foot">
-    <div><a class="brand" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="175" height="46" loading="lazy"></a><p>Land Development &amp; Subdivision Consultants. Creating Better Spaces Together.</p>
-      <ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li>Christchurch satellite office</li></ul></div>
+<footer class="tfoot"><div class="wrap">
+  <div class="tfoot__top">
+    <nav class="signpost" aria-label="Offices and phone numbers">
+      <a class="fp" href="tel:+6498361804"><span>Auckland Head Office</span><b>09 836 1804</b></a>
+      <a class="fp fp--l" href="tel:+6498696070"><span>Manukau</span><b>09 869 6070</b></a>
+      <div class="fp"><span>Christchurch satellite office</span><b>via Head Office</b></div>
+      <a class="fp fp--l" href="https://portal.thomasconsultants.co.nz"><span>Client portal</span><b>Log in</b></a>
+    </nav>
+    <div class="tfoot__brand"><a class="brand" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="175" height="46" loading="lazy"></a><p>Land development and subdivision consultants. Surveying, planning, engineering, landscape architecture and environmental work across Aotearoa.</p></div>
+  </div>
+  <div class="tfoot__cols">
     <div><h4>Services</h4><ul><li><a href="services.html#land-surveying">Land Surveying</a></li><li><a href="services.html#rma-planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape-architecture">Landscape Architecture</a></li><li><a href="services.html#environmental-services">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
-    <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
-    <div><h4>Follow</h4><ul><li><a href="https://www.facebook.com/thomasconsultantsltd">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd">LinkedIn</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="services.html#faq">Questions</a></li></ul></div>
+    <div><h4>Follow</h4><ul class="soc"><li><a href="https://www.facebook.com/thomasconsultantsltd">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd">LinkedIn</a></li></ul></div>
   </div>
   <div class="fbase"><div><span>&copy; 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span></div><span>Proudly designed by AMBS Solutions</span></div>
 </div></footer>
