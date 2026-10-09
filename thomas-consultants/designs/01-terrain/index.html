@@ -138,7 +138,7 @@ html.anim .hero h1 .ln:nth-child(3)>span{animation-delay:.2s}
 .rot{display:inline-grid;vertical-align:bottom;overflow:hidden;color:var(--accent-glow);padding-bottom:.08em;margin-bottom:-.08em}
 .rw{grid-area:1/1;transform:translateY(110%);transition:transform .7s var(--ease)}
 .rw.is-on{transform:none}
-.rw.is-out{transform:translateY(-110%)}
+.rw.is-out{transform:translateY(-110%)}.rw:not(.is-on):not(.is-out){transition:none}/*rot-reset*/
 .hero .lede{color:#e3e6df;max-width:25.5em}
 html.anim .hero .fade{animation:fade 1s .45s var(--ease) both}
 html.anim .hero .fade2{animation:fade 1s .6s var(--ease) both}
