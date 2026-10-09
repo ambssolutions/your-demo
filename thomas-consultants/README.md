@@ -50,9 +50,10 @@ With neither set, "Send preference" opens the client's email app with the choice
 ## Testing
 
 ```
-node thomas-consultants/tests/e2e.mjs            # everything
-node thomas-consultants/tests/e2e.mjs gallery    # gallery only
-node thomas-consultants/tests/e2e.mjs 03         # one concept
+node tests/e2e.mjs            # everything
+node tests/e2e.mjs gallery    # gallery only
+node tests/e2e.mjs 03         # one concept
+node tools/thumbs.mjs         # regenerate thumbnails
 ```
 
 Checks: no console errors, no horizontal overflow, no broken links or anchors, mobile menu, contact form validation and success, gallery shortlist / compare / send / share link.

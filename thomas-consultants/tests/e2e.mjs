@@ -1,5 +1,5 @@
 // End-to-end checks for the Thomas Consultants concept gallery and all 10 concept sites.
-// Run from the repo root:  node thomas-consultants/tests/e2e.mjs
+// Run:  node tests/e2e.mjs  (path is relative to this folder; works from anywhere)
 // Needs Playwright (global install is fine) and Python 3 for the static server.
 import { createRequire } from "node:module";
 import { spawn, execSync } from "node:child_process";
@@ -11,12 +11,12 @@ let chromium;
 try { ({ chromium } = require("playwright")); }
 catch { ({ chromium } = require(path.join(execSync("npm root -g").toString().trim(), "playwright"))); }
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const SITE = path.resolve(path.dirname(new URL(import.meta.url).pathname), ".."); // folder holding index.html + designs/
 const PORT = 4173 + Math.floor(Math.random() * 500);
-const BASE = `http://127.0.0.1:${PORT}/thomas-consultants/`;
+const BASE = `http://127.0.0.1:${PORT}/`;
 const ONLY = process.argv[2]; // optional: "gallery" or one concept, e.g. "03"
 
-const server = spawn("python3", ["-m", "http.server", String(PORT), "--bind", "127.0.0.1"], { cwd: ROOT, stdio: "ignore" });
+const server = spawn("python3", ["-m", "http.server", String(PORT), "--bind", "127.0.0.1"], { cwd: SITE, stdio: "ignore" });
 await new Promise(r => setTimeout(r, 800));
 
 const exe = ["/opt/pw-browsers/chromium-1194/chrome-linux/chrome", "/opt/pw-browsers/chromium"].find(existsSync);
@@ -113,7 +113,7 @@ async function crawl(slug) {
 
 async function testConcept(slug) {
   console.log(`\n${slug}`);
-  if (!existsSync(path.join(ROOT, "thomas-consultants/designs", slug, "index.html"))) return ok(`${slug} exists`, false, "missing home page");
+  if (!existsSync(path.join(SITE, "designs", slug, "index.html"))) return ok(`${slug} exists`, false, "missing home page");
   const pages = await crawl(slug);
   const names = pages.map(p => p.replace(BASE + "designs/", ""));
   ok(`site has home + inner pages (${names.length})`, ["services","projects","about","contact"].every(n => names.some(x => x.endsWith(`${slug}/${n}.html`))), names.join(", "));
@@ -163,7 +163,7 @@ async function testConcept(slug) {
             const t = (await f.getAttribute("type")) || "text";
             await f.fill(t === "email" ? "client@example.com" : t === "tel" ? "021 555 0123" : t === "number" ? "1" : "Test enquiry about a subdivision");
           }
-          for (const s of await form.locator("select").all()) { const v = await s.locator("option").nth(1).getAttribute("value").catch(() => null); if (v !== null) await s.selectOption(v); }
+          for (const s of await form.locator("select").all()) if (await s.isVisible() && (await s.locator("option").count()) > 1) await s.selectOption({ index: 1 });
           for (const c of await form.locator('input[type="checkbox"][required]').all()) await c.check();
           for (const r of await form.locator('input[type="radio"]').all()) { await r.check({ force: true }).catch(() => {}); break; }
           await submit.click(); await page.waitForTimeout(1200);
