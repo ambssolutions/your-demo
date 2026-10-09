@@ -136,6 +136,10 @@ async function testConcept(slug) {
         return out;
       });
       ok(`${label} no console errors`, errors.length === 0, errors.slice(0, 3).join(" | "));
+      const copied = await page.evaluate(() => { const t = document.body.innerText.replace(/\s+/g, " "); return ["Six disciplines. One integrated team", "We make it easy. You see it through", "people love.", "Let's talk about your site", "Let’s talk about your site", "second to none", "—"].filter(x => t.includes(x)); });
+      ok(`${label} no copied/template/banned copy`, !copied.length, copied.join(" | "));
+      const realLogo = await page.evaluate(() => !![...document.querySelectorAll("header img, nav img, .nav img, .header img, img")].find(i => /assets\/logo\//.test(i.getAttribute("src") || "") && i.getBoundingClientRect().top < 120));
+      ok(`${label} real logo in header`, realLogo);
       ok(`${label} no horizontal overflow`, overflow <= 1, `${overflow}px`);
       ok(`${label} no broken links/anchors`, !brokenLinks.length && !missingAnchors.length, [...brokenLinks, ...missingAnchors].slice(0, 4).join(", "));
 

@@ -120,3 +120,42 @@ Test: Playwright, 390x844 mobile, 4x CPU throttle, ~1.6 Mbps, 150 ms latency.
 - Keep all Phase 2/3 requirements (pages, nav, forms, JSON-LD, copy rules, data-concept, concepts.js script tag).
 
 Verify with `node thomas-consultants/tests/e2e.mjs NN` (must pass 40/40) and `node thomas-consultants/tests/perf.mjs NN` (must meet the budget on every page).
+
+# Phase 5: real brand + "stop looking AI-generated" (client feedback: "why not the original logo?", "is it looking AI generated?")
+
+## A. Real logo and brand colours (mandatory, every page)
+- Logo files: `thomas-consultants/assets/logo/` (from pages: `../../assets/logo/...`)
+  - `thomas-consultants.svg`: full colour (green swirl #77A22F + teal text #052C31), for light backgrounds
+  - `thomas-consultants-white.svg`: white text + green swirl, for dark backgrounds/headers over photos
+  - `thomas-consultants-mono-dark.svg`: all teal, for very light/green backgrounds where the swirl would clash
+  - `mark.svg`: swirl only, for favicon and tight spaces
+- Header: replace ANY text wordmark / invented icon with `<img src="../../assets/logo/....svg" alt="Thomas Consultants" width="152" height="40">` (height 34-44px desktop, 30-34px mobile; width auto from 190x50 ratio). Use the white version when the header sits over a photo or dark section, and swap to colour when the header becomes solid light on scroll (two <img> toggled by class is fine). Footer: logo too. Favicon: `<link rel="icon" type="image/svg+xml" href="../../assets/logo/mark.svg">`.
+- Brand colours: official green **#77A22F**, official ink/teal **#052C31**. Replace #6DAB3C/#5F9434 etc with the official green (lighter/darker tints derived from it are fine). Each concept may keep its personality palette, but the brand green and ink must appear correctly (logo, primary buttons or key accents).
+
+## B. Remove copied and AI-template copy (mandatory)
+- REMOVE all MiKia lines (another client's copy): "Six disciplines. One integrated team.", "We make it easy. You see it through.", "From the first survey peg to the finished street/last planting/new street", "Let's talk about your site.", "Easy to work with. Committed to your goals.", "Quick answers.", "From raw land to a place people…". Write your own.
+- Do NOT use "From raw land to <word> people love." in any concept. Rotating accent-word headlines are allowed ONLY in 01 Terrain and 09 Kinetic.
+- Prefer the client's own language: "Creating Better Spaces Together", "Quality civil engineering, resource consents and planning", "Land development & subdivision consultants", "from site assessments to final delivery", and the real project text.
+- Cut AI-template tells: no more than ONE mono/uppercase eyebrow style label per section and none on every card; no "STAGE 01 / SHEET S-01 / REV A / CH 0.250" decoration unless it carries real meaning (Blueprint may keep a little); limit pill tags to 2 per card; no fake UI widgets with invented data; no generic stat row "25 years · 6 disciplines · 3 offices" in the hero (use it once, lower down, at most); no invented figures.
+- Vary rhythm: not every section needs heading + subheading + 3 cards. Use some long-form paragraphs, a real quote, a big real number, a single large photo with a caption.
+
+## C. Real project content (mandatory)
+- `thomas-consultants/assets/content/projects-source.json` holds the real text from the client's 40 project pages (title, site, overview, goal, process, outcome). Use it for project cards and every `project.html?p=` case study (2-4 short paragraphs + the real facts: site address, client, what Thomas did, outcome). Light editing for length is fine; do not invent facts.
+- Use concrete real facts on home pages where they fit, e.g. Thom Street: engineering design + construction monitoring for 82 terrace houses and apartments for Kāinga Ora, about 300 tenants, 11,046 m² site, completed November 2020; Taurus Crescent: engineering, surveying and planning for 21 homes in Beach Haven; Churchill Park lookout: concept design for Auckland Council and the Ōrakei Local Board, 360° views over a former golf course.
+- Keep the photo mapping from Phase 4.
+
+## D. Make each concept structurally distinct (mandatory)
+The ten concepts currently share one section order. Restructure each home page around its own idea (keep all pages, nav, forms, JSON-LD, perf budget):
+- **01 Terrain**: cinematic long scroll that tells ONE project start to finish (Thom Street: survey → design → consent → construction → handover), then the services and a short project list. Headline may rotate words.
+- **02 Flow**: product-style "Where do you want to start?" chooser at the top (Subdivide my land / Get a resource consent / Survey my site / Design a public space) leading to the right service; clean feature sections; headline built on "Quality civil engineering, resource consents and planning."
+- **03 Blueprint**: the drawing register IS the home page: a large project register table/list with real sites, clients, disciplines, years where known; each row expands to a photo + facts. Headline idea: "Every good development starts with a good survey." (or similar, your words).
+- **04 Field Notes**: magazine issue: one lead feature article (Churchill Park lookout, real text + pull quote), then 2 secondary features, then a short "contents" of services. Serif, generous whitespace.
+- **05 Midnight**: capability and assurance: accreditations (ISO 45001, IANZ, Toitū), health and safety, council approvals process; projects as a dark gallery. Distinct headline.
+- **06 Swiss**: index of real numbers and facts (82 homes, 21 dwellings, 11,046 m², 25 years) set in giant type, services as a numbered index; minimal photography in a strict grid.
+- **07 Aotearoa**: land, water and ecology first: streams, reserves, native planting, contamination testing; sustainability commitment with real projects (Kauri Glen, Withers Reserve, rural subdivision stormwater).
+- **08 Bento**: homeowner and small developer focus ("Thinking of subdividing your section?"): friendly guide tiles, cross-lease to freehold explainer, the quiz, simple steps, real FAQ.
+- **09 Kinetic**: bold big-energy: the team and culture (people photos), huge real numbers, project reel. Rotating words allowed.
+- **10 Infrastructure**: for councils, government and large developers: sectors, clients (Kāinga Ora, Auckland Council, Auckland Transport, Watercare), prequalification and accreditations, office map, projects grouped by client.
+
+## Verify
+`node thomas-consultants/tests/e2e.mjs NN` 40/40 and `node thomas-consultants/tests/perf.mjs NN` all pages within budget. Grep your pages for the banned MiKia lines and for "people love" before finishing. Then regenerate thumbnails: `node thomas-consultants/tools/thumbs.mjs NN-slug`.
