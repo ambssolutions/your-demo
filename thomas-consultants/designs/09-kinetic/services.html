@@ -583,16 +583,16 @@ h1 em,.h2 em,.velo em,.ln em{display:inline-block}
 .pull--wide{max-width:none;margin-top:clamp(48px,7vw,96px)}
 .pull--wide blockquote{font-size:clamp(1.3rem,2.6vw,2.4rem)}
 /* services: how a job runs */
-.runs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.run{display:grid;grid-template-columns:clamp(56px,7vw,110px) minmax(0,1.1fr) minmax(0,1.3fr) clamp(120px,16vw,230px);gap:clamp(16px,3vw,44px);align-items:center;padding:clamp(20px,3vw,36px) 0;border-bottom:1px solid var(--line)}
-.run__n{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,4.2rem);line-height:.8;letter-spacing:-.06em;color:var(--lime);font-variant-numeric:tabular-nums}
-.run h3{white-space:nowrap;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,min(3.3vw,7vh),3.3rem);line-height:.88;letter-spacing:-.045em;margin:0;transition:transform .6s var(--out)}
-.run:hover h3{transform:translateX(14px)}
-.run__t{margin:10px 0 0;color:var(--lime);font-weight:600}
-.run__d{margin:0;color:var(--muted);max-width:46ch}
-.run__m{aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--ink-3)}
-.run__m img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--out)}
-.run:hover .run__m img{transform:scale(1.06)}
+.jruns{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.jrun{display:grid;grid-template-columns:clamp(56px,7vw,110px) minmax(0,1.1fr) minmax(0,1.3fr) clamp(120px,16vw,230px);gap:clamp(16px,3vw,44px);align-items:center;padding:clamp(20px,3vw,36px) 0;border-bottom:1px solid var(--line)}
+.jrun__n{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,4.2rem);line-height:.8;letter-spacing:-.06em;color:var(--lime);font-variant-numeric:tabular-nums}
+.jrun h3{white-space:nowrap;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,min(3.3vw,7vh),3.3rem);line-height:.88;letter-spacing:-.045em;margin:0;transition:transform .6s var(--out)}
+.jrun:hover h3{transform:translateX(14px)}
+.jrun__t{margin:10px 0 0;color:var(--lime);font-weight:600}
+.jrun__d{margin:0;color:var(--muted);max-width:46ch}
+.jrun__m{aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--ink-3)}
+.jrun__m img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--out)}
+.jrun:hover .jrun__m img{transform:scale(1.06)}
 /* about: people list */
 .people{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink-line)}
 .person>a,.person>div{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.75fr) minmax(0,1.3fr) 24px;gap:clamp(14px,3vw,40px);align-items:baseline;padding:clamp(18px,2.6vw,30px) 0;border-bottom:1px solid var(--ink-line);text-decoration:none;color:inherit;position:relative}
@@ -625,9 +625,9 @@ h1 em,.h2 em,.velo em,.ln em{display:inline-block}
 .footer__lead{font-family:var(--sans);font-weight:400;font-size:16px;color:var(--muted);max-width:34ch;line-height:1.5}
 .footer__soc{grid-auto-flow:column;justify-content:start;gap:2px 18px!important}
 @media (max-width:900px){
-  .run{grid-template-columns:auto minmax(0,1fr);align-items:start}
-  .run__d{grid-column:2}
-  .run__m{grid-column:2;max-width:320px}
+  .jrun{grid-template-columns:auto minmax(0,1fr);align-items:start}
+  .jrun__d{grid-column:2}
+  .jrun__m{grid-column:2;max-width:320px}
   .person>a,.person>div{grid-template-columns:minmax(0,1fr) 24px}
   .person__r,.person__d{grid-column:1}
   .why2,.offrow{grid-template-columns:minmax(0,1fr)}
@@ -739,7 +739,7 @@ h1 em,.h2 em,.velo em,.ln em{display:inline-block}
   <section class="sheet sheet--ink2 cv" id="process" aria-labelledby="proc-title">
     <div class="wrap">
       <div class="head"><div><h2 class="h2" id="proc-title"><span class="velo">How a job runs</span></h2></div><p>Most subdivisions and developments pass through these four points. Which disciplines you need at each one depends on the site.</p></div>
-      <ol class="runs"><li class="run rv" style="--rd:0.0s"><span class="run__n" aria-hidden="true">01</span><div class="run__v"><h3>Walk it</h3><p class="run__t">Survey and investigate</p></div><p class="run__d">Topographical and boundary survey, soil and contamination testing, ecology where it matters. You learn what the land allows before you spend on design.</p><div class="run__m"><img src="../../assets/img/surveyor-road-800.webp" srcset="../../assets/img/surveyor-road-800.webp 800w, ../../assets/img/surveyor-road-1600.webp 1600w" sizes="(max-width: 900px) 40vw, 16vw" width="1600" height="1080" alt="Surveyor setting up an instrument beside a road" loading="lazy" decoding="async"></div></li><li class="run rv" style="--rd:0.06s"><span class="run__n" aria-hidden="true">02</span><div class="run__v"><h3>Draw it</h3><p class="run__t">Scheme, engineering and consent</p></div><p class="run__d">Planners, engineers and landscape architects draw the scheme together. We lodge the resource consent and answer the council's section 92 questions.</p><div class="run__m"><img src="../../assets/img/team-plans-800.webp" srcset="../../assets/img/team-plans-800.webp 800w, ../../assets/img/team-plans-1600.webp 1600w" sizes="(max-width: 900px) 40vw, 16vw" width="1600" height="1069" alt="Engineers and planners reviewing plans around a table" loading="lazy" decoding="async"></div></li><li class="run rv" style="--rd:0.12s"><span class="run__n" aria-hidden="true">03</span><div class="run__v"><h3>Build it</h3><p class="run__t">Set out and monitor</p></div><p class="run__d">Surveyors set out the works. Engineers monitor construction so drainage, roads and earthworks match the approved plans.</p><div class="run__m"><img src="../../assets/img/roadworks-800.webp" srcset="../../assets/img/roadworks-800.webp 800w, ../../assets/img/roadworks-1600.webp 1600w" sizes="(max-width: 900px) 40vw, 16vw" width="1600" height="759" alt="Road and kerb construction in progress" loading="lazy" decoding="async"></div></li><li class="run rv" style="--rd:0.18s"><span class="run__n" aria-hidden="true">04</span><div class="run__v"><h3>Sign it off</h3><p class="run__t">Certify and title</p></div><p class="run__d">Engineering sign-offs, as-built survey and the paperwork council needs before new titles can issue.</p><div class="run__m"><img src="../../assets/img/street-new-800.webp" srcset="../../assets/img/street-new-800.webp 800w, ../../assets/img/street-new-1600.webp 1600w" sizes="(max-width: 900px) 40vw, 16vw" width="1600" height="1069" alt="A newly completed street of townhouses" loading="lazy" decoding="async"></div></li></ol>
+      <ol class="jruns"><li class="jrun rv" style="--rd:0.0s"><span class="jrun__n" aria-hidden="true">01</span><div class="jrun__v"><h3>Walk it</h3><p class="jrun__t">Survey and investigate</p></div><p class="jrun__d">Topographical and boundary survey, soil and contamination testing, ecology where it matters. You learn what the land allows before you spend on design.</p><div class="jrun__m"><img src="../../assets/img/surveyor-road-800.webp" srcset="../../assets/img/surveyor-road-800.webp 800w, ../../assets/img/surveyor-road-1600.webp 1600w" sizes="(max-width: 900px) 40vw, 16vw" width="1600" height="1080" alt="Surveyor setting up an instrument beside a road" loading="lazy" decoding="async"></div></li><li class="jrun rv" style="--rd:0.06s"><span class="jrun__n" aria-hidden="true">02</span><div class="jrun__v"><h3>Draw it</h3><p class="jrun__t">Scheme, engineering and consent</p></div><p class="jrun__d">Planners, engineers and landscape architects draw the scheme together. We lodge the resource consent and answer the council's section 92 questions.</p><div class="jrun__m"><img src="../../assets/img/team-plans-800.webp" srcset="../../assets/img/team-plans-800.webp 800w, ../../assets/img/team-plans-1600.webp 1600w" sizes="(max-width: 900px) 40vw, 16vw" width="1600" height="1069" alt="Engineers and planners reviewing plans around a table" loading="lazy" decoding="async"></div></li><li class="jrun rv" style="--rd:0.12s"><span class="jrun__n" aria-hidden="true">03</span><div class="jrun__v"><h3>Build it</h3><p class="jrun__t">Set out and monitor</p></div><p class="jrun__d">Surveyors set out the works. Engineers monitor construction so drainage, roads and earthworks match the approved plans.</p><div class="jrun__m"><img src="../../assets/img/roadworks-800.webp" srcset="../../assets/img/roadworks-800.webp 800w, ../../assets/img/roadworks-1600.webp 1600w" sizes="(max-width: 900px) 40vw, 16vw" width="1600" height="759" alt="Road and kerb construction in progress" loading="lazy" decoding="async"></div></li><li class="jrun rv" style="--rd:0.18s"><span class="jrun__n" aria-hidden="true">04</span><div class="jrun__v"><h3>Sign it off</h3><p class="jrun__t">Certify and title</p></div><p class="jrun__d">Engineering sign-offs, as-built survey and the paperwork council needs before new titles can issue.</p><div class="jrun__m"><img src="../../assets/img/street-new-800.webp" srcset="../../assets/img/street-new-800.webp 800w, ../../assets/img/street-new-1600.webp 1600w" sizes="(max-width: 900px) 40vw, 16vw" width="1600" height="1069" alt="A newly completed street of townhouses" loading="lazy" decoding="async"></div></li></ol>
     </div>
   </section>
   <section class="sheet sheet--paper cv" id="faq" aria-labelledby="faq-title">
