@@ -45,7 +45,7 @@ p{margin:0 0 1em}
 .dark .eyebrow,.on-dark .eyebrow{color:var(--fern)}
 .lede{font-size:clamp(18px,1.5vw,21px);color:var(--muted);max-width:620px}
 .dark .lede{color:#C5D3C2}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;border:0;cursor:pointer;background:var(--thomas);color:#0E1A10;font:700 15px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .4s var(--ease)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:clamp(48px,7vh,56px);padding:0 28px;border-radius:999px;border:0;cursor:pointer;background:var(--thomas);color:#0E1A10;font:700 15px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .4s var(--ease)}
 .btn:hover{background:var(--fern)}
 .btn.ghost{background:rgba(5,44,49,.35);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
 .btn.ghost:hover{background:rgba(255,255,255,.2)}
@@ -89,25 +89,27 @@ footer .brand img{height:46px}
 .slide.on img{animation:kb 9s ease-out both}
 @keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
 .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(3,30,34,.55) 0%,rgba(3,30,34,.15) 30%,rgba(3,30,34,.35) 58%,rgba(3,30,34,.82) 100%)}
-.ridges{position:absolute;left:0;right:0;bottom:-2px;z-index:3;height:clamp(110px,16vw,220px);pointer-events:none}
+.ridges{position:absolute;left:0;right:0;bottom:-2px;z-index:3;height:clamp(90px,min(16vw,22vh),220px);pointer-events:none}
 .ridges svg{position:absolute;left:50%;bottom:0;width:max(100%,1100px);height:100%;transform:translateX(-50%)}
 .ridges .rl{position:absolute;inset:0}.ridges .rl svg{animation:rup 1.4s var(--ease) both}.ridges .r2 svg{animation-delay:.12s}.ridges .r3 svg{animation-delay:.24s}
 .ridges .r1{opacity:.45}.ridges .r2{opacity:.7}
 @keyframes rup{from{translate:0 60%}}
 .hcopy .wrap>*{animation:hup 1s var(--ease) both}.hcopy .wrap>:nth-child(2){animation-delay:.1s}.hcopy .wrap>:nth-child(3){animation-delay:.2s}.hcopy .wrap>:nth-child(4){animation-delay:.3s}
 @keyframes hup{from{opacity:0;translate:0 30px}}
-.hcopy{position:absolute;z-index:2;left:0;right:0;bottom:clamp(120px,19vw,250px)}
-.hero h1{font-size:clamp(44px,min(7.2vw,11vh),108px);line-height:.94;max-width:13ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
-.phero h1{font-size:clamp(36px,min(5vw,8vh),76px);max-width:18ch}
-.phero .hcopy{bottom:clamp(110px,12vw,170px)}
+.hcopy{position:absolute;z-index:2;left:0;right:0;top:84px;bottom:clamp(96px,min(19vw,23vh),250px);display:flex;align-items:flex-end}
+.hcopy .wrap{max-height:100%}
+.hero h1{font-size:clamp(34px,min(5.4vw,8vh),92px);line-height:.96;max-width:16ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.phero h1{font-size:clamp(32px,min(4.8vw,7.4vh),76px);max-width:18ch}
+.phero .hcopy{bottom:clamp(90px,min(12vw,17vh),170px)}
 .phero{min-height:620px}
 .rot{display:inline-grid;vertical-align:top;color:var(--fern)}
 .rot>span{grid-area:1/1;opacity:0;transform:translateY(.35em);transition:opacity .6s,transform .7s var(--ease)}
 .rot>span.on{opacity:1;transform:none}
 .hcopy .eyebrow{color:#DDEBD2}
-.hcopy .lede{color:#E6EEE2;margin:18px 0 26px}
+.hcopy .lede{color:#E6EEE2;margin:clamp(10px,2vh,18px) 0 clamp(14px,3vh,26px);font-size:clamp(16px,min(1.5vw,2.6vh),21px);max-width:680px}
+.hcopy .eyebrow{margin-bottom:clamp(8px,1.6vh,16px)}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.smeta{position:absolute;z-index:4;right:var(--pad);bottom:calc(clamp(110px,16vw,220px) - 20px);width:min(300px,40vw);font:700 12px var(--display);letter-spacing:.18em;text-transform:uppercase;color:#E6EEE2}
+.smeta{position:absolute;z-index:4;right:var(--pad);bottom:calc(clamp(90px,min(16vw,22vh),220px) - 10px);width:min(300px,40vw);font:700 12px var(--display);letter-spacing:.18em;text-transform:uppercase;color:#E6EEE2}
 .scaps{position:relative;height:18px}
 .scap{position:absolute;inset:0;opacity:0;transition:opacity .6s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .scap.on{opacity:1}
@@ -208,7 +210,7 @@ footer .brand img{height:46px}
 .contour{position:absolute;right:-60px;top:40px;width:520px;opacity:.12;pointer-events:none}
 /* koru */
 .koru{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
-.korubox{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--moss)}
+.korubox{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;max-height:calc(100svh - 120px);margin:0 auto;background:var(--moss)}
 .korubox img{width:100%;height:100%;object-fit:cover}
 .korubox::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,44,49,.15),rgba(5,44,49,.7))}
 .korubox svg{position:absolute;inset:6% 8%;width:84%;height:88%;z-index:2}
@@ -219,7 +221,7 @@ footer .brand img{height:46px}
 .pillars span{font-size:15px;color:var(--muted)}
 /* process (sticky stacked) */
 .stack{display:grid;gap:26px}
-.stage{position:sticky;top:calc(92px + var(--n) * 18px);display:grid;grid-template-columns:1.2fr 1fr;min-height:clamp(380px,46vh,460px);border-radius:28px;overflow:hidden;box-shadow:0 -14px 40px -24px rgba(0,0,0,.35)}
+.stage{position:sticky;top:calc(92px + var(--n) * 18px);max-height:calc(100svh - 92px - var(--n) * 18px - 24px);display:grid;grid-template-columns:1.2fr 1fr;min-height:clamp(380px,46vh,460px);border-radius:28px;overflow:hidden;box-shadow:0 -14px 40px -24px rgba(0,0,0,.35)}
 .stage .tx{padding:clamp(26px,3.6vw,50px);display:flex;flex-direction:column}
 .stage .no{font:700 clamp(70px,8vw,120px)/.85 var(--display);opacity:.9;margin-bottom:16px}
 .stage .k{font:700 12px var(--display);letter-spacing:.2em;text-transform:uppercase;margin:14px 0 8px;opacity:.8}
@@ -410,6 +412,11 @@ html.pt-out .pt{transform:none}
   @keyframes pr1{to{translate:0 -6vh}}@keyframes pr2{to{translate:0 8vh}}@keyframes pr3{to{translate:0 19vh}}
   @keyframes prc{to{translate:0 -16vh;opacity:0}}
   @keyframes kd{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes kl{from{opacity:0}to{opacity:.9}}
+}
+@media (max-height:760px) and (min-width:861px){
+  .stage{position:relative;top:auto;max-height:none;min-height:0}
+  .stack{gap:18px}
+  .stage .no{font-size:clamp(54px,8vh,80px)}
 }
 @media (max-width:1080px){
   .navl,.nav .btn{display:none}.burger{display:grid}
@@ -656,7 +663,7 @@ document.querySelectorAll('[data-disc]').forEach(function(box){
   box.addEventListener('pointerleave', function(){ hold = false; sched(); });
   track.addEventListener('touchstart', function(){ paused = true; if (pauseBtn) pauseBtn.setAttribute('aria-pressed', 'true'); sched(); }, {passive:true});
   if ('IntersectionObserver' in window){
-    var po = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting){ var k = Array.prototype.indexOf.call(panels, x.target); if (k !== i){ mark(k); sched(); } } }); }, {root: track, threshold: .6});
+    var po = new IntersectionObserver(function(en){ en.forEach(function(x){ var on = x.isIntersecting; x.target.setAttribute('aria-hidden', on ? 'false' : 'true'); x.target.inert = !on; if (on){ var k = Array.prototype.indexOf.call(panels, x.target); if (k !== i){ mark(k); sched(); } } }); }, {root: track, threshold: .6});
     Array.prototype.forEach.call(panels, function(p){ po.observe(p); });
   }
   TC.vis(box, function(v){ inView = v; sched(); });
@@ -673,7 +680,7 @@ document.querySelectorAll('[data-car]').forEach(function(box){
   box.querySelector('.cprev').addEventListener('click', function(){ go(i - 1); });
   box.querySelector('.cnext').addEventListener('click', function(){ go(i + 1); });
   if ('IntersectionObserver' in window){
-    var o = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting) mark(Array.prototype.indexOf.call(items, x.target)); }); }, {root: track, threshold: .7});
+    var o = new IntersectionObserver(function(en){ en.forEach(function(x){ var full = x.intersectionRatio >= .9; x.target.setAttribute('aria-hidden', full ? 'false' : 'true'); x.target.inert = !full; if (x.intersectionRatio >= .7) mark(Array.prototype.indexOf.call(items, x.target)); }); }, {root: track, threshold: [0, .7, .9, 1]});
     Array.prototype.forEach.call(items, function(it){ o.observe(it); });
   }
   mark(0);

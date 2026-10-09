@@ -45,7 +45,7 @@ p{margin:0 0 1em}
 .dk .pill{background:rgba(255,255,255,.1);color:#fff}
 .lede{font-size:clamp(17px,1.4vw,19px);color:var(--muted);max-width:600px}
 .dk .lede{color:#C3CFBF}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;border:0;cursor:pointer;background:var(--ink);color:#fff;font:700 15px var(--font);text-decoration:none;transition:background .3s,transform .4s var(--spring)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:clamp(48px,7vh,56px);padding:0 26px;border-radius:999px;border:0;cursor:pointer;background:var(--ink);color:#fff;font:700 15px var(--font);text-decoration:none;transition:background .3s,transform .4s var(--spring)}
 .btn:hover{background:var(--deep)}
 .btn.g{background:var(--thomas);color:#0F1E0A}.btn.g:hover{background:#8AB43F}
 .btn.w{background:#fff;color:var(--ink)}.btn.w:hover{background:var(--mint)}
@@ -85,8 +85,8 @@ a.tile{text-decoration:none;color:inherit}
 #menu a.cta{grid-column:span 2;background:var(--thomas);justify-content:center}
 /* hero bento */
 .hb{padding:86px 0 0}
-.hgrid{display:grid;gap:var(--gap);grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(250px,34vh) minmax(250px,34vh) minmax(190px,auto);grid-template-areas:"main main main a" "main main main b" "c d e f"}
-.hmain{grid-area:main;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(22px,3.4vw,46px);min-height:520px;background:var(--night)}
+.hgrid{display:grid;gap:var(--gap);grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(220px,calc(50vh - 56px)) minmax(220px,calc(50vh - 56px)) minmax(190px,auto);grid-template-areas:"main main main a" "main main main b" "c d e f"}
+.hmain{grid-area:main;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(20px,min(3.4vw,4.6vh),46px);min-height:460px;background:var(--night)}
 .ha{grid-area:a}.hbb{grid-area:b}.hc{grid-area:c}.hd{grid-area:d}.he{grid-area:e}.hf{grid-area:f}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s;z-index:-2}
 .slide.on{opacity:1}
@@ -95,9 +95,9 @@ a.tile{text-decoration:none;color:inherit}
 @keyframes kb{from{transform:scale(1.13)}to{transform:scale(1)}}
 .hmain::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,18,12,.3) 0%,rgba(10,18,12,0) 30%,rgba(10,18,12,.55) 60%,rgba(10,18,12,.85) 100%),linear-gradient(90deg,rgba(10,18,12,.45),transparent 70%)}
 .hmain h1,.hmain .eb,.hmain .lede{text-shadow:0 2px 18px rgba(0,0,0,.35)}
-.hmain h1{font-size:clamp(40px,5.6vw,84px);letter-spacing:-.045em;max-width:12ch;margin:6px 0 14px}
+.hmain h1{font-size:clamp(34px,min(5vw,7.6vh),80px);letter-spacing:-.045em;max-width:13ch;margin:4px 0 clamp(8px,1.6vh,14px)}
 .hmain .eb{font-size:14px;font-weight:700;color:#E3EEDB;max-width:46ch}
-.hmain .lede{color:#E9F0E4;margin:0 0 22px;max-width:52ch}
+.hmain .lede{color:#E9F0E4;margin:0 0 clamp(12px,2.6vh,22px);max-width:56ch;font-size:clamp(15px,min(1.4vw,2.4vh),19px)}
 .rot{display:inline-grid;vertical-align:bottom}
 .rot>span{grid-area:1/1;opacity:0;transform:translateY(.4em) scale(.96);transition:opacity .5s,transform .7s var(--spring);background:var(--thomas);color:#0F1E0A;border-radius:.22em;padding:0 .14em;justify-self:start}
 .rot>span.on{opacity:1;transform:none}
@@ -226,7 +226,7 @@ a.tile{text-decoration:none;color:inherit}
 .wgrid .wt p{margin:0;color:#B9C7B5;font-size:15px}
 /* process */
 .stack{display:grid;gap:22px}
-.stage{position:sticky;top:calc(92px + var(--n) * 16px);display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding:var(--gap);border-radius:30px;box-shadow:0 -12px 40px -24px rgba(0,0,0,.3);min-height:clamp(360px,44vh,440px)}
+.stage{position:sticky;top:calc(92px + var(--n) * 16px);max-height:calc(100svh - 92px - var(--n) * 16px - 24px);display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding:var(--gap);border-radius:30px;box-shadow:0 -12px 40px -24px rgba(0,0,0,.3);min-height:clamp(360px,44vh,440px)}
 .stage .tx{padding:clamp(14px,2.4vw,30px);display:flex;flex-direction:column}
 .stage .no{width:64px;height:64px;border-radius:20px;background:#fff;display:grid;place-items:center;font-size:26px;font-weight:800}
 .stage .no{margin-bottom:18px}
@@ -388,11 +388,11 @@ a.tile{text-decoration:none;color:inherit}
 .jump{display:flex;gap:8px;flex-wrap:wrap;list-style:none;margin:0 0 20px;padding:0}
 .jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:#fff;box-shadow:var(--sh);text-decoration:none;font-weight:700;font-size:14px}
 /* page hero */
-.pgr{display:grid;gap:var(--gap);grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(230px,30vh) minmax(230px,30vh);grid-template-areas:"main main main a" "main main main b"}
+.pgr{display:grid;gap:var(--gap);grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(210px,calc(40vh - 40px)) minmax(210px,calc(40vh - 40px));grid-template-areas:"main main main a" "main main main b"}
 .crumbs ol{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;font-weight:700}
 .crumbs li+li::before{content:"/";margin-right:6px;opacity:.6}
 .crumbs a{text-decoration:none;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.2)}
-.pgr h1{font-size:clamp(36px,4.6vw,68px);max-width:16ch}
+.pgr h1{font-size:clamp(32px,min(4.4vw,7vh),68px);max-width:18ch}
 .values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
 .values .tile{padding:24px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end}
 .values h3{font-size:22px;margin-bottom:6px}.values p{margin:0;color:var(--ink2);font-size:15.5px}
@@ -435,6 +435,10 @@ html.pt-in .pt i{transform:scale(1.25);transition:none;animation:pts .01s 2.4s f
 html.pt-out .pt i{transform:scale(1.25)}
 @keyframes pts{to{transform:scale(0)}}
 @media (max-aspect-ratio:1/1){.pt{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(6,1fr)}}
+@media (max-height:760px) and (min-width:761px){
+  .stage{position:relative;top:auto;max-height:none;min-height:0}
+  .stack{gap:16px}
+}
 @media (max-width:1060px){
   .scgrid{grid-template-columns:1fr 1fr}
   .fqwrap{grid-template-columns:1fr}
@@ -647,7 +651,7 @@ document.querySelectorAll('[data-disc]').forEach(function(box){
   box.addEventListener('pointerleave', function(){ hold = false; sched(); });
   track.addEventListener('touchstart', function(){ paused = true; if (pauseBtn) pauseBtn.setAttribute('aria-pressed', 'true'); sched(); }, {passive:true});
   if ('IntersectionObserver' in window){
-    var po = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting){ var k = Array.prototype.indexOf.call(panels, x.target); if (k !== i){ mark(k); sched(); } } }); }, {root: track, threshold: .6});
+    var po = new IntersectionObserver(function(en){ en.forEach(function(x){ var on = x.isIntersecting; x.target.setAttribute('aria-hidden', on ? 'false' : 'true'); x.target.inert = !on; if (on){ var k = Array.prototype.indexOf.call(panels, x.target); if (k !== i){ mark(k); sched(); } } }); }, {root: track, threshold: .6});
     Array.prototype.forEach.call(panels, function(p){ po.observe(p); });
   }
   TC.vis(box, function(v){ inView = v; sched(); });
@@ -664,7 +668,7 @@ document.querySelectorAll('[data-car]').forEach(function(box){
   box.querySelector('.cprev').addEventListener('click', function(){ go(i - 1); });
   box.querySelector('.cnext').addEventListener('click', function(){ go(i + 1); });
   if ('IntersectionObserver' in window){
-    var o = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting) mark(Array.prototype.indexOf.call(items, x.target)); }); }, {root: track, threshold: .7});
+    var o = new IntersectionObserver(function(en){ en.forEach(function(x){ var full = x.intersectionRatio >= .9; x.target.setAttribute('aria-hidden', full ? 'false' : 'true'); x.target.inert = !full; if (x.intersectionRatio >= .7) mark(Array.prototype.indexOf.call(items, x.target)); }); }, {root: track, threshold: [0, .7, .9, 1]});
     Array.prototype.forEach.call(items, function(it){ o.observe(it); });
   }
   mark(0);

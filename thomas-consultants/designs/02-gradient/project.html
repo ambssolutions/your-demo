@@ -127,7 +127,7 @@ html.anim:not(.lite) .phero .bg img{animation:kb 9s ease-out both}
 .crumbs li+li::before{content:"›";margin-right:6px;opacity:.8}
 .crumbs a:hover{text-decoration:underline}
 .crumbs [aria-current]{font-weight:600}
-.phero h1{font-size:clamp(38px,5.6vw,74px);line-height:1.05;letter-spacing:-.04em;max-width:9.9em}
+.phero h1{font-size:clamp(36px,min(5.6vw,9vh),74px);line-height:1.05;letter-spacing:-.04em;max-width:9.9em}
 .phero .lead{color:#e6f1ed;max-width:30.2em}
 html.anim .phero h1,html.anim .phero .lead,html.anim .phero .crumbs{animation:up .9s var(--ease) both}
 html.anim .phero h1{animation-delay:.08s}
@@ -208,6 +208,7 @@ html:not(.lite) .cta-card::before{animation:drift 14s ease-in-out infinite alter
 .quickbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;font-weight:600;font-size:15px;background:var(--ink);color:#fff}
 .quickbar .qb-primary{background:var(--grad);color:#04211c}
 .footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+.facts dd a{display:inline-block}
 /* page transition: diagonal gradient sweep */
 .pt{position:fixed;top:0;bottom:0;left:-20%;width:140%;z-index:500;pointer-events:none;background:linear-gradient(110deg,#b6e36a,#77A22F 30%,#14b8a6 65%,#0f766e);clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);transform:translateX(100%);display:grid;place-items:center}
 .pt span .logo{height:44px}
@@ -449,6 +450,7 @@ document.querySelectorAll('[data-snap]').forEach(function(w){
   var tr=w.querySelector('.snap-track'), it=[].slice.call(tr.children), cnt=w.querySelector('[data-count-label]'), dots=[].slice.call(w.querySelectorAll('.dots button')), cur=0;
   function mark(k){ cur=k; if(cnt) cnt.textContent=(k+1)+' / '+it.length; dots.forEach(function(b,j){ b.setAttribute('aria-current', j===k?'true':'false'); }); }
   if('IntersectionObserver' in window){ var o=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && e.intersectionRatio>.6) mark(it.indexOf(e.target)); }); }, {root:tr, threshold:[.6]}); it.forEach(function(x){ o.observe(x); }); }
+  if('IntersectionObserver' in window){ var po=new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('part', e.intersectionRatio<.97); }); }, {root:tr, threshold:[0,.97,1]}); it.forEach(function(x){ x.classList.add('part'); po.observe(x); }); }
   function to(k){ k=Math.max(0,Math.min(it.length-1,k)); tr.scrollTo({left:it[k].offsetLeft-tr.offsetLeft-(parseFloat(getComputedStyle(tr).paddingLeft)||0), behavior: rm?'auto':'smooth'}); mark(k); }
   var p=w.querySelector('[data-prev]'), n=w.querySelector('[data-next]');
   p && p.addEventListener('click', function(){ to(cur-1); }); n && n.addEventListener('click', function(){ to(cur+1); });
@@ -573,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(hero){ gsap.to(hero.querySelectorAll('.slides, .bg'), {yPercent:14, ease:'none', scrollTrigger:{trigger:hero, start:'top top', end:'bottom top', scrub:true}});
       var ui=hero.querySelector('.ui-card'); ui && gsap.to(ui, {yPercent:-30, ease:'none', scrollTrigger:{trigger:hero, start:'top top', end:'bottom top', scrub:true}}); }
     var st=gsap.utils.toArray('.stage');
-    st.forEach(function(c,i){ if(i===st.length-1) return; gsap.to(c, {scale:.95, opacity:.6, ease:'none', scrollTrigger:{trigger:st[i+1], start:'top 85%', end:'top 25%', scrub:true}}); });
+    st.forEach(function(c,i){ if(i===st.length-1) return; gsap.to(c, {scale:.95, ease:'none', scrollTrigger:{trigger:st[i+1], start:'top 85%', end:'top 25%', scrub:true}}); });
     gsap.utils.toArray('.split img').forEach(function(im){ gsap.fromTo(im, {yPercent:-5}, {yPercent:5, ease:'none', scrollTrigger:{trigger:im.parentNode, start:'top bottom', end:'bottom top', scrub:true}}); });
     ScrollTrigger.refresh();
     if('ResizeObserver' in window){ var rt, h0=0; new ResizeObserver(function(){ var hh=document.body.offsetHeight; if(Math.abs(hh-h0)<2) return; h0=hh; clearTimeout(rt); rt=setTimeout(function(){ ScrollTrigger.refresh(); }, 250); }).observe(document.body); }

@@ -126,8 +126,8 @@ h2.h em{font-style:normal;color:var(--green-hi)}
 .hero__tint::after{content:"";position:absolute;inset:0;background:rgba(5,44,49,.3)}
 .hero__grid{position:absolute;inset:0;z-index:-1;opacity:.55;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px}
 .hero__plan{position:absolute;z-index:-1;right:-2%;top:12%;width:min(58vw,820px);opacity:.9;pointer-events:none}
-.hero__in{position:relative;width:100%;padding-top:120px;padding-bottom:clamp(96px,12vh,140px)}
-.hero h1{font-size:clamp(46px,7.4vw,112px);line-height:.95;letter-spacing:-.045em;font-weight:600;margin:20px 0 22px;max-width:12ch}
+.hero__in{position:relative;width:100%;padding-top:clamp(88px,13vh,120px);padding-bottom:clamp(96px,12vh,140px)}
+.hero h1{font-size:clamp(40px,min(7vw,10vh),112px);line-height:.95;letter-spacing:-.045em;font-weight:600;margin:20px 0 22px;max-width:12ch}
 .hero h1 .l{display:block}
 .rot{display:block;color:var(--green-hi);min-height:1em;white-space:nowrap;transition:opacity .4s ease,transform .5s var(--ease)}
 .rot.out{opacity:0;transform:translateY(-.25em)}
@@ -382,7 +382,7 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 .phero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,44,49,.6),rgba(5,44,49,.2) 35%,rgba(5,44,49,.92)),linear-gradient(90deg,rgba(5,44,49,.7),transparent 70%)}
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(90deg,transparent,#000);mask-image:linear-gradient(90deg,transparent,#000)}
 .phero__in{position:relative;width:100%;padding-top:120px;padding-bottom:calc(var(--r) + clamp(40px,6vw,72px))}
-.phero h1{font-size:clamp(40px,6vw,88px);line-height:.98;letter-spacing:-.04em;font-weight:600;margin:16px 0 18px;max-width:16ch}
+.phero h1{font-size:clamp(36px,min(5.6vw,9vh),88px);line-height:.98;letter-spacing:-.04em;font-weight:600;margin:16px 0 18px;max-width:16ch}
 .phero .lede{color:rgba(234,245,255,.86);margin:0;max-width:52ch;font-size:clamp(17px,1.4vw,20px)}
 .anim .phero__in{opacity:0}
 .anim .phero.ready .phero__in,.anim.fs .phero__in{opacity:1;transition:opacity .3s}
@@ -557,16 +557,30 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 
+/* ---- Phase 6: laptop screens ---- */
+.pc{max-height:calc(100svh - 96px - var(--i) * 20px - 24px)}
+.pc__txt{padding:clamp(20px,min(3.6vw,5vh),52px)}
+.pc h3{font-size:clamp(24px,min(2.8vw,4.6vh),42px)}
+.pc__no{font-size:clamp(44px,min(7vw,11vh),120px)}
+@media (max-height:760px){
+  .pc{position:relative;top:auto;max-height:none;transform:none!important}
+  .stack{gap:18px}
+}
+
 /* ---- Phase 5: register home ---- */
 .hero--reg{min-height:76vh;min-height:76svh}
-.hero--reg h1{max-width:16ch;font-size:clamp(42px,6.2vw,96px)}
+.hero--reg{min-height:min(76svh,760px)}
+.hero--reg h1{max-width:16ch;font-size:clamp(38px,min(5.6vw,9.4vh),92px);line-height:.98;margin:14px 0 16px}
+.hero--reg .lede{margin-bottom:22px}
 .hero__caption{position:absolute;right:var(--pad);bottom:calc(var(--r) + 18px);font:400 11.5px var(--mono);color:var(--muted);max-width:40ch;text-align:right}
 .reg{border-top:2px solid var(--ink-2)}
-.reg__hd,.reg__sum{display:grid;grid-template-columns:64px minmax(0,2.4fr) minmax(0,1.6fr) minmax(0,1.4fr) 64px 32px;gap:16px;align-items:center}
+.reg__hd,.reg .reg__sum{display:grid;grid-template-columns:64px minmax(0,2.4fr) minmax(0,1.6fr) minmax(0,1.4fr) 64px 32px;gap:16px;align-items:center}
 .reg__hd{padding:12px 4px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pmuted);border-bottom:1px solid var(--pline-2)}
-.reg details{border-bottom:1px solid var(--pline-2)}
-.reg details[hidden]{display:none}
-.reg__sum{list-style:none;cursor:pointer;padding:18px 4px;min-height:64px;transition:background .25s}
+.reg__row{border-bottom:1px solid var(--pline-2)}
+.reg__row[hidden]{display:none}
+.reg__h{margin:0;font:inherit}
+.reg__body[hidden]{display:none}
+.reg .reg__sum{width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:18px 4px;min-height:64px;transition:background .25s}
 .reg__sum::-webkit-details-marker{display:none}
 .reg__sum:hover{background:rgba(119,162,47,.08)}
 .reg__no{font:500 13px var(--mono);color:var(--green-dk)}
@@ -577,8 +591,8 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 .reg__pm{width:30px;height:30px;border-radius:50%;border:1px solid var(--pline-2);position:relative;justify-self:end}
 .reg__pm::before,.reg__pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;margin:-.75px 0 0 -6px;background:var(--ink-2);transition:transform .3s var(--ease)}
 .reg__pm::after{transform:rotate(90deg)}
-.reg details[open] .reg__pm::after{transform:rotate(0)}
-.reg details[open] .reg__sum{background:rgba(119,162,47,.08)}
+.reg__sum[aria-expanded="true"] .reg__pm::after{transform:rotate(0)}
+.reg .reg__sum[aria-expanded="true"]{background:rgba(119,162,47,.08)}
 .reg__body{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(20px,3vw,40px);padding:6px 4px 32px 84px}
 .reg__img{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/2;background:var(--paper-2);margin:0}
 .reg__img img{width:100%;height:100%;object-fit:cover}
@@ -627,7 +641,7 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 .cs__q[hidden]{display:none}
 @media (max-width:1100px){
   .reg__hd{display:none}
-  .reg__sum{grid-template-columns:44px minmax(0,1fr) 32px;gap:6px 12px}
+  .reg .reg__sum{grid-template-columns:44px minmax(0,1fr) 32px;gap:6px 12px}
   .reg__c,.reg__w,.reg__y{grid-column:2;font-size:13.5px}
   .reg__c{grid-row:2}.reg__w{display:none}.reg__y{display:none}
   .reg__pm{grid-column:3;grid-row:1}
@@ -678,7 +692,7 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 <text class="hp-t fd" x="140" y="140">LOT 1 · 612 m²</text><text class="hp-t fd" x="280" y="245">LOT 4 · 532 m²</text><text class="hp-t fd" x="490" y="255">LOT 10</text><text class="hp-t fd" x="480" y="365">LOT 12</text>
 <text class="hp-t g fd" x="660" y="286">SWMH 2 · IL 38.42</text><text class="hp-t fd" x="360" y="16">236.85 m</text><text class="hp-t fd" x="18" y="70">E1748210.4 N5917386.2</text>
 </svg>
-  <div class="wrap hero__in" style="padding-bottom:calc(var(--r) + clamp(48px,7vh,90px))">
+  <div class="wrap hero__in" style="padding-bottom:calc(var(--r) + clamp(36px,6vh,90px))">
     <span class="eyebrow" data-h>Land development &amp; subdivision consultants</span>
     <h1 id="hero-h" data-h style="--hd:120ms">Every good development starts with a good survey.</h1>
     <p class="lede" data-h style="--hd:240ms">Quality civil engineering, resource consents and planning, from site assessments to final delivery. Creating better spaces together.</p>
@@ -698,119 +712,119 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
     <p class="fcount" aria-live="polite">Showing <b data-shown>16</b> of 16 projects</p>
     <div class="reg" id="reg">
       <div class="reg__hd" aria-hidden="true"><span>No.</span><span>Project</span><span>Client</span><span>Work</span><span>Year</span><span></span></div>
-      <details data-cats="engineering res-com" open>
-  <summary class="reg__sum"><span class="reg__no">P-01</span><span class="reg__t">Thom Street, New Lynn<small>Engineering design and construction monitoring for 82 Kāinga Ora homes on an 11,046 m² site.</small></span><span class="reg__c">Kāinga Ora</span><span class="reg__w">Engineering design, Construction monitoring</span><span class="reg__y">2020</span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+      <div class="reg__row" data-cats="engineering res-com">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="true" aria-controls="reg-1" id="regb-1"><span class="reg__no">P-01</span><span class="reg__t">Thom Street, New Lynn<small>Engineering design and construction monitoring for 82 Kāinga Ora homes on an 11,046 m² site.</small></span><span class="reg__c">Kāinga Ora</span><span class="reg__w">Engineering design, Construction monitoring</span><span class="reg__y">2020</span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-1" role="region" aria-labelledby="regb-1">
     <figure class="reg__img"><img src="../../assets/img/apartments-bright-800.webp" srcset="../../assets/img/apartments-bright-800.webp 800w, ../../assets/img/apartments-bright-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="1069" alt="Apartment terrace with orange and yellow accents" loading="lazy" decoding="async"><figcaption>Thom Street, New Lynn, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">Thomas Consultants undertook the engineering design and construction monitoring for the public infrastructure serving 82 terrace houses and apartments for Kāinga Ora, built to house about 300 tenants on an 11,046 m² site in New Lynn.</p><dl class="dl"><div><dt>Client</dt><dd>Kāinga Ora</dd></div><div><dt>Site</dt><dd>Thom Street, New Lynn</dd></div><div><dt>Homes</dt><dd>82 terrace houses and apartments</dd></div><div><dt>Site area</dt><dd>11,046 m²</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=thom-street">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="engineering surveying planning res-com">
-  <summary class="reg__sum"><span class="reg__no">P-02</span><span class="reg__t">Taurus Crescent, Beach Haven<small>Engineering, surveying and planning for 21 new homes for Kāinga Ora.</small></span><span class="reg__c">Kāinga Ora</span><span class="reg__w">Engineering, Surveying</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="engineering surveying planning res-com">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-2" id="regb-2"><span class="reg__no">P-02</span><span class="reg__t">Taurus Crescent, Beach Haven<small>Engineering, surveying and planning for 21 new homes for Kāinga Ora.</small></span><span class="reg__c">Kāinga Ora</span><span class="reg__w">Engineering, Surveying</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-2" role="region" aria-labelledby="regb-2" hidden>
     <figure class="reg__img"><img src="../../assets/img/aerial-subdivision-800.webp" srcset="../../assets/img/aerial-subdivision-800.webp 800w, ../../assets/img/aerial-subdivision-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="898" alt="Drone view of a completed residential subdivision" loading="lazy" decoding="async"><figcaption>10-22 Taurus Crescent, Beach Haven, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">We provided engineering, surveying and planning for the construction of 21 homes in the Mixed Housing Suburban zone in Beach Haven. Our engineering support included design and monitoring of the public assets.</p><dl class="dl"><div><dt>Client</dt><dd>Kāinga Ora</dd></div><div><dt>Site</dt><dd>10-22 Taurus Crescent, Beach Haven</dd></div><div><dt>Homes</dt><dd>21 dwellings</dd></div><div><dt>Partners</dt><dd>Home Construction, Context Architects</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=taurus-crescent">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="landscape public">
-  <summary class="reg__sum"><span class="reg__no">P-03</span><span class="reg__t">Churchill Park lookout, Glendowie<small>A lookout with 360° views on the highest point of a former golf course.</small></span><span class="reg__c">Auckland Council and Ōrakei Local Board</span><span class="reg__w">Landscape architecture</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="landscape public">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-3" id="regb-3"><span class="reg__no">P-03</span><span class="reg__t">Churchill Park lookout, Glendowie<small>A lookout with 360° views on the highest point of a former golf course.</small></span><span class="reg__c">Auckland Council and Ōrakei Local Board</span><span class="reg__w">Landscape architecture</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-3" role="region" aria-labelledby="regb-3" hidden>
     <figure class="reg__img"><img src="../../assets/img/lookout-seat-800.webp" srcset="../../assets/img/lookout-seat-800.webp 800w, ../../assets/img/lookout-seat-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="1067" alt="Curved bench at a park lookout with harbour views" loading="lazy" decoding="async"><figcaption>320-336 Riddell Road, Glendowie, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">Auckland Council asked us to deliver the design for a lookout at Churchill Park, a large park in Glendowie with a rich history. Once a golf course, the park is now an urban farm. A club house used to stand on its highest point.</p><dl class="dl"><div><dt>Client</dt><dd>Auckland Council and Ōrakei Local Board</dd></div><div><dt>Site</dt><dd>320-336 Riddell Road, Glendowie</dd></div><div><dt>Our role</dt><dd>Detailed landscape design and construction delivery</dd></div><div><dt>Partners</dt><dd>Community Facilities design team, Urban Effects</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=churchill-park">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="landscape public">
-  <summary class="reg__sum"><span class="reg__no">P-04</span><span class="reg__t">Observation Green, Hobsonville<small>A new neighbourhood park at Scott Point, with nature play, a fitness course and a learn-to-ride track.</small></span><span class="reg__c">Auckland Council and Upper Harbour Local Board</span><span class="reg__w">Landscape architecture</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="landscape public">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-4" id="regb-4"><span class="reg__no">P-04</span><span class="reg__t">Observation Green, Hobsonville<small>A new neighbourhood park at Scott Point, with nature play, a fitness course and a learn-to-ride track.</small></span><span class="reg__c">Auckland Council and Upper Harbour Local Board</span><span class="reg__w">Landscape architecture</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-4" role="region" aria-labelledby="regb-4" hidden>
     <figure class="reg__img"><img src="../../assets/img/play-space-800.webp" srcset="../../assets/img/play-space-800.webp 800w, ../../assets/img/play-space-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="1067" alt="Play space with rope fencing and native grasses" loading="lazy" decoding="async"><figcaption>1 Observation Green, Hobsonville, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">Auckland Council hired us to deliver a detailed concept design for a new park at Scott Point in Hobsonville, surrounded by recently built, high-density housing.</p><dl class="dl"><div><dt>Client</dt><dd>Auckland Council and Upper Harbour Local Board</dd></div><div><dt>Site</dt><dd>1 Observation Green, Hobsonville</dd></div><div><dt>Our role</dt><dd>Landscape architecture, concept to detailed design</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=observation-green">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="environmental public">
-  <summary class="reg__sum"><span class="reg__no">P-05</span><span class="reg__t">Fearon Park, Mount Roskill<small>Client-side project management of a multi-year open space programme worth about $4.3m.</small></span><span class="reg__c">Public open space</span><span class="reg__w">Project management, Contaminated soil</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="environmental public">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-5" id="regb-5"><span class="reg__no">P-05</span><span class="reg__t">Fearon Park, Mount Roskill<small>Client-side project management of a multi-year open space programme worth about $4.3m.</small></span><span class="reg__c">Public open space</span><span class="reg__w">Project management, Contaminated soil</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-5" role="region" aria-labelledby="regb-5" hidden>
     <figure class="reg__img"><img src="../../assets/img/plaza-path-800.webp" srcset="../../assets/img/plaza-path-800.webp 800w, ../../assets/img/plaza-path-1024.webp 1024w" sizes="(min-width: 1101px) 44vw, 92vw" width="1024" height="683" alt="Landscaped plaza with pathways and planting" loading="lazy" decoding="async"><figcaption>Fearon Park, Mount Roskill, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">We provided client-side project management for this multi-year development, which linked neighbouring reserves, improved safety and gave a growing Mt Roskill population a place for recreation.</p><dl class="dl"><div><dt>Site</dt><dd>Fearon Park, Mount Roskill</dd></div><div><dt>Our role</dt><dd>Client-side project management</dd></div><div><dt>Value</dt><dd>About $4.3m over the programme</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=fearon-park">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="engineering res-com">
-  <summary class="reg__sum"><span class="reg__no">P-06</span><span class="reg__t">6 Banff Avenue, Epsom<small>Infrastructure assessment, design and monitoring for 25 apartments in a five-storey building.</small></span><span class="reg__c">McMillan &amp; Lockwood for Kāinga Ora</span><span class="reg__w">Engineering, Construction monitoring</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="engineering res-com">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-6" id="regb-6"><span class="reg__no">P-06</span><span class="reg__t">6 Banff Avenue, Epsom<small>Infrastructure assessment, design and monitoring for 25 apartments in a five-storey building.</small></span><span class="reg__c">McMillan &amp; Lockwood for Kāinga Ora</span><span class="reg__w">Engineering, Construction monitoring</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-6" role="region" aria-labelledby="regb-6" hidden>
     <figure class="reg__img"><img src="../../assets/img/aerial-apartments-800.webp" srcset="../../assets/img/aerial-apartments-800.webp 800w, ../../assets/img/aerial-apartments-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="898" alt="Aerial view of a four-storey apartment building in an Auckland suburb" loading="lazy" decoding="async"><figcaption>6 Banff Avenue, Epsom, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">Kāinga Ora and McMillan &amp; Lockwood engaged us to assess the existing infrastructure around the site to support a resource consent for 25 one and two-bedroom homes in a five-storey apartment building.</p><dl class="dl"><div><dt>Client</dt><dd>McMillan &amp; Lockwood for Kāinga Ora</dd></div><div><dt>Site</dt><dd>6 Banff Avenue, Epsom</dd></div><div><dt>Homes</dt><dd>25 apartments, five storeys</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=banff-avenue">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="engineering surveying res-com">
-  <summary class="reg__sum"><span class="reg__no">P-07</span><span class="reg__t">Cracroft Street and Great South Road<small>Design and monitoring of a five-storey block of 28 apartments for Kāinga Ora.</small></span><span class="reg__c">Kāinga Ora</span><span class="reg__w">Engineering, Surveying</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="engineering surveying res-com">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-7" id="regb-7"><span class="reg__no">P-07</span><span class="reg__t">Cracroft Street and Great South Road<small>Design and monitoring of a five-storey block of 28 apartments for Kāinga Ora.</small></span><span class="reg__c">Kāinga Ora</span><span class="reg__w">Engineering, Surveying</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-7" role="region" aria-labelledby="regb-7" hidden>
     <figure class="reg__img"><img src="../../assets/img/apartments-colour-800.webp" srcset="../../assets/img/apartments-colour-800.webp 800w, ../../assets/img/apartments-colour-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="1066" alt="Four-storey apartment building with orange panels" loading="lazy" decoding="async"><figcaption>Cracroft Street and Great South Road, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">Kāinga Ora engaged us for the design and monitoring of a new five-storey block of 28 one and two-bedroom apartments, part of its push to provide more social housing.</p><dl class="dl"><div><dt>Client</dt><dd>Kāinga Ora</dd></div><div><dt>Homes</dt><dd>28 apartments, five storeys</dd></div><div><dt>Our role</dt><dd>Survey, engineering design, construction monitoring</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=cracroft-street">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="planning engineering res-com">
-  <summary class="reg__sum"><span class="reg__no">P-08</span><span class="reg__t">Walmer Road and Moa Road, Pt Chevalier<small>Planning, engineering design and monitoring for 10 new homes.</small></span><span class="reg__c">Signature Homes and Kāinga Ora</span><span class="reg__w">Planning, Engineering</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="planning engineering res-com">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-8" id="regb-8"><span class="reg__no">P-08</span><span class="reg__t">Walmer Road and Moa Road, Pt Chevalier<small>Planning, engineering design and monitoring for 10 new homes.</small></span><span class="reg__c">Signature Homes and Kāinga Ora</span><span class="reg__w">Planning, Engineering</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-8" role="region" aria-labelledby="regb-8" hidden>
     <figure class="reg__img"><img src="../../assets/img/aerial-harbour-800.webp" srcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="899" alt="Aerial view of new housing with the harbour behind" loading="lazy" decoding="async"><figcaption>Walmer Road and Moa Road, Pt Chevalier, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">We prepared a full package of planning, engineering design and monitoring for 10 new homes on Walmer Road and Moa Road, working closely with partner consultants so the proposal met the client's needs, the planning framework and the site's constraints.</p><dl class="dl"><div><dt>Client</dt><dd>Signature Homes and Kāinga Ora</dd></div><div><dt>Site</dt><dd>Walmer Road and Moa Road, Pt Chevalier</dd></div><div><dt>Homes</dt><dd>10 dwellings</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=walmer-moa">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="engineering surveying res-com">
-  <summary class="reg__sum"><span class="reg__no">P-09</span><span class="reg__t">Tasman Avenue, Mount Albert<small>Three new homes and a four-lot fee simple subdivision with a jointly owned access lot.</small></span><span class="reg__c">Private client</span><span class="reg__w">Engineering, Surveying</span><span class="reg__y">2022</span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="engineering surveying res-com">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-9" id="regb-9"><span class="reg__no">P-09</span><span class="reg__t">Tasman Avenue, Mount Albert<small>Three new homes and a four-lot fee simple subdivision with a jointly owned access lot.</small></span><span class="reg__c">Private client</span><span class="reg__w">Engineering, Surveying</span><span class="reg__y">2022</span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-9" role="region" aria-labelledby="regb-9" hidden>
     <figure class="reg__img"><img src="../../assets/img/house-dusk-800.webp" srcset="../../assets/img/house-dusk-800.webp 800w, ../../assets/img/house-dusk-1500.webp 1500w" sizes="(min-width: 1101px) 44vw, 92vw" width="1500" height="1028" alt="Contemporary home lit at dusk" loading="lazy" decoding="async"><figcaption>Tasman Avenue, Mount Albert, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">A private client engaged us for engineering and surveying on three new homes, with a subdivision creating four fee simple lots including a jointly owned access lot (JOAL).</p><dl class="dl"><div><dt>Client</dt><dd>Private client</dd></div><div><dt>Site</dt><dd>Tasman Avenue, Mount Albert</dd></div><div><dt>Lots</dt><dd>4 fee simple lots and a JOAL</dd></div><div><dt>Completed</dt><dd>June 2022</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=tasman-avenue">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="planning engineering res-com">
-  <summary class="reg__sum"><span class="reg__no">P-10</span><span class="reg__t">3 Kaimai Avenue, Massey<small>Consent and engineering for seven terrace homes.</small></span><span class="reg__c">Jebel Construction</span><span class="reg__w">Planning, Engineering</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="planning engineering res-com">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-10" id="regb-10"><span class="reg__no">P-10</span><span class="reg__t">3 Kaimai Avenue, Massey<small>Consent and engineering for seven terrace homes.</small></span><span class="reg__c">Jebel Construction</span><span class="reg__w">Planning, Engineering</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-10" role="region" aria-labelledby="regb-10" hidden>
     <figure class="reg__img"><img src="../../assets/img/townhouses-new-800.webp" srcset="../../assets/img/townhouses-new-800.webp 800w, ../../assets/img/townhouses-new-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="1200" alt="New two-storey townhouses with fresh landscaping" loading="lazy" decoding="async"><figcaption>3 Kaimai Avenue, Massey, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">Our planners, engineers and surveyors obtained approval for 7 new terrace homes. A thorough application and our engineering support during construction led to a more streamlined approval.</p><dl class="dl"><div><dt>Client</dt><dd>Jebel Construction</dd></div><div><dt>Site</dt><dd>3 Kaimai Avenue, Massey</dd></div><div><dt>Homes</dt><dd>7 terrace units</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=kaimai-avenue">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="public">
-  <summary class="reg__sum"><span class="reg__no">P-11</span><span class="reg__t">Elliott Reserve playground, Glenfield<small>One larger play space to replace two failing ones.</small></span><span class="reg__c">Public open space</span><span class="reg__w">Project management</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="public">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-11" id="regb-11"><span class="reg__no">P-11</span><span class="reg__t">Elliott Reserve playground, Glenfield<small>One larger play space to replace two failing ones.</small></span><span class="reg__c">Public open space</span><span class="reg__w">Project management</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-11" role="region" aria-labelledby="regb-11" hidden>
     <figure class="reg__img"><img src="../../assets/img/playground-800.webp" srcset="../../assets/img/playground-800.webp 800w, ../../assets/img/playground-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="1069" alt="Nature playground with timber play structures" loading="lazy" decoding="async"><figcaption>Elliott Reserve, Glenfield, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">The old equipment in two play areas was dismantled and packed for donation, and timber benches and some trees were removed to make room for one larger, combined play space.</p><dl class="dl"><div><dt>Site</dt><dd>Elliott Reserve, Glenfield</dd></div><div><dt>Our role</dt><dd>Project management</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=elliott-reserve">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="environmental public">
-  <summary class="reg__sum"><span class="reg__no">P-12</span><span class="reg__t">Kauri Glen Reserve, Northcote<small>Ecological impact assessment for track renewals through kauri up to 400 years old.</small></span><span class="reg__c">Auckland Council</span><span class="reg__w">Ecology</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="environmental public">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-12" id="regb-12"><span class="reg__no">P-12</span><span class="reg__t">Kauri Glen Reserve, Northcote<small>Ecological impact assessment for track renewals through kauri up to 400 years old.</small></span><span class="reg__c">Auckland Council</span><span class="reg__w">Ecology</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-12" role="region" aria-labelledby="regb-12" hidden>
     <figure class="reg__img"><img src="../../assets/img/bush-800.webp" srcset="../../assets/img/bush-800.webp 800w, ../../assets/img/bush-1512.webp 1512w" sizes="(min-width: 1101px) 44vw, 92vw" width="1512" height="2016" alt="Native bush on a hillside" loading="lazy" decoding="async"><figcaption>Kauri Glen Reserve, Northcote, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">Auckland Council commissioned us to assess the ecological impact of renewing a popular walking track. Because of kauri dieback, new tracks and an 18 m high bridge were built so visitors could enjoy the forest without harming it.</p><dl class="dl"><div><dt>Client</dt><dd>Auckland Council</dd></div><div><dt>Site</dt><dd>Kauri Glen Reserve, Northcote</dd></div><div><dt>Track</dt><dd>5,905 m repaired, 490 m new, 526 m closed</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=kauri-glen">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="engineering environmental public">
-  <summary class="reg__sum"><span class="reg__no">P-13</span><span class="reg__t">Withers Reserve footbridge<small>Civil engineering, survey and ecology for a new footbridge after flood damage.</small></span><span class="reg__c">Auckland Council</span><span class="reg__w">Engineering, Ecology</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="engineering environmental public">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-13" id="regb-13"><span class="reg__no">P-13</span><span class="reg__t">Withers Reserve footbridge<small>Civil engineering, survey and ecology for a new footbridge after flood damage.</small></span><span class="reg__c">Auckland Council</span><span class="reg__w">Engineering, Ecology</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-13" role="region" aria-labelledby="regb-13" hidden>
     <figure class="reg__img"><img src="../../assets/img/boardwalk-800.webp" srcset="../../assets/img/boardwalk-800.webp 800w, ../../assets/img/boardwalk-1280.webp 1280w" sizes="(min-width: 1101px) 44vw, 92vw" width="1280" height="960" alt="Timber boardwalk through native bush" loading="lazy" decoding="async"><figcaption>Withers Reserve, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">Auckland Council engaged us for the civil engineering, survey and ecology needed to replace a footbridge damaged in a severe flood. Its loss had closed an important walking link between the reserve and Kashmir Street.</p><dl class="dl"><div><dt>Client</dt><dd>Auckland Council</dd></div><div><dt>Our role</dt><dd>Engineering, survey, ecology, construction monitoring</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=withers-reserve">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="engineering environmental">
-  <summary class="reg__sum"><span class="reg__no">P-14</span><span class="reg__t">96 Parker Road, Oratia<small>A rural site subdivided into four lifestyle blocks with on-site stormwater and wastewater.</small></span><span class="reg__c">Private client</span><span class="reg__w">Engineering, Stormwater</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="engineering environmental">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-14" id="regb-14"><span class="reg__no">P-14</span><span class="reg__t">96 Parker Road, Oratia<small>A rural site subdivided into four lifestyle blocks with on-site stormwater and wastewater.</small></span><span class="reg__c">Private client</span><span class="reg__w">Engineering, Stormwater</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-14" role="region" aria-labelledby="regb-14" hidden>
     <figure class="reg__img"><img src="../../assets/img/stream-800.webp" srcset="../../assets/img/stream-800.webp 800w, ../../assets/img/stream-1024.webp 1024w" sizes="(min-width: 1101px) 44vw, 92vw" width="1024" height="683" alt="Stream with a culvert and native bush" loading="lazy" decoding="async"><figcaption>96 Parker Road, Oratia, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">A large rural site with a single dwelling was subdivided into four lifestyle blocks, each with its own on-site stormwater and wastewater disposal, water supply and utilities.</p><dl class="dl"><div><dt>Site</dt><dd>96 Parker Road, Oratia</dd></div><div><dt>Lots</dt><dd>4 lifestyle blocks</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=parker-road">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="landscape public">
-  <summary class="reg__sum"><span class="reg__no">P-15</span><span class="reg__t">Henderson High School Heart Space<small>A covered stage, seating and planting at the centre of the school.</small></span><span class="reg__c">Henderson High School</span><span class="reg__w">Landscape architecture</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="landscape public">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-15" id="regb-15"><span class="reg__no">P-15</span><span class="reg__t">Henderson High School Heart Space<small>A covered stage, seating and planting at the centre of the school.</small></span><span class="reg__c">Henderson High School</span><span class="reg__w">Landscape architecture</span><span class="reg__y"></span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-15" role="region" aria-labelledby="regb-15" hidden>
     <figure class="reg__img"><img src="../../assets/img/render-park-800.webp" srcset="../../assets/img/render-park-800.webp 800w, ../../assets/img/render-park-1600.webp 1600w" sizes="(min-width: 1101px) 44vw, 92vw" width="1600" height="900" alt="Landscape render of a park with shade sails" loading="lazy" decoding="async"><figcaption>21 Henderson Valley Road, Henderson, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">After working with Henderson High School on other projects, the school asked us to design a 'Heart Space' at its centre: somewhere for students to gather informally at lunch, and for assemblies, cultural performances and prize giving.</p><dl class="dl"><div><dt>Client</dt><dd>Henderson High School</dd></div><div><dt>Site</dt><dd>21 Henderson Valley Road, Henderson</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=henderson-high">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details><details data-cats="planning engineering environmental res-com">
-  <summary class="reg__sum"><span class="reg__no">P-16</span><span class="reg__t">Scott Road, Hobsonville<small>Resource consent for 67 dwellings, with earthworks over 14,096 m². Approved 9 February 2022.</small></span><span class="reg__c">Nade Investments Ltd</span><span class="reg__w">Resource consent, Engineering</span><span class="reg__y">2022</span><span class="reg__pm" aria-hidden="true"></span></summary>
-  <div class="reg__body">
+</div><div class="reg__row" data-cats="planning engineering environmental res-com">
+  <h3 class="reg__h"><button type="button" class="acc-q reg__sum" aria-expanded="false" aria-controls="reg-16" id="regb-16"><span class="reg__no">P-16</span><span class="reg__t">Scott Road, Hobsonville<small>Resource consent for 67 dwellings, with earthworks over 14,096 m². Approved 9 February 2022.</small></span><span class="reg__c">Nade Investments Ltd</span><span class="reg__w">Resource consent, Engineering</span><span class="reg__y">2022</span><span class="reg__pm" aria-hidden="true"></span></button></h3>
+  <div class="reg__body" id="reg-16" role="region" aria-labelledby="regb-16" hidden>
     <figure class="reg__img"><img src="../../assets/img/plan-engineering-800.webp" srcset="../../assets/img/plan-engineering-800.webp 800w, ../../assets/img/plan-engineering-1600.webp 1600w, ../../assets/img/plan-engineering-2400.webp 2400w" sizes="(min-width: 1101px) 44vw, 92vw" width="2400" height="1696" alt="Engineering layout plan for a residential development" loading="lazy" decoding="async"><figcaption>Scott Road, Hobsonville, Auckland</figcaption></figure>
     <div class="reg__txt"><p class="lead">We provided our full range of services for a 67-dwelling development in Hobsonville, with the aim of obtaining resource consent.</p><dl class="dl"><div><dt>Client</dt><dd>Nade Investments Ltd</dd></div><div><dt>Site</dt><dd>Scott Road, Hobsonville</dd></div><div><dt>Dwellings</dt><dd>67</dd></div><div><dt>Earthworks</dt><dd>14,096 m²</dd></div></dl>
       <p style="margin-top:16px"><a class="tlink" href="project.html?p=scott-road">Read the case study <span class="ar">→</span></a></p></div>
   </div>
-</details>
+</div>
     </div>
     <p class="fcount" data-empty hidden>No projects in this category yet.</p>
     <div class="reg__more"><a class="btn btn--ghost mag" href="projects.html">All projects with photos <span class="ar">→</span></a></div>
@@ -1083,6 +1097,15 @@ $$('[data-carousel]').forEach(function(car){
   mark();
 });
 
+/* horizontal reels/carousels: slides that sit partly or fully outside the viewport are hidden from assistive tech until they scroll in */
+$$('[data-track]').forEach(function(track){
+  io($$('[data-track] > *', track.parentNode).filter(function(el){ return el.parentNode === track; }), function(el, v, en){
+    var r = en ? en.boundingClientRect : el.getBoundingClientRect();
+    var out = r.left < -1 || r.right > innerWidth + 1;
+    if (out) el.setAttribute('aria-hidden', 'true'); else el.removeAttribute('aria-hidden');
+  }, {threshold:[0, .2, .4, .6, .8, .95, 1]});
+});
+
 /* tabs (testimonials) */
 $$('[data-tabs]').forEach(function(box){
   var tabs = $$('[role=tab]', box), panels = $$('[role=tabpanel]', box), cur = 0, timer, auto = +box.dataset.auto || 0, vis = false;
@@ -1231,9 +1254,8 @@ document.addEventListener('DOMContentLoaded', function(){
     if (plan) gsap.to(plan, {yPercent:-12, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
     gsap.utils.toArray('.pc').forEach(function(c, i, all){
       if (i === all.length - 1) return;
-      var dim = c.querySelector('.pc__dim');
-      gsap.to(c, {scale:.94, ease:'none', scrollTrigger:{trigger:all[i + 1], start:'top 85%', end:'top 30%', scrub:true}});
-      if (dim) gsap.to(dim, {opacity:.55, ease:'none', scrollTrigger:{trigger:all[i + 1], start:'top 85%', end:'top 30%', scrub:true}});
+      if (matchMedia('(max-height: 760px)').matches) return;
+      gsap.to(c, {scale:.96, ease:'none', scrollTrigger:{trigger:all[i + 1], start:'top 85%', end:'top 30%', scrub:true}});
     });
     gsap.utils.toArray('.collage figure, .svc__media .m2').forEach(function(f, i){
       gsap.fromTo(f, {y:30 * ((i % 2) ? 1 : -1)}, {y:-30 * ((i % 2) ? 1 : -1), ease:'none', scrollTrigger:{trigger:f, scrub:true}});
