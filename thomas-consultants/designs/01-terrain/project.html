@@ -272,7 +272,7 @@ html.pt-cover .pt{transform:none}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="pt" aria-hidden="true"><span><img class="logo logo-w" src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="152" height="40"></span></div>
+<div class="pt" aria-hidden="true"><span><img class="logo logo-w" src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="152" height="40" loading="lazy" decoding="async"></span></div>
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="logo logo-w" src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="152" height="40"></a>
@@ -359,7 +359,7 @@ function caseBody(p){ var h=p.paras.map(function(x,i){ return '<p'+(i?'':' class
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="index.html" style="display:inline-flex"><img class="logo logo-w" src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="152" height="40"></a>
+        <a class="brand" href="index.html" style="display:inline-flex"><img class="logo logo-w" src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="152" height="40" loading="lazy" decoding="async"></a>
         <p style="max-width:34ch;margin:0 0 16px">Land development and subdivision consultants. Creating Better Spaces Together.</p>
         <p style="margin:0 0 12px">Auckland <a href="tel:+6498361804" style="color:#fff">09 836 1804</a><br>Manukau <a href="tel:+6498696070" style="color:#fff">09 869 6070</a><br>Christchurch satellite office</p>
         <p style="margin:0"><a href="https://www.facebook.com/thomasconsultantsltd" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/thomasconsultantsltd" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/company/thomasconsultantsltd" rel="noopener">LinkedIn</a></p>
@@ -533,6 +533,7 @@ document.querySelectorAll('form[data-validate]').forEach(function(form){
     status.textContent='Thank you. We have your enquiry and will be in touch soon.';
   });
 });
+(function(){ var sv=new URLSearchParams(location.search).get('service'), sel=document.querySelector('form[data-validate] select[name="service"]'); if(sv && sel && sel.querySelector('option[value="'+sv.replace(/[^a-z-]/g,'')+'"]')) sel.value=sv; })();
 document.querySelectorAll('[data-preset]').forEach(function(a){ a.addEventListener('click', function(){ var s=document.querySelector('form[data-validate] select[name="service"]'); if(s){ s.value=a.getAttribute('data-preset'); s.dispatchEvent(new Event('change')); } }); });
 
 /* project filters */

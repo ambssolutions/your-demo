@@ -673,7 +673,7 @@ window.__concept = function(k){
     var io = new IntersectionObserver(function(es){
       if (started || !es[0].isIntersecting) return; started = true; io.disconnect();
       load('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js').then(function(){ return load('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'); }).then(function(){
-        gsap.registerPlugin(ScrollTrigger);
+        document.documentElement.style.scrollBehavior = 'auto'; gsap.registerPlugin(ScrollTrigger);
         gsap.matchMedia().add('(min-width: 900px) and (pointer: fine)', function(){
           document.documentElement.classList.add('pinned');
           var dist = function(){ return reel.scrollWidth - window.innerWidth; };

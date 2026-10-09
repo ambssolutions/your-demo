@@ -739,7 +739,6 @@
       if (LIGHT && now - lastF < 33) { requestAnimationFrame(frame); return; }
       lastF = now;
       /* touch / low-power devices: assemble the parcel once, then hold it as a still frame */
-      if (LIGHT && now - t0 > 1600) { running = false; done = true; return; }
       var t = (now - t0) / 1000, sc = state.scatter, R = Math.min(160, W * 0.25), R2 = R * R;
       state.intro = Math.min(1, state.intro + (LIGHT ? 0.05 : 0.012));
       ctx.clearRect(0, 0, W, H);
@@ -762,10 +761,17 @@
         for (var q = 0; q < arr.length; q++) ctx.rect(arr[q].x - 0.8, arr[q].y - 0.8, sz, sz);
         ctx.fill();
       }
-      requestAnimationFrame(frame);
+      if (!done) requestAnimationFrame(frame); else running = false;
     }
     function start() { if (!running && !done && visible && !document.hidden) { running = true; requestAnimationFrame(frame); } }
     resize();
+    if (LIGHT) {
+      /* touch / low-power devices: draw the formed parcel once as a still overlay, no animation frames */
+      parts.forEach(function (p) { p.x = p.tx; p.y = p.ty; });
+      state.intro = 1; done = true;
+      var keepT = t0; t0 = performance.now() - 1e6; running = true; frame(performance.now()); running = false; t0 = keepT;
+      return;
+    }
     var rT; window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(resize, 200); });
     if (FINE) {
       hero.addEventListener('pointermove', function (e) { var r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true; });
