@@ -553,6 +553,15 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
 }
 
 /* ---- Phase 6: laptop screens ---- */
+@media (min-width:900px){
+  .journal{padding-top:clamp(56px,9vh,130px);padding-bottom:clamp(36px,6vh,100px)}
+  .journal .head{margin-bottom:clamp(18px,3.4vh,56px)}
+  .journal .jcard{width:clamp(240px,36vh,420px)}
+  .journal .jcard__img,.journal .jcard:nth-child(3n+2) .jcard__img{aspect-ratio:auto;height:clamp(190px,40vh,520px)}
+  .journal .jcard:nth-child(even){margin-top:clamp(0px,3.5vh,56px)}
+  .journal .jbar{margin-top:clamp(14px,2.4vh,28px)}
+}
+@media (min-width:900px) and (max-height:820px){ .journal .jcard__sum{display:none} .journal .jcard__cap{margin-top:10px;padding-top:10px} .journal .head h2.h{font-size:clamp(30px,min(4vw,7vh),60px)} }
 .pc{max-height:calc(100svh - 98px - var(--i) * 22px - 24px)}
 .pc__txt{padding:clamp(20px,min(3.6vw,5vh),52px)}
 .pc h3{font-size:clamp(24px,min(2.8vw,4.6vh),42px)}

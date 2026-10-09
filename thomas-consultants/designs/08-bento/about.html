@@ -817,8 +817,9 @@ TC.lenis = function(){
 document.addEventListener('DOMContentLoaded', function(){
 
   /* mini animations run only while their tile is on screen */
-  if ('IntersectionObserver' in window){ var mo = new IntersectionObserver(function(en){ en.forEach(function(x){ x.target.classList.toggle('live', x.isIntersecting); }); }); document.querySelectorAll('.hs').forEach(function(t){ mo.observe(t); }); }
-  else document.querySelectorAll('.hs').forEach(function(t){ t.classList.add('live'); });
+  if (!document.documentElement.classList.contains('gs')) {}
+  else if ('IntersectionObserver' in window){ var mo = new IntersectionObserver(function(en){ en.forEach(function(x){ x.target.classList.toggle('live', x.isIntersecting); }); }); document.querySelectorAll('.hs').forEach(function(t){ mo.observe(t); }); }
+
   /* odometer */
   document.querySelectorAll('.odo[data-to]').forEach(function(o){
     var el = o.querySelector('span'), to = +o.getAttribute('data-to');
