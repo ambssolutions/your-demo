@@ -439,7 +439,7 @@ dl.offices{margin:0}
 .office dd{margin:0}
 /* inner page hero */
 .phero{position:relative;padding:150px 0 clamp(48px,7vw,96px);overflow:hidden}
-.phero__h{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,8vw,9rem);line-height:.92;letter-spacing:-.045em;margin:28px 0 0;text-transform:uppercase}
+.phero__h{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,6.2vw,7.4rem);line-height:.92;letter-spacing:-.045em;margin:28px 0 0;text-transform:uppercase}
 html.motion .phero .line>span{transform:translateY(110%)}
 .phero__foot{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-top:clamp(28px,4vw,56px);border-top:1px solid var(--line);padding-top:24px}
 .phero__lede{max-width:52ch;color:var(--paper-dim);font-size:clamp(17px,1.4vw,20px);margin:0}
@@ -462,7 +462,7 @@ html.motion .phero .line>span{transform:translateY(110%)}
 .sblock__n{font-family:var(--display);font-weight:800;font-size:clamp(6rem,16vw,15rem);line-height:.8;letter-spacing:-.07em;color:transparent;-webkit-text-stroke:2px var(--lime);display:block}
 .sblock__art{margin-top:28px;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;position:relative}
 .sblock__art>.art{position:absolute;inset:0}
-.sblock h2{overflow-wrap:break-word;font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,5vw,5rem);line-height:.95;letter-spacing:-.04em;margin:0 0 22px;text-transform:uppercase}
+.sblock h2{overflow-wrap:break-word;font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3.4vw,3.2rem);line-height:.95;letter-spacing:-.04em;margin:0 0 22px;text-transform:uppercase}
 .sblock__short{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,2.2vw,2rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 18px}
 .sblock__long{color:var(--paper-dim);max-width:56ch;margin:0 0 32px}
 .subs{list-style:none;margin:0 0 36px;padding:0;border-top:1px solid var(--line)}
@@ -540,6 +540,9 @@ html.motion .phero .line>span{transform:translateY(110%)}
 .cdl dd{margin:0}
 .cdl a{font-family:var(--display);font-weight:700;font-size:clamp(1.2rem,2vw,1.6rem);text-decoration:none;color:var(--lime);display:inline-flex;min-height:44px;align-items:center}
 .cdl a:hover{text-decoration:underline;text-underline-offset:5px}
+.cdl>div.cdl__soc{grid-template-columns:minmax(0,1fr);gap:12px}
+.cdl .chip{font-family:var(--body);font-weight:500;font-size:15px;color:var(--paper)}
+.cdl .chip:hover{text-decoration:none;color:var(--lime)}
 .tell{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .tell li{border:1px solid var(--line);border-radius:16px;padding:18px}
 .tell b{display:block;font-family:var(--display);font-size:18px;margin-bottom:4px}
@@ -616,18 +619,18 @@ html.motion .phero .line>span{transform:translateY(110%)}
 <!--NAV-->
 <header class="nav" id="nav">
   <div class="nav__bar">
-    <a class="logo" href="09-kinetic.html" aria-label="Thomas Consultants home"><span class="logo__mark" aria-hidden="true">✳</span>Thomas Consultants</a>
+    <a class="logo" href="index.html" aria-label="Thomas Consultants home"><span class="logo__mark" aria-hidden="true">✳</span>Thomas Consultants</a>
     <nav aria-label="Primary">
       <ul class="nav__links">
-        <li><a href="09-kinetic.html" class="is-active" aria-current="page"><span class="roll"><span>Home</span><span aria-hidden="true">Home</span></span></a></li>
-        <li><a href="09-kinetic/services.html"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a></li>
-        <li><a href="09-kinetic/projects.html"><span class="roll"><span>Projects</span><span aria-hidden="true">Projects</span></span></a></li>
-        <li><a href="09-kinetic/about.html"><span class="roll"><span>About</span><span aria-hidden="true">About</span></span></a></li>
-        <li><a href="09-kinetic/contact.html"><span class="roll"><span>Contact</span><span aria-hidden="true">Contact</span></span></a></li>
+        <li><a href="index.html" class="is-active" aria-current="page"><span class="roll"><span>Home</span><span aria-hidden="true">Home</span></span></a></li>
+        <li><a href="services.html"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a></li>
+        <li><a href="projects.html"><span class="roll"><span>Projects</span><span aria-hidden="true">Projects</span></span></a></li>
+        <li><a href="about.html"><span class="roll"><span>About</span><span aria-hidden="true">About</span></span></a></li>
+        <li><a href="contact.html"><span class="roll"><span>Contact</span><span aria-hidden="true">Contact</span></span></a></li>
       </ul>
     </nav>
     <div class="nav__right">
-      <a class="btn magnetic" href="09-kinetic/contact.html">Free consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+      <a class="btn magnetic" href="contact.html">Free consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
       <button class="burger menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i></i></button>
     </div>
   </div>
@@ -636,11 +639,11 @@ html.motion .phero .line>span{transform:translateY(110%)}
 <div class="menu" id="menu" aria-hidden="true">
   <nav aria-label="Mobile">
   <ul>
-    <li><a href="09-kinetic.html" data-n="01" aria-current="page">Home</a></li>
-    <li><a href="09-kinetic/services.html" data-n="02">Services</a></li>
-    <li><a href="09-kinetic/projects.html" data-n="03">Projects</a></li>
-    <li><a href="09-kinetic/about.html" data-n="04">About</a></li>
-    <li><a href="09-kinetic/contact.html" data-n="05">Contact</a></li>
+    <li><a href="index.html" data-n="01" aria-current="page">Home</a></li>
+    <li><a href="services.html" data-n="02">Services</a></li>
+    <li><a href="projects.html" data-n="03">Projects</a></li>
+    <li><a href="about.html" data-n="04">About</a></li>
+    <li><a href="contact.html" data-n="05">Contact</a></li>
   </ul>
   </nav>
   <div class="menu__foot">
@@ -709,35 +712,35 @@ html.motion .phero .line>span{transform:translateY(110%)}
     <div class="wrap">
       <div class="sec-head">
         <h2 class="giant" id="svc-title"><span class="velo">What</span><br><span class="velo"><em>we do</em></span></h2>
-        <div><p>Six disciplines under one roof. One team carrying your site from first survey to final sign-off, with quality civil engineering, resource consents and planning.</p><a class="btn btn--ghost magnetic" href="09-kinetic/services.html" style="margin-top:20px">All services &amp; FAQ</a></div>
+        <div><p>Six disciplines under one roof. One team carrying your site from first survey to final sign-off, with quality civil engineering, resource consents and planning.</p><a class="btn btn--ghost magnetic" href="services.html" style="margin-top:20px">All services &amp; FAQ</a></div>
       </div>
       <ul class="svc">
-        <li data-preview="0"><a href="09-kinetic/services.html#surveying">
+        <li data-preview="0"><a href="services.html#surveying">
           <span class="svc__n">(01)</span>
           <div><h3>Land Surveying</h3></div>
           <div><p>We provide accurate and reliable data for your development projects.</p><small>Boundary redefinition · Cross-lease to freehold · Topographical · Set out · Drone inspections · 3D laser scanning</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="1"><a href="09-kinetic/services.html#planning">
+        <li data-preview="1"><a href="services.html#planning">
           <span class="svc__n">(02)</span>
           <div><h3>RMA Planning</h3></div>
           <div><p>Advice on zoning, land use and resource consent applications.</p><small>Feasibility reports · Hearings evidence · Plan changes</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="2"><a href="09-kinetic/services.html#engineering">
+        <li data-preview="2"><a href="services.html#engineering">
           <span class="svc__n">(03)</span>
           <div><h3>Engineering</h3></div>
           <div><p>Infrastructure that is robust and compliant.</p><small>Roads · Stormwater · Three waters · Earthworks · Flood engineering · Construction monitoring</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="3"><a href="09-kinetic/services.html#landscape">
+        <li data-preview="3"><a href="services.html#landscape">
           <span class="svc__n">(04)</span>
           <div><h3>Landscape Architecture</h3></div>
           <div><p>Every aspect of the outdoor design process.</p><small>Open space design · Landscape &amp; visual assessments · Planting plans</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="4"><a href="09-kinetic/services.html#environmental">
+        <li data-preview="4"><a href="services.html#environmental">
           <span class="svc__n">(05)</span>
           <div><h3>Environmental Services</h3></div>
           <div><p>Environmental Management Plans, ecology, soil &amp; water contamination testing, asbestos.</p><small>EMPs · Ecology · Contamination testing · Asbestos</small></div>
           <span class="svc__arrow" aria-hidden="true">→</span></a></li>
-        <li data-preview="5"><a href="09-kinetic/services.html#project-management">
+        <li data-preview="5"><a href="services.html#project-management">
           <span class="svc__n">(06)</span>
           <div><h3>Project Management</h3></div>
           <div><p>From concept to completion, we oversee the entire process.</p><small>Programme · Budget · Contractors · Delivery</small></div>
@@ -756,14 +759,14 @@ html.motion .phero .line>span{transform:translateY(110%)}
         </div>
         <div>
           <h2 class="sr" id="why-title">Why choose Thomas Consultants</h2>
-          <p class="why__lead js-words">After 25 years of delivering multi-faceted land development and infrastructure projects, our expertise is second to none. We are committed to environmentally responsible and sustainable development.</p>
+          <p class="why__lead js-words">After 25 years of delivering multi-faceted land development and infrastructure projects, we know this work inside out. We are committed to environmentally responsible and sustainable development.</p>
           <div class="why__pts">
             <div><h3>Transparent communication</h3><p>You always know where your project stands, and who is looking after it.</p></div>
             <div><h3>Joined-up project management</h3><p>Surveyors, planners, engineers and ecologists working as one team.</p></div>
             <div><h3>Timely and on budget</h3><p>Timely results that are on budget and aligned with your vision.</p></div>
             <div><h3>Sustainable by default</h3><p>Environmentally responsible development, from soil testing to planting plans.</p></div>
           </div>
-          <a class="btn btn--ghost magnetic" href="09-kinetic/about.html" style="margin-top:32px">Our story</a>
+          <a class="btn btn--ghost magnetic" href="about.html" style="margin-top:32px">Our story</a>
         </div>
       </div>
       <div class="stats">
@@ -780,7 +783,7 @@ html.motion .phero .line>span{transform:translateY(110%)}
     <div class="wrap">
       <div class="sec-head">
         <h2 class="giant" id="proc-title"><span class="velo">How it</span><br><span class="velo"><em>moves</em></span></h2>
-        <div><p>Four stages, one accountable team. We carry your project from the first site walk to handover, so nothing falls between consultants.</p><a class="btn btn--ghost magnetic" href="09-kinetic/services.html#process" style="margin-top:20px">How we work</a></div>
+        <div><p>Four stages, one accountable team. We carry your project from the first site walk to handover, so nothing falls between consultants.</p><a class="btn btn--ghost magnetic" href="services.html#process" style="margin-top:20px">How we work</a></div>
       </div>
       <div class="stack">
         <article class="card">
@@ -816,20 +819,20 @@ html.motion .phero .line>span{transform:translateY(110%)}
     <div class="work__pin">
       <div class="wrap sec-head" style="margin-bottom:clamp(28px,4vw,56px)">
         <h2 class="giant" id="work-title"><span class="velo">Selected</span> <span class="velo"><em>work</em></span></h2>
-        <div><p>Parks, homes, supermarkets and subdivisions: a cross-section of projects shaped by our team across Tāmaki Makaurau and beyond.</p><a class="btn btn--ghost magnetic" href="09-kinetic/projects.html" style="margin-top:20px">View all projects</a></div>
+        <div><p>Parks, homes, supermarkets and subdivisions: a cross-section of projects shaped by our team across Tāmaki Makaurau and beyond.</p><a class="btn btn--ghost magnetic" href="projects.html" style="margin-top:20px">View all projects</a></div>
       </div>
       <div class="reel-outer">
         <div class="reel">
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--photo3 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Completed apartment building, subdivision plan and Thomas Consultants engineers on a sports field" width="800" height="650" loading="lazy" decoding="async"></div><span class="proj__idx">01 / 09</span><span class="proj__big" aria-hidden="true">01</span></div><h3>Open Space Development, Fearon Park, Mount Roskill</h3><p>Project Management · Contaminated Sites</p></a>
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--plan js-clip" role="img" aria-label="Site plan linework"></div><span class="proj__idx">02 / 09</span><span class="proj__big" aria-hidden="true">02</span></div><h3>McMillan and Lockwood (Kāinga Ora)</h3><p>Construction Monitoring · Engineering · Residential</p></a>
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--contour js-clip" role="img" aria-label="Contour lines"></div><span class="proj__idx">03 / 09</span><span class="proj__big" aria-hidden="true">03</span></div><h3>Churchill Park Lookout</h3><p>Landscape Architecture · Open Space Design</p></a>
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--green js-clip" role="img" aria-label="Abstract landscape rings"></div><span class="proj__idx">04 / 09</span><span class="proj__big" aria-hidden="true">04</span></div><h3>Observation Green</h3><p>Landscape &amp; Visual Assessments · Planting Plan</p></a>
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--photo2 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Civil engineer on a construction site" width="1253" height="836" loading="lazy" decoding="async"></div><span class="proj__idx">05 / 09</span><span class="proj__big" aria-hidden="true">05</span></div><h3>2 Cracroft Road / 618-620 Great South Road (Kāinga Ora)</h3><p>Engineering · Surveying</p></a>
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--grid js-clip" role="img" aria-label="Survey grid"></div><span class="proj__idx">06 / 09</span><span class="proj__big" aria-hidden="true">06</span></div><h3>PAK'nSAVE, Alderman Drive, Henderson</h3><p>Commercial · Civil Engineering</p></a>
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--lime js-clip" role="img" aria-label="Hatched site pattern"></div><span class="proj__idx">07 / 09</span><span class="proj__big" aria-hidden="true">07</span></div><h3>Scott Road, Hobsonville</h3><p>Resource Consent · Traffic Engineering · Soil Testing</p></a>
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--contour2 js-clip" role="img" aria-label="Layered terrain contours"></div><span class="proj__idx">08 / 09</span><span class="proj__big" aria-hidden="true">08</span></div><h3>GJ Gardner Kokowai Apartments, Hobsonville Point</h3><p>Landscape Architecture</p></a>
-          <a class="proj" href="09-kinetic/project.html"><div class="proj__media"><div class="art art--photo1 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Apartment development, a subdivision plan being marked up and two Thomas Consultants engineers on site" width="1800" height="650" loading="lazy" decoding="async"></div><span class="proj__idx">09 / 09</span><span class="proj__big" aria-hidden="true">09</span></div><h3>Homes of Choice residential subdivision</h3><p>Engineering · Planning · Subdivision</p></a>
-          <div class="reel__end"><strong>Your site could be next.</strong><a class="btn magnetic" href="09-kinetic/projects.html">View all projects <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--photo3 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Completed apartment building, subdivision plan and Thomas Consultants engineers on a sports field" width="800" height="650" loading="lazy" decoding="async"></div><span class="proj__idx">01 / 09</span><span class="proj__big" aria-hidden="true">01</span></div><h3>Open Space Development, Fearon Park, Mount Roskill</h3><p>Project Management · Contaminated Sites</p></a>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--plan js-clip" role="img" aria-label="Site plan linework"></div><span class="proj__idx">02 / 09</span><span class="proj__big" aria-hidden="true">02</span></div><h3>McMillan and Lockwood (Kāinga Ora)</h3><p>Construction Monitoring · Engineering · Residential</p></a>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--contour js-clip" role="img" aria-label="Contour lines"></div><span class="proj__idx">03 / 09</span><span class="proj__big" aria-hidden="true">03</span></div><h3>Churchill Park Lookout</h3><p>Landscape Architecture · Open Space Design</p></a>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--green js-clip" role="img" aria-label="Abstract landscape rings"></div><span class="proj__idx">04 / 09</span><span class="proj__big" aria-hidden="true">04</span></div><h3>Observation Green</h3><p>Landscape &amp; Visual Assessments · Planting Plan</p></a>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--photo2 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Civil engineer on a construction site" width="1253" height="836" loading="lazy" decoding="async"></div><span class="proj__idx">05 / 09</span><span class="proj__big" aria-hidden="true">05</span></div><h3>2 Cracroft Road / 618-620 Great South Road (Kāinga Ora)</h3><p>Engineering · Surveying</p></a>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--grid js-clip" role="img" aria-label="Survey grid"></div><span class="proj__idx">06 / 09</span><span class="proj__big" aria-hidden="true">06</span></div><h3>PAK'nSAVE, Alderman Drive, Henderson</h3><p>Commercial · Civil Engineering</p></a>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--lime js-clip" role="img" aria-label="Hatched site pattern"></div><span class="proj__idx">07 / 09</span><span class="proj__big" aria-hidden="true">07</span></div><h3>Scott Road, Hobsonville</h3><p>Resource Consent · Traffic Engineering · Soil Testing</p></a>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--contour2 js-clip" role="img" aria-label="Layered terrain contours"></div><span class="proj__idx">08 / 09</span><span class="proj__big" aria-hidden="true">08</span></div><h3>GJ Gardner Kokowai Apartments, Hobsonville Point</h3><p>Landscape Architecture</p></a>
+          <a class="proj" href="project.html"><div class="proj__media"><div class="art art--photo1 js-clip"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Apartment development, a subdivision plan being marked up and two Thomas Consultants engineers on site" width="1800" height="650" loading="lazy" decoding="async"></div><span class="proj__idx">09 / 09</span><span class="proj__big" aria-hidden="true">09</span></div><h3>Homes of Choice residential subdivision</h3><p>Engineering · Planning · Subdivision</p></a>
+          <div class="reel__end"><strong>Your site could be next.</strong><a class="btn magnetic" href="projects.html">View all projects <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div>
         </div>
       </div>
       <div class="reel__progress" aria-hidden="true"><i></i></div>
@@ -902,7 +905,7 @@ html.motion .phero .line>span{transform:translateY(110%)}
             <div class="office"><dt>Auckland<span>Head Office</span></dt><dd><a href="tel:+6498361804">09 836 1804</a></dd></div>
             <div class="office"><dt>Manukau<span>South Auckland office</span></dt><dd><a href="tel:+6498696070">09 869 6070</a></dd></div>
             <div class="office"><dt>Christchurch<span>Satellite office, call Head Office</span></dt><dd><a href="tel:+6498361804">09 836 1804</a></dd></div>
-            <div class="office"><dt>All contact options<span>Offices, planner meetings, socials</span></dt><dd><a href="09-kinetic/contact.html">Contact page ↗</a></dd></div>
+            <div class="office"><dt>All contact options<span>Offices, planner meetings, socials</span></dt><dd><a href="contact.html">Contact page ↗</a></dd></div>
             <div class="office"><dt>Client portal<span>Existing clients</span></dt><dd><a href="https://portal.thomasconsultants.co.nz">Log in ↗</a></dd></div>
           </dl>
         </div>
@@ -937,16 +940,16 @@ html.motion .phero .line>span{transform:translateY(110%)}
     <div class="footer__top">
       <div><p class="footer__lead">Land development &amp; subdivision consultants. Creating better spaces together.</p>
         <ul class="footer__call"><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li></ul></div>
-      <div><h2 class="footer__h">Services</h2><ul><li><a href="09-kinetic/services.html#surveying">Land Surveying</a></li><li><a href="09-kinetic/services.html#planning">RMA Planning</a></li><li><a href="09-kinetic/services.html#engineering">Engineering</a></li><li><a href="09-kinetic/services.html#landscape">Landscape Architecture</a></li><li><a href="09-kinetic/services.html#environmental">Environmental Services</a></li><li><a href="09-kinetic/services.html#project-management">Project Management</a></li></ul></div>
-      <div><h2 class="footer__h">Explore</h2><ul><li><a href="09-kinetic.html">Home</a></li><li><a href="09-kinetic/projects.html">Projects</a></li><li><a href="09-kinetic/about.html">About</a></li><li><a href="09-kinetic/contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
+      <div><h2 class="footer__h">Services</h2><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
+      <div><h2 class="footer__h">Explore</h2><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
       <div><h2 class="footer__h">Follow</h2><ul><li><a href="https://www.facebook.com/thomasconsultantsltd">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd">LinkedIn</a></li></ul></div>
     </div>
-    <a class="build js-build" href="09-kinetic/contact.html" aria-label="Let's build: start your project"><span class="build__txt">Let's build<i>.</i></span></a>
+    <a class="build js-build" href="contact.html" aria-label="Let's build: start your project"><span class="build__txt">Let's build<i>.</i></span></a>
     <div class="footer__base"><span>© 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span><span>Proudly designed by AMBS Solutions</span><a href="#main">Back to top ↑</a></div>
   </div>
 </footer>
 
-<nav class="qbar" aria-label="Quick contact"><a href="tel:+6498361804">Call 09 836 1804</a><a href="09-kinetic/contact.html#planner">Book a meeting</a></nav>
+<nav class="qbar" aria-label="Quick contact"><a href="tel:+6498361804">Call 09 836 1804</a><a href="contact.html#planner">Book a meeting</a></nav>
 <!--/FOOT-->
 
 <script>
@@ -1105,7 +1108,7 @@ html.motion .phero .line>span{transform:translateY(110%)}
     });
 
   /* ---------- Page transitions: lime wipe up, then navigate ---------- */
-  var LABELS = { 'services.html': 'Services', 'projects.html': 'Projects', 'about.html': 'About', 'contact.html': 'Contact', 'project.html': 'Case study', '09-kinetic.html': 'Home' };
+  var LABELS = { 'services.html': 'Services', 'projects.html': 'Projects', 'about.html': 'About', 'contact.html': 'Contact', 'project.html': 'Case study', 'index.html': 'Home' };
   document.addEventListener('click', function(e){
     var a = e.target.closest('a');
     if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === '_blank') return;
@@ -1326,5 +1329,6 @@ html.motion .phero .line>span{transform:translateY(110%)}
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 })();
 </script>
+<script src="../../assets/concepts.js" defer></script>
 </body>
 </html>

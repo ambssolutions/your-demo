@@ -142,8 +142,8 @@ p{margin:0}
 .hero__lines circle{fill:#a9d983}
 @keyframes drift{to{stroke-dashoffset:-600}}
 .hero .container{position:relative;width:100%;padding-top:clamp(80px,12vw,140px);padding-bottom:clamp(36px,5vw,64px)}
-.hero__inner{max-width:820px}
-.hero h1{font-size:clamp(2.35rem,5.4vw,4.9rem);font-weight:800;letter-spacing:-.035em;line-height:1.03;margin:18px 0 22px}
+.hero__inner{max-width:920px}
+.hero h1{font-size:clamp(2.2rem,4.9vw,4.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.03;margin:18px 0 22px}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .ln>span{display:inline-block}
 html.motion .hero h1 .ln>span{transform:translateY(105%)}
@@ -451,6 +451,7 @@ html.motion .rv{opacity:0;transform:translateY(28px)}
 }
 /* ===== Phase 2/3 additions ===== */
 h1,h2,h3{overflow-wrap:break-word}
+.office .office__ico{display:grid}
 .btn{max-width:100%}
 .drawer li a::after{content:"→";font-weight:500;opacity:.7}
 .footer__h{color:#fff;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;font-family:var(--display)}
@@ -627,7 +628,7 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
       <a href="tel:+6498696070">Manukau 09 869 6070</a>
     </div>
     <div class="util__r">
-      <a href="10-corporate/about.html">25 years of land development</a>
+      <a href="about.html">25 years of land development</a>
       <a href="https://portal.thomasconsultants.co.nz">Client portal ↗</a>
     </div>
   </div>
@@ -635,21 +636,21 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
 
 <header class="nav" id="nav">
   <div class="container">
-    <a class="logo" href="10-corporate.html" aria-label="Thomas Consultants home">
+    <a class="logo" href="index.html" aria-label="Thomas Consultants home">
       <svg viewBox="0 0 40 40" width="34" height="34" fill="none" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#0e3b2c"/><path d="M9 29 18 13l5 9 3-5 5 12" stroke="#a9d983" stroke-width="2.6" stroke-linejoin="round"/></svg>
       <span>Thomas Consultants<small>Land development</small></span>
     </a>
     <nav aria-label="Primary">
       <ul class="nav__links">
-        <li><a href="10-corporate.html" class="is-active" aria-current="page">Home</a></li>
-        <li><a href="10-corporate/services.html">Services</a></li>
-        <li><a href="10-corporate/projects.html">Projects</a></li>
-        <li><a href="10-corporate/about.html">About</a></li>
-        <li><a href="10-corporate/contact.html">Contact</a></li>
+        <li><a href="index.html" class="is-active" aria-current="page">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="nav__cta">
-      <a class="btn magnetic" href="10-corporate/contact.html">Free consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+      <a class="btn magnetic" href="contact.html">Free consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
       <button class="burger menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><i></i></button>
     </div>
   </div>
@@ -658,14 +659,14 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
 <div class="drawer" id="drawer" aria-hidden="true">
   <nav aria-label="Mobile">
   <ul>
-    <li><a href="10-corporate.html" aria-current="page">Home</a></li>
-    <li><a href="10-corporate/services.html">Services</a></li>
-    <li><a href="10-corporate/projects.html">Projects</a></li>
-    <li><a href="10-corporate/about.html">About</a></li>
-    <li><a href="10-corporate/contact.html">Contact</a></li>
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   </nav>
-  <a class="btn" href="10-corporate/contact.html">Book Your Free Development Consultation</a>
+  <a class="btn" href="contact.html">Book Your Free Development Consultation</a>
   <div class="drawer__meta">
     <a href="tel:+6498361804">Auckland Head Office · 09 836 1804</a>
     <a href="tel:+6498696070">Manukau · 09 869 6070</a>
@@ -698,8 +699,8 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
         <p class="hero__sub h-in">Creating Better Spaces Together</p>
         <p class="hero__body h-in">As experienced land development specialists, we work closely with our clients to understand their vision and help them create smarter, more sustainable spaces. Our team of engineers, planners, surveyors, landscape architects, ecologists, and contamination experts ensure you are supported throughout the entire journey, from site assessments to final delivery.</p>
         <div class="hero__ctas h-in">
-          <a class="btn magnetic" href="10-corporate/contact.html">Book Your Free Development Consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-          <a class="btn btn--outline magnetic" href="10-corporate/contact.html#planner">Complimentary Planner Meeting</a>
+          <a class="btn magnetic" href="contact.html">Book Your Free Development Consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+          <a class="btn btn--outline magnetic" href="contact.html#planner">Complimentary Planner Meeting</a>
         </div>
       </div>
       <div class="hero__strip h-in">
@@ -730,14 +731,14 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
       <div>
         <span class="kicker rv">Why choose us</span>
         <h2 class="h2 rv" id="why-title">Expertise that carries your project from feasibility to final delivery.</h2>
-        <p class="lede rv">After 25 years of delivering multi-faceted land development and infrastructure projects, our expertise is second to none. We are committed to environmentally responsible and sustainable development, with transparent communication and joined-up project management.</p>
+        <p class="lede rv">After 25 years of delivering multi-faceted land development and infrastructure projects, we know this work inside out. We are committed to environmentally responsible and sustainable development, with transparent communication and joined-up project management.</p>
         <ul class="why__list">
           <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><div><b>One integrated team</b><span>Engineers, planners, surveyors, landscape architects, ecologists and contamination experts.</span></div></li>
           <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><div><b>Transparent communication</b><span>Clear updates and a single point of contact throughout.</span></div></li>
           <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>On time, on budget</b><span>Timely results that are on budget and aligned with your vision.</span></div></li>
           <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg><div><b>Sustainable development</b><span>Environmentally responsible outcomes, Toitū Envirocare accredited.</span></div></li>
         </ul>
-        <a class="btn btn--dark magnetic rv" href="10-corporate/about.html">About Thomas Consultants <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn--dark magnetic rv" href="about.html">About Thomas Consultants <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </section>
@@ -765,37 +766,37 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
           <article class="panel" id="cap-surveying">
             <div><span class="panel__no">01 / LAND SURVEYING</span><h3>Land Surveying</h3><p>We provide accurate and reliable data for your development projects, from first boundary check to final set out.</p>
               <ul><li>Boundary redefinition</li><li>Cross-lease to freehold</li><li>Topographical surveys</li><li>Set out</li><li>Drone inspections</li><li>3D laser scanning</li></ul>
-              <a class="link" href="10-corporate/services.html#surveying">Explore surveying <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+              <a class="link" href="services.html#surveying">Explore surveying <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
             <svg class="panel__art" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M90 20 40 160M90 20l50 140M60 110h60"/><circle cx="90" cy="20" r="8"/><path class="acc" d="M20 170h140" stroke-dasharray="6 6"/><circle class="acc" cx="150" cy="60" r="16"/><path class="acc" d="M150 44v32M134 60h32"/></svg>
           </article>
           <article class="panel" id="cap-planning">
             <div><span class="panel__no">02 / RMA PLANNING</span><h3>RMA Planning</h3><p>Advice on zoning, land use and resource consent applications, backed by planners who know the district plans inside out.</p>
               <ul><li>Resource consent applications</li><li>Zoning &amp; land use advice</li><li>Feasibility reports</li><li>Hearings evidence</li><li>Plan changes</li></ul>
-              <a class="link" href="10-corporate/services.html#planning">Explore planning <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+              <a class="link" href="services.html#planning">Explore planning <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
             <svg class="panel__art" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="30" y="20" width="120" height="150" rx="6"/><path d="M50 50h80M50 70h80M50 90h50"/><path class="acc" d="m60 130 16 16 34-34" stroke-width="3"/></svg>
           </article>
           <article class="panel" id="cap-engineering">
             <div><span class="panel__no">03 / ENGINEERING</span><h3>Engineering</h3><p>Infrastructure that is robust and compliant, designed for the long life of your development.</p>
               <ul><li>Roads</li><li>Stormwater</li><li>Three waters</li><li>Earthworks</li><li>Flood engineering</li><li>Construction monitoring</li></ul>
-              <a class="link" href="10-corporate/services.html#engineering">Explore engineering <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+              <a class="link" href="services.html#engineering">Explore engineering <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
             <svg class="panel__art" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 120h160M10 140h160"/><path d="M30 120V80h40v40M90 120V60h50v60"/><path class="acc" d="M10 160c20-10 40 10 60 0s40 10 60 0 30 5 40 0"/><circle class="acc" cx="150" cy="35" r="14"/></svg>
           </article>
           <article class="panel" id="cap-landscape">
             <div><span class="panel__no">04 / LANDSCAPE ARCHITECTURE</span><h3>Landscape Architecture</h3><p>Every aspect of the outdoor design process, from public open space to residential streetscapes.</p>
               <ul><li>Open space design</li><li>Landscape &amp; visual assessments</li><li>Planting plans</li></ul>
-              <a class="link" href="10-corporate/services.html#landscape">Explore landscape <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+              <a class="link" href="services.html#landscape">Explore landscape <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
             <svg class="panel__art" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="60" cy="70" r="30"/><path d="M60 100v60"/><circle cx="125" cy="90" r="22"/><path d="M125 112v48"/><path class="acc" d="M10 160h160M20 145c30-20 60-20 80 0s50 15 70-5"/></svg>
           </article>
           <article class="panel" id="cap-environmental">
             <div><span class="panel__no">05 / ENVIRONMENTAL SERVICES</span><h3>Environmental Services</h3><p>Environmental Management Plans, ecology, soil &amp; water contamination testing and asbestos, handled by in-house specialists.</p>
               <ul><li>Environmental Management Plans</li><li>Ecology</li><li>Soil contamination testing</li><li>Water contamination testing</li><li>Asbestos</li></ul>
-              <a class="link" href="10-corporate/services.html#environmental">Explore environmental <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+              <a class="link" href="services.html#environmental">Explore environmental <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
             <svg class="panel__art" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M70 20h40M80 20v50L40 150a10 10 0 0 0 9 15h82a10 10 0 0 0 9-15L100 70V20"/><path class="acc" d="M55 120h70"/><circle class="acc" cx="80" cy="140" r="5"/><circle class="acc" cx="105" cy="132" r="4"/></svg>
           </article>
           <article class="panel" id="cap-pm">
             <div><span class="panel__no">06 / PROJECT MANAGEMENT</span><h3>Project Management</h3><p>From concept to completion, we oversee the entire process, so you have one partner accountable for programme, budget and quality.</p>
               <ul><li>Concept to completion</li><li>Programme &amp; budget control</li><li>Consultant coordination</li><li>Contractor management</li></ul>
-              <a class="link" href="10-corporate/services.html#project-management">Explore project management <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+              <a class="link" href="services.html#project-management">Explore project management <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
             <svg class="panel__art" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 40h60M20 80h100M20 120h140M20 160h80"/><path class="acc" d="M20 40h30M20 80h70M20 120h120" stroke-width="6" stroke-linecap="round"/></svg>
           </article>
         </div>
@@ -808,7 +809,7 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
     <div class="container">
       <div class="sec-head">
         <div><span class="kicker rv">Our process</span><h2 class="h2 rv" id="proc-title">A clear path from site assessment to delivery.</h2><p class="lede rv">Every project follows a proven four-stage framework, with the same team accountable at every step.</p></div>
-        <a class="btn btn--ghost magnetic rv" href="10-corporate/services.html#process">How we work</a>
+        <a class="btn btn--ghost magnetic rv" href="services.html#process">How we work</a>
       </div>
       <ol class="steps">
         <span class="steps__line" aria-hidden="true"><i></i></span>
@@ -834,17 +835,17 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
         <button class="tab" type="button" data-filter="environmental" aria-pressed="false">Environmental <span>3</span></button>
       </div>
       <div class="grid js-grid" aria-live="polite">
-        <a class="pcard" href="10-corporate/project.html" data-sectors="public environmental"><div class="pcard__media"><div class="viz viz--photo"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Open space development at Fearon Park, Mount Roskill" width="800" height="650" loading="lazy" decoding="async"></div><span class="pcard__sector">Public sector</span></div><div class="pcard__body"><h3>Open Space Development, Fearon Park, Mount Roskill</h3><p>Project Management · Contaminated Sites</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-        <a class="pcard" href="10-corporate/project.html" data-sectors="residential public"><div class="pcard__media"><div class="viz viz--plan" role="img" aria-label="Engineering site plan linework"></div><span class="pcard__sector">Residential</span></div><div class="pcard__body"><h3>McMillan and Lockwood (Kāinga Ora)</h3><p>Construction Monitoring · Engineering · Residential</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-        <a class="pcard" href="10-corporate/project.html" data-sectors="public"><div class="pcard__media"><div class="viz viz--contour" role="img" aria-label="Contour linework"></div><span class="pcard__sector">Public sector</span></div><div class="pcard__body"><h3>Churchill Park Lookout</h3><p>Landscape Architecture · Open Space Design</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-        <a class="pcard" href="10-corporate/project.html" data-sectors="public environmental"><div class="pcard__media"><div class="viz viz--green" role="img" aria-label="Planting plan pattern"></div><span class="pcard__sector">Public sector</span></div><div class="pcard__body"><h3>Observation Green</h3><p>Landscape &amp; Visual Assessments · Planting Plan</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-        <a class="pcard" href="10-corporate/project.html" data-sectors="residential public"><div class="pcard__media"><div class="viz viz--photo"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Engineer on site at Great South Road" width="1253" height="836" loading="lazy" decoding="async"></div><span class="pcard__sector">Residential</span></div><div class="pcard__body"><h3>2 Cracroft Road / 618-620 Great South Road (Kāinga Ora)</h3><p>Engineering · Surveying</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-        <a class="pcard" href="10-corporate/project.html" data-sectors="commercial"><div class="pcard__media"><div class="viz viz--grid" role="img" aria-label="Survey grid"></div><span class="pcard__sector">Commercial</span></div><div class="pcard__body"><h3>PAK'nSAVE, Alderman Drive, Henderson</h3><p>Commercial · Civil Engineering</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-        <a class="pcard" href="10-corporate/project.html" data-sectors="commercial environmental"><div class="pcard__media"><div class="viz viz--slate" role="img" aria-label="Soil testing locations pattern"></div><span class="pcard__sector">Commercial</span></div><div class="pcard__body"><h3>Scott Road, Hobsonville</h3><p>Resource Consent · Traffic Engineering · Soil Testing</p><span class="pcard__more">View case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-        <a class="pcard" href="10-corporate/project.html" data-sectors="residential"><div class="pcard__media"><div class="viz viz--contour" role="img" aria-label="Landscape contours" style="filter:hue-rotate(-20deg)"></div><span class="pcard__sector">Residential</span></div><div class="pcard__body"><h3>GJ Gardner Kokowai Apartments, Hobsonville Point</h3><p>Landscape Architecture</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-        <a class="pcard" href="10-corporate/project.html" data-sectors="residential"><div class="pcard__media"><div class="viz viz--photo"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Residential subdivision" width="1800" height="650" loading="lazy" decoding="async"></div><span class="pcard__sector">Residential</span></div><div class="pcard__body"><h3>Homes of Choice residential subdivision</h3><p>Engineering · Planning · Subdivision</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="public environmental"><div class="pcard__media"><div class="viz viz--photo"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners-800-x-650-px-1.jpg.webp" alt="Open space development at Fearon Park, Mount Roskill" width="800" height="650" loading="lazy" decoding="async"></div><span class="pcard__sector">Public sector</span></div><div class="pcard__body"><h3>Open Space Development, Fearon Park, Mount Roskill</h3><p>Project Management · Contaminated Sites</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="residential public"><div class="pcard__media"><div class="viz viz--plan" role="img" aria-label="Engineering site plan linework"></div><span class="pcard__sector">Residential</span></div><div class="pcard__body"><h3>McMillan and Lockwood (Kāinga Ora)</h3><p>Construction Monitoring · Engineering · Residential</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="public"><div class="pcard__media"><div class="viz viz--contour" role="img" aria-label="Contour linework"></div><span class="pcard__sector">Public sector</span></div><div class="pcard__body"><h3>Churchill Park Lookout</h3><p>Landscape Architecture · Open Space Design</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="public environmental"><div class="pcard__media"><div class="viz viz--green" role="img" aria-label="Planting plan pattern"></div><span class="pcard__sector">Public sector</span></div><div class="pcard__body"><h3>Observation Green</h3><p>Landscape &amp; Visual Assessments · Planting Plan</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="residential public"><div class="pcard__media"><div class="viz viz--photo"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/civil-engineer-on-construction-site.jpg.webp" alt="Engineer on site at Great South Road" width="1253" height="836" loading="lazy" decoding="async"></div><span class="pcard__sector">Residential</span></div><div class="pcard__body"><h3>2 Cracroft Road / 618-620 Great South Road (Kāinga Ora)</h3><p>Engineering · Surveying</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="commercial"><div class="pcard__media"><div class="viz viz--grid" role="img" aria-label="Survey grid"></div><span class="pcard__sector">Commercial</span></div><div class="pcard__body"><h3>PAK'nSAVE, Alderman Drive, Henderson</h3><p>Commercial · Civil Engineering</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="commercial environmental"><div class="pcard__media"><div class="viz viz--slate" role="img" aria-label="Soil testing locations pattern"></div><span class="pcard__sector">Commercial</span></div><div class="pcard__body"><h3>Scott Road, Hobsonville</h3><p>Resource Consent · Traffic Engineering · Soil Testing</p><span class="pcard__more">View case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="residential"><div class="pcard__media"><div class="viz viz--contour" role="img" aria-label="Landscape contours" style="filter:hue-rotate(-20deg)"></div><span class="pcard__sector">Residential</span></div><div class="pcard__body"><h3>GJ Gardner Kokowai Apartments, Hobsonville Point</h3><p>Landscape Architecture</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+        <a class="pcard" href="project.html" data-sectors="residential"><div class="pcard__media"><div class="viz viz--photo"><img src="https://www.thomasconsultants.co.nz/wp-content/smush-webp/Homepage-banners.jpg.webp" alt="Residential subdivision" width="1800" height="650" loading="lazy" decoding="async"></div><span class="pcard__sector">Residential</span></div><div class="pcard__body"><h3>Homes of Choice residential subdivision</h3><p>Engineering · Planning · Subdivision</p><span class="pcard__more">View project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
       </div>
-      <div class="projects__foot"><a class="btn btn--dark magnetic" href="10-corporate/projects.html">View all projects <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+      <div class="projects__foot"><a class="btn btn--dark magnetic" href="projects.html">View all projects <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
     </div>
   </section>
 
@@ -923,7 +924,7 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
         <dl class="cphones">
           <div class="cphone rv"><dt>Auckland · Head Office</dt><dd><a href="tel:+6498361804">09 836 1804</a></dd></div>
           <div class="cphone rv"><dt>Manukau</dt><dd><a href="tel:+6498696070">09 869 6070</a></dd></div>
-          <div class="cphone rv"><dt>Christchurch · Satellite office</dt><dd><a href="10-corporate/contact.html">All contact options</a></dd></div>
+          <div class="cphone rv"><dt>Christchurch · Satellite office</dt><dd><a href="contact.html">All contact options</a></dd></div>
         </dl>
       </div>
       <div class="form" id="formBox">
@@ -959,7 +960,7 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
   <div class="container">
     <div class="footer__grid">
       <div>
-        <a class="logo" href="10-corporate.html"><svg viewBox="0 0 40 40" width="34" height="34" fill="none" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#6dab3c"/><path d="M9 29 18 13l5 9 3-5 5 12" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/></svg><span>Thomas Consultants<small>Land development</small></span></a>
+        <a class="logo" href="index.html"><svg viewBox="0 0 40 40" width="34" height="34" fill="none" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#6dab3c"/><path d="M9 29 18 13l5 9 3-5 5 12" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/></svg><span>Thomas Consultants<small>Land development</small></span></a>
         <p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p>
         <div class="socials">
           <a href="https://www.facebook.com/thomasconsultantsltd" aria-label="Thomas Consultants on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
@@ -967,15 +968,15 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
           <a href="https://www.linkedin.com/company/thomasconsultantsltd" aria-label="Thomas Consultants on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM2 9h4v12H2zm7 0h4v1.7c.6-1 2-2 4-2 4 0 5 2.5 5 6V21h-4v-5.5c0-1.5-.3-3-2-3s-3 1.2-3 3V21H9z"/></svg></a>
         </div>
       </div>
-      <div><h2 class="footer__h">Services</h2><ul><li><a href="10-corporate/services.html#surveying">Land Surveying</a></li><li><a href="10-corporate/services.html#planning">RMA Planning</a></li><li><a href="10-corporate/services.html#engineering">Engineering</a></li><li><a href="10-corporate/services.html#landscape">Landscape Architecture</a></li><li><a href="10-corporate/services.html#environmental">Environmental Services</a></li><li><a href="10-corporate/services.html#project-management">Project Management</a></li></ul></div>
-      <div><h2 class="footer__h">Explore</h2><ul><li><a href="10-corporate.html">Home</a></li><li><a href="10-corporate/projects.html">Projects</a></li><li><a href="10-corporate/about.html">About us</a></li><li><a href="10-corporate/contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
-      <div><h2 class="footer__h">Offices</h2><ul><li><a href="tel:+6498361804">Auckland Head Office<br>09 836 1804</a></li><li><a href="tel:+6498696070">Manukau<br>09 869 6070</a></li><li><a href="10-corporate/contact.html">Christchurch satellite office</a></li></ul></div>
+      <div><h2 class="footer__h">Services</h2><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
+      <div><h2 class="footer__h">Explore</h2><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
+      <div><h2 class="footer__h">Offices</h2><ul><li><a href="tel:+6498361804">Auckland Head Office<br>09 836 1804</a></li><li><a href="tel:+6498696070">Manukau<br>09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul></div>
     </div>
     <div class="footer__base"><span>© 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span><span>Proudly designed by AMBS Solutions</span><a href="#main">Back to top ↑</a></div>
   </div>
 </footer>
 
-<nav class="qbar" aria-label="Quick contact"><a href="tel:+6498361804"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call 09 836 1804</a><a href="10-corporate/contact.html#planner">Book a meeting</a></nav>
+<nav class="qbar" aria-label="Quick contact"><a href="tel:+6498361804"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call 09 836 1804</a><a href="contact.html#planner">Book a meeting</a></nav>
 <!--/FOOT-->
 
 <script>
@@ -1219,5 +1220,6 @@ html.motion .phero h1 .ln>span{transform:translateY(105%)}
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 })();
 </script>
+<script src="../../assets/concepts.js" defer></script>
 </body>
 </html>

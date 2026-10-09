@@ -1,0 +1,92 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/terrain",
+      "destination": "/designs/01-terrain/",
+      "permanent": false
+    },
+    {
+      "source": "/flow",
+      "destination": "/designs/02-gradient/",
+      "permanent": false
+    },
+    {
+      "source": "/blueprint",
+      "destination": "/designs/03-blueprint/",
+      "permanent": false
+    },
+    {
+      "source": "/field-notes",
+      "destination": "/designs/04-editorial/",
+      "permanent": false
+    },
+    {
+      "source": "/midnight",
+      "destination": "/designs/05-midnight/",
+      "permanent": false
+    },
+    {
+      "source": "/swiss",
+      "destination": "/designs/06-swiss/",
+      "permanent": false
+    },
+    {
+      "source": "/aotearoa",
+      "destination": "/designs/07-landscape/",
+      "permanent": false
+    },
+    {
+      "source": "/bento",
+      "destination": "/designs/08-bento/",
+      "permanent": false
+    },
+    {
+      "source": "/kinetic",
+      "destination": "/designs/09-kinetic/",
+      "permanent": false
+    },
+    {
+      "source": "/infrastructure",
+      "destination": "/designs/10-corporate/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/designs/(.*)\\.(webp|jpg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)\\.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, stale-while-revalidate=3600"
+        }
+      ]
+    }
+  ]
+}

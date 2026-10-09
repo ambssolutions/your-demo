@@ -34,7 +34,7 @@ Nav (sticky, with mobile menu) · Hero · Services (all 6) · Why us / 25 years 
 Each concept becomes a full multi-page site in its own design language (same fonts, tokens, nav, footer, motion system).
 
 ## File layout (for concept NN-slug)
-- Home stays at `designs/NN-slug.html`
+- Home lives at `designs/NN-slug/index.html` (moved from `designs/NN-slug.html` after phase 2)
 - Inner pages in a folder: `designs/NN-slug/services.html`, `projects.html`, `about.html`, `contact.html`
 - Optional extra: `designs/NN-slug/project.html` (one project case-study detail page, e.g. Scott Road, Hobsonville)
 - Pages may share nothing on disk except what's copied (keep each page self-contained, inline CSS/JS; duplication is fine).

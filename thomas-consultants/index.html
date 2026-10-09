@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Thomas Consultants · Design Concepts</title>
-<meta name="description" content="Ten homepage concepts for Thomas Consultants. Preview them, shortlist your favourites and send us your preferred design.">
+<title>Thomas Consultants · Website Concepts</title>
+<meta name="description" content="Ten website concepts for Thomas Consultants. Preview them, shortlist your favourites and send us your preferred design.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 /* ---------- header ---------- */
 .top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:16px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;text-decoration:none}
+.brand{display:flex;white-space:nowrap;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;text-decoration:none}
 .brand i{width:28px;height:28px;border-radius:8px;background:var(--green);display:grid;place-items:center;color:#fff;font-style:normal;font-size:14px}
 .brand span{color:var(--muted);font-weight:500}
 .top nav{margin-left:auto;display:flex;gap:8px;align-items:center}
@@ -58,7 +58,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 /* ---------- toolbar ---------- */
 .bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:28px 0 20px}
-.seg{display:inline-flex;padding:4px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line)}
+.seg{display:inline-flex;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:4px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line)}
 .seg button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-weight:600;font-size:13.5px;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .bar .hint{color:var(--muted);font-size:13px;margin-left:auto}
@@ -72,9 +72,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 .card.hidden{display:none}
 .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--surface-2);cursor:zoom-in;border:0;padding:0;display:block;width:100%}
 .thumb .ph{position:absolute;inset:0;display:grid;place-items:center;font:400 2.4rem/1 var(--serif);color:rgba(255,255,255,.9);transition:opacity .6s}
-.thumb iframe{position:absolute;left:0;top:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none;opacity:0;transition:opacity .6s}
-.thumb.loaded iframe{opacity:1}
-.thumb.loaded .ph{opacity:0}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s var(--ease)}
+.card:hover .thumb img{transform:scale(1.035)}
+.rec{position:absolute;left:12px;bottom:12px;z-index:2;background:var(--green-d);color:#fff;font-weight:700;font-size:12px;padding:5px 10px;border-radius:99px}
+.rec::before{content:"★ "}
+.tags li.mo{background:rgba(109,171,60,.16);color:var(--green-ink)}
+.why{font-size:13px!important;background:var(--bg);border-radius:12px;padding:10px 12px}
+.why b{color:var(--ink)}
 .thumb::after{content:"Preview";position:absolute;right:12px;bottom:12px;background:rgba(10,14,12,.78);color:#fff;font-size:12px;font-weight:600;padding:6px 12px;border-radius:99px;opacity:0;transform:translateY(6px);transition:.3s var(--ease)}
 .thumb:hover::after,.thumb:focus-visible::after{opacity:1;transform:none}
 .num{position:absolute;left:12px;top:12px;z-index:2;background:rgba(255,255,255,.92);color:var(--ink);font-weight:700;font-size:12px;padding:5px 10px;border-radius:99px}
@@ -197,7 +201,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 120px;color:var(--muted);
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#"><i>T</i>Thomas Consultants <span>· Homepage concepts</span></a>
+    <a class="brand" href="#"><i>T</i>Thomas Consultants <span>· Website concepts</span></a>
     <nav aria-label="Actions">
       <button class="btn ghost" id="shareBtn" type="button" title="Copy a link that includes your shortlist">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
@@ -212,9 +216,9 @@ footer{border-top:1px solid var(--line);padding:24px 0 120px;color:var(--muted);
   <section class="intro" aria-labelledby="h1">
     <span class="eyebrow">Design review · 10 concepts</span>
     <h1 id="h1">Ten new directions for <em>thomasconsultants.co.nz</em></h1>
-    <p>Each concept is a full working homepage built from your real content, with its own look, motion and flow, drawing on the style of a well-known website. Open them full screen, try them on desktop, tablet and mobile, shortlist the ones you like, then send us your favourite.</p>
+    <p>Each concept is a complete working website (home, services, projects, about and contact) built from your real content, with its own look, motion and flow. Open them full screen, click through the pages, try them on desktop, tablet and mobile, shortlist the ones you like, then send us your favourite.</p>
     <ol class="steps">
-      <li><b>Explore</b><span>Click any preview to open the live concept. Scroll it to see the animations.</span></li>
+      <li><b>Explore</b><span>Click any preview to open the live site. Scroll and click through the pages to see the motion.</span></li>
       <li><b>Shortlist</b><span>Tap the star on the designs you like. Compare up to 3 side by side.</span></li>
       <li><b>Send your pick</b><span>Choose your preferred design, add notes and send it to us.</span></li>
     </ol>
@@ -223,6 +227,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 120px;color:var(--muted);
   <div class="bar">
     <div class="seg" role="group" aria-label="Filter concepts">
       <button type="button" aria-pressed="true" data-filter="all">All 10</button>
+      <button type="button" aria-pressed="false" data-filter="rec">★ Recommended</button>
       <button type="button" aria-pressed="false" data-filter="short">Shortlisted <span class="count" id="countSeg">0</span></button>
     </div>
     <button class="btn" type="button" id="compareBtn" disabled>
@@ -324,18 +329,18 @@ const FORM_ENDPOINT = "";
 const SEND_TO = "";
 
 const CONCEPTS = [
-  {id:"01",slug:"01-terrain",name:"Terrain",insp:"Apple product pages",desc:"Cinematic, one idea per screen. A topographic map draws itself and zooms into the services as you scroll.",tags:["Cinematic scroll","Minimal","Big type"],sw:["#0b0d0c","#ffffff","#6DAB3C"]},
-  {id:"02",slug:"02-gradient",name:"Flow",insp:"Stripe",desc:"Living mesh-gradient hero, angled sections and 3D-tilt service cards with a glow that follows your cursor.",tags:["Mesh gradient","3D tilt","Tech-polished"],sw:["#0a2540","#6DAB3C","#19c3b1"]},
-  {id:"03",slug:"03-blueprint",name:"Blueprint",insp:"Engineering drawings & technical tools",desc:"A subdivision site plan draws itself line by line, with a crosshair cursor reading live coordinates.",tags:["Technical","Line drawing","Dark"],sw:["#0b1a2e","#cfe8ff","#6DAB3C"]},
-  {id:"04",slug:"04-editorial",name:"Field Notes",insp:"Kinfolk / Aesop editorial",desc:"Calm, warm and editorial. Masked photo reveals, serif headlines and a horizontal project journal.",tags:["Editorial","Serif","Warm"],sw:["#f3eee4","#2f4a2a","#9aa57a"]},
-  {id:"05",slug:"05-midnight",name:"Midnight",insp:"Linear / Vercel",desc:"Dark, precise and glowing. A particle field forms a land parcel, with spotlight bento cards.",tags:["Dark mode","Particles","Bento"],sw:["#050806","#6DAB3C","#a7f070"]},
-  {id:"06",slug:"06-swiss",name:"Swiss Grid",insp:"Pentagram & Swiss typographic style",desc:"Strict grid, giant numerals and an index list of services that reveals previews as you hover.",tags:["Typographic","Grid","Bold"],sw:["#ffffff","#111111","#6DAB3C"]},
-  {id:"07",slug:"07-landscape",name:"Aotearoa",insp:"Patagonia & national-park sites",desc:"Layered parallax hills separate as you scroll, and a koru unfurls for the sustainability story.",tags:["Parallax","Nature","Sustainability"],sw:["#23402a","#9cc6d9","#e9dfc8"]},
-  {id:"08",slug:"08-bento",name:"Bento",insp:"Notion & Apple keynote bento grids",desc:"Friendly rounded tiles that build themselves, each with a live mini-animation, plus a \"which service?\" quiz.",tags:["Playful","Interactive quiz","Light"],sw:["#faf9f5","#dcefc9","#4E8A24"]},
-  {id:"09",slug:"09-kinetic",name:"Kinetic",insp:"Awwwards-winning agency sites",desc:"Bold and loud. A preloader, giant type that stretches with scroll speed, and a pinned project reel.",tags:["Kinetic type","Custom cursor","High energy"],sw:["#0c0c0c","#c6ff3d","#f2f2f2"]},
-  {id:"10",slug:"10-corporate",name:"Infrastructure",insp:"Arup / AECOM",desc:"Confident and trustworthy. An interactive NZ office map, sticky capabilities and sector filters.",tags:["Corporate","Interactive map","Trust"],sw:["#123524","#ffffff","#6DAB3C"]}
+  {id:"01",motion:"Highly animated",slug:"01-terrain",name:"Terrain",insp:"Apple product pages",desc:"Cinematic, one idea per screen. A topographic map draws itself and zooms into the services as you scroll.",tags:["Cinematic scroll","Minimal","Big type"],sw:["#0b0d0c","#ffffff","#6DAB3C"]},
+  {id:"02",motion:"Animated",slug:"02-gradient",name:"Flow",insp:"Stripe",desc:"Living mesh-gradient hero, angled sections and 3D-tilt service cards with a glow that follows your cursor.",tags:["Mesh gradient","3D tilt","Tech-polished"],sw:["#0a2540","#6DAB3C","#19c3b1"]},
+  {id:"03",motion:"Highly animated",rec:"Speaks the language of surveyors and engineers, and stands apart from every competitor site.",slug:"03-blueprint",name:"Blueprint",insp:"Engineering drawings & technical tools",desc:"A subdivision site plan draws itself line by line, with a crosshair cursor reading live coordinates.",tags:["Technical","Line drawing","Dark"],sw:["#0b1a2e","#cfe8ff","#6DAB3C"]},
+  {id:"04",motion:"Subtle motion",slug:"04-editorial",name:"Field Notes",insp:"Kinfolk / Aesop editorial",desc:"Calm, warm and editorial. Masked photo reveals, serif headlines and a horizontal project journal.",tags:["Editorial","Serif","Warm"],sw:["#f3eee4","#2f4a2a","#9aa57a"]},
+  {id:"05",motion:"Interactive",slug:"05-midnight",name:"Midnight",insp:"Linear / Vercel",desc:"Dark, precise and glowing. A particle field forms a land parcel, with spotlight bento cards.",tags:["Dark mode","Particles","Bento"],sw:["#050806","#6DAB3C","#a7f070"]},
+  {id:"06",motion:"Animated",slug:"06-swiss",name:"Swiss Grid",insp:"Pentagram & Swiss typographic style",desc:"Strict grid, giant numerals and an index list of services that reveals previews as you hover.",tags:["Typographic","Grid","Bold"],sw:["#ffffff","#111111","#6DAB3C"]},
+  {id:"07",motion:"Highly animated",rec:"Puts sustainability and the NZ landscape front and centre, warm and memorable.",slug:"07-landscape",name:"Aotearoa",insp:"Patagonia & national-park sites",desc:"Layered parallax hills separate as you scroll, and a koru unfurls for the sustainability story.",tags:["Parallax","Nature","Sustainability"],sw:["#23402a","#9cc6d9","#e9dfc8"]},
+  {id:"08",motion:"Interactive",slug:"08-bento",name:"Bento",insp:"Notion & Apple keynote bento grids",desc:"Friendly rounded tiles that build themselves, each with a live mini-animation, plus a \"which service?\" quiz.",tags:["Playful","Interactive quiz","Light"],sw:["#faf9f5","#dcefc9","#4E8A24"]},
+  {id:"09",motion:"Highly animated",slug:"09-kinetic",name:"Kinetic",insp:"Awwwards-winning agency sites",desc:"Bold and loud. A preloader, giant type that stretches with scroll speed, and a pinned project reel.",tags:["Kinetic type","Custom cursor","High energy"],sw:["#0c0c0c","#c6ff3d","#f2f2f2"]},
+  {id:"10",motion:"Interactive",rec:"The safest choice for councils and developers: clear, trustworthy and easy to extend.",slug:"10-corporate",name:"Infrastructure",insp:"Arup / AECOM",desc:"Confident and trustworthy. An interactive NZ office map, sticky capabilities and sector filters.",tags:["Corporate","Interactive map","Trust"],sw:["#123524","#ffffff","#6DAB3C"]}
 ];
-const url = c => "designs/" + c.slug + ".html";
+const url = c => "designs/" + c.slug + "/";
 const byId = id => CONCEPTS.find(c => c.id === id);
 const $ = s => document.querySelector(s);
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -345,7 +350,7 @@ const store = {
   get(k,d){try{const v=localStorage.getItem("tc-"+k);return v?JSON.parse(v):d}catch(e){return d}},
   set(k,v){try{localStorage.setItem("tc-"+k,JSON.stringify(v))}catch(e){}}
 };
-let shortlist = store.get("shortlist",[]);
+let shortlist = store.get("shortlist",[]).filter(byId);
 let pick = store.get("pick",null);
 // a shared link (?s=01,04&p=04) seeds the shortlist
 (() => {
@@ -374,14 +379,15 @@ CONCEPTS.forEach((c,i) => {
   el.className = "card"; el.dataset.id = c.id;
   el.innerHTML = `
     <button class="thumb" type="button" aria-label="Preview concept ${c.id}, ${c.name}" style="background:linear-gradient(135deg,${c.sw[0]},${c.sw[2]})">
-      <span class="num">${c.id}</span><span class="pick-flag">★ Preferred</span>
-      <span class="ph">${c.name}</span>
+      <span class="num">${c.id}</span><span class="pick-flag">★ Preferred</span>${c.rec?'<span class="rec">Recommended</span>':''}
+      <img src="designs/${c.slug}/thumb.webp" alt="Concept ${c.id}, ${c.name}: homepage preview" width="720" height="450" loading="${i<3?"eager":"lazy"}" decoding="async">
     </button>
     <div class="body">
       <h2>${c.name}</h2>
       <div class="insp">Inspired by <b>${c.insp}</b></div>
       <p>${c.desc}</p>
-      <ul class="tags">${c.tags.map(t=>`<li>${t}</li>`).join("")}</ul>
+      <ul class="tags"><li class="mo">${c.motion}</li>${c.tags.map(t=>`<li>${t}</li>`).join("")}</ul>
+      ${c.rec?`<p class="why"><b>Why we recommend it:</b> ${c.rec}</p>`:""}
       <div class="actions">
         <div class="sw" aria-hidden="true">${c.sw.map(s=>`<i style="background:${s}"></i>`).join("")}</div>
         <a class="btn ghost" href="${url(c)}" target="_blank" rel="noopener">Open ↗</a>
@@ -393,20 +399,6 @@ CONCEPTS.forEach((c,i) => {
   grid.insertBefore(el, $("#empty"));
   setTimeout(() => el.classList.add("in"), reduce ? 0 : 80 + i*70);
 });
-
-/* live thumbnails: load each concept's iframe only when it nears the viewport */
-function fitThumbs(){ document.querySelectorAll(".thumb iframe").forEach(f => f.style.transform = `scale(${f.parentElement.clientWidth/1440})`); }
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (!e.isIntersecting) return;
-  io.unobserve(e.target);
-  const id = e.target.closest(".card").dataset.id;
-  const f = document.createElement("iframe");
-  f.src = url(byId(id)); f.title = `Thumbnail of concept ${id}`; f.tabIndex = -1; f.setAttribute("aria-hidden","true"); f.loading = "lazy";
-  f.onload = () => e.target.classList.add("loaded");
-  e.target.appendChild(f); fitThumbs();
-}), {rootMargin:"200px"});
-document.querySelectorAll(".thumb").forEach(t => io.observe(t));
-addEventListener("resize", fitThumbs);
 
 /* ---------- filter ---------- */
 let filter = "all";
@@ -423,7 +415,7 @@ function render(){
     const id = el.dataset.id, on = isOn(id);
     el.classList.toggle("on", on);
     el.classList.toggle("pick", pick === id);
-    el.classList.toggle("hidden", filter === "short" && !on);
+    el.classList.toggle("hidden", (filter === "short" && !on) || (filter === "rec" && !byId(id).rec));
     const b = el.querySelector(".star");
     b.setAttribute("aria-pressed", on);
     b.querySelector("span").textContent = on ? "Shortlisted" : "Shortlist";
@@ -522,7 +514,7 @@ function collect(){
 function summary(d){
   const c = byId(d.pick);
   return [
-    "Thomas Consultants · homepage concept selection", "",
+    "Thomas Consultants · website concept selection", "",
     `Preferred design: ${d.pick} · ${c.name} (inspired by ${c.insp})`,
     `Link: ${new URL(url(c), location.href).href}`, "",
     `Shortlist: ${d.shortlist.length ? d.shortlist.map(id=>`${id} ${byId(id).name}`).join(", ") : "(none)"}`, "",
@@ -568,6 +560,8 @@ $("#shareBtn").onclick = () => copy(shareUrl(pick), shortlist.length ? "Link wit
 /* ---------- toast ---------- */
 let tt; function toast(m){ const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(()=>t.classList.remove("show"), 2200); }
 
+addEventListener("storage", e => { if (e.key === "tc-shortlist" || e.key === "tc-pick") { shortlist = store.get("shortlist",[]).filter(byId); pick = store.get("pick",null); render(); } });
+addEventListener("pageshow", e => { if (e.persisted) { shortlist = store.get("shortlist",[]).filter(byId); render(); } });
 render();
 </script>
 </body>

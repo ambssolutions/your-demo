@@ -93,7 +93,7 @@ const CONCEPTS = ["01-terrain","02-gradient","03-blueprint","04-editorial","05-m
 
 async function crawl(slug) {
   // collect every internal .html page reachable from the concept's home
-  const start = `${BASE}designs/${slug}.html`;
+  const start = `${BASE}designs/${slug}/`;
   const seen = new Set([start]), queue = [start];
   const { ctx, page } = await newPage(1440);
   while (queue.length) {
@@ -103,7 +103,8 @@ async function crawl(slug) {
     const hrefs = await page.$$eval("a[href]", as => as.map(a => a.href));
     for (const h of hrefs) {
       const clean = h.split("#")[0].split("?")[0];
-      if (clean.startsWith(BASE + "designs/") && clean.endsWith(".html") && !seen.has(clean)) { seen.add(clean); queue.push(clean); }
+      const norm = clean.endsWith("/index.html") ? clean.slice(0, -10) : clean;
+      if (norm.startsWith(BASE + "designs/") && (norm.endsWith(".html") || norm.endsWith("/")) && !seen.has(norm)) { seen.add(norm); queue.push(norm); }
     }
   }
   await ctx.close();
@@ -112,7 +113,7 @@ async function crawl(slug) {
 
 async function testConcept(slug) {
   console.log(`\n${slug}`);
-  if (!existsSync(path.join(ROOT, "thomas-consultants/designs", slug + ".html"))) return ok(`${slug} exists`, false, "missing home page");
+  if (!existsSync(path.join(ROOT, "thomas-consultants/designs", slug, "index.html"))) return ok(`${slug} exists`, false, "missing home page");
   const pages = await crawl(slug);
   const names = pages.map(p => p.replace(BASE + "designs/", ""));
   ok(`site has home + inner pages (${names.length})`, ["services","projects","about","contact"].every(n => names.some(x => x.endsWith(`${slug}/${n}.html`))), names.join(", "));
@@ -138,7 +139,7 @@ async function testConcept(slug) {
       ok(`${label} no horizontal overflow`, overflow <= 1, `${overflow}px`);
       ok(`${label} no broken links/anchors`, !brokenLinks.length && !missingAnchors.length, [...brokenLinks, ...missingAnchors].slice(0, 4).join(", "));
 
-      if (width === 390 && u.endsWith(`${slug}.html`)) {
+      if (width === 390 && u.endsWith(`${slug}/`)) {
         // mobile menu: find a visible toggle that controls navigation
         const toggle = page.locator('button[aria-expanded], button[aria-controls], .menu-toggle, .burger, .hamburger').filter({ visible: true }).first();
         if (await toggle.count()) {
