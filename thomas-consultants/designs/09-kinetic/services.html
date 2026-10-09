@@ -246,7 +246,8 @@ html.pinned .work__pin{min-height:100vh;display:flex;flex-direction:column;justi
 html.pinned .proj{width:clamp(200px,32vh,24vw)}
 html.pinned .proj__media{aspect-ratio:1/1}
 html.pinned .proj h3,html.pinned .proj p{transition:opacity .4s,visibility .4s}
-html.pinned .proj.edge h3,html.pinned .proj.edge p{opacity:0;visibility:hidden}
+html.pinned .proj.edge h3,html.pinned .proj.edge p,html.pinned .reel__end.edge>*{opacity:0;visibility:hidden}
+html.pinned .reel__end>*{transition:opacity .4s,visibility .4s}
 html.pinned .proj p{font-size:14px}
 html.pinned .work .h2{font-size:clamp(2rem,3.6vw,3.8rem)}
 /* split */
