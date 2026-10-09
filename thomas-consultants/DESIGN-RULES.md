@@ -69,3 +69,54 @@ Apply to every page of your concepts (keep each concept's own visual language an
 - Copy: NZ English, short plain sentences. NO em dashes (—) anywhere in visible copy, no exclamation marks (except inside verbatim client testimonials), no hype words (seamless, unlock, revolutionise, leverage, cutting-edge). Do not invent stats, awards or testimonials beyond BRIEF.md (25 years, 6 disciplines, 3 offices, project count are fine).
 - Footer: Services + Explore columns, legal line "© 2026 Thomas Consultants Ltd", "Some images may be stock images or illustrative renders.", "Proudly designed by AMBS Solutions".
 - REMOVE the "Concept NN" bottom-left badge: the gallery will inject a shared concept switcher (`../assets/concepts.js` style) at the end; just leave `<html data-concept="NN-slug">` on every page.
+
+# Phase 4: rebuild to MiKia standard (client feedback: "not optimised", "not impressive")
+
+Benchmark: https://mikia-consulting.vercel.app (AMBS's own land-development site). Open it, study it, and match its level of craft in your concept's own design language. Do not copy MiKia's brand (red/serif look, logo, copy); copy its *quality and patterns*.
+
+## What makes MiKia impressive (apply these)
+1. **Cinematic full-bleed photo hero**: real photography (or a slow crossfading slideshow of 3 photos with Ken Burns), dark gradient for legibility, a SHORT punchy serif/display headline with one animated or italic accent word that rotates (e.g. "From raw land to *homes* / *parks* / *streets* people love."). The long "Your Trusted Partner for End-to-End Land Development Support" becomes the eyebrow or lede, not the H1. Big pill CTAs, full-width on mobile. Progress bar on the slideshow.
+2. **Discipline showcase**: "Six disciplines. One integrated team." as an interactive carousel/tabs with story progress bars, autoplay with pause, each discipline with a real photo + 3-4 ticked points.
+3. **Process**: 4 stages as sticky stacking cards (CSS position:sticky), each a different tone, with a photo or icon, big stage number.
+4. **Projects**: real photos on EVERY project card; hover zoom; Residential | Commercial | Public spaces split panels with photos.
+5. **"In the field" photo carousel/mosaic** with captions and prev/next.
+6. **People**: use the team photos (engineer-smiling, engineer-scaffold, team-plans, site-visit, park-team) in Why/About so it feels human.
+7. **Rounded section sheets** that overlap the previous section (border-radius 32-40px top, negative margin), alternating light/dark for rhythm. No large empty areas: every section has a visual anchor (photo, illustration, data).
+8. **Warm contact block**: "Let's talk about your site." with a prominent Book a meeting card, phone, email.
+9. Mobile is the primary experience: check every section at 390px. Hero fills the screen, text never cramped, no awkward empty gaps, swipeable carousels, sticky quick bar.
+
+## Photography (mandatory)
+- Use ONLY the self-hosted library `thomas-consultants/assets/img/` (from pages: `../../assets/img/NAME-800.webp` etc). Manifest with alt text, sizes and source project: `assets/img/photos.json`. Each photo has `NAME-800.webp` and usually `NAME-1600.webp` (or a native width listed in `widths`).
+- Every <img>: `srcset` with the available widths, a correct `sizes`, `width`/`height`, `alt` from the manifest, `loading="lazy" decoding="async"` except the LCP hero image (`fetchpriority="high"`, no lazy, plus `<link rel="preload" as="image" imagesrcset=... imagesizes=...>` in <head>).
+- Remove ALL hotlinked thomasconsultants.co.nz images.
+- Project ↔ photo mapping (use real names and matching photos):
+  - McMillan and Lockwood, Kāinga Ora: aerial-apartments, apartments-street
+  - 2 Cracroft Road / 618-620 Great South Road, Kāinga Ora: apartments-colour, aerial-apartment-block
+  - Churchill Park Lookout (landscape architecture): lookout-seat, park-seating, park-team
+  - Observation Green (landscape architecture): play-space
+  - Open Space, Fearon Park (project management): plaza-path
+  - Taurus Crescent, Kāinga Ora (engineering, surveying): aerial-subdivision, aerial-street
+  - Thom Street, New Lynn (engineering design, construction monitoring): apartments-bright, street-new
+  - Tasman Avenue, Mt Albert (engineering, surveying): house-dusk, house-modern
+  - Signature Homes & Kāinga Ora (engineering, planning): aerial-harbour, homes-fenced
+  - Kaimai Avenue, Massey terraced housing: townhouses-new, aerial-townhouses
+  - Elliott Reserve playground, Glenfield (project management): playground
+  - Kauri Glen Reserve, Northcote (ecological assessment): bush
+  - Withers Reserve (environmental): boardwalk
+  - Rural subdivision (stormwater, ecology): stream, swale, swale-path
+  - Henderson High School Heart Space (landscape architecture): render-park
+  - Scott Road, Hobsonville (resource consent): plan-engineering
+- Service photos: surveying → surveyor-road / aerial-subdivision; planning → team-plans / plan-engineering; engineering → engineer-scaffold / roadworks / new-road; landscape → lookout-seat / playground-aerial; environmental → stream / bush / soil-test; project management → site-visit / earthworks-sunset.
+- `surveyor-road`, `team-meeting`, `fern-canopy`, `playground-aerial`, `office`, `plans-desk`, `site-visit`, `engineer-*`, `team-plans` come from the client's general site imagery (fine to use).
+
+## Performance budget (mandatory, measured)
+Test: Playwright, 390x844 mobile, 4x CPU throttle, ~1.6 Mbps, 150 ms latency.
+- LCP < 2.5 s, CLS < 0.05, Total Blocking Time < 300 ms, HTML < 150 KB per page, total page weight on first load < 1.2 MB.
+- Fonts: at most 2 families, only the weights used, `display=swap`, preconnect.
+- JS: GSAP + ScrollTrigger with `defer`; init after `DOMContentLoaded`. Lenis only for `(pointer:fine)` and no reduced motion. No layout reads inside scroll handlers; use ScrollTrigger or rAF. Pause canvas/WebGL/rAF loops when off-screen (IntersectionObserver) and when `document.hidden`; cap canvas DPR at 1.5; on `(pointer:coarse)` or `navigator.hardwareConcurrency<=4` use a lighter variant (fewer particles, no per-frame SVG rebuild).
+- No huge inline SVG/data (generate procedurally in JS if needed). Big decorative SVGs: keep path counts low.
+- `content-visibility:auto; contain-intrinsic-size:auto 800px` on below-the-fold sections that have no pinned ScrollTrigger inside.
+- Animate only transform/opacity/clip-path. Reserve space for images (aspect-ratio) to keep CLS ~0.
+- Keep all Phase 2/3 requirements (pages, nav, forms, JSON-LD, copy rules, data-concept, concepts.js script tag).
+
+Verify with `node thomas-consultants/tests/e2e.mjs NN` (must pass 40/40) and `node thomas-consultants/tests/perf.mjs NN` (must meet the budget on every page).

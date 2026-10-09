@@ -1,0 +1,483 @@
+{
+ "aerial-townhouses": {
+  "alt": "Aerial view of a new townhouse development with landscaped yards",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "3-scaled.jpg.webp"
+ },
+ "aerial-subdivision": {
+  "alt": "Drone view of a completed residential subdivision",
+  "w": 1600,
+  "h": 898,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "DJI_0198-scaled.jpg.webp"
+ },
+ "aerial-street": {
+  "alt": "Aerial view of new homes along a freshly built street",
+  "w": 1280,
+  "h": 719,
+  "widths": [
+   800,
+   1280
+  ],
+  "source": "DJI_0216.jpg.webp"
+ },
+ "aerial-apartments": {
+  "alt": "Aerial view of a four-storey apartment building in an Auckland suburb",
+  "w": 1600,
+  "h": 898,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "DJI_0440-scaled.jpg.webp"
+ },
+ "aerial-harbour": {
+  "alt": "Aerial view of new housing with the harbour behind",
+  "w": 1600,
+  "h": 899,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "Walmer-and-Moa-Road-completed-AR102042-DJI_0230.jpg.webp"
+ },
+ "aerial-apartment-block": {
+  "alt": "Drone view of an apartment block and surrounding streets",
+  "w": 1600,
+  "h": 1066,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "Cracroft-Street-and-Great-South-Road-completed-3-AR101637.jpg.webp"
+ },
+ "engineer-smiling": {
+  "alt": "Thomas Consultants engineer on site in a hard hat and hi-vis vest",
+  "w": 1594,
+  "h": 1365,
+  "widths": [
+   800,
+   1594
+  ],
+  "source": "2b143ca0eeb6913049a40f8f508c3c9b15fb61a6-scaled-1-e1778015448541.jpg"
+ },
+ "engineer-scaffold": {
+  "alt": "Engineer standing in front of scaffolding on a construction site",
+  "w": 1253,
+  "h": 836,
+  "widths": [
+   800,
+   1253
+  ],
+  "source": "civil-engineer-on-construction-site.jpg.webp"
+ },
+ "surveyor-road": {
+  "alt": "Surveyor setting up an instrument beside a road",
+  "w": 1600,
+  "h": 1080,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "69b0428f9489b863c26dad1377fc6a5a66165043-1-scaled.png.webp"
+ },
+ "team-plans": {
+  "alt": "Engineers and planners reviewing plans around a table",
+  "w": 1600,
+  "h": 1069,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "TCL-In-Situ-Staff-39-scaled.jpg.webp"
+ },
+ "team-meeting": {
+  "alt": "Project team meeting in a boardroom",
+  "w": 1600,
+  "h": 992,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "iStock-586922584.jpg"
+ },
+ "office": {
+  "alt": "Thomas Consultants office reception",
+  "w": 1600,
+  "h": 1130,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "TCL-In-Situ-Staff-2-scaled.jpg"
+ },
+ "site-visit": {
+  "alt": "Two consultants in hi-vis inspecting new townhouses",
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "Thomas-Civil-April-Shoot-88-scaled.jpg"
+ },
+ "plans-desk": {
+  "alt": "Hands pointing at a landscape plan on a desk",
+  "w": 1600,
+  "h": 1027,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "project-management-built-environment.jpg"
+ },
+ "park-team": {
+  "alt": "Team members on site at a newly built park lookout",
+  "w": 1600,
+  "h": 900,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "20220310_134111-scaled.jpg.webp"
+ },
+ "apartments-street": {
+  "alt": "Completed apartment building with timber balconies",
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "142A9556-scaled.jpg"
+ },
+ "apartments-colour": {
+  "alt": "Four-storey apartment building with orange panels",
+  "w": 1600,
+  "h": 1066,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "Cracroft-Street-and-Great-South-Road-completed-4-AR101637.jpg.webp"
+ },
+ "townhouses-dark": {
+  "alt": "Three-storey townhouses with dark cladding",
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "IMG_3789-scaled.jpg.webp"
+ },
+ "apartments-white": {
+  "alt": "White apartment buildings on a street corner",
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "IMG_3832-scaled.jpg.webp"
+ },
+ "apartments-bright": {
+  "alt": "Apartment terrace with orange and yellow accents",
+  "w": 1600,
+  "h": 1069,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "ThomSt_Colourful-scaled.jpg"
+ },
+ "townhouses-new": {
+  "alt": "New two-storey townhouses with fresh landscaping",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "1-scaled.jpg.webp"
+ },
+ "townhouses-row": {
+  "alt": "Row of completed townhouses with driveways",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "2-scaled.jpg"
+ },
+ "house-dusk": {
+  "alt": "Contemporary home lit at dusk",
+  "w": 1500,
+  "h": 1028,
+  "widths": [
+   800,
+   1500
+  ],
+  "source": "64gab.jpg.webp"
+ },
+ "house-modern": {
+  "alt": "Modern two-storey home with timber and dark cladding",
+  "w": 1279,
+  "h": 1462,
+  "widths": [
+   800,
+   1279
+  ],
+  "source": "15-Tasman-completion-photo.jpg"
+ },
+ "homes-fenced": {
+  "alt": "New homes behind a black fence and footpath",
+  "w": 1600,
+  "h": 1066,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "Walmer-and-Moa-Road-completed-AR102042-424A4756-1.jpg"
+ },
+ "street-new": {
+  "alt": "A newly completed street of townhouses",
+  "w": 1600,
+  "h": 1069,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "DSC00389-scaled.jpg.webp"
+ },
+ "park-tree": {
+  "alt": "Park pathway under a large tree",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "1-3-scaled.jpg.webp"
+ },
+ "park-seating": {
+  "alt": "Curved timber seating around a new planted garden",
+  "w": 1600,
+  "h": 900,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "20220310_134608-scaled.jpg.webp"
+ },
+ "playground-aerial": {
+  "alt": "Aerial view of a new playground and plaza",
+  "w": 1600,
+  "h": 784,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "Fearon-Drone_Stage-2-complete.jpg"
+ },
+ "playground": {
+  "alt": "Nature playground with timber play structures",
+  "w": 1600,
+  "h": 1069,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "DSC08184-scaled.jpg.webp"
+ },
+ "play-space": {
+  "alt": "Play space with rope fencing and native grasses",
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "IMG_3009-1-scaled.jpg.webp"
+ },
+ "lookout-seat": {
+  "alt": "Curved bench at a park lookout with harbour views",
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "IMG_3066-scaled.jpg"
+ },
+ "plaza-path": {
+  "alt": "Landscaped plaza with pathways and planting",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   800,
+   1024
+  ],
+  "source": "Open-Space-Fearon-Park-5.jpg.webp"
+ },
+ "path-planting": {
+  "alt": "Footpath winding through native planting",
+  "w": 1024,
+  "h": 685,
+  "widths": [
+   800,
+   1024
+  ],
+  "source": "Parker-2-1.jpg"
+ },
+ "render-park": {
+  "alt": "Landscape render of a park with shade sails",
+  "w": 1600,
+  "h": 900,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "Heart-Space-timber-pole-shade-sail-option_Page_4.png.webp"
+ },
+ "court": {
+  "alt": "Outdoor basketball court beside trees",
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "IMG_2951-scaled.jpg"
+ },
+ "stream": {
+  "alt": "Stream with a culvert and native bush",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   800,
+   1024
+  ],
+  "source": "Parker-road-2-1.jpg"
+ },
+ "swale": {
+  "alt": "Restored stream bank with rock armouring",
+  "w": 1024,
+  "h": 678,
+  "widths": [
+   800,
+   1024
+  ],
+  "source": "Parker-road-3-1-1.jpg"
+ },
+ "fern-canopy": {
+  "alt": "Looking up through native fern canopy",
+  "w": 1254,
+  "h": 836,
+  "widths": [
+   800,
+   1254
+  ],
+  "source": "iStock-870041984.jpg"
+ },
+ "bush": {
+  "alt": "Native bush on a hillside",
+  "w": 1512,
+  "h": 2016,
+  "widths": [
+   800,
+   1512
+  ],
+  "source": "kauri-glen-reserve.jpg"
+ },
+ "boardwalk": {
+  "alt": "Timber boardwalk through native bush",
+  "w": 1280,
+  "h": 960,
+  "widths": [
+   800,
+   1280
+  ],
+  "source": "withersroad2.jpg.webp"
+ },
+ "soil-test": {
+  "alt": "Soil test pit on a site investigation",
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "20220729_103205-scaled.jpg.webp"
+ },
+ "swale-path": {
+  "alt": "Concrete path beside a stormwater swale",
+  "w": 1024,
+  "h": 684,
+  "widths": [
+   800,
+   1024
+  ],
+  "source": "parker-road-1.jpg"
+ },
+ "earthworks-sunset": {
+  "alt": "Earthworks site at sunset",
+  "w": 1600,
+  "h": 757,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "20220503_172425-scaled.jpg.webp"
+ },
+ "new-road": {
+  "alt": "Freshly sealed road in a new development",
+  "w": 1600,
+  "h": 758,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "20220506_161552-scaled.jpg.webp"
+ },
+ "roadworks": {
+  "alt": "Road and kerb construction in progress",
+  "w": 1600,
+  "h": 759,
+  "widths": [
+   800,
+   1600
+  ],
+  "source": "20220430_123126-rotated.jpg.webp"
+ },
+ "plan-engineering": {
+  "alt": "Engineering layout plan for a residential development",
+  "w": 2400,
+  "h": 1696,
+  "widths": [
+   800,
+   1600,
+   2400
+  ],
+  "source": "21-Scott-Rd_RC-approved.png.webp"
+ },
+ "plan-landscape": {
+  "alt": "Landscape concept plan for a public park",
+  "w": 1063,
+  "h": 727,
+  "widths": [
+   800,
+   1063
+  ],
+  "source": "Screenshot-152.png.webp"
+ }
+}
