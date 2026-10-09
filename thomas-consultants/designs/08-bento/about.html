@@ -13,6 +13,7 @@
 <meta property="og:image" content="../../assets/img/aerial-subdivision-1600.webp">
 <meta property="og:locale" content="en_NZ">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../../assets/logo/mark.svg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thomasconsultants.co.nz/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://www.thomasconsultants.co.nz/about"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +23,7 @@
 <script>(function(){var h=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;if(!rm&&matchMedia('(pointer:fine)').matches)h.classList.add('gs');try{if(sessionStorage.getItem('tc-pt')&&!rm)h.classList.add('pt-in');sessionStorage.removeItem('tc-pt')}catch(e){}})();</script>
 <style>
 @font-face{font-family:'Jakarta fb';src:local('Arial'),local('Liberation Sans'),local('Helvetica'),local('Roboto');size-adjust:105%}
-:root{--bg:#F4F3EE;--card:#fff;--ink:#17211A;--ink2:#3B4A3E;--muted:#66725F;--line:#E4E2D9;--thomas:#6DAB3C;--thomas-dk:#4E8A2A;--deep:#24461A;--night:#13211A;
+:root{--bg:#F4F3EE;--card:#fff;--ink:#052C31;--ink2:#3B4A3E;--muted:#66725F;--line:#E4E2D9;--thomas:#77A22F;--thomas-dk:#5E8225;--deep:#2F4A12;--night:#052C31;
 --mint:#E6F2DA;--sky:#E1EDF5;--sky-ink:#2F6B8F;--peach:#FBE8D7;--peach-ink:#B15D24;--lilac:#ECE8F7;--lilac-ink:#5E4FA5;--butter:#FAF1CF;--butter-ink:#86670F;
 --font:'Plus Jakarta Sans','Jakarta fb',sans-serif;--r:24px;--gap:14px;--pad:clamp(14px,3.6vw,40px);--sh:0 1px 2px rgba(23,33,26,.05),0 10px 30px -14px rgba(23,33,26,.18);--ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.34,1.56,.64,1)}
 *,*::before,*::after{box-sizing:border-box}
@@ -46,7 +47,7 @@ p{margin:0 0 1em}
 .dk .lede{color:#C3CFBF}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;border:0;cursor:pointer;background:var(--ink);color:#fff;font:700 15px var(--font);text-decoration:none;transition:background .3s,transform .4s var(--spring)}
 .btn:hover{background:var(--deep)}
-.btn.g{background:var(--thomas);color:#0F1E0A}.btn.g:hover{background:#80C152}
+.btn.g{background:var(--thomas);color:#0F1E0A}.btn.g:hover{background:#8AB43F}
 .btn.w{background:#fff;color:var(--ink)}.btn.w:hover{background:var(--mint)}
 .btn.glass{background:rgba(10,18,12,.35);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
 .more{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:#fff;box-shadow:var(--sh);text-decoration:none;font-weight:700;font-size:15px;color:var(--deep)}
@@ -61,7 +62,8 @@ a.tile{text-decoration:none;color:inherit}
 .nav{position:fixed;top:12px;left:0;right:0;z-index:100;padding:0 var(--pad)}
 .nin{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:8px 8px 8px 16px;border-radius:999px;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);box-shadow:var(--sh);transition:background .3s}
 .nav.solid .nin{background:rgba(255,255,255,.94)}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:-.02em;font-size:18px;white-space:nowrap}
+.brand{display:flex;align-items:center;text-decoration:none;min-height:44px}
+.brand img{height:38px;width:auto}
 .brand .mk{width:32px;height:32px;border-radius:11px;background:var(--thomas);display:grid;place-items:center}
 .navl{display:flex;gap:2px;list-style:none;margin:0;padding:0}
 .navl a{display:block;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;color:var(--ink2)}
@@ -154,6 +156,32 @@ a.tile{text-decoration:none;color:inherit}
 .strip span{white-space:nowrap;font-weight:800;font-size:16px;padding:12px 20px;border-radius:999px;background:#fff;box-shadow:var(--sh)}
 .strip span:nth-child(3n+1){background:var(--mint)}.strip span:nth-child(3n+2){background:var(--sky)}
 @keyframes mq{to{transform:translateX(-50%)}}
+/* phase 5 homeowner sections */
+.gq{display:block;font-size:16px;line-height:1.3;letter-spacing:-.01em}
+.hs .panel{margin-top:auto}
+.cl{display:grid;gap:var(--gap);grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"a b c c" "d d c c"}
+.cl .tile{padding:24px}.cl1{grid-area:a}.cl2{grid-area:b}.cl3{grid-area:c;min-height:380px}.cl4{grid-area:d}
+.cl h3{font-size:22px;margin-bottom:8px}.cl p{margin:0;color:var(--ink2)}
+.rpgrid{display:grid;gap:var(--gap);grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"a b big big" "c d big big" "q q q q"}
+.rp{display:grid;grid-template-rows:auto 1fr;text-decoration:none}
+.rp:nth-child(1){grid-area:a}.rp:nth-child(2){grid-area:b}.rp:nth-child(3){grid-area:c}.rp:nth-child(4){grid-area:d}
+.rp .ph{aspect-ratio:16/9;overflow:hidden}.rp .ph img{width:100%;height:100%;object-fit:cover}
+.rp .tx{padding:14px 16px 16px}
+.num{display:block;font-size:clamp(44px,4.4vw,64px);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--ink)}
+.rp span{display:block;font-weight:700;margin-top:4px}.rp small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+.rpbig{grid-area:big;min-height:420px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end}
+.rpbig .num{font-size:clamp(80px,9vw,140px)}
+.rq{grid-area:q;margin:0;padding:clamp(22px,3vw,36px)}
+.rq blockquote{margin:0;font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.3}
+.rq figcaption{margin-top:10px;font-weight:700;color:var(--ink2)}
+.scgrid{display:grid;gap:var(--gap);grid-template-columns:repeat(3,minmax(0,1fr))}
+.sc{min-height:260px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none}
+.sc b{display:block;font-size:18px}.sc span{display:block;font-size:14px;color:var(--ink2);margin-top:2px}
+.fqwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,70px);align-items:start}
+.pd .casebody p{color:var(--ink2)}
+.caseh{font-size:22px;margin:24px 0 6px}
+.casequote{margin:20px 0;padding:18px 20px;border-radius:18px;background:var(--mint);font-weight:800;font-size:19px;line-height:1.4}
+.casequote cite{display:block;margin-top:8px;font-weight:700;font-size:14px;color:var(--ink2);font-style:normal}
 /* disciplines */
 .dtabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:18px}
 .dtab{position:relative;overflow:hidden;border:0;cursor:pointer;min-height:46px;padding:0 18px;border-radius:999px;background:#fff;box-shadow:var(--sh);font:700 14px var(--font);color:var(--ink2)}
@@ -201,6 +229,7 @@ a.tile{text-decoration:none;color:inherit}
 .stage{position:sticky;top:calc(92px + var(--n) * 16px);display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding:var(--gap);border-radius:30px;box-shadow:0 -12px 40px -24px rgba(0,0,0,.3);min-height:clamp(360px,44vh,440px)}
 .stage .tx{padding:clamp(14px,2.4vw,30px);display:flex;flex-direction:column}
 .stage .no{width:64px;height:64px;border-radius:20px;background:#fff;display:grid;place-items:center;font-size:26px;font-weight:800}
+.stage .no{margin-bottom:18px}
 .stage .k{font-size:13px;font-weight:800;color:var(--muted);margin:18px 0 6px}
 .stage h3{font-size:clamp(26px,2.6vw,38px);margin-bottom:8px}
 .stage p{margin:0;color:var(--ink2)}
@@ -407,6 +436,8 @@ html.pt-out .pt i{transform:scale(1.25)}
 @keyframes pts{to{transform:scale(0)}}
 @media (max-aspect-ratio:1/1){.pt{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(6,1fr)}}
 @media (max-width:1060px){
+  .scgrid{grid-template-columns:1fr 1fr}
+  .fqwrap{grid-template-columns:1fr}
   .navl,.nav .btn{display:none}.burger{display:grid}
   .hgrid{grid-template-columns:1fr 1fr;grid-template-rows:auto;grid-template-areas:"main main" "a b" "c d" "e f"}
   .hgrid>.tile:not(.hmain){min-height:220px}
@@ -427,6 +458,11 @@ html.pt-out .pt i{transform:scale(1.25)}
   .foot{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
+  .brand img{height:32px}
+  .cl{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "d"}.cl3{min-height:260px}
+  .rpgrid{grid-template-columns:1fr 1fr;grid-template-areas:"big big" "a b" "c d" "q q"}.rpbig{min-height:380px}
+  .scgrid{grid-template-columns:1fr 1fr}.sc{min-height:200px}
+  .fqwrap{grid-template-columns:1fr}
   .qbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:110;padding:8px;border-radius:999px;background:#fff;box-shadow:0 20px 40px -10px rgba(0,0,0,.3)}
   .qbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;text-decoration:none;font-weight:800;font-size:14px;background:var(--ink);color:#fff}
   .qbar a.b{background:var(--thomas);color:#0F1E0A}
@@ -462,7 +498,7 @@ html.pt-out .pt i{transform:scale(1.25)}
 <a class="skip" href="#main">Skip to content</a>
 <div id="topSentinel" style="position:absolute;top:0;height:60px;width:1px" aria-hidden="true"></div>
 <header class="nav" id="nav"><div class="nin">
-  <a class="brand" href="index.html" aria-label="Thomas Consultants home"><span class="mk"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 14 L7 6 L10 10 L12 7 L16 14Z" fill="#fff"/></svg></span>Thomas Consultants</a>
+  <a class="brand" href="index.html"><img src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="145" height="38"></a>
   <nav aria-label="Primary"><ul class="navl"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
   <a class="btn g magnetic" href="contact.html#book">Book a consultation</a>
   <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
@@ -472,10 +508,10 @@ html.pt-out .pt i{transform:scale(1.25)}
 <section class="hb" id="top" aria-labelledby="h1"><div class="wrap"><div class="hgrid pgr">
   <div class="tile hmain"><div class="slide on"><img src="../../assets/img/park-team-800.webp" srcset="../../assets/img/park-team-800.webp 800w, ../../assets/img/park-team-1600.webp 1600w" sizes="(max-width: 1060px) 100vw, 72vw" width="1600" height="900" alt="Team members on site at a newly built park lookout" fetchpriority="high" decoding="async"></div>
     <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">About</span></li></ol></nav><h1 id="h1">Twenty-five years of better spaces.</h1><p class="lede" style="margin-top:12px">We are land development specialists. We help our clients create smarter, more sustainable spaces, and we stay with them for the whole journey.</p></div>
-  <div class="tile hs ha " style="--i:1;--fx:120px;--fy:0"><img class="bg" src="../../assets/img/engineer-smiling-800.webp" srcset="../../assets/img/engineer-smiling-800.webp 800w, ../../assets/img/engineer-smiling-1594.webp 1594w" sizes="(max-width: 1060px) 46vw, 23vw" width="1594" height="1365" alt="Thomas Consultants engineer on site in a hard hat and hi-vis vest" loading="lazy" decoding="async"><span class="lbl" style="align-self:flex-start">Experience</span><div class="panel"><div class="odo" data-to="25"><span>25</span><sup>+</sup></div><div class="cap">years of land development</div></div></div><div class="tile hs hbb " style="--i:2;--fx:120px;--fy:0"><img class="bg" src="../../assets/img/park-tree-800.webp" srcset="../../assets/img/park-tree-800.webp 800w, ../../assets/img/park-tree-1600.webp 1600w" sizes="(max-width: 1060px) 46vw, 23vw" width="1600" height="1200" alt="Park pathway under a large tree" loading="lazy" decoding="async"><span class="lbl" style="align-self:flex-start">Sustainability</span><div class="panel" style="width:56%;align-self:flex-end"><svg viewBox="0 0 200 200" aria-hidden="true"><ellipse cx="100" cy="190" rx="60" ry="8" fill="#E9CDB3"/>
+  <div class="tile hs ha " style="--i:1;--fx:120px;--fy:0"><img class="bg" src="../../assets/img/engineer-smiling-800.webp" srcset="../../assets/img/engineer-smiling-800.webp 800w, ../../assets/img/engineer-smiling-1594.webp 1594w" sizes="(max-width: 1060px) 46vw, 23vw" width="1594" height="1365" alt="Thomas Consultants engineer on site in a hard hat and hi-vis vest" loading="lazy" decoding="async"><span class="lbl" style="align-self:flex-start">Our people</span><div class="panel"><div class="cap">Engineers, planners, surveyors, landscape architects and ecologists.</div></div></div><div class="tile hs hbb " style="--i:2;--fx:120px;--fy:0"><img class="bg" src="../../assets/img/park-tree-800.webp" srcset="../../assets/img/park-tree-800.webp 800w, ../../assets/img/park-tree-1600.webp 1600w" sizes="(max-width: 1060px) 46vw, 23vw" width="1600" height="1200" alt="Park pathway under a large tree" loading="lazy" decoding="async"><span class="lbl" style="align-self:flex-start">Sustainability</span><div class="panel" style="width:56%;align-self:flex-end"><svg viewBox="0 0 200 200" aria-hidden="true"><ellipse cx="100" cy="190" rx="60" ry="8" fill="#E9CDB3"/>
   <path class="m-draw" pathLength="1" d="M100 190 C100 160 98 140 100 110 M100 150 C90 138 82 132 72 124 M100 134 C112 124 120 118 130 108" stroke="#7A4E2C" stroke-width="7" stroke-linecap="round" fill="none"/>
-  <circle class="m-pop" style="animation-delay:.5s" cx="100" cy="86" r="36" fill="#6DAB3C"/><circle class="m-pop" style="animation-delay:.65s" cx="70" cy="106" r="24" fill="#4E8A2A"/>
-  <circle class="m-pop" style="animation-delay:.8s" cx="130" cy="102" r="26" fill="#80C152"/><circle class="m-pop" style="animation-delay:.95s" cx="104" cy="58" r="22" fill="#9BCF6E"/></svg></div></div>
+  <circle class="m-pop" style="animation-delay:.5s" cx="100" cy="86" r="36" fill="#77A22F"/><circle class="m-pop" style="animation-delay:.65s" cx="70" cy="106" r="24" fill="#4E8A2A"/>
+  <circle class="m-pop" style="animation-delay:.8s" cx="130" cy="102" r="26" fill="#8AB43F"/><circle class="m-pop" style="animation-delay:.95s" cx="104" cy="58" r="22" fill="#9BCF6E"/></svg></div></div>
 </div></div></section>
 <section class="sec" aria-labelledby="stT"><div class="wrap">
   <div class="head rv"><div><span class="pill">Our story</span><h2 id="stT">Built over 25 years.</h2></div></div>
@@ -516,6 +552,15 @@ html.pt-out .pt i{transform:scale(1.25)}
     <div class="tile rv" style="color:#fff;min-height:300px;--rd:160ms"><img class="bg" src="../../assets/img/playground-800.webp" srcset="../../assets/img/playground-800.webp 800w, ../../assets/img/playground-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 31vw" width="1600" height="1069" alt="Nature playground with timber play structures" loading="lazy" decoding="async"><h3 style="text-shadow:0 2px 12px rgba(0,0,0,.5)">Better public spaces</h3><p style="color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5)">Parks, reserves and play spaces that communities enjoy.</p></div>
   </div>
 </div></section>
+<section class="sec sheet dk cv" aria-labelledby="fT">
+  <div class="wrap" data-car>
+    <div class="head rv"><div><span class="pill">In the field</span><h2 id="fT">Out on site.</h2></div><p class="lede">Our surveyors, engineers and ecologists at work, from the first site visit to the handover.</p></div>
+    <div class="ctrack" tabindex="0" aria-label="Photos from the field"><figure class="tile citem"><img class="bg" src="../../assets/img/surveyor-road-800.webp" srcset="../../assets/img/surveyor-road-800.webp 800w, ../../assets/img/surveyor-road-1600.webp 1600w" sizes="(max-width: 760px) 76vw, 380px" width="1600" height="1080" alt="Surveyor setting up an instrument beside a road" loading="lazy" decoding="async"><figcaption><b>Survey</b><span>Understanding the land</span></figcaption></figure><figure class="tile citem"><img class="bg" src="../../assets/img/earthworks-sunset-800.webp" srcset="../../assets/img/earthworks-sunset-800.webp 800w, ../../assets/img/earthworks-sunset-1600.webp 1600w" sizes="(max-width: 760px) 76vw, 380px" width="1600" height="757" alt="Earthworks site at sunset" loading="lazy" decoding="async"><figcaption><b>Earthworks</b><span>Shaping the site</span></figcaption></figure><figure class="tile citem"><img class="bg" src="../../assets/img/roadworks-800.webp" srcset="../../assets/img/roadworks-800.webp 800w, ../../assets/img/roadworks-1600.webp 1600w" sizes="(max-width: 760px) 76vw, 380px" width="1600" height="759" alt="Road and kerb construction in progress" loading="lazy" decoding="async"><figcaption><b>Roads</b><span>Kerb and channel going in</span></figcaption></figure><figure class="tile citem"><img class="bg" src="../../assets/img/soil-test-800.webp" srcset="../../assets/img/soil-test-800.webp 800w, ../../assets/img/soil-test-1600.webp 1600w" sizes="(max-width: 760px) 76vw, 380px" width="1600" height="1200" alt="Soil test pit on a site investigation" loading="lazy" decoding="async"><figcaption><b>Testing</b><span>What is in the ground</span></figcaption></figure><figure class="tile citem"><img class="bg" src="../../assets/img/swale-800.webp" srcset="../../assets/img/swale-800.webp 800w, ../../assets/img/swale-1024.webp 1024w" sizes="(max-width: 760px) 76vw, 380px" width="1024" height="678" alt="Restored stream bank with rock armouring" loading="lazy" decoding="async"><figcaption><b>Stormwater</b><span>A restored stream bank</span></figcaption></figure><figure class="tile citem"><img class="bg" src="../../assets/img/park-team-800.webp" srcset="../../assets/img/park-team-800.webp 800w, ../../assets/img/park-team-1600.webp 1600w" sizes="(max-width: 760px) 76vw, 380px" width="1600" height="900" alt="Team members on site at a newly built park lookout" loading="lazy" decoding="async"><figcaption><b>Handover</b><span>A new lookout, ready to enjoy</span></figcaption></figure><figure class="tile citem"><img class="bg" src="../../assets/img/new-road-800.webp" srcset="../../assets/img/new-road-800.webp 800w, ../../assets/img/new-road-1600.webp 1600w" sizes="(max-width: 760px) 76vw, 380px" width="1600" height="758" alt="Freshly sealed road in a new development" loading="lazy" decoding="async"><figcaption><b>Delivered</b><span>A new street for a new neighbourhood</span></figcaption></figure></div>
+    <div class="cctrl"><div class="cdots" aria-hidden="true"></div><div style="display:flex;align-items:center;gap:10px"><span class="ccount">1 / 7</span>
+  <button class="cbtn cprev" type="button" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 4L6 10l6 6"/></svg></button>
+  <button class="cbtn cnext" type="button" aria-label="Next"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 4l6 6-6 6"/></svg></button></div></div>
+  </div>
+</section>
 <section class="sec sheet wh cv" aria-labelledby="tT">
   <div class="wrap"><div class="head rv"><div><span class="pill">Trusted and accredited</span><h2 id="tT">In good company.</h2></div></div>
   <div class="trust"><div class="tile rv" style="background:var(--bg);box-shadow:none"><h3>Clients</h3><ul class="chips"><li>Kāinga Ora</li><li>Auckland Transport</li><li>Watercare</li><li>Panuku</li><li>NZ Transport Agency</li><li>Ministry of Education</li><li>Waikato District Council</li><li>Rotorua Lakes Council</li><li>Hobsonville Point</li><li>Homes of Choice</li></ul></div><div class="tile mint rv"><h3>Accreditations</h3><ul class="chips"><li>ISO 45001</li><li>IANZ</li><li>Toitū Envirocare</li><li>Engineering NZ</li><li>Water NZ</li><li>Survey and Spatial NZ</li><li>NZ Planning Institute</li><li>NZILA</li><li>SiteSafe</li><li>SiteWise</li></ul></div></div></div>
@@ -537,14 +582,14 @@ html.pt-out .pt i{transform:scale(1.25)}
 </div></section>
 <section class="sec cv" aria-labelledby="ctaT" style="padding-top:clamp(40px,5vw,70px)">
   <div class="wrap ctab">
-    <div class="tile m rv"><h2 id="ctaT">Let's talk about your site.</h2><p>Book Your Free Development Consultation or a Complimentary Planner Meeting. Tell us about your land and we will help you plan the next step.</p><div class="ctas"><a class="btn magnetic" href="contact.html#book">Book a free consultation</a><a class="btn w magnetic" href="tel:+6498361804">Call 09 836 1804</a></div></div>
+    <div class="tile m rv"><h2 id="ctaT">Have a section in mind?</h2><p>Book Your Free Development Consultation or a Complimentary Planner Meeting. Tell us about your land and we will help you plan the next step.</p><div class="ctas"><a class="btn magnetic" href="contact.html#book">Book a free consultation</a><a class="btn w magnetic" href="tel:+6498361804">Call 09 836 1804</a></div></div>
     <div class="tile p rv"><img class="bg" src="../../assets/img/site-visit-800.webp" srcset="../../assets/img/site-visit-800.webp 800w, ../../assets/img/site-visit-1600.webp 1600w" sizes="(max-width: 1060px) 92vw, 40vw" width="1600" height="1067" alt="Two consultants in hi-vis inspecting new townhouses" loading="lazy" decoding="async"><div class="panel"><small style="font-weight:700;color:var(--muted)">Auckland Head Office</small><a href="tel:+6498361804">09 836 1804</a><small style="font-weight:700;color:var(--muted)">Manukau</small><a href="tel:+6498696070">09 869 6070</a></div></div>
   </div>
 </section>
 </main>
 <footer><div class="wrap">
   <div class="tile foot">
-    <div><a class="brand" href="index.html"><span class="mk"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 14 L7 6 L10 10 L12 7 L16 14Z" fill="#fff"/></svg></span>Thomas Consultants</a><p>Land Development &amp; Subdivision Consultants. Creating Better Spaces Together.</p>
+    <div><a class="brand" href="index.html"><img src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="167" height="44" loading="lazy"></a><p>Land Development &amp; Subdivision Consultants. Creating Better Spaces Together.</p>
       <ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li>Christchurch satellite office</li></ul></div>
     <div><h4>Services</h4><ul><li><a href="services.html#land-surveying">Land Surveying</a></li><li><a href="services.html#rma-planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape-architecture">Landscape Architecture</a></li><li><a href="services.html#environmental-services">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
     <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
@@ -776,12 +821,6 @@ document.addEventListener('DOMContentLoaded', function(){
     if (TC.reduce) return;
     TC.vis(o, function(v){ if (!v || o._done) return; o._done = 1; var t0 = 0; el.textContent = '0';
       (function f(t){ if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 1600); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); })(performance.now()); });
-  });
-  /* theodolite bearing readout ticks while visible */
-  document.querySelectorAll('[data-bearing]').forEach(function(el){
-    var a = 127.2, d = 1, iv = 0;
-    if (TC.reduce) return;
-    TC.vis(el, function(v){ clearInterval(iv); if (v) iv = setInterval(function(){ if (document.hidden) return; a += d * .27; if (a > 131.8 || a < 127.2) d = -d; var g = Math.floor(a), m = Math.floor((a - g) * 60); el.textContent = g + '° ' + (m < 10 ? '0' : '') + m + '′'; }, 200); });
   });
   /* quiz */
   var quiz = document.getElementById('quiz');

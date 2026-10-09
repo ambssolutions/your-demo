@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About | Thomas Consultants · Concept 07</title>
 <meta name="description" content="Thomas Consultants has delivered land development and infrastructure projects for 25 years. Our values, people, accreditations, clients and offices.">
-<meta name="theme-color" content="#15281E">
+<meta name="theme-color" content="#052C31">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Thomas Consultants">
 <meta property="og:title" content="About | Thomas Consultants · Concept 07">
@@ -13,6 +13,7 @@
 <meta property="og:image" content="../../assets/img/aerial-harbour-1600.webp">
 <meta property="og:locale" content="en_NZ">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../../assets/logo/mark.svg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thomasconsultants.co.nz/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://www.thomasconsultants.co.nz/about"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +23,7 @@
 <script>(function(){var h=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;if(!rm&&matchMedia('(pointer:fine)').matches)h.classList.add('gs');try{if(sessionStorage.getItem('tc-pt')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('pt-in');sessionStorage.removeItem('tc-pt')}catch(e){}})();</script>
 <style>
 @font-face{font-family:'Oswald fb';src:local('Arial'),local('Liberation Sans'),local('Helvetica'),local('Roboto');size-adjust:79%}
-:root{--forest:#15281E;--forest2:#1E3829;--moss:#3F6B2E;--thomas:#6DAB3C;--thomas-dk:#4F8A2A;--fern:#8BC45A;--sand:#EADFC8;--paper:#F5EFE2;--white:#FFFDF8;--clay:#B9763C;--ink:#14201A;--muted:#55645A;--line:rgba(20,32,26,.14);
+:root{--forest:#052C31;--forest2:#0B3A3E;--moss:#4A6B24;--thomas:#77A22F;--thomas-dk:#5E8225;--fern:#A3C55E;--sand:#EADFC8;--paper:#F5EFE2;--white:#FFFDF8;--clay:#B9763C;--ink:#052C31;--muted:#55645A;--line:rgba(20,32,26,.14);
 --display:'Oswald','Oswald fb',sans-serif;--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--pad:clamp(16px,5vw,64px);--r:22px;--ease:cubic-bezier(.2,.7,.1,1)}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
@@ -45,7 +46,7 @@ p{margin:0 0 1em}
 .dark .lede{color:#C5D3C2}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;border:0;cursor:pointer;background:var(--thomas);color:#0E1A10;font:700 15px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .4s var(--ease)}
 .btn:hover{background:var(--fern)}
-.btn.ghost{background:rgba(21,40,30,.35);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
+.btn.ghost{background:rgba(5,44,49,.35);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
 .btn.ghost:hover{background:rgba(255,255,255,.2)}
 .btn.dark{background:var(--forest);color:#fff}
 .btn.dark:hover{background:var(--moss)}
@@ -53,18 +54,20 @@ p{margin:0 0 1em}
 .dark .more{color:#fff}
 .ticks{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
 .ticks li{display:flex;gap:12px;align-items:flex-start}
-.ticks li::before{content:"";flex:0 0 20px;height:20px;margin-top:3px;border-radius:50%;background:var(--thomas) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%2314201A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.ticks li::before{content:"";flex:0 0 20px;height:20px;margin-top:3px;border-radius:50%;background:var(--thomas) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%23052C31' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
 /* header */
 .nav{position:fixed;inset:0 0 auto;z-index:100;color:#fff;transition:background .4s,box-shadow .4s}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
-.nav.solid{background:rgba(21,40,30,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 19px var(--display);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.nav.solid{background:rgba(5,44,49,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.brand{display:flex;align-items:center;text-decoration:none;min-height:44px}
+.brand img{height:42px;width:auto}
+footer .brand img{height:46px}
 .navl{display:flex;gap:2px;list-style:none;margin:0;padding:0}
 .navl a{display:block;padding:10px 14px;border-radius:999px;text-decoration:none;font:700 14px var(--display);letter-spacing:.12em;text-transform:uppercase}
 .navl a:hover{background:rgba(255,255,255,.12)}
 .navl a[aria-current]{background:rgba(139,196,90,.28)}
 .nav .btn{min-height:46px;padding:0 20px;font-size:13px}
-.burger{display:none;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.45);background:rgba(21,40,30,.4);color:#fff;cursor:pointer;place-items:center}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.45);background:rgba(5,44,49,.4);color:#fff;cursor:pointer;place-items:center}
 .burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:currentColor;transition:transform .3s}
 .burger span{position:relative}.burger span::before,.burger span::after{content:"";position:absolute;left:0}
 .burger span::before{top:-6px}.burger span::after{top:6px}
@@ -84,7 +87,7 @@ p{margin:0 0 1em}
 .slide img{width:100%;height:100%;object-fit:cover}
 .slide.on img{animation:kb 9s ease-out both}
 @keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
-.shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,20,14,.55) 0%,rgba(10,20,14,.15) 30%,rgba(10,20,14,.35) 58%,rgba(10,20,14,.82) 100%)}
+.shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(3,30,34,.55) 0%,rgba(3,30,34,.15) 30%,rgba(3,30,34,.35) 58%,rgba(3,30,34,.82) 100%)}
 .ridges{position:absolute;left:0;right:0;bottom:-2px;z-index:3;height:clamp(110px,16vw,220px);pointer-events:none}
 .ridges svg{position:absolute;left:50%;bottom:0;width:max(100%,1100px);height:100%;transform:translateX(-50%)}
 .ridges .rl{position:absolute;inset:0}.ridges .rl svg{animation:rup 1.4s var(--ease) both}.ridges .r2 svg{animation-delay:.12s}.ridges .r3 svg{animation-delay:.24s}
@@ -133,6 +136,28 @@ p{margin:0 0 1em}
 /* reveal */
 .io .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform 1s var(--ease);transition-delay:var(--rd,0ms)}
 .io .rv.in{opacity:1;transform:none}
+/* phase 5 long-form */
+.leadp{font-size:clamp(20px,1.8vw,25px);line-height:1.5;color:var(--forest);margin:20px 0 18px}
+.two p{color:var(--muted)}
+.bigfig{margin:0}
+.bigfig img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;background:var(--moss)}
+.bigfig figcaption{font-size:14.5px;color:var(--muted);margin-top:10px}
+.feat{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(26px,5vw,72px);align-items:center;padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)}
+.feat:nth-of-type(even) .bigfig{order:2}
+.feat h3{font-size:clamp(28px,3vw,42px);color:var(--forest)}
+.feat p{color:var(--muted)}
+.bign{font:700 clamp(58px,7vw,108px)/.9 var(--display);color:var(--thomas-dk)!important;margin:16px 0 18px}
+.bign small{display:block;font:600 15px/1.4 var(--sans);color:var(--muted);margin-top:8px;text-transform:none}
+.quote{position:relative;overflow:hidden;padding:clamp(110px,13vw,190px) 0}
+.quote>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28}
+.quote .wrap{position:relative}
+.quote blockquote{margin:0;max-width:24ch;font:700 clamp(30px,3.8vw,56px)/1.12 var(--display);color:#fff}
+.quote blockquote::before{content:"\201C";color:var(--fern)}
+.quote p{margin-top:24px;color:#C5D3C2}
+.caseh{font-size:26px;color:var(--forest);margin:30px 0 4px}
+.casebody p{color:var(--ink);font-size:18px}
+.casequote{margin:26px 0;padding:22px 24px;border-left:4px solid var(--thomas);background:var(--white);border-radius:0 16px 16px 0;font:700 22px/1.35 var(--display);color:var(--forest)}
+.casequote cite{display:block;margin-top:10px;font:600 14px var(--sans);color:var(--muted);font-style:normal}
 /* disciplines */
 .dtabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:18px}
 .dtab{background:none;border:0;padding:0 0 6px;text-align:left;cursor:pointer;color:var(--muted);font:600 15px var(--sans);min-height:44px}
@@ -149,7 +174,7 @@ p{margin:0 0 1em}
 .dpanel{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.1fr 1fr;background:var(--white);border-radius:28px;overflow:hidden;min-height:480px;border:1px solid var(--line)}
 .dpanel .ph{position:relative;overflow:hidden;background:var(--moss)}
 .dpanel .ph img{width:100%;height:100%;object-fit:cover}
-.dpanel .ph .tag{position:absolute;left:18px;bottom:18px;background:rgba(21,40,30,.78);color:#fff;font:700 12px var(--display);letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+.dpanel .ph .tag{position:absolute;left:18px;bottom:18px;background:rgba(5,44,49,.78);color:#fff;font:700 12px var(--display);letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}
 .dpanel .tx{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center}
 .dpanel .k{font:700 12px var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
 .dpanel h3{font-size:clamp(32px,3.6vw,52px);margin:12px 0 12px;color:var(--forest)}
@@ -184,7 +209,7 @@ p{margin:0 0 1em}
 .koru{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
 .korubox{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--moss)}
 .korubox img{width:100%;height:100%;object-fit:cover}
-.korubox::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,40,30,.15),rgba(21,40,30,.7))}
+.korubox::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,44,49,.15),rgba(5,44,49,.7))}
 .korubox svg{position:absolute;inset:6% 8%;width:84%;height:88%;z-index:2}
 .pillars{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
 .pillars li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.7)}
@@ -195,7 +220,7 @@ p{margin:0 0 1em}
 .stack{display:grid;gap:26px}
 .stage{position:sticky;top:calc(92px + var(--n) * 18px);display:grid;grid-template-columns:1.2fr 1fr;min-height:clamp(380px,46vh,460px);border-radius:28px;overflow:hidden;box-shadow:0 -14px 40px -24px rgba(0,0,0,.35)}
 .stage .tx{padding:clamp(26px,3.6vw,50px);display:flex;flex-direction:column}
-.stage .no{font:700 clamp(70px,8vw,120px)/.85 var(--display);opacity:.9}
+.stage .no{font:700 clamp(70px,8vw,120px)/.85 var(--display);opacity:.9;margin-bottom:16px}
 .stage .k{font:700 12px var(--display);letter-spacing:.2em;text-transform:uppercase;margin:14px 0 8px;opacity:.8}
 .stage h3{font-size:clamp(28px,3vw,44px);margin-bottom:10px}
 .stage p{margin:0;opacity:.85}
@@ -210,7 +235,7 @@ p{margin:0 0 1em}
 .spl{position:relative;display:block;aspect-ratio:4/5;border-radius:24px;overflow:hidden;color:#fff;text-decoration:none;background:var(--moss)}
 .spl img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .spl:hover img{transform:scale(1.07)}
-.spl::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,20,14,.85))}
+.spl::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(3,30,34,.85))}
 .spl .c{position:absolute;left:22px;right:22px;bottom:20px;z-index:1}
 .spl b{display:block;font:700 clamp(28px,2.6vw,38px)/1 var(--display);text-transform:uppercase}
 .spl span{font-size:15px;color:#E6EEE2}
@@ -239,7 +264,7 @@ p{margin:0 0 1em}
 .citem{flex:0 0 min(78vw,440px);scroll-snap-align:start;position:relative;margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--moss)}
 .citem img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .citem:hover img{transform:scale(1.06)}
-.citem::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,20,14,.82))}
+.citem::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(3,30,34,.82))}
 .citem figcaption{position:absolute;left:20px;right:20px;bottom:18px;z-index:1;color:#fff}
 .citem b{display:block;font:700 28px/1 var(--display);text-transform:uppercase}
 .citem span{font-size:15px;color:#E6EEE2}
@@ -264,7 +289,7 @@ p{margin:0 0 1em}
 .cgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,4vw,60px);align-items:start}
 .bookcard{position:relative;border-radius:26px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;color:#fff;background:var(--moss);margin-top:26px}
 .bookcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.bookcard::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,20,14,.1),rgba(10,20,14,.85))}
+.bookcard::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(3,30,34,.1),rgba(3,30,34,.85))}
 .bookcard>*:not(img){position:relative;z-index:2}
 .bookcard h3{font-size:clamp(28px,2.6vw,38px);margin-bottom:8px}
 .bookcard p{color:#E6EEE2;margin:0 0 18px}
@@ -299,7 +324,7 @@ p{margin:0 0 1em}
 /* cta band */
 .ctaband{position:relative;overflow:hidden;color:#fff;background:var(--forest)}
 .ctaband>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ctaband::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,20,14,.9),rgba(10,20,14,.45))}
+.ctaband::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(3,30,34,.9),rgba(3,30,34,.45))}
 .ctaband .wrap{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
 .ctaband h2{max-width:14ch}
 .ctaband h2 em{font-style:normal;color:var(--fern)}
@@ -357,7 +382,7 @@ a.office:hover img{transform:scale(1.06)}
 .role a{color:var(--thomas-dk);font-weight:600}
 .pnav{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:40px}
 /* footer */
-footer{background:#0F1E16;color:#B7C6B4;padding:70px 0 40px;font-size:15px;content-visibility:auto;contain-intrinsic-size:auto 600px}
+footer{background:#03252A;color:#B7C6B4;padding:70px 0 40px;font-size:15px;content-visibility:auto;contain-intrinsic-size:auto 600px}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
 footer h4{font:700 14px var(--display);letter-spacing:.16em;text-transform:uppercase;color:#fff;margin:0 0 12px}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
@@ -392,6 +417,7 @@ html.pt-out .pt{transform:none}
   .values,.offices{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
+  .feat{grid-template-columns:1fr}.feat:nth-of-type(even) .bigfig{order:0}
   .dtabs{display:flex;overflow-x:auto;scrollbar-width:none;gap:14px;margin:0 calc(-1 * var(--pad)) 14px;padding:0 var(--pad)}
   .dtabs::-webkit-scrollbar{display:none}
   .dtab{flex:0 0 auto;white-space:nowrap}
@@ -405,7 +431,8 @@ html.pt-out .pt{transform:none}
   .spl{aspect-ratio:3/4}
 }
 @media (max-width:760px){
-  .qbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:110;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#15281E}
+  .brand img{height:32px}
+  .qbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:110;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#052C31}
   .qbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;text-decoration:none;font:700 14px var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
   .qbar a.b{background:var(--thomas);color:#0E1A10;box-shadow:none}
   footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
@@ -434,7 +461,7 @@ html.pt-out .pt{transform:none}
 <a class="skip" href="#main">Skip to content</a>
 <div id="topSentinel" style="position:absolute;top:0;height:120px;width:1px" aria-hidden="true"></div>
 <header class="nav" id="nav"><div class="wrap">
-  <a class="brand" href="index.html" aria-label="Thomas Consultants home"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 26 L11 12 L16 19 L21 9 L30 26Z" fill="#8BC45A"/><path d="M18.5 14 L21 9 L23.5 14 L21 12.8Z" fill="#fff"/></svg>Thomas Consultants</a>
+  <a class="brand" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="160" height="42"></a>
   <nav aria-label="Primary"><ul class="navl"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
   <a class="btn magnetic" href="contact.html#book">Book a consultation</a>
   <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
@@ -450,8 +477,8 @@ html.pt-out .pt{transform:none}
     <p class="lede">We are land development specialists. We help our clients create smarter, more sustainable spaces, and we stay with them for the whole journey.</p>
   </div></div>
   <div class="ridges" aria-hidden="true">
-  <div class="rl r1"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 220V96L120 52L230 88L360 30L470 80L600 44L720 92L860 26L980 78L1110 40L1240 90L1360 50L1440 70V220Z" fill="#15281E"/></svg></div>
-  <div class="rl r2"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 220V140C140 110 240 120 380 138S620 96 760 112S1020 150 1160 124S1360 100 1440 116V220Z" fill="#1E3829"/></svg></div>
+  <div class="rl r1"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 220V96L120 52L230 88L360 30L470 80L600 44L720 92L860 26L980 78L1110 40L1240 90L1360 50L1440 70V220Z" fill="#052C31"/></svg></div>
+  <div class="rl r2"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 220V140C140 110 240 120 380 138S620 96 760 112S1020 150 1160 124S1360 100 1440 116V220Z" fill="#0B3A3E"/></svg></div>
   <div class="rl r3"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 220V184C200 160 360 176 560 182S900 150 1100 166S1340 188 1440 176V220Z" fill="#F5EFE2"/></svg></div>
 </div>
 </section>
@@ -475,7 +502,7 @@ html.pt-out .pt{transform:none}
       <p class="eyebrow">Why choose us</p>
       <h2 id="whyT">25 years of reading the land.</h2>
       <p class="lede" style="margin-top:18px">After 25 years of delivering multi-faceted land development and infrastructure projects, we know this work inside out. We bring transparent communication and well-run project management, with timely results that are on budget and aligned with your vision.</p>
-      <ul class="whyl"><li><b>25 years of experience</b><span>Multi-faceted land development and infrastructure projects, delivered across New Zealand.</span></li><li><b>Six disciplines in-house</b><span>Survey, planning, engineering, landscape, environmental and project management under one roof.</span></li><li><b>One point of contact</b><span>A single team coordinates everything, so nothing falls between consultants.</span></li><li><b>Accredited and safe</b><span>ISO 45001, IANZ, Toitū Envirocare and more, plus SiteSafe and SiteWise on site.</span></li></ul>
+      <ul class="whyl"><li><b>25 years of experience</b><span>Multi-faceted land development and infrastructure projects, delivered across New Zealand.</span></li><li><b>Every discipline in-house</b><span>Survey, planning, engineering, landscape, environmental and project management under one roof.</span></li><li><b>One point of contact</b><span>A single team coordinates everything, so nothing falls between consultants.</span></li><li><b>Accredited and safe</b><span>ISO 45001, IANZ, Toitū Envirocare and more, plus SiteSafe and SiteWise on site.</span></li></ul>
       <div class="stats">
         <div class="stat"><div class="n"><span class="count" data-to="25">25</span><sup>+</sup></div><div class="l">Years</div></div>
         <div class="stat"><div class="n"><span class="count" data-to="6">6</span></div><div class="l">Disciplines</div></div>
@@ -498,7 +525,7 @@ html.pt-out .pt{transform:none}
       <ul class="pillars">
         <li><span class="d">01</span><div><b>Environmental Management Plans</b><span>Protecting sites and waterways through every phase of works.</span></div></li>
         <li><span class="d">02</span><div><b>Ecology</b><span>Assessments that keep native habitat at the heart of design.</span></div></li>
-        <li><span class="d">03</span><div><b>Soil and water testing</b><span>Contamination and asbestos expertise for safe, healthy land.</span></div></li>
+        <li><span class="d">03</span><div><b>Soil and water testing</b><span>In Taupaki our scientists tested uncertified fill for asbestos, arsenic and lead, and showed it was safe to keep on site.</span></div></li>
         <li><span class="d">04</span><div><b>Toitū Envirocare</b><span>Accredited for measuring and managing our own footprint.</span></div></li>
       </ul>
     </div>
@@ -535,7 +562,7 @@ html.pt-out .pt{transform:none}
 </main>
 <footer><div class="wrap">
   <div class="foot">
-    <div><a class="brand" href="index.html"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 26 L11 12 L16 19 L21 9 L30 26Z" fill="#8BC45A"/><path d="M18.5 14 L21 9 L23.5 14 L21 12.8Z" fill="#fff"/></svg>Thomas Consultants</a><p>Land Development &amp; Subdivision Consultants. Creating Better Spaces Together.</p>
+    <div><a class="brand" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="175" height="46" loading="lazy"></a><p>Land Development &amp; Subdivision Consultants. Creating Better Spaces Together.</p>
       <ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li>Christchurch satellite office</li></ul></div>
     <div><h4>Services</h4><ul><li><a href="services.html#land-surveying">Land Surveying</a></li><li><a href="services.html#rma-planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape-architecture">Landscape Architecture</a></li><li><a href="services.html#environmental-services">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
     <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz">Client portal</a></li></ul></div>
@@ -544,7 +571,7 @@ html.pt-out .pt{transform:none}
   <div class="fbase"><div><span>&copy; 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span></div><span>Proudly designed by AMBS Solutions</span></div>
 </div></footer>
 <div class="qbar" aria-label="Quick contact"><a href="tel:+6498361804">Call 09 836 1804</a><a class="b" href="contact.html#book">Book a meeting</a></div>
-<div class="pt" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0 100V60L120 30L220 58L360 10L480 50L600 24L740 70L880 20L1000 52L1120 14L1260 56L1440 30V100Z" fill="#15281E"/></svg><div></div></div>
+<div class="pt" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0 100V60L120 30L220 58L360 10L480 50L600 24L740 70L880 20L1000 52L1120 14L1260 56L1440 30V100Z" fill="#052C31"/></svg><div></div></div>
 <script>
 /* Thomas Consultants concept runtime (vanilla, no layout reads in scroll handlers) */
 (function(){

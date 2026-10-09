@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About | Thomas Consultants · Concept 02</title>
 <meta name="description" content="About Thomas Consultants: 25 years of land development, our values, people, accreditations, clients and offices in Auckland, Manukau and Christchurch.">
-<meta name="theme-color" content="#14b8a6">
+<meta name="theme-color" content="#052C31">
+<link rel="icon" type="image/svg+xml" href="../../assets/logo/mark.svg">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_NZ">
 <meta property="og:site_name" content="Thomas Consultants">
@@ -38,11 +39,11 @@
 @font-face{font-family:'Inter Fallback';font-weight:400;src:local('Arial'),local('ArialMT'),local('Liberation Sans'),local('Roboto'),local('Helvetica Neue');size-adjust:106.6%}
 @font-face{font-family:'Inter Fallback';font-weight:500;src:local('Arial'),local('ArialMT'),local('Liberation Sans'),local('Roboto'),local('Helvetica Neue');size-adjust:107.7%}
 @font-face{font-family:'Inter Fallback';font-weight:600;src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('Roboto Bold'),local('Helvetica Neue Bold');size-adjust:101.1%}
-:root{--ink:#06231f;--ink-2:#0b3530;--paper:#fff;--soft:#f3f8f5;--line:#e1ebe6;--muted:#47615b;--muted-2:#5f7771;
---accent:#6DAB3C;--accent-deep:#4f8a29;--teal:#14b8a6;--teal-deep:#0f766e;--mint:#7ee0c3;--lime:#b6e36a;
---grad:linear-gradient(135deg,#6DAB3C,#14b8a6);--display:'Sora','Sora Fallback',system-ui,sans-serif;--sans:'Inter','Inter Fallback',system-ui,-apple-system,'Segoe UI',sans-serif;
+:root{--ink:#052C31;--ink-2:#0a3a40;--paper:#fff;--soft:#f3f8f5;--line:#e1ebe6;--muted:#47615b;--muted-2:#5f7771;
+--accent:#77A22F;--accent-deep:#5a7d20;--teal:#14b8a6;--teal-deep:#0f766e;--mint:#7ee0c3;--lime:#b6e36a;
+--grad:linear-gradient(135deg,#77A22F,#14b8a6);--display:'Sora','Sora Fallback',system-ui,sans-serif;--sans:'Inter','Inter Fallback',system-ui,-apple-system,'Segoe UI',sans-serif;
 --pad:clamp(16px,5vw,48px);--max:1200px;--r:18px;--r-lg:24px;--sheet:32px;--ease:cubic-bezier(.22,.8,.2,1);--nav:68px;
---shadow:0 2px 4px rgba(6,35,31,.04),0 12px 32px -8px rgba(6,35,31,.12),0 40px 80px -30px rgba(6,35,31,.2)}
+--shadow:0 2px 4px rgba(5,44,49,.04),0 12px 32px -8px rgba(5,44,49,.12),0 40px 80px -30px rgba(5,44,49,.2)}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -66,10 +67,10 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;margin:0;font-weight:7
 .on-dark .gt{background:linear-gradient(90deg,var(--lime),var(--mint));-webkit-background-clip:text;background-clip:text}
 .head{margin-bottom:clamp(32px,5vw,56px)}
 /* sheets */
-.sheet{position:relative;background:var(--paper);border-radius:var(--sheet) var(--sheet) 0 0;margin-top:calc(-1 * var(--sheet));padding:clamp(72px,10vw,120px) 0 calc(clamp(72px,10vw,120px) + var(--sheet));box-shadow:0 -1px 0 var(--line),0 -20px 50px -30px rgba(6,35,31,.25)}
+.sheet{position:relative;background:var(--paper);border-radius:var(--sheet) var(--sheet) 0 0;margin-top:calc(-1 * var(--sheet));padding:clamp(72px,10vw,120px) 0 calc(clamp(72px,10vw,120px) + var(--sheet));box-shadow:0 -1px 0 var(--line),0 -20px 50px -30px rgba(5,44,49,.25)}
 .sheet.soft{background:var(--soft)}
 .sheet.ink{background:var(--ink);color:#fff;box-shadow:0 -20px 50px -30px rgba(0,0,0,.5);isolation:isolate;overflow:hidden}
-.sheet.ink::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(700px 420px at 90% 0%,rgba(20,184,166,.32),transparent 60%),radial-gradient(600px 420px at 0% 100%,rgba(109,171,60,.28),transparent 60%)}
+.sheet.ink::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(700px 420px at 90% 0%,rgba(20,184,166,.32),transparent 60%),radial-gradient(600px 420px at 0% 100%,rgba(119,162,47,.28),transparent 60%)}
 .cv{content-visibility:auto;contain-intrinsic-size:auto 900px}
 /* buttons */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 28px;border-radius:999px;font-weight:600;font-size:15.5px;transition:background .25s,color .25s,box-shadow .25s,transform .25s var(--ease);text-align:center}
@@ -83,8 +84,11 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;margin:0;font-weight:7
 html:not(.lite) .nav.scrolled{background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px)}
 .nav .wrap{display:flex;align-items:center;gap:20px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;white-space:nowrap}
-.brand-mark{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;flex:none}
-.brand-mark svg{width:16px;height:16px}
+.logo{display:block;height:32px;width:auto}
+.nav .logo-c{display:none}
+.nav.scrolled .logo-w{display:none}
+.nav.scrolled .logo-c{display:block}
+@media (min-width:1000px){.logo{height:40px}}
 .nav-links{display:none;gap:2px;list-style:none;margin:0 0 0 14px;padding:0}
 .nav-links a{display:block;padding:8px 14px;border-radius:10px;font-size:15px;font-weight:500;transition:background .2s}
 .nav-links a:hover{background:rgba(127,127,127,.14)}
@@ -107,16 +111,17 @@ html:not(.lite) .nav.scrolled{background:rgba(255,255,255,.8);backdrop-filter:sa
 .drawer-foot{margin-top:12px;padding-top:14px;border-top:1px solid var(--line);display:grid;gap:10px;font-size:14px;color:var(--muted)}
 .drawer-foot .btn{width:100%}
 .drawer-foot a:not(.btn){color:var(--ink);font-weight:600}
-.scrim{position:fixed;inset:0;z-index:110;background:rgba(6,35,31,.4);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.scrim{position:fixed;inset:0;z-index:110;background:rgba(5,44,49,.4);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
 .menu-open .scrim{opacity:1;visibility:visible}
 @keyframes kb{from{transform:scale(1.1)}to{transform:scale(1)}}
-.tint{position:absolute;inset:0;background:linear-gradient(120deg,rgba(109,171,60,.55),rgba(20,184,166,.35) 45%,rgba(6,35,31,.1) 70%),linear-gradient(180deg,rgba(6,35,31,.55),rgba(6,35,31,.05) 32%,rgba(6,35,31,.35) 60%,rgba(6,35,31,.92));mix-blend-mode:normal}
+.tint{position:absolute;inset:0;background:linear-gradient(120deg,rgba(119,162,47,.55),rgba(20,184,166,.35) 45%,rgba(5,44,49,.1) 70%),linear-gradient(180deg,rgba(5,44,49,.55),rgba(5,44,49,.05) 32%,rgba(5,44,49,.35) 60%,rgba(5,44,49,.92));mix-blend-mode:normal}
 .lite .grid-lines{display:none}
 .grid-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 60%);mask-image:linear-gradient(180deg,#000,transparent 60%)}
 @keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.on-dark .accred li{background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);color:#fff}
 /* page hero */
-.phero{position:relative;min-height:540px;height:76svh;overflow:hidden;color:#fff;isolation:isolate;background:#0b3530;clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),0 100%);display:flex;align-items:flex-end}
+.phero{position:relative;min-height:540px;height:76svh;overflow:hidden;color:#fff;isolation:isolate;background:#052C31;clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),0 100%);display:flex;align-items:flex-end}
 .phero .bg{position:absolute;inset:0}
 .phero .bg img{width:100%;height:100%;object-fit:cover}
 html.anim:not(.lite) .phero .bg img{animation:kb 9s ease-out both}
@@ -152,7 +157,7 @@ html.rvon .rv.in{opacity:1;transform:none}
 .people .main img{width:100%;height:100%;object-fit:cover}
 .people .small{position:absolute;right:-6px;bottom:0;width:46%;border-radius:18px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 20px 50px -20px rgba(0,0,0,.6);border:4px solid var(--ink)}
 .people .small img{width:100%;height:100%;object-fit:cover}
-.float{position:absolute;left:14px;top:14px;background:rgba(6,35,31,.78);border-radius:18px;padding:14px 18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.float{position:absolute;left:14px;top:14px;background:rgba(5,44,49,.78);border-radius:18px;padding:14px 18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
 html:not(.lite) .float{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .float .n{font-family:var(--display);font-weight:700;font-size:46px;letter-spacing:-.05em;line-height:1}
 .float .n .u{font-size:22px;color:var(--mint)}
@@ -164,7 +169,7 @@ html:not(.lite) .float{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(1
 .points b{display:block;font-family:var(--display);font-weight:600}
 .points span{color:#b3cbc4;font-size:15px}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:48px;border-radius:var(--r-lg);overflow:hidden;background:rgba(255,255,255,.12)}
-.stat{background:rgba(6,35,31,.85);padding:22px 20px}
+.stat{background:rgba(5,44,49,.85);padding:22px 20px}
 .stat .v{font-family:var(--display);font-size:clamp(34px,3.6vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1;background:linear-gradient(90deg,var(--lime),var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat p{margin:6px 0 0;color:#b3cbc4;font-size:14px}
 /* testimonials */
@@ -186,7 +191,7 @@ html:not(.lite) .float{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(1
 .faq-ph img{width:100%;height:100%;object-fit:cover}
 /* contact block */
 .cta-card{position:relative;border-radius:28px;overflow:hidden;color:#fff;padding:clamp(28px,5vw,64px);background:var(--ink);isolation:isolate;display:grid;gap:28px}
-.cta-card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(520px 360px at 100% 0%,rgba(20,184,166,.55),transparent 65%),radial-gradient(520px 380px at 0% 100%,rgba(109,171,60,.45),transparent 65%),radial-gradient(400px 300px at 60% 60%,rgba(126,224,195,.22),transparent 70%)}
+.cta-card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(520px 360px at 100% 0%,rgba(20,184,166,.55),transparent 65%),radial-gradient(520px 380px at 0% 100%,rgba(119,162,47,.45),transparent 65%),radial-gradient(400px 300px at 60% 60%,rgba(126,224,195,.22),transparent 70%)}
 html:not(.lite) .cta-card::before{animation:drift 14s ease-in-out infinite alternate}
 @keyframes drift{to{transform:translate3d(-4%,3%,0) scale(1.08)}}
 .cta-card h2{font-size:clamp(34px,4.6vw,60px);line-height:1.04;letter-spacing:-.04em;margin-top:12px}
@@ -231,13 +236,13 @@ html:not(.lite) .cta-card::before{animation:drift 14s ease-in-out infinite alter
 .foot-base{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 24px;font-size:13px}
 .foot-base p{margin:0}
 /* quick bar */
-.quickbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:95;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;box-shadow:0 -1px 0 var(--line),0 -10px 30px -10px rgba(6,35,31,.18)}
+.quickbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:95;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;box-shadow:0 -1px 0 var(--line),0 -10px 30px -10px rgba(5,44,49,.18)}
 .quickbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;font-weight:600;font-size:15px;background:var(--ink);color:#fff}
 .quickbar .qb-primary{background:var(--grad);color:#04211c}
 .footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 /* page transition: diagonal gradient sweep */
-.pt{position:fixed;top:0;bottom:0;left:-20%;width:140%;z-index:500;pointer-events:none;background:linear-gradient(110deg,#b6e36a,#6DAB3C 30%,#14b8a6 65%,#0f766e);clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);transform:translateX(100%);display:grid;place-items:center}
-.pt span{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:22px;color:#04211c}
+.pt{position:fixed;top:0;bottom:0;left:-20%;width:140%;z-index:500;pointer-events:none;background:linear-gradient(110deg,#b6e36a,#77A22F 30%,#14b8a6 65%,#0f766e);clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);transform:translateX(100%);display:grid;place-items:center}
+.pt span .logo{height:44px}
 html.pt-cover .pt{transform:none}
 .pt.in{transform:none;transition:transform .5s cubic-bezier(.7,0,.2,1);pointer-events:auto}
 .pt.out{transform:translateX(-100%);transition:transform .75s cubic-bezier(.7,0,.2,1)}
@@ -264,10 +269,10 @@ html.pt-cover .pt{transform:none}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="pt" aria-hidden="true"><span><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#04211c" stroke-width="1.8" stroke-linecap="round"><path d="M2 11c2-3 4-4 6-4s4 1 6 4"/><path d="M4 13.5c1.4-1.8 2.6-2.5 4-2.5s2.6.7 4 2.5"/><path d="M8 2v5"/></svg></span>Thomas Consultants</span></div>
+<div class="pt" aria-hidden="true"><span><img class="logo" src="../../assets/logo/thomas-consultants-mono-dark.svg" alt="" width="152" height="40"></span></div>
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Thomas Consultants home"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#04211c" stroke-width="1.8" stroke-linecap="round"><path d="M2 11c2-3 4-4 6-4s4 1 6 4"/><path d="M4 13.5c1.4-1.8 2.6-2.5 4-2.5s2.6.7 4 2.5"/><path d="M8 2v5"/></svg></span>Thomas Consultants</a>
+    <a class="brand" href="index.html" aria-label="Thomas Consultants home"><img class="logo logo-w" src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="152" height="40"><img class="logo logo-c" src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="152" height="40"></a>
     <nav aria-label="Primary"><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <div class="nav-right">
       <a class="btn btn-primary mag" href="contact.html#enquiry">Book a meeting <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
@@ -277,7 +282,7 @@ html.pt-cover .pt{transform:none}
 </header>
 <div class="scrim" id="scrim"></div>
 <div class="drawer" id="mobileMenu" aria-hidden="true">
-  <div class="drawer-head"><span class="brand"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#04211c" stroke-width="1.8" stroke-linecap="round"><path d="M2 11c2-3 4-4 6-4s4 1 6 4"/><path d="M4 13.5c1.4-1.8 2.6-2.5 4-2.5s2.6.7 4 2.5"/><path d="M8 2v5"/></svg></span>Thomas Consultants</span><button class="menu-btn" id="menuClose" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-head"><span class="brand"><img class="logo logo-c" src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="152" height="40"></span><button class="menu-btn" id="menuClose" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
   <nav aria-label="Mobile"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
   <div class="drawer-foot">
     <a class="btn btn-primary" href="contact.html#enquiry">Book Your Free Development Consultation</a>
@@ -305,7 +310,7 @@ html.pt-cover .pt{transform:none}
 <section class="sheet soft cv" aria-labelledby="values-title"><div class="wrap"><div class="head"><p class="label rv">Values</p><h2 class="h2 rv" id="values-title">What we hold ourselves to.</h2></div><div class="vals"><article class="val tilt glow rv" style="--rd:0.0s"><div class="ph"><img src="../../assets/img/fern-canopy-800.webp" srcset="../../assets/img/fern-canopy-800.webp 800w, ../../assets/img/fern-canopy-1254.webp 1254w" sizes="(min-width:700px) 33vw, 100vw" alt="Looking up through native fern canopy" width="1254" height="836" loading="lazy" decoding="async"></div><div class="tx"><span class="label">01</span><h3 style="margin-top:8px">Sustainability</h3><p>We are committed to environmentally responsible and sustainable development, building it into every project from feasibility onward.</p></div></article><article class="val tilt glow rv" style="--rd:0.08s"><div class="ph"><img src="../../assets/img/team-meeting-800.webp" srcset="../../assets/img/team-meeting-800.webp 800w, ../../assets/img/team-meeting-1600.webp 1600w" sizes="(min-width:700px) 33vw, 100vw" alt="Project team meeting in a boardroom" width="1600" height="992" loading="lazy" decoding="async"></div><div class="tx"><span class="label">02</span><h3 style="margin-top:8px">Transparent communication</h3><p>Clear, honest updates at every milestone. You always know where your project stands and what comes next.</p></div></article><article class="val tilt glow rv" style="--rd:0.16s"><div class="ph"><img src="../../assets/img/site-visit-800.webp" srcset="../../assets/img/site-visit-800.webp 800w, ../../assets/img/site-visit-1600.webp 1600w" sizes="(min-width:700px) 33vw, 100vw" alt="Two consultants in hi-vis inspecting new townhouses" width="1600" height="1067" loading="lazy" decoding="async"></div><div class="tx"><span class="label">03</span><h3 style="margin-top:8px">On time, on budget</h3><p>Well-run project management that delivers timely results, on budget and aligned with your vision.</p></div></article></div></div></section>
 <section class="sheet ink on-dark cv" aria-labelledby="why-title"><div class="wrap why">
   <div class="people rv"><div class="main"><img src="../../assets/img/park-team-800.webp" srcset="../../assets/img/park-team-800.webp 800w, ../../assets/img/park-team-1600.webp 1600w" sizes="(min-width:1000px) 40vw, 100vw" alt="Team members on site at a newly built park lookout" width="1600" height="900" loading="lazy" decoding="async"></div><div class="small"><img src="../../assets/img/surveyor-road-800.webp" srcset="../../assets/img/surveyor-road-800.webp 800w, ../../assets/img/surveyor-road-1600.webp 1600w" sizes="(min-width:1000px) 18vw, 46vw" alt="Surveyor setting up an instrument beside a road" width="1600" height="1080" loading="lazy" decoding="async"></div></div>
-  <div><p class="label rv">Why choose us</p><h2 class="h2 rv" id="why-title">Expertise built over <span class="gt">25 years.</span></h2><p class="lead rv">After 25 years of delivering land development and infrastructure projects, our team knows how sites behave and how to keep a programme moving.</p><ul class="points"><li class="rv" style="--rd:0.0s"><span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg></span><div><b>Six disciplines, one team</b><span>Surveying, planning, engineering, landscape, environmental and project management in-house, so nothing falls between consultants.</span></div></li><li class="rv" style="--rd:0.06s"><span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg></span><div><b>One accountable lead</b><span>You deal with one point of contact for the programme, the budget and every consultant.</span></div></li><li class="rv" style="--rd:0.12s"><span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg></span><div><b>Local knowledge</b><span>25 years working with Auckland councils and agencies, and with councils across New Zealand.</span></div></li><li class="rv" style="--rd:0.18s"><span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg></span><div><b>Accredited</b><span>Recognised by ten professional and industry bodies, including ISO 45001 and Toitū Envirocare.</span></div></li></ul></div>
+  <div><p class="label rv">Why choose us</p><h2 class="h2 rv" id="why-title">Expertise built over <span class="gt">25 years.</span></h2><p class="lead rv">After 25 years of delivering land development and infrastructure projects, our team knows how sites behave and how to keep a programme moving.</p><ul class="points"><li class="rv" style="--rd:0.0s"><span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg></span><div><b>Everything under one roof</b><span>Surveying, planning, engineering, landscape, environmental and project management in-house, so your project is not passed between firms.</span></div></li><li class="rv" style="--rd:0.06s"><span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg></span><div><b>One accountable lead</b><span>You deal with one point of contact for the programme, the budget and every consultant.</span></div></li><li class="rv" style="--rd:0.12s"><span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg></span><div><b>Local knowledge</b><span>25 years working with Auckland councils and agencies, and with councils across New Zealand.</span></div></li><li class="rv" style="--rd:0.18s"><span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg></span><div><b>Accredited</b><span>Recognised by ten professional and industry bodies, including ISO 45001 and Toitū Envirocare.</span></div></li></ul></div>
 </div><div class="wrap"><div class="stats rv"><div class="stat"><div class="v"><span data-count="25">25</span></div><p>Years</p></div><div class="stat"><div class="v"><span data-count="6">6</span></div><p>Disciplines</p></div><div class="stat"><div class="v"><span data-count="3">3</span></div><p>Offices</p></div><div class="stat"><div class="v"><span data-count="10">10</span></div><p>Accreditations</p></div></div></div></section>
 <section class="sheet cv" aria-labelledby="comm-title"><div class="wrap"><div class="commit rv"><div><p class="label">Community &amp; sustainability</p><h2 class="h2" id="comm-title">Good development leaves the land better.</h2><p>We are committed to environmentally responsible and sustainable development. Our ecologists and contamination specialists find environmental risks early, and our landscape architects design open spaces that communities use and enjoy.</p><p>Our Toitū Envirocare accreditation holds us to account on our own environmental footprint, and ISO 45001 keeps our people and sites safe.</p></div><div class="ph"><img src="../../assets/img/boardwalk-800.webp" srcset="../../assets/img/boardwalk-800.webp 800w, ../../assets/img/boardwalk-1280.webp 1280w" sizes="(min-width:1000px) 45vw, 100vw" alt="Timber boardwalk through native bush" width="1280" height="960" loading="lazy" decoding="async"></div></div></div></section>
 <section class="sheet soft cv" aria-labelledby="trust-title"><div class="wrap"><div class="head"><p class="label rv">Clients &amp; accreditations</p><h2 class="h2 rv" id="trust-title">Certified, accredited and trusted.</h2></div><ul class="accred rv" style="margin-top:0"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>ISO 45001</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>IANZ</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>Toitū Envirocare</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>Engineering NZ</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>Water NZ</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>Survey and Spatial NZ</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>NZ Planning Institute</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>NZILA</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>SiteSafe</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3L13 4.5"/></svg>SiteWise</li></ul></div><div class="marquee" style="margin-top:36px" aria-label="Clients include"><div class="marquee-track"><span>Kāinga Ora</span><span>Auckland Transport</span><span>Watercare</span><span>Panuku</span><span>NZ Transport Agency</span><span>Ministry of Education</span><span>Waikato District Council</span><span>Rotorua Lakes Council</span><span>Hobsonville Point</span><span>Homes of Choice</span><span>Kāinga Ora</span><span>Auckland Transport</span><span>Watercare</span><span>Panuku</span><span>NZ Transport Agency</span><span>Ministry of Education</span><span>Waikato District Council</span><span>Rotorua Lakes Council</span><span>Hobsonville Point</span><span>Homes of Choice</span></div></div></section>
@@ -317,7 +322,7 @@ html.pt-cover .pt{transform:none}
   <div><dt>Client portal</dt><dd><a href="https://portal.thomasconsultants.co.nz" rel="noopener">portal.thomasconsultants.co.nz</a></dd></div>
 </dl></div></div></section>
 <section class="sheet cv" aria-labelledby="cta-title"><div class="wrap"><div class="cta-card on-dark rv">
-  <div><p class="label">Get started</p><h2 id="cta-title">Let's talk about your site.</h2><p class="lead">Book your free development consultation, or a complimentary meeting with one of our planners. No obligation, just clear advice.</p></div>
+  <div><p class="label">Get started</p><h2 id="cta-title">Start with a conversation.</h2><p class="lead">Book your free development consultation, or a complimentary meeting with one of our planners. No obligation, just clear advice.</p></div>
   <div><a class="book" href="contact.html#enquiry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span><b>Book a meeting</b><span>Free development consultation</span></span></a>
   <ul class="c-links"><li><a href="tel:+6498361804"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>Call 09 836 1804</a></li><li><a href="contact.html#planner"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>Complimentary Planner Meeting</a></li></ul></div>
 </div></div></section>
@@ -326,7 +331,7 @@ html.pt-cover .pt{transform:none}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:12px"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#04211c" stroke-width="1.8" stroke-linecap="round"><path d="M2 11c2-3 4-4 6-4s4 1 6 4"/><path d="M4 13.5c1.4-1.8 2.6-2.5 4-2.5s2.6.7 4 2.5"/><path d="M8 2v5"/></svg></span>Thomas Consultants</a>
+        <a class="brand" href="index.html" style="margin-bottom:14px;display:inline-flex"><img class="logo logo-c" src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="152" height="40"></a>
         <p style="margin:0 0 12px;max-width:34ch">Land development and subdivision consultants. Creating Better Spaces Together.</p>
         <p style="margin:0">Auckland HQ <a href="tel:+6498361804">09 836 1804</a><br>Manukau <a href="tel:+6498696070">09 869 6070</a><br>Christchurch satellite office</p>
       </div>
@@ -498,6 +503,7 @@ document.querySelectorAll('form[data-validate]').forEach(function(form){
     status.textContent='Thank you. We have your enquiry and will be in touch soon.';
   });
 });
+(function(){ var sv=new URLSearchParams(location.search).get('service'), sel=document.querySelector('form[data-validate] select[name="service"]'); if(sv && sel && sel.querySelector('option[value="'+sv.replace(/[^a-z-]/g,'')+'"]')) sel.value=sv; })();
 document.querySelectorAll('[data-preset]').forEach(function(a){ a.addEventListener('click', function(){ var s=document.querySelector('form[data-validate] select[name="service"]'); if(s){ s.value=a.getAttribute('data-preset'); s.dispatchEvent(new Event('change')); } }); });
 
 /* project filters */
@@ -535,6 +541,13 @@ onReady(function(){ var ric=window.requestIdleCallback||function(f){ return setT
 document.addEventListener('DOMContentLoaded', function(){
   'use strict';
   var d=document.documentElement, rm=matchMedia('(prefers-reduced-motion: reduce)').matches, fine=matchMedia('(pointer:fine)').matches && !d.classList.contains('lite');
+
+  /* "Where do you want to start?" chooser */
+  var ch=[].slice.call(document.querySelectorAll('[data-path]'));
+  function pick(b, scroll){ ch.forEach(function(x){ var on=x===b, pn=document.getElementById(x.getAttribute('aria-controls')); x.setAttribute('aria-selected', on?'true':'false'); x.tabIndex=on?0:-1; pn.hidden=!on; if(on){ pn.classList.remove('is-new'); void pn.offsetWidth; pn.classList.add('is-new'); } });
+    if(scroll){ var tg=document.getElementById('paths'); tg && tg.scrollIntoView({behavior: rm?'auto':'smooth', block:'start'}); } }
+  ch.forEach(function(b,i){ b.addEventListener('click', function(){ pick(b, true); });
+    b.addEventListener('keydown', function(e){ var k=e.key==='ArrowRight'||e.key==='ArrowDown'?1:e.key==='ArrowLeft'||e.key==='ArrowUp'?-1:0; if(!k) return; e.preventDefault(); var n=ch[(i+k+ch.length)%ch.length]; pick(n,false); n.focus(); }); });
 
   /* process rail fills as the stacked cards scroll past (rAF, desktop) */
   var sw=document.querySelector('.stack-wrap'), rail=sw && sw.querySelector('.rail');

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/svg+xml" href="../../assets/logo/mark.svg">
 <title>Projects | Thomas Consultants · Concept 04</title>
 <meta name="description" content="A journal of land development projects by Thomas Consultants: parks and reserves, Kāinga Ora housing, apartments and subdivisions.">
 <meta name="theme-color" content="#F3EFE6">
@@ -30,7 +31,7 @@ setTimeout(function(){if(!window.__tcok)d.classList.add('fs')},3500);})();
 @font-face{font-family:'Fraunces';font-style:normal;font-weight:300 400;font-display:swap;src:url(https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib14c7qv8.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400 600;font-display:swap;src:url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400 600;font-display:swap;src:url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
-:root{--paper:#F3EFE6;--paper-2:#EAE4D6;--paper-3:#DFD8C6;--ink:#1D2520;--soft:#4A5249;--forest:#1E3828;--forest-2:#27452F;--olive:#6B7743;--sage:#A6AF95;--green:#5F9434;--green-lt:#7DBA4A;
+:root{--paper:#F3EFE6;--paper-2:#EAE4D6;--paper-3:#DFD8C6;--ink:#1D2520;--soft:#4A5249;--forest:#052C31;--forest-2:#0A3D43;--olive:#6B7743;--sage:#A6AF95;--green:#77A22F;--green-lt:#9BC655;
 --rule:rgba(29,37,32,.14);--rule-2:rgba(29,37,32,.3);--prule:rgba(243,239,230,.22);
 --serif:'Fraunces','Iowan Old Style',Georgia,serif;--sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
 --pad:clamp(16px,5vw,80px);--max:1360px;--r:40px;--ease:cubic-bezier(.22,.8,.18,1)}
@@ -68,7 +69,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:250;pointer-events:none
 .pill--paper{background:var(--paper);color:var(--forest);border-color:var(--paper)}
 .pill--paper::before{background:var(--green-lt)}
 .pill--paper:hover{color:var(--paper)}
-.pill--ghost{background:rgba(20,30,22,.35);color:var(--paper);border-color:rgba(243,239,230,.55)}
+.pill--ghost{background:rgba(5,44,49,.35);color:var(--paper);border-color:rgba(243,239,230,.55)}
 .pill--ghost::before{background:var(--paper)}
 .pill--ghost:hover{color:var(--forest)}
 .pill--line{background:transparent;color:var(--forest)}
@@ -83,14 +84,23 @@ body::after{content:"";position:fixed;inset:-50%;z-index:250;pointer-events:none
 .forest .chip{border-color:var(--prule)}
 .ticks{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
 .ticks li{display:flex;gap:12px;align-items:flex-start}
-.ticks li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;border:1px solid var(--olive);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%235F9434' stroke-width='1.8'/%3E%3C/svg%3E") center/15px no-repeat}
+.ticks li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;border:1px solid var(--olive);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%2377A22F' stroke-width='1.8'/%3E%3C/svg%3E") center/15px no-repeat}
 .forest .ticks li::before{border-color:var(--sage)}
 /* header */
 #top-sentinel{position:absolute;top:0;left:0;width:1px;height:60px;pointer-events:none}
 .hdr{position:fixed;top:0;left:0;right:0;z-index:120;color:var(--paper);transition:background .35s,color .35s,border-color .35s;border-bottom:1px solid transparent}
 .hdr.solid{background:rgba(243,239,230,.9);color:var(--ink);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--rule)}
 .hdr__in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;height:74px}
-.brand{font:400 23px/1 var(--serif);letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:40px;width:auto}
+.brand .lc{display:none}
+.hdr.solid .brand .lw{display:none}
+.hdr.solid .brand .lc{display:block}
+.hdr.menu-open .brand .lw{display:block}
+.hdr.menu-open .brand .lc{display:none}
+@media (max-width:600px){.brand img{height:32px}}
+.foot__logo{display:block;margin:0 0 clamp(36px,5vw,64px)}
+.foot__logo img{height:clamp(52px,7vw,84px);width:auto}
 .brand i{font-style:italic;color:var(--green-lt)}
 .hdr.solid .brand i{color:var(--green)}
 .nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
@@ -116,20 +126,20 @@ body::after{content:"";position:fixed;inset:-50%;z-index:250;pointer-events:none
 .mmenu__ft a{color:var(--paper);text-decoration:none;padding:8px 0;font-size:15px}
 .hdr.menu-open{background:transparent;color:var(--paper);border-color:transparent;backdrop-filter:none}
 /* hero */
-.hero{position:relative;min-height:92vh;min-height:92svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#24372A;color:var(--paper);isolation:isolate}
+.hero{position:relative;min-height:92vh;min-height:92svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#0B3A3F;color:var(--paper);isolation:isolate}
 .hero__slides{position:absolute;inset:0;z-index:-2}
 .hs{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.6s ease}
 .hs.on{opacity:1}
 .hs img{width:100%;height:100%;object-fit:cover;transform:scale(1.03)}
 .anim .hs.on img{animation:kb 10s linear both}
 @keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.15) translateX(-1.5%)}}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,30,22,.5) 0%,rgba(20,30,22,.05) 32%,rgba(20,30,22,.35) 58%,rgba(16,26,18,.88) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,44,49,.5) 0%,rgba(5,44,49,.05) 32%,rgba(5,44,49,.35) 58%,rgba(4,34,38,.88) 100%)}
 .mast{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:96px 0 14px;border-bottom:1px solid var(--prule);font:600 11.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;opacity:.9}
 .mast span:nth-child(2){text-align:center}.mast span:nth-child(3){text-align:right}
 .hero__in{padding-bottom:clamp(100px,13vh,140px)}
 .hero h1{font:300 clamp(48px,7.6vw,124px)/.96 var(--serif);letter-spacing:-.035em;margin:0 0 22px;max-width:13ch}
 .hero h1 .l{display:block}
-.rot{display:block;font-style:italic;color:#CFE3B2;min-height:1em;white-space:nowrap;transition:opacity .45s ease,transform .6s var(--ease),filter .5s}
+.rot{display:block;font-style:italic;color:#C9E39A;min-height:1em;white-space:nowrap;transition:opacity .45s ease,transform .6s var(--ease),filter .5s}
 .rot.out{opacity:0;transform:translateY(-.18em)}
 .rot.in2{animation:rin .8s var(--ease)}
 @keyframes rin{from{opacity:0;transform:translateY(.25em)}to{opacity:1;transform:none}}
@@ -199,9 +209,9 @@ body::after{content:"";position:fixed;inset:-50%;z-index:250;pointer-events:none
 .cnt{font:italic 400 18px var(--serif)}
 /* process */
 .stack{display:grid;gap:24px}
-.pc{color:var(--ink);position:sticky;top:calc(98px + var(--i) * 22px);border-radius:32px;overflow:hidden;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);min-height:min(66vh,520px);box-shadow:0 -24px 60px -28px rgba(20,30,22,.45)}
+.pc{color:var(--ink);position:sticky;top:calc(98px + var(--i) * 22px);border-radius:32px;overflow:hidden;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);min-height:min(66vh,520px);box-shadow:0 -24px 60px -28px rgba(5,44,49,.45)}
 .pc:nth-child(1){background:var(--paper)}.pc:nth-child(2){background:#D9DCC8}.pc:nth-child(3){background:#BFC6A6}.pc:nth-child(4){background:var(--forest-2);color:var(--paper)}
-.pc__dim{position:absolute;inset:0;background:#0E1610;opacity:0;z-index:5;pointer-events:none}
+.pc__dim{position:absolute;inset:0;background:#021A1D;opacity:0;z-index:5;pointer-events:none}
 .pc__txt{padding:clamp(26px,4vw,56px);display:flex;flex-direction:column}
 .pc__no{font:300 clamp(72px,9vw,132px)/.8 var(--serif);font-style:italic;color:var(--olive);letter-spacing:-.05em}
 .pc:nth-child(4) .pc__no{color:var(--sage)}
@@ -233,7 +243,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:250;pointer-events:none
 .sectors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .sector{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:440px;border-radius:200px 200px 24px 24px;overflow:hidden;text-decoration:none;color:var(--paper);padding:30px;isolation:isolate}
 .sector img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
-.sector::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,26,18,0) 35%,rgba(16,26,18,.85))}
+.sector::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,34,38,0) 35%,rgba(4,34,38,.85))}
 .sector:hover img{transform:scale(1.06)}
 .sector h3{font:300 clamp(32px,3vw,44px)/1 var(--serif);margin:0 0 8px}
 .sector p{margin:0 0 14px;opacity:.85}
@@ -343,17 +353,17 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
 .office-img{margin:26px 0 0;border-radius:24px;overflow:hidden;aspect-ratio:16/8;background:var(--paper-3)}
 .office-img img{width:100%;height:100%;object-fit:cover}
 /* inner hero */
-.phero{position:relative;height:84vh;height:84svh;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;background:#24372A;color:var(--paper)}
+.phero{position:relative;height:84vh;height:84svh;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;background:#0B3A3F;color:var(--paper)}
 .phero__img{position:absolute;inset:0;z-index:-2;margin:0}
 .phero__img img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
 .anim .phero__img img{animation:kb 16s linear both}
-.phero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,30,22,.55),rgba(20,30,22,.1) 35%,rgba(16,26,18,.9))}
+.phero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,44,49,.55),rgba(5,44,49,.1) 35%,rgba(4,34,38,.9))}
 .phero .mast{grid-template-columns:minmax(0,1fr) auto}
 .phero .mast span:nth-child(2){text-align:right}
 .phero__in{padding-top:28px;padding-bottom:calc(var(--r) + clamp(36px,5vw,64px))}
 .phero__row{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:20px 56px;align-items:end}
 .phero h1{font:300 clamp(42px,6.2vw,100px)/1 var(--serif);letter-spacing:-.03em;margin:0}
-.phero h1 em{font-style:italic;color:#CFE3B2}
+.phero h1 em{font-style:italic;color:#C9E39A}
 .phero .lede{font:italic 400 clamp(19px,1.7vw,24px)/1.35 var(--serif);color:rgba(243,239,230,.9);margin:0}
 .split .w{display:inline-block;white-space:nowrap}
 .split .c{display:inline-block}
@@ -540,6 +550,79 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* ---- Phase 5: magazine issue ---- */
+.cover{position:relative;min-height:92vh;min-height:92svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#0B3A3F;color:var(--paper);isolation:isolate}
+.cover__img{position:absolute;inset:0;z-index:-2;margin:0}
+.cover__img img{width:100%;height:100%;object-fit:cover;transform:scale(1.03)}
+.anim .cover__img img{animation:kb 18s linear both}
+.cover::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,44,49,.55) 0%,rgba(5,44,49,.05) 30%,rgba(5,44,49,.3) 55%,rgba(4,34,38,.9) 100%)}
+.cover__in{padding-bottom:clamp(96px,12vh,130px)}
+.cover .kicker{font:600 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#C9E39A}
+.cover h1{font:300 clamp(50px,8vw,132px)/.95 var(--serif);letter-spacing:-.035em;margin:18px 0 22px;max-width:12ch}
+.cover h1 em{font-style:italic}
+.cover__row{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);gap:24px 64px;align-items:end}
+.cover .stand{font:italic 400 clamp(19px,1.7vw,24px)/1.4 var(--serif);margin:0 0 26px;max-width:40ch;color:rgba(243,239,230,.92)}
+.cover__lines{border-top:1px solid var(--prule);padding-top:14px;font-size:14.5px}
+.cover__lines b{display:block;font:600 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;opacity:.75;margin-bottom:8px}
+.cover__lines a{display:block;text-decoration:none;font:400 19px/1.3 var(--serif);padding:6px 0}
+.cover__lines a:hover{font-style:italic}
+.anim .cover > .wrap{opacity:0}
+.anim .cover.ready > .wrap,.anim.fs .cover > .wrap{opacity:1;transition:opacity .3s}
+.anim .cover [data-h]{opacity:0;transform:translateY(26px)}
+.anim .cover.ready [data-h],.anim.fs .cover [data-h]{opacity:1;transform:none;transition:opacity 1.1s var(--ease),transform 1.2s var(--ease);transition-delay:var(--hd,0ms)}
+.article{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:clamp(28px,5vw,88px)}
+.article__side{position:sticky;top:110px;align-self:start}
+.article__side .dl dd{font-size:17px}
+.article h2{font:300 clamp(38px,5vw,76px)/1.02 var(--serif);letter-spacing:-.03em;margin:0 0 28px;max-width:16ch}
+.article h2 em{font-style:italic;color:var(--olive)}
+.article__body{max-width:720px}
+.article__body p{font:300 clamp(19px,1.5vw,22px)/1.6 var(--serif);margin:0 0 22px;color:var(--ink)}
+.article__body > p:first-of-type::first-letter{float:left;font-size:4.2em;line-height:.82;padding:.06em .1em 0 0;color:var(--forest);font-weight:400}
+.article__fig{margin:40px 0;border-radius:4px;overflow:hidden;position:relative}
+.article__fig img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.article__fig figcaption{font:italic 400 15px var(--serif);color:var(--soft);padding-top:10px}
+.pull{margin:44px 0;padding:28px 0;border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2)}
+.pull p{font:italic 300 clamp(28px,3vw,44px)/1.2 var(--serif)!important;color:var(--forest)!important;margin:0!important}
+.pull p::first-letter{float:none!important;font-size:1em!important;padding:0!important}
+.landmarks{list-style:none;margin:8px 0 28px;padding:0;columns:2;column-gap:28px}
+.landmarks li{break-inside:avoid;border-top:1px solid var(--rule);padding:9px 0;font:400 17px var(--serif)}
+.landmarks li::before{content:"↗ ";color:var(--green)}
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,64px)}
+.feat__img{margin:0 0 22px;border-radius:200px 200px 6px 6px;overflow:hidden;aspect-ratio:4/3.4;background:var(--paper-3)}
+.feat__img img{width:100%;height:100%;object-fit:cover}
+.feat .kick{font:600 11.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--olive)}
+.feat h3{font:300 clamp(30px,3vw,46px)/1.05 var(--serif);letter-spacing:-.02em;margin:10px 0 12px}
+.feat h3 b{font-weight:300;font-style:italic;color:var(--green)}
+.feat .stand{font:italic 400 19px/1.4 var(--serif);color:var(--forest);margin:0 0 12px}
+.feat p{color:var(--soft);margin:0 0 12px}
+.contents{border-top:1px solid var(--rule-2)}
+.contents a{display:grid;grid-template-columns:70px minmax(0,4fr) minmax(0,5fr) 30px;gap:18px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule-2);text-decoration:none;transition:padding .45s var(--ease)}
+.contents a:hover{padding-left:10px}
+.contents em{font:italic 400 24px var(--serif);color:var(--olive)}
+.contents h3{margin:0;font:300 clamp(26px,2.6vw,38px)/1.1 var(--serif)}
+.contents p{margin:0;color:var(--soft)}
+.contents span.ar{font-size:20px}
+.letter{max-width:900px}
+.jcard__sum{margin:6px 0 0;font-size:14.5px;opacity:.82;grid-column:2}
+.jgrid .jcard__sum{color:var(--soft);opacity:1}
+.cs{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(32px,6vw,96px);align-items:start}
+.cs__txt p{font:300 clamp(19px,1.5vw,22px)/1.6 var(--serif);margin:0 0 20px}
+.cs__txt p:first-child::first-letter{float:left;font-size:3.6em;line-height:.82;padding:.06em .1em 0 0;color:var(--forest);font-weight:400}
+.cs__q{margin:28px 0 0;padding:26px 0 0;border-top:1px solid var(--rule-2)}
+.cs__q p{font:italic 300 clamp(22px,2vw,28px)/1.3 var(--serif);margin:0 0 10px;color:var(--forest)}
+.cs__q footer{font:600 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--olive)}
+.cs__q[hidden]{display:none}
+@media (max-width:860px){
+  .cover .mast{grid-template-columns:minmax(0,1fr)}
+  .cover .mast span:nth-child(n+2){display:none}
+  .cover::before{background:linear-gradient(180deg,rgba(5,44,49,.55) 0%,rgba(5,44,49,.35) 30%,rgba(5,44,49,.6) 55%,rgba(4,34,38,.92) 100%)}
+  .cover__row,.article,.feats,.cs{grid-template-columns:minmax(0,1fr)}
+  .article__side{position:relative;top:0}
+  .contents a{grid-template-columns:44px minmax(0,1fr) 24px}
+  .contents p{grid-column:2;grid-row:2}
+  .landmarks{columns:1}
+}
 </style>
 
 </head>
@@ -549,7 +632,7 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
 <div id="top-sentinel" aria-hidden="true"></div>
 <header class="hdr" id="top">
   <div class="wrap hdr__in">
-    <a class="brand" href="index.html" aria-label="Thomas Consultants, home">Thomas <i>Consultants</i></a>
+    <a class="brand" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="152" height="40" class="lw"><img src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="152" height="40" class="lc"></a>
     <nav class="nav" aria-label="Primary"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html" aria-current="page">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <div class="hdr__r"><a class="pill mag" href="contact.html"><span class="dot"></span>Book a consultation</a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><span></span><span></span></button></div>
@@ -573,54 +656,54 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
     <h2 class="sr" id="jr-h">Project journal</h2>
     <div class="filters" data-filters="#jgrid" role="group" aria-label="Filter projects"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="engineering" aria-pressed="false">Engineering</button><button type="button" data-filter="planning" aria-pressed="false">Planning</button><button type="button" data-filter="landscape" aria-pressed="false">Landscape</button><button type="button" data-filter="surveying" aria-pressed="false">Surveying</button><button type="button" data-filter="environmental" aria-pressed="false">Environmental</button><button type="button" data-filter="res-com" aria-pressed="false">Residential &amp; Commercial</button><button type="button" data-filter="public" aria-pressed="false">Public spaces</button></div>
     <p class="fcount" aria-live="polite">Showing <span data-shown>16</span> of 16 entries</p>
-    <div class="jgrid" id="jgrid"><a class="jcard" href="project.html?p=mcmillan-lockwood" data-cats="engineering res-com">
-  <div class="jcard__img"><span class="jcard__no">No. 01</span><img src="../../assets/img/aerial-apartments-800.webp" srcset="../../assets/img/aerial-apartments-800.webp 800w, ../../assets/img/aerial-apartments-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="898" alt="Aerial view of a four-storey apartment building in an Auckland suburb" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">01</span><h3>McMillan and Lockwood</h3><p>Auckland · Construction Monitoring, Engineering, Residential</p></div>
-</a><a class="jcard" href="project.html?p=cracroft-road" data-cats="engineering surveying res-com">
-  <div class="jcard__img"><span class="jcard__no">No. 02</span><img src="../../assets/img/apartments-colour-800.webp" srcset="../../assets/img/apartments-colour-800.webp 800w, ../../assets/img/apartments-colour-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="1066" alt="Four-storey apartment building with orange panels" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">02</span><h3>2 Cracroft Road / 618-620 Great South Road</h3><p>Auckland · Engineering, Surveying</p></div>
+    <div class="jgrid" id="jgrid"><a class="jcard" href="project.html?p=thom-street" data-cats="engineering res-com">
+  <div class="jcard__img"><span class="jcard__no">No. 01</span><img src="../../assets/img/apartments-bright-800.webp" srcset="../../assets/img/apartments-bright-800.webp 800w, ../../assets/img/apartments-bright-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="1069" alt="Apartment terrace with orange and yellow accents" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k">01</span><h3>Thom Street, New Lynn</h3><p>Kāinga Ora · Engineering design, Construction monitoring</p><p class="jcard__sum">Engineering design and construction monitoring for 82 Kāinga Ora homes on an 11,046 m² site.</p></div>
+</a><a class="jcard" href="project.html?p=taurus-crescent" data-cats="engineering surveying planning res-com">
+  <div class="jcard__img"><span class="jcard__no">No. 02</span><img src="../../assets/img/aerial-subdivision-800.webp" srcset="../../assets/img/aerial-subdivision-800.webp 800w, ../../assets/img/aerial-subdivision-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="898" alt="Drone view of a completed residential subdivision" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k">02</span><h3>Taurus Crescent, Beach Haven</h3><p>Kāinga Ora · Engineering, Surveying</p><p class="jcard__sum">Engineering, surveying and planning for 21 new homes for Kāinga Ora.</p></div>
 </a><a class="jcard" href="project.html?p=churchill-park" data-cats="landscape public">
   <div class="jcard__img"><span class="jcard__no">No. 03</span><img src="../../assets/img/lookout-seat-800.webp" srcset="../../assets/img/lookout-seat-800.webp 800w, ../../assets/img/lookout-seat-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="1067" alt="Curved bench at a park lookout with harbour views" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">03</span><h3>Churchill Park Lookout</h3><p>Auckland · Landscape Architecture, Open Space Design</p></div>
+  <div class="jcard__cap"><span class="k">03</span><h3>Churchill Park lookout, Glendowie</h3><p>Auckland Council and Ōrakei Local Board · Landscape architecture</p><p class="jcard__sum">A lookout with 360° views on the highest point of a former golf course.</p></div>
 </a><a class="jcard" href="project.html?p=observation-green" data-cats="landscape public">
   <div class="jcard__img"><span class="jcard__no">No. 04</span><img src="../../assets/img/play-space-800.webp" srcset="../../assets/img/play-space-800.webp 800w, ../../assets/img/play-space-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="1067" alt="Play space with rope fencing and native grasses" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">04</span><h3>Observation Green</h3><p>Auckland · Landscape &amp; Visual Assessments, Planting Plan</p></div>
+  <div class="jcard__cap"><span class="k">04</span><h3>Observation Green, Hobsonville</h3><p>Auckland Council and Upper Harbour Local Board · Landscape architecture</p><p class="jcard__sum">A new neighbourhood park at Scott Point, with nature play, a fitness course and a learn-to-ride track.</p></div>
 </a><a class="jcard" href="project.html?p=fearon-park" data-cats="environmental public">
   <div class="jcard__img"><span class="jcard__no">No. 05</span><img src="../../assets/img/plaza-path-800.webp" srcset="../../assets/img/plaza-path-800.webp 800w, ../../assets/img/plaza-path-1024.webp 1024w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1024" height="683" alt="Landscaped plaza with pathways and planting" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">05</span><h3>Open Space, Fearon Park</h3><p>Mount Roskill · Project Management, Contaminated Sites</p></div>
-</a><a class="jcard" href="project.html?p=taurus-crescent" data-cats="engineering surveying res-com">
-  <div class="jcard__img"><span class="jcard__no">No. 06</span><img src="../../assets/img/aerial-subdivision-800.webp" srcset="../../assets/img/aerial-subdivision-800.webp 800w, ../../assets/img/aerial-subdivision-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="898" alt="Drone view of a completed residential subdivision" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">06</span><h3>Taurus Crescent</h3><p>Auckland · Engineering, Surveying</p></div>
-</a><a class="jcard" href="project.html?p=thom-street" data-cats="engineering res-com">
-  <div class="jcard__img"><span class="jcard__no">No. 07</span><img src="../../assets/img/apartments-bright-800.webp" srcset="../../assets/img/apartments-bright-800.webp 800w, ../../assets/img/apartments-bright-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="1069" alt="Apartment terrace with orange and yellow accents" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">07</span><h3>Thom Street, New Lynn</h3><p>New Lynn · Engineering Design, Construction Monitoring</p></div>
+  <div class="jcard__cap"><span class="k">05</span><h3>Fearon Park, Mount Roskill</h3><p>Public open space · Project management, Contaminated soil</p><p class="jcard__sum">Client-side project management of a multi-year open space programme worth about $4.3m.</p></div>
+</a><a class="jcard" href="project.html?p=banff-avenue" data-cats="engineering res-com">
+  <div class="jcard__img"><span class="jcard__no">No. 06</span><img src="../../assets/img/aerial-apartments-800.webp" srcset="../../assets/img/aerial-apartments-800.webp 800w, ../../assets/img/aerial-apartments-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="898" alt="Aerial view of a four-storey apartment building in an Auckland suburb" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k">06</span><h3>6 Banff Avenue, Epsom</h3><p>McMillan &amp; Lockwood for Kāinga Ora · Engineering, Construction monitoring</p><p class="jcard__sum">Infrastructure assessment, design and monitoring for 25 apartments in a five-storey building.</p></div>
+</a><a class="jcard" href="project.html?p=cracroft-street" data-cats="engineering surveying res-com">
+  <div class="jcard__img"><span class="jcard__no">No. 07</span><img src="../../assets/img/apartments-colour-800.webp" srcset="../../assets/img/apartments-colour-800.webp 800w, ../../assets/img/apartments-colour-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="1066" alt="Four-storey apartment building with orange panels" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k">07</span><h3>Cracroft Street and Great South Road</h3><p>Kāinga Ora · Engineering, Surveying</p><p class="jcard__sum">Design and monitoring of a five-storey block of 28 apartments for Kāinga Ora.</p></div>
+</a><a class="jcard" href="project.html?p=walmer-moa" data-cats="planning engineering res-com">
+  <div class="jcard__img"><span class="jcard__no">No. 08</span><img src="../../assets/img/aerial-harbour-800.webp" srcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="899" alt="Aerial view of new housing with the harbour behind" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k">08</span><h3>Walmer Road and Moa Road, Pt Chevalier</h3><p>Signature Homes and Kāinga Ora · Planning, Engineering</p><p class="jcard__sum">Planning, engineering design and monitoring for 10 new homes.</p></div>
 </a><a class="jcard" href="project.html?p=tasman-avenue" data-cats="engineering surveying res-com">
-  <div class="jcard__img"><span class="jcard__no">No. 08</span><img src="../../assets/img/house-dusk-800.webp" srcset="../../assets/img/house-dusk-800.webp 800w, ../../assets/img/house-dusk-1500.webp 1500w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1500" height="1028" alt="Contemporary home lit at dusk" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">08</span><h3>Tasman Avenue, Mt Albert</h3><p>Mt Albert · Engineering, Surveying</p></div>
-</a><a class="jcard" href="project.html?p=signature-homes" data-cats="engineering planning res-com">
-  <div class="jcard__img"><span class="jcard__no">No. 09</span><img src="../../assets/img/aerial-harbour-800.webp" srcset="../../assets/img/aerial-harbour-800.webp 800w, ../../assets/img/aerial-harbour-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="899" alt="Aerial view of new housing with the harbour behind" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">09</span><h3>Signature Homes &amp; Kāinga Ora</h3><p>Auckland · Engineering, Planning</p></div>
-</a><a class="jcard" href="project.html?p=kaimai-avenue" data-cats="res-com">
+  <div class="jcard__img"><span class="jcard__no">No. 09</span><img src="../../assets/img/house-dusk-800.webp" srcset="../../assets/img/house-dusk-800.webp 800w, ../../assets/img/house-dusk-1500.webp 1500w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1500" height="1028" alt="Contemporary home lit at dusk" loading="lazy" decoding="async"></div>
+  <div class="jcard__cap"><span class="k">09</span><h3>Tasman Avenue, Mount Albert</h3><p>Private client · Engineering, Surveying</p><p class="jcard__sum">Three new homes and a four-lot fee simple subdivision with a jointly owned access lot.</p></div>
+</a><a class="jcard" href="project.html?p=kaimai-avenue" data-cats="planning engineering res-com">
   <div class="jcard__img"><span class="jcard__no">No. 10</span><img src="../../assets/img/townhouses-new-800.webp" srcset="../../assets/img/townhouses-new-800.webp 800w, ../../assets/img/townhouses-new-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="1200" alt="New two-storey townhouses with fresh landscaping" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">10</span><h3>Kaimai Avenue, Massey</h3><p>Massey · Residential, Terraced Housing</p></div>
+  <div class="jcard__cap"><span class="k">10</span><h3>3 Kaimai Avenue, Massey</h3><p>Jebel Construction · Planning, Engineering</p><p class="jcard__sum">Consent and engineering for seven terrace homes.</p></div>
 </a><a class="jcard" href="project.html?p=elliott-reserve" data-cats="public">
   <div class="jcard__img"><span class="jcard__no">No. 11</span><img src="../../assets/img/playground-800.webp" srcset="../../assets/img/playground-800.webp 800w, ../../assets/img/playground-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="1069" alt="Nature playground with timber play structures" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">11</span><h3>Elliott Reserve playground, Glenfield</h3><p>Glenfield · Project Management</p></div>
+  <div class="jcard__cap"><span class="k">11</span><h3>Elliott Reserve playground, Glenfield</h3><p>Public open space · Project management</p><p class="jcard__sum">One larger play space to replace two failing ones.</p></div>
 </a><a class="jcard" href="project.html?p=kauri-glen" data-cats="environmental public">
   <div class="jcard__img"><span class="jcard__no">No. 12</span><img src="../../assets/img/bush-800.webp" srcset="../../assets/img/bush-800.webp 800w, ../../assets/img/bush-1512.webp 1512w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1512" height="2016" alt="Native bush on a hillside" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">12</span><h3>Kauri Glen Reserve, Northcote</h3><p>Northcote · Ecological Assessment</p></div>
-</a><a class="jcard" href="project.html?p=withers-reserve" data-cats="environmental public">
+  <div class="jcard__cap"><span class="k">12</span><h3>Kauri Glen Reserve, Northcote</h3><p>Auckland Council · Ecology</p><p class="jcard__sum">Ecological impact assessment for track renewals through kauri up to 400 years old.</p></div>
+</a><a class="jcard" href="project.html?p=withers-reserve" data-cats="engineering environmental public">
   <div class="jcard__img"><span class="jcard__no">No. 13</span><img src="../../assets/img/boardwalk-800.webp" srcset="../../assets/img/boardwalk-800.webp 800w, ../../assets/img/boardwalk-1280.webp 1280w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1280" height="960" alt="Timber boardwalk through native bush" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">13</span><h3>Withers Reserve</h3><p>Auckland · Environmental</p></div>
-</a><a class="jcard" href="project.html?p=rural-subdivision" data-cats="engineering environmental">
+  <div class="jcard__cap"><span class="k">13</span><h3>Withers Reserve footbridge</h3><p>Auckland Council · Engineering, Ecology</p><p class="jcard__sum">Civil engineering, survey and ecology for a new footbridge after flood damage.</p></div>
+</a><a class="jcard" href="project.html?p=parker-road" data-cats="engineering environmental">
   <div class="jcard__img"><span class="jcard__no">No. 14</span><img src="../../assets/img/stream-800.webp" srcset="../../assets/img/stream-800.webp 800w, ../../assets/img/stream-1024.webp 1024w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1024" height="683" alt="Stream with a culvert and native bush" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">14</span><h3>Rural subdivision</h3><p>Auckland region · Stormwater, Ecology</p></div>
+  <div class="jcard__cap"><span class="k">14</span><h3>96 Parker Road, Oratia</h3><p>Private client · Engineering, Stormwater</p><p class="jcard__sum">A rural site subdivided into four lifestyle blocks with on-site stormwater and wastewater.</p></div>
 </a><a class="jcard" href="project.html?p=henderson-high" data-cats="landscape public">
   <div class="jcard__img"><span class="jcard__no">No. 15</span><img src="../../assets/img/render-park-800.webp" srcset="../../assets/img/render-park-800.webp 800w, ../../assets/img/render-park-1600.webp 1600w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="1600" height="900" alt="Landscape render of a park with shade sails" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">15</span><h3>Henderson High School Heart Space</h3><p>Henderson · Landscape Architecture</p></div>
+  <div class="jcard__cap"><span class="k">15</span><h3>Henderson High School Heart Space</h3><p>Henderson High School · Landscape architecture</p><p class="jcard__sum">A covered stage, seating and planting at the centre of the school.</p></div>
 </a><a class="jcard" href="project.html?p=scott-road" data-cats="planning engineering environmental res-com">
   <div class="jcard__img"><span class="jcard__no">No. 16</span><img src="../../assets/img/plan-engineering-800.webp" srcset="../../assets/img/plan-engineering-800.webp 800w, ../../assets/img/plan-engineering-1600.webp 1600w, ../../assets/img/plan-engineering-2400.webp 2400w" sizes="(min-width: 1101px) 30vw, (min-width: 601px) 45vw, 92vw" width="2400" height="1696" alt="Engineering layout plan for a residential development" loading="lazy" decoding="async"></div>
-  <div class="jcard__cap"><span class="k">16</span><h3>Scott Road, Hobsonville</h3><p>Hobsonville · Resource Consent, Traffic Engineering, Soil Testing</p></div>
+  <div class="jcard__cap"><span class="k">16</span><h3>Scott Road, Hobsonville</h3><p>Nade Investments Ltd · Resource consent, Engineering</p><p class="jcard__sum">Resource consent for 67 dwellings, with earthworks over 14,096 m². Approved 9 February 2022.</p></div>
 </a></div>
     <p class="fcount" data-empty hidden>No entries in this category yet.</p>
   </div>
@@ -641,7 +724,7 @@ form.done .form-status{font:300 clamp(26px,2.6vw,34px)/1.25 var(--serif);color:v
 </main>
 <footer class="foot">
   <div class="wrap">
-    <p class="foot__word" aria-hidden="true">Thomas <em>Consultants</em></p>
+    <a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants.svg" alt="Thomas Consultants" width="319" height="84"></a>
     <div class="foot__grid">
       <div><h3>Thomas Consultants Ltd</h3><p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p>
         <ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul></div>
@@ -711,7 +794,7 @@ if (sent) io([sent], function(t, vis){ header.classList.toggle('solid', !vis); }
 
 /* hero text ready after fonts (avoids font-swap layout shift) */
 var ready = false;
-function heroReady(){ if (ready) return; ready = true; $$('.hero, .phero').forEach(function(h){ h.classList.add('ready'); }); requestAnimationFrame(function(){ root.classList.add('fr'); }); }
+function heroReady(){ if (ready) return; ready = true; $$('.hero, .phero, .cover').forEach(function(h){ h.classList.add('ready'); }); requestAnimationFrame(function(){ root.classList.add('fr'); }); }
 if (document.fonts && document.fonts.ready) { document.fonts.ready.then(heroReady); setTimeout(heroReady, 2600); } else heroReady();
 
 /* scroll reveals */
@@ -909,6 +992,9 @@ if (window.TC_PROJECTS && $('[data-project]')){
       else if (f === 'tags') el.innerHTML = d.tags.map(function(t){ return '<span class="chip">' + t.replace(/&/g, '&amp;') + '</span>'; }).join('');
       else if (f === 'hero'){ var p = d.photos[0]; el.srcset = ss(p); el.src = IMG + p.n + '-800.webp'; el.alt = p.alt; el.width = p.w; el.height = p.h; }
       else if (f === 'gallery') el.innerHTML = d.photos.map(function(p, i){ return '<figure class="gal__item' + (i === 0 ? ' gal__item--wide' : '') + '"><img src="' + IMG + p.n + '-800.webp" srcset="' + ss(p) + '" sizes="(min-width: 900px) 60vw, 92vw" width="' + p.w + '" height="' + p.h + '" alt="' + p.alt + '" loading="lazy" decoding="async"><figcaption>' + p.alt + '</figcaption></figure>'; }).join('');
+      else if (f === 'paras') el.innerHTML = d.paras.map(function(t){ return '<p>' + t.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</p>'; }).join('');
+      else if (f === 'facts') el.innerHTML = d.facts.map(function(r){ return '<div><dt>' + r[0] + '</dt><dd>' + r[1].replace(/&/g, '&amp;') + '</dd></div>'; }).join('');
+      else if (f === 'quote'){ if (d.quote){ el.hidden = false; el.innerHTML = '<p>' + d.quote[0] + '</p><footer>' + d.quote[1] + '</footer>'; } else el.hidden = true; }
       else if (d[f] !== undefined) el.textContent = d[f];
     });
     var a = $('[data-pprev]'), b = $('[data-pnext]');
