@@ -145,7 +145,8 @@ html.motion .loader{animation:ptSafety 0s linear 7s forwards}
 .hero{position:relative;min-height:100svh;padding:132px 0 40px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .hero__grid{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:calc(100% / 12) 120px;mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%)}
 .hero__meta{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:clamp(24px,4vw,56px)}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.15rem,7.6vw,9.4rem);line-height:.92;letter-spacing:-.045em;margin:0;text-transform:uppercase}
+.hero>.wrap{width:100%}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(1.85rem,5.6vw,7.4rem);line-height:.92;letter-spacing:-.045em;margin:0;text-transform:uppercase}
 .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 .line>span{display:inline-block;will-change:transform}
 html.motion .hero .line>span{transform:translateY(110%)}
@@ -347,7 +348,7 @@ html.reel-pinned .reel__end{width:clamp(280px,40vh,32vw)}
 .footer ul a:hover{color:var(--lime)}
 .footer__lead{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.15;letter-spacing:-.02em;max-width:22ch;margin:0}
 .build{display:block;text-decoration:none;margin-top:clamp(48px,8vw,100px);position:relative;text-align:center}
-.build__txt{display:inline-block;font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,14vw,19rem);line-height:.82;letter-spacing:-.065em;white-space:nowrap;color:var(--paper);will-change:transform;transition:color .4s}
+.build__txt{display:inline-block;font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,11.5vw,16rem);line-height:.82;letter-spacing:-.065em;white-space:nowrap;color:var(--paper);will-change:transform;transition:color .4s}
 .build:hover .build__txt{color:var(--lime)}
 .build__txt i{font-style:normal;color:var(--lime)}
 .build:hover .build__txt i{color:var(--paper)}
@@ -1002,7 +1003,7 @@ html.motion .phero .line>span{transform:translateY(110%)}
   });
   var cards = gsap.utils.toArray('.card');
   cards.forEach(function(card, i){
-    if (i < cards.length - 1) gsap.to(card, { scale: .9, rotate: i % 2 ? 1.5 : -1.5, filter: 'brightness(.55)', ease: 'none', scrollTrigger: { trigger: cards[i + 1], start: 'top bottom', end: 'top 96px', scrub: true } });
+    if (i < cards.length - 1) gsap.fromTo(card, { scale: 1, rotate: 0, filter: 'brightness(1)' }, { scale: .9, rotate: i % 2 ? 1.5 : -1.5, filter: 'brightness(.5)', ease: 'none', scrollTrigger: { trigger: cards[i + 1], start: 'top bottom', end: 'top 96px', scrub: true } });
     gsap.from(card.querySelector('.card__n'), { yPercent: 50, opacity: 0, duration: 1.1, ease: 'power4.out', scrollTrigger: { trigger: card, start: 'top 75%' } });
   });
   gsap.utils.toArray('.js-accr > *').length && gsap.from('.js-accr > *', { opacity: 0, y: 30, stagger: { each: .05, from: 'random' }, duration: .8, ease: 'power3.out', scrollTrigger: { trigger: '.js-accr', start: 'top 85%' } });
