@@ -104,7 +104,7 @@ async function crawl(slug) {
     for (const h of hrefs) {
       const clean = h.split("#")[0].split("?")[0];
       const norm = clean.endsWith("/index.html") ? clean.slice(0, -10) : clean;
-      if (norm.startsWith(BASE + "designs/") && (norm.endsWith(".html") || norm.endsWith("/")) && !seen.has(norm)) { seen.add(norm); queue.push(norm); }
+      if (norm.startsWith(`${BASE}designs/${slug}/`) && (norm.endsWith(".html") || norm.endsWith("/")) && !seen.has(norm)) { seen.add(norm); queue.push(norm); }
     }
   }
   await ctx.close();
