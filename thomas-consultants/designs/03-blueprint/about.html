@@ -658,6 +658,71 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
   .photo-wide{aspect-ratio:4/3}
   .hero__caption{display:none}
 }
+
+/* Phase 7: drawing-office surfaces. Square corners, hairlines, flat fills, no rounded sheets sliding over each other. */
+:root{--r:0px}
+@media (max-width:760px){:root{--r:0px}}
+.btn,.chip,.trust span,.dslide,.frame,.tb,.pc,.pc__img,.pcard,.pcard__no,.sector,.fslide__img,.collage figure,.point,.readouts,.log,.log__tabs button,.leg,.book,.form,.fld input,.fld select,.fld textarea,.office-strip,.subnav a,.svc__media figure,.filters button,.val,.commit__img,.planner,.tell li,.dl dd .social a,.gal__item,.gal__item figcaption,.pnav a,.qbar a,.reg__img,.reg__img figcaption,.photo-wide,.cs__q{border-radius:0}
+.btn{border-radius:2px}
+.book,.form,.collage figure{box-shadow:none}
+.sheet + .sheet{border-top:1px solid var(--line-2)}
+.sheet.light + .sheet.light{border-top-color:var(--pline-2)}
+.hero__ctas{align-items:center;gap:14px 28px}
+.band__ctas{align-items:flex-start}
+.band__ctas .btn{align-self:stretch}
+.planner__ctas{align-items:center;gap:14px 26px}
+.svc .tlink{margin-top:22px}
+.light .reg__more .tlink,.reg__more .tlink{margin-left:auto}
+/* about: practice record, a drawing-register table */
+.dreg{margin-top:clamp(40px,6vw,72px);display:grid;gap:1px;background:var(--pline-2);border:1px solid var(--pline-2)}
+.dreg__r{display:grid;grid-template-columns:76px minmax(0,3fr) minmax(0,8fr);gap:1px}
+.dreg__r > *{background:#fff;margin:0;padding:14px 18px;min-width:0}
+.dreg__r--h > *{background:var(--paper-2);font:500 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--pmuted);padding:10px 18px}
+.dreg__r b{font:500 12px var(--mono);color:var(--green-dk);letter-spacing:.06em}
+.dreg__r h3{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.dreg__r p{color:var(--ink-2);font-size:16px}
+.dreg__r p small{display:block;font:400 12px var(--mono);color:var(--pmuted);margin-top:4px}
+@media (max-width:640px){
+  .dreg__r{grid-template-columns:58px minmax(0,1fr)}
+  .dreg__r > *{padding:12px 14px}
+  .dreg__r > b{padding:13px 8px;white-space:nowrap;font-size:11px}
+  .dreg__r--h{display:none}
+  .dreg__r p{grid-column:2}
+  .dreg__r > b{grid-row:span 2}
+}
+/* about: general notes, as they appear on a drawing */
+.gnotes{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.gnotes__fig{margin:0;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ink-3);border:1px solid var(--line-2)}
+.gnotes__fig img{width:100%;height:100%;object-fit:cover}
+.gnotes__fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:var(--ink);font:400 11.5px var(--mono);color:var(--muted)}
+.notes{list-style:none;margin:28px 0 0;padding:0;counter-reset:n;border-top:1px solid var(--line-2)}
+.notes li{counter-increment:n;display:grid;grid-template-columns:52px minmax(0,1fr);padding:20px 0;border-bottom:1px solid var(--line-2)}
+.notes li::before{content:counter(n) ".";font:500 15px var(--mono);color:var(--green-hi);padding-top:3px}
+.notes h3{margin:0 0 6px;font-size:21px;font-weight:600;letter-spacing:-.015em}
+.notes p{margin:0;color:var(--muted)}
+@media (max-width:860px){.gnotes{grid-template-columns:minmax(0,1fr)}.gnotes__fig{aspect-ratio:16/10}}
+/* footer: a drawing title block */
+.foot{border-top:0}
+.tblock{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,3fr) minmax(0,2fr) minmax(0,3fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
+.tblock > .tb-c{background:var(--ink);padding:24px 22px 20px;min-width:0}
+.tblock .foot__logo{margin-bottom:14px}
+.tb-row{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,2.2fr) minmax(0,1.7fr) minmax(0,1.6fr) minmax(0,1fr);gap:1px}
+.tb-f{background:var(--ink);padding:10px 14px 12px;font:400 12px/1.45 var(--mono);color:var(--white);min-width:0}
+.tb-f small{display:block;font:500 9.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.tb-f a{color:var(--cyan);text-decoration:none;display:inline-block;padding:2px 0}
+.tb-f a:hover{color:var(--green-hi)}
+.tb-f--sheet span{display:block;font:500 20px/1.1 var(--mono);color:var(--green-hi);letter-spacing:-.02em}
+.tb-soc{display:flex;flex-wrap:wrap;gap:0 16px;margin-top:4px}
+.tb-c h3 + ul + h3{margin-top:18px}
+@media (max-width:1100px){
+  .tblock{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tb-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .tblock{grid-template-columns:minmax(0,1fr)}
+  .tb-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tb-f--note,.tb-f:last-child{grid-column:1/-1}
+}
 </style>
 
 </head>
@@ -681,52 +746,46 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
   <figure class="phero__img"><img src="../../assets/img/park-team-800.webp" srcset="../../assets/img/park-team-800.webp 800w, ../../assets/img/park-team-1600.webp 1600w" sizes="100vw" width="1600" height="900" alt="Team members on site at a newly built park lookout" fetchpriority="high" decoding="async"></figure>
   <div class="wrap phero__in">
     <nav class="crumbs" aria-label="Breadcrumb" data-h><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">About</span></li></ol></nav>
-    <span class="eyebrow" data-h style="--hd:80ms">About · Calibration</span>
-    <h1 id="page-h" data-h style="--hd:160ms">Twenty-five years of shaping land with care.</h1>
-    <p class="lede" data-h style="--hd:260ms">A land development consultancy with engineers, planners, surveyors, landscape architects, ecologists and contamination experts under one roof.</p>
+    <span class="eyebrow" data-h style="--hd:80ms">About the practice</span>
+    <h1 id="page-h" data-h style="--hd:160ms">Six disciplines in one land development practice.</h1>
+    <p class="lede" data-h style="--hd:260ms">Land development and subdivision consultants for 25 years, working from Auckland, Manukau and Christchurch.</p>
   </div>
 </section>
 <section class="sheet light grid-bg" aria-labelledby="story-h">
   <div class="wrap">
     <div class="story">
-      <div><span class="eyebrow">Our story</span><h2 class="h rv" id="story-h">Built over 25 years, <em>one project at a time.</em></h2>
-        <p class="big rv" style="margin-top:22px">After 25 years of delivering multi-faceted land development and infrastructure projects, we know this work inside out.</p>
-        <p class="rv">We work closely with our clients to understand their vision and help them create smarter, more sustainable spaces. Our people support you through the entire journey, from site assessments to final delivery.</p>
-        <p class="rv">Today we work from our head office in Auckland, an office in Manukau and a satellite office in Christchurch, for councils, public agencies, developers and families.</p></div>
+      <div><span class="eyebrow">Sheet 03.1</span><h2 class="h rv" id="story-h">Practice record</h2>
+        <p class="big rv" style="margin-top:22px">We have spent 25 years on multi-faceted land development and infrastructure projects, for councils, public agencies, developers and families.</p>
+        <p class="rv">The work runs from a boundary survey on a single section to the public roads and pipes for 82 Kāinga Ora homes at Thom Street, New Lynn. Surveying, planning, engineering, landscape and environmental work are done in-house, so the drawings are coordinated before they reach council.</p></div>
       <div class="collage rv"><figure class="c1"><img src="../../assets/img/engineer-smiling-800.webp" srcset="../../assets/img/engineer-smiling-800.webp 800w, ../../assets/img/engineer-smiling-1594.webp 1594w" sizes="(min-width: 861px) 34vw, 62vw" width="1594" height="1365" alt="Thomas Consultants engineer on site in a hard hat and hi-vis vest" loading="lazy" decoding="async"></figure><figure class="c2"><img src="../../assets/img/office-800.webp" srcset="../../assets/img/office-800.webp 800w, ../../assets/img/office-1600.webp 1600w" sizes="(min-width: 861px) 22vw, 40vw" width="1600" height="1130" alt="Thomas Consultants office reception" loading="lazy" decoding="async"></figure><figure class="c3"><img src="../../assets/img/team-plans-800.webp" srcset="../../assets/img/team-plans-800.webp 800w, ../../assets/img/team-plans-1600.webp 1600w" sizes="(min-width: 861px) 26vw, 48vw" width="1600" height="1069" alt="Engineers and planners reviewing plans around a table" loading="lazy" decoding="async"></figure><span class="ret" aria-hidden="true"></span></div>
     </div>
-    <div class="readouts"><div class="ro"><small>Years in practice<i aria-hidden="true"></i></small><div><span data-count="25" data-pad="3" style="font-size:1em;color:inherit;margin:0">025</span><span>YRS</span></div></div><div class="ro"><small>Disciplines<i aria-hidden="true"></i></small><div><span data-count="6" data-pad="3" style="font-size:1em;color:inherit;margin:0">006</span><span>DISC</span></div></div><div class="ro"><small>Offices<i aria-hidden="true"></i></small><div><span data-count="3" data-pad="3" style="font-size:1em;color:inherit;margin:0">003</span><span>OFF</span></div></div><div class="ro"><small>Featured projects<i aria-hidden="true"></i></small><div><span data-count="16" data-pad="3" style="font-size:1em;color:inherit;margin:0">016</span><span>PRJ</span></div></div></div>
+    <div class="dreg rv" role="group" aria-label="Practice record"><div class="dreg__r dreg__r--h" aria-hidden="true"><span>No.</span><span>Item</span><span>Record</span></div><div class="dreg__r"><b>R-01</b><h3>In practice</h3><p>25 years of land development and infrastructure projects.</p></div><div class="dreg__r"><b>R-02</b><h3>Disciplines</h3><p>Land surveying, RMA planning, engineering, landscape architecture, environmental services and project management.</p></div><div class="dreg__r"><b>R-03</b><h3>Offices</h3><p>Auckland head office, Manukau, and a satellite office in Christchurch.<small>09 836 1804 · 09 869 6070</small></p></div><div class="dreg__r"><b>R-04</b><h3>Clients</h3><p>Kāinga Ora, Auckland Transport, Watercare, Panuku, NZ Transport Agency, Ministry of Education, Waikato District Council, Rotorua Lakes Council, Hobsonville Point and Homes of Choice.<small>Also Auckland Council and its local boards, schools and private owners.</small></p></div><div class="dreg__r"><b>R-05</b><h3>Certification</h3><p>ISO 45001, IANZ and Toitū Envirocare.</p></div><div class="dreg__r"><b>R-06</b><h3>Memberships</h3><p>Engineering NZ, Water NZ, Survey and Spatial NZ, NZ Planning Institute and NZILA.</p></div><div class="dreg__r"><b>R-07</b><h3>Site safety</h3><p>SiteSafe and SiteWise.</p></div></div>
   </div>
 </section>
-<section class="sheet deep grid-bg cv" aria-labelledby="val-h">
-  <div class="wrap"><div class="head"><div><span class="eyebrow">Values</span><h2 class="h rv" id="val-h">What we <em>stand for.</em></h2></div><p class="lede rv">Three commitments guide every project we take on.</p></div><div class="vals"><article class="val rv"><b>VALUE 01</b><h3>Sustainability</h3><p>We are committed to environmentally responsible and sustainable development, and we look for ways to leave land better than we found it.</p></article><article class="val rv"><b>VALUE 02</b><h3>Transparent communication</h3><p>You always know where your project stands. We explain options plainly and tell you early when something changes.</p></article><article class="val rv"><b>VALUE 03</b><h3>On time, on budget</h3><p>We plan carefully and manage closely, so results arrive when promised and within the agreed budget.</p></article></div></div>
-</section>
-<section class="sheet light cv" aria-labelledby="why-h">
-  <div class="wrap"><div class="head"><div><span class="eyebrow">Why choose us</span><h2 class="h rv" id="why-h">Four reasons clients <em>return.</em></h2></div><p class="lede rv">Transparent communication and well-run project management, with timely results that are on budget and aligned with your vision.</p></div>
-  <div class="points" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"><div class="point rv"><b>01</b><h3>25 years of experience</h3><p>We have delivered multi-faceted land development and infrastructure projects for 25 years.</p></div><div class="point rv"><b>02</b><h3>Six disciplines, one team</h3><p>Engineers, planners, surveyors, landscape architects, ecologists and contamination experts work together in-house.</p></div><div class="point rv"><b>03</b><h3>One accountable person</h3><p>One point of contact from first visit to final handover, with clear and regular updates.</p></div><div class="point rv"><b>04</b><h3>Aligned with your vision</h3><p>Timely results, on budget, that match what you set out to build.</p></div></div></div>
+<section class="sheet deep grid-bg cv" aria-labelledby="notes-h">
+  <div class="wrap gnotes">
+    <figure class="gnotes__fig rv"><img src="../../assets/img/fern-canopy-800.webp" srcset="../../assets/img/fern-canopy-800.webp 800w, ../../assets/img/fern-canopy-1254.webp 1254w" sizes="(min-width: 861px) 38vw, 92vw" width="1254" height="836" alt="Looking up through native fern canopy" loading="lazy" decoding="async"><figcaption>Native canopy. Ecology is part of the brief on most of our reserve work.</figcaption></figure>
+    <div><span class="eyebrow">Sheet 03.2</span><h2 class="h rv" id="notes-h">General notes</h2>
+      <p class="lede rv">Every drawing set carries general notes that apply to the whole job. These are ours.</p>
+      <ol class="notes rv">
+        <li><div><h3>Environmental care</h3><p>We are committed to environmentally responsible and sustainable development. At Kauri Glen Reserve our ecological assessment guided track renewals through kauri aged 300 to 400 years.</p></div></li>
+        <li><div><h3>Plain communication</h3><p>We explain options plainly and keep you informed at each stage, including when something changes.</p></div></li>
+        <li><div><h3>Programme and budget</h3><p>At Thom Street we worked with Kāinga Ora and the contractors to finish on time and on budget, then obtained sign-offs from Watercare, Auckland Council and Auckland Transport.</p></div></li>
+        <li><div><h3>Public places</h3><p>Many of our projects are parks, reserves and playgrounds, such as the Churchill Park lookout and the Elliott Reserve playground.</p></div></li>
+      </ol>
+    </div>
+  </div>
 </section>
 <section class="sheet dark grid-bg cv" aria-labelledby="team-h">
-  <div class="wrap"><div class="head"><div><span class="eyebrow">Our people</span><h2 class="h rv" id="team-h">The people behind the <em>drawings.</em></h2></div><p class="lede rv">Engineers, planners, surveyors and landscape architects, in the office and on site.</p></div></div>
+  <div class="wrap"><div class="head"><div><span class="eyebrow">Sheet 03.3</span><h2 class="h rv" id="team-h">Site photographs</h2></div><p class="lede rv">Our engineers, planners, surveyors and landscape architects on site and in the office.</p></div></div>
   <div data-carousel aria-roledescription="carousel" aria-label="Our people at work">
     <div class="track ftrack" data-track><figure class="fslide" data-slide><div class="fslide__img"><img data-srcset="../../assets/img/engineer-smiling-800.webp 800w, ../../assets/img/engineer-smiling-1594.webp 1594w" sizes="(min-width: 600px) 420px, 78vw" width="1594" height="1365" alt="Thomas Consultants engineer on site in a hard hat and hi-vis vest" decoding="async"></div><figcaption><b>Fig 01</b>On site with our engineers</figcaption></figure><figure class="fslide" data-slide><div class="fslide__img"><img data-srcset="../../assets/img/team-meeting-800.webp 800w, ../../assets/img/team-meeting-1600.webp 1600w" sizes="(min-width: 600px) 420px, 78vw" width="1600" height="992" alt="Project team meeting in a boardroom" decoding="async"></div><figcaption><b>Fig 02</b>Project team meeting</figcaption></figure><figure class="fslide" data-slide><div class="fslide__img"><img data-srcset="../../assets/img/site-visit-800.webp 800w, ../../assets/img/site-visit-1600.webp 1600w" sizes="(min-width: 600px) 420px, 78vw" width="1600" height="1067" alt="Two consultants in hi-vis inspecting new townhouses" decoding="async"></div><figcaption><b>Fig 03</b>Construction monitoring</figcaption></figure><figure class="fslide" data-slide><div class="fslide__img"><img data-srcset="../../assets/img/park-team-800.webp 800w, ../../assets/img/park-team-1600.webp 1600w" sizes="(min-width: 600px) 420px, 78vw" width="1600" height="900" alt="Team members on site at a newly built park lookout" decoding="async"></div><figcaption><b>Fig 04</b>Handover at Churchill Park</figcaption></figure><figure class="fslide" data-slide><div class="fslide__img"><img data-srcset="../../assets/img/plans-desk-800.webp 800w, ../../assets/img/plans-desk-1600.webp 1600w" sizes="(min-width: 600px) 420px, 78vw" width="1600" height="1027" alt="Hands pointing at a landscape plan on a desk" decoding="async"></div><figcaption><b>Fig 05</b>Landscape design review</figcaption></figure><figure class="fslide" data-slide><div class="fslide__img"><img data-srcset="../../assets/img/engineer-scaffold-800.webp 800w, ../../assets/img/engineer-scaffold-1253.webp 1253w" sizes="(min-width: 600px) 420px, 78vw" width="1253" height="836" alt="Engineer standing in front of scaffolding on a construction site" decoding="async"></div><figcaption><b>Fig 06</b>Construction monitoring</figcaption></figure></div>
     <div class="wrap fctl"><span class="cnt"><span data-now>01</span> / 06</span><div class="ctl"><button class="cbtn" type="button" data-prev aria-label="Previous photo">←</button><button class="cbtn" type="button" data-next aria-label="Next photo">→</button></div></div>
   </div>
 </section>
-<section class="sheet light grid-bg cv" aria-labelledby="com-h">
-  <div class="wrap commit">
-    <figure class="commit__img rv" style="margin:0"><img src="../../assets/img/fern-canopy-800.webp" srcset="../../assets/img/fern-canopy-800.webp 800w, ../../assets/img/fern-canopy-1254.webp 1254w" sizes="(min-width: 861px) 40vw, 92vw" width="1254" height="836" alt="Looking up through native fern canopy" loading="lazy" decoding="async"></figure>
-    <div><span class="eyebrow">Community &amp; sustainability</span><h2 class="h rv" id="com-h">Better spaces for the <em>communities</em> who use them.</h2>
-      <p class="lede rv">We are committed to environmentally responsible and sustainable development. Our ecologists, landscape architects and contamination specialists help every project respect the land and the people around it.</p>
-      <ul class="ticks rv"><li>Toitū Envirocare certified</li><li>Ecology and contamination expertise in-house</li><li>Parks, playgrounds and reserves for the public</li><li>Safety first, with ISO 45001, SiteSafe and SiteWise</li></ul></div>
-  </div>
-</section>
-<section class="sheet deep grid-bg cv" aria-labelledby="proof-h">
-  <div class="wrap"><div class="head"><div><span class="eyebrow">Field log</span><h2 class="h rv" id="proof-h">What our clients <em>say.</em></h2></div><p class="lede rv">Feedback from councils, event managers and private clients.</p></div>
-  <div class="proof"><div class="log rv" data-tabs data-auto="8000"><span class="eyebrow">Field log</span><blockquote class="q on" id="tp-0" role="tabpanel" aria-labelledby="tq-0"><p>I have to say – this looks amazing. I think this is the first time I received a first concept that fully met the brief and looks exactly how I imagined it.</p><footer>Barbara Heise <span>· Auckland Council</span></footer></blockquote><blockquote class="q" id="tp-1" role="tabpanel" aria-labelledby="tq-1" hidden><p>You have been timely, pro-active in your communications with us, given us a cost-effective outcome, and I have found Thomas Consultants very easy to deal with.</p><footer>Nigel <span>· New Plymouth District Council</span></footer></blockquote><blockquote class="q" id="tp-2" role="tabpanel" aria-labelledby="tq-2" hidden><p>Outstanding customer service, responsive and very professional. Despite the logistical challenges of extended lockdowns, Brett from Thomas Consultants went above and beyond to help with our environmental property needs.</p><footer>Marie CK <span>· Private Client</span></footer></blockquote><blockquote class="q" id="tp-3" role="tabpanel" aria-labelledby="tq-3" hidden><p>Very quick and helpful responses and helped us get a BCE in a very short timeframe!</p><footer>David Cho <span>· High-profile event manager</span></footer></blockquote><blockquote class="q" id="tp-4" role="tabpanel" aria-labelledby="tq-4" hidden><p>I want to say thank you very much for all the hard work you put in on this job. Couldn't be happier with the outcome!</p><footer>Private Client <span>· Resource Consent, Mission Bay</span></footer></blockquote><div class="log__tabs" role="tablist" aria-label="Testimonials"><button role="tab" id="tq-0" aria-controls="tp-0" aria-selected="true">L-01</button><button role="tab" id="tq-1" aria-controls="tp-1" aria-selected="false" tabindex="-1">L-02</button><button role="tab" id="tq-2" aria-controls="tp-2" aria-selected="false" tabindex="-1">L-03</button><button role="tab" id="tq-3" aria-controls="tp-3" aria-selected="false" tabindex="-1">L-04</button><button role="tab" id="tq-4" aria-controls="tp-4" aria-selected="false" tabindex="-1">L-05</button></div></div><div class="legend"><div class="leg rv"><h3>Clients <span>10</span></h3><ul><li><span>C01</span>Kāinga Ora</li><li><span>C02</span>Auckland Transport</li><li><span>C03</span>Watercare</li><li><span>C04</span>Panuku</li><li><span>C05</span>NZ Transport Agency</li><li><span>C06</span>Ministry of Education</li><li><span>C07</span>Waikato District Council</li><li><span>C08</span>Rotorua Lakes Council</li><li><span>C09</span>Hobsonville Point</li><li><span>C10</span>Homes of Choice</li></ul></div><div class="leg rv"><h3>Accreditations <span>10</span></h3><ul><li><span>A01</span>ISO 45001</li><li><span>A02</span>IANZ</li><li><span>A03</span>Toitū Envirocare</li><li><span>A04</span>Engineering NZ</li><li><span>A05</span>Water NZ</li><li><span>A06</span>Survey and Spatial NZ</li><li><span>A07</span>NZ Planning Institute</li><li><span>A08</span>NZILA</li><li><span>A09</span>SiteSafe</li><li><span>A10</span>SiteWise</li></ul></div></div></div></div>
-</section>
 <section class="sheet light cv" aria-labelledby="off-h">
   <div class="wrap contact">
-    <div><span class="eyebrow">Offices</span><h2 class="h rv" id="off-h">Three offices across <em>Aotearoa.</em></h2><p class="lede rv">Call, visit or book a meeting at the office nearest you.</p><dl class="dl">
+    <div><h2 class="h rv" id="off-h">Offices</h2><p class="lede rv">Call the Auckland head office or Manukau. Meetings in Christchurch are arranged through Auckland.</p><dl class="dl">
   <div><dt>Auckland</dt><dd>Head Office<br><a href="tel:+6498361804">09 836 1804</a></dd></div>
   <div><dt>Manukau</dt><dd>South Auckland office<br><a href="tel:+6498696070">09 869 6070</a></dd></div>
   <div><dt>Christchurch</dt><dd>Satellite office<small>Call our Auckland head office to arrange a meeting.</small></dd></div>
@@ -736,25 +795,31 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 </section>
 <section class="sheet dark grid-bg band cv" aria-labelledby="band-h">
   <div class="wrap band__in">
-    <div><span class="eyebrow">Next step</span><h2 class="h" id="band-h">Ready to set out your <em>next project?</em></h2>
+    <div><h2 class="h" id="band-h">Book a free development consultation</h2>
       <div class="band__ph"><span>Auckland <a href="tel:+6498361804">09 836 1804</a></span><span>Manukau <a href="tel:+6498696070">09 869 6070</a></span></div></div>
     <div class="band__ctas rv">
-      <a class="btn mag" href="contact.html">Book Your Free Development Consultation <span class="ar">→</span></a>
-      <a class="btn btn--ghost mag" href="contact.html#planner">Complimentary Planner Meeting <span class="ar">→</span></a>
+      <a class="btn mag" href="contact.html">Book a consultation <span class="ar">→</span></a>
+      <a class="tlink" href="contact.html#planner">Complimentary planner meeting <span class="ar">→</span></a>
     </div>
   </div>
 </section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <div class="foot__grid">
-      <div><a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="167" height="44"></a><p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p>
-        <ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul></div>
-      <div><h3>Services</h3><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
-      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal ↗</a></li></ul></div>
-      <div><h3>Connect</h3><ul><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+    <div class="tblock">
+      <div class="tb-c"><a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="167" height="44" loading="lazy" decoding="async"></a><p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p></div>
+      <div class="tb-c"><h3>Services</h3><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
+      <div class="tb-c"><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="tb-c"><h3>Offices</h3><ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul><h3>Connect</h3><ul class="tb-soc"><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+      <div class="tb-row">
+        <div class="tb-f tb-f--sheet"><small>Sheet</small><span>03</span>About</div>
+        <div class="tb-f"><small>Client portal</small><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Log in ↗</a></div>
+        <div class="tb-f tb-f--note"><small>Note</small>Some images may be stock images or illustrative renders.</div>
+        <div class="tb-f"><small>Owner</small>© 2026 Thomas Consultants Ltd</div>
+        <div class="tb-f"><small>Site design</small>Proudly designed by AMBS Solutions</div>
+        <div class="tb-f"><small>Return</small><a href="#top">Back to top ↑</a></div>
+      </div>
     </div>
-    <div class="foot__legal"><span>© 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span><span>Proudly designed by AMBS Solutions</span><a href="#top" style="color:var(--cyan);text-decoration:none">Back to top ↑</a></div>
   </div>
 </footer>
 <div class="qbar" aria-label="Quick contact"><a href="tel:+6498361804">Call 09 836 1804</a><a class="go" href="contact.html">Book a meeting</a></div>
@@ -879,7 +944,7 @@ $$('[data-carousel]').forEach(function(car){
   var track = $('[data-track]', car), slides = $$('[data-slide]', car), bars = $$('[data-bar]', car);
   var now = $('[data-now]', car), pauseBtn = $('[data-pause]', car), auto = +car.dataset.autoplay || 0;
   var idx = 0, timer = null, paused = !auto || reduced, onscreen = false, hover = false, started = false;
-  function lazy(){ [idx, idx + 1, idx - 1].forEach(function(k){ var s = slides[k]; if (s) $$('img[data-srcset]', s).forEach(loadImg); }); }
+  function lazy(){ [idx - 1, idx, idx + 1, idx + 2, idx + 3].forEach(function(k){ var s = slides[k]; if (s) $$('img[data-srcset]', s).forEach(loadImg); }); }
   function mark(){
     bars.forEach(function(b, k){ b.classList.toggle('done', k < idx); b.classList.toggle('on', k === idx); b.setAttribute('aria-current', k === idx ? 'true' : 'false'); b.classList.remove('run'); });
     if (now) now.textContent = ('0' + (idx + 1)).slice(-2);

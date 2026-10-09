@@ -658,6 +658,71 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
   .photo-wide{aspect-ratio:4/3}
   .hero__caption{display:none}
 }
+
+/* Phase 7: drawing-office surfaces. Square corners, hairlines, flat fills, no rounded sheets sliding over each other. */
+:root{--r:0px}
+@media (max-width:760px){:root{--r:0px}}
+.btn,.chip,.trust span,.dslide,.frame,.tb,.pc,.pc__img,.pcard,.pcard__no,.sector,.fslide__img,.collage figure,.point,.readouts,.log,.log__tabs button,.leg,.book,.form,.fld input,.fld select,.fld textarea,.office-strip,.subnav a,.svc__media figure,.filters button,.val,.commit__img,.planner,.tell li,.dl dd .social a,.gal__item,.gal__item figcaption,.pnav a,.qbar a,.reg__img,.reg__img figcaption,.photo-wide,.cs__q{border-radius:0}
+.btn{border-radius:2px}
+.book,.form,.collage figure{box-shadow:none}
+.sheet + .sheet{border-top:1px solid var(--line-2)}
+.sheet.light + .sheet.light{border-top-color:var(--pline-2)}
+.hero__ctas{align-items:center;gap:14px 28px}
+.band__ctas{align-items:flex-start}
+.band__ctas .btn{align-self:stretch}
+.planner__ctas{align-items:center;gap:14px 26px}
+.svc .tlink{margin-top:22px}
+.light .reg__more .tlink,.reg__more .tlink{margin-left:auto}
+/* about: practice record, a drawing-register table */
+.dreg{margin-top:clamp(40px,6vw,72px);display:grid;gap:1px;background:var(--pline-2);border:1px solid var(--pline-2)}
+.dreg__r{display:grid;grid-template-columns:76px minmax(0,3fr) minmax(0,8fr);gap:1px}
+.dreg__r > *{background:#fff;margin:0;padding:14px 18px;min-width:0}
+.dreg__r--h > *{background:var(--paper-2);font:500 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--pmuted);padding:10px 18px}
+.dreg__r b{font:500 12px var(--mono);color:var(--green-dk);letter-spacing:.06em}
+.dreg__r h3{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.dreg__r p{color:var(--ink-2);font-size:16px}
+.dreg__r p small{display:block;font:400 12px var(--mono);color:var(--pmuted);margin-top:4px}
+@media (max-width:640px){
+  .dreg__r{grid-template-columns:58px minmax(0,1fr)}
+  .dreg__r > *{padding:12px 14px}
+  .dreg__r > b{padding:13px 8px;white-space:nowrap;font-size:11px}
+  .dreg__r--h{display:none}
+  .dreg__r p{grid-column:2}
+  .dreg__r > b{grid-row:span 2}
+}
+/* about: general notes, as they appear on a drawing */
+.gnotes{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.gnotes__fig{margin:0;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ink-3);border:1px solid var(--line-2)}
+.gnotes__fig img{width:100%;height:100%;object-fit:cover}
+.gnotes__fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:var(--ink);font:400 11.5px var(--mono);color:var(--muted)}
+.notes{list-style:none;margin:28px 0 0;padding:0;counter-reset:n;border-top:1px solid var(--line-2)}
+.notes li{counter-increment:n;display:grid;grid-template-columns:52px minmax(0,1fr);padding:20px 0;border-bottom:1px solid var(--line-2)}
+.notes li::before{content:counter(n) ".";font:500 15px var(--mono);color:var(--green-hi);padding-top:3px}
+.notes h3{margin:0 0 6px;font-size:21px;font-weight:600;letter-spacing:-.015em}
+.notes p{margin:0;color:var(--muted)}
+@media (max-width:860px){.gnotes{grid-template-columns:minmax(0,1fr)}.gnotes__fig{aspect-ratio:16/10}}
+/* footer: a drawing title block */
+.foot{border-top:0}
+.tblock{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,3fr) minmax(0,2fr) minmax(0,3fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
+.tblock > .tb-c{background:var(--ink);padding:24px 22px 20px;min-width:0}
+.tblock .foot__logo{margin-bottom:14px}
+.tb-row{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,2.2fr) minmax(0,1.7fr) minmax(0,1.6fr) minmax(0,1fr);gap:1px}
+.tb-f{background:var(--ink);padding:10px 14px 12px;font:400 12px/1.45 var(--mono);color:var(--white);min-width:0}
+.tb-f small{display:block;font:500 9.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.tb-f a{color:var(--cyan);text-decoration:none;display:inline-block;padding:2px 0}
+.tb-f a:hover{color:var(--green-hi)}
+.tb-f--sheet span{display:block;font:500 20px/1.1 var(--mono);color:var(--green-hi);letter-spacing:-.02em}
+.tb-soc{display:flex;flex-wrap:wrap;gap:0 16px;margin-top:4px}
+.tb-c h3 + ul + h3{margin-top:18px}
+@media (max-width:1100px){
+  .tblock{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tb-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .tblock{grid-template-columns:minmax(0,1fr)}
+  .tb-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tb-f--note,.tb-f:last-child{grid-column:1/-1}
+}
 </style>
 
 </head>
@@ -682,7 +747,7 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
   <div class="wrap phero__in">
     <nav class="crumbs" aria-label="Breadcrumb" data-h><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Projects</span></li></ol></nav>
     <span class="eyebrow" data-h style="--hd:80ms">Projects · Drawing register</span>
-    <h1 id="page-h" data-h style="--hd:160ms">Sixteen projects. Every discipline at work.</h1>
+    <h1 id="page-h" data-h style="--hd:160ms">Sixteen projects for councils, Kāinga Ora, developers and private owners.</h1>
     <p class="lede" data-h style="--hd:260ms">Parks and reserves, Kāinga Ora homes, apartments and subdivisions. Filter the register by discipline or sector.</p>
   </div>
 </section>
@@ -744,30 +809,36 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
   </div>
 </section>
 <section class="sheet dark grid-bg cv" aria-labelledby="sec-h">
-  <div class="wrap"><div class="head"><div><span class="eyebrow">Sectors</span><h2 class="h rv" id="sec-h">Homes, apartments and <em>public spaces.</em></h2></div><p class="lede rv">Pick a sector to filter the register.</p></div>
+  <div class="wrap"><div class="head"><div><h2 class="h rv" id="sec-h">Homes, apartments and public spaces</h2></div><p class="lede rv">Pick a sector to filter the register.</p></div>
   <div class="sectors"><a class="sector rv" href="projects.html?f=res-com"><img src="../../assets/img/aerial-townhouses-800.webp" srcset="../../assets/img/aerial-townhouses-800.webp 800w, ../../assets/img/aerial-townhouses-1600.webp 1600w" sizes="(min-width: 861px) 32vw, 92vw" width="1600" height="1200" alt="Aerial view of a new townhouse development with landscaped yards" loading="lazy" decoding="async"><span class="sector__go" aria-hidden="true">↗</span><h3>Residential</h3><p>Subdivisions, infill and terraced housing.</p><div class="chips"><span class="chip">Subdivisions</span><span class="chip">Infill</span><span class="chip">Terraced housing</span></div></a><a class="sector rv" href="projects.html?f=res-com"><img src="../../assets/img/apartments-white-800.webp" srcset="../../assets/img/apartments-white-800.webp 800w, ../../assets/img/apartments-white-1600.webp 1600w" sizes="(min-width: 861px) 32vw, 92vw" width="1600" height="1067" alt="White apartment buildings on a street corner" loading="lazy" decoding="async"><span class="sector__go" aria-hidden="true">↗</span><h3>Commercial</h3><p>Apartments and mixed-use developments.</p><div class="chips"><span class="chip">Apartments</span><span class="chip">Mixed-use</span><span class="chip">Public housing</span></div></a><a class="sector rv" href="projects.html?f=public"><img src="../../assets/img/playground-aerial-800.webp" srcset="../../assets/img/playground-aerial-800.webp 800w, ../../assets/img/playground-aerial-1600.webp 1600w" sizes="(min-width: 861px) 32vw, 92vw" width="1600" height="784" alt="Aerial view of a new playground and plaza" loading="lazy" decoding="async"><span class="sector__go" aria-hidden="true">↗</span><h3>Public spaces</h3><p>Parks, playgrounds and reserves.</p><div class="chips"><span class="chip">Parks</span><span class="chip">Playgrounds</span><span class="chip">Reserves</span></div></a></div></div>
 </section>
 <section class="sheet light grid-bg band cv" aria-labelledby="band-h">
   <div class="wrap band__in">
-    <div><span class="eyebrow">Next step</span><h2 class="h" id="band-h">Ready to set out your <em>next project?</em></h2>
+    <div><h2 class="h" id="band-h">Book a free development consultation</h2>
       <div class="band__ph"><span>Auckland <a href="tel:+6498361804">09 836 1804</a></span><span>Manukau <a href="tel:+6498696070">09 869 6070</a></span></div></div>
     <div class="band__ctas rv">
-      <a class="btn mag" href="contact.html">Book Your Free Development Consultation <span class="ar">→</span></a>
-      <a class="btn btn--ghost mag" href="contact.html#planner">Complimentary Planner Meeting <span class="ar">→</span></a>
+      <a class="btn mag" href="contact.html">Book a consultation <span class="ar">→</span></a>
+      <a class="tlink" href="contact.html#planner">Complimentary planner meeting <span class="ar">→</span></a>
     </div>
   </div>
 </section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <div class="foot__grid">
-      <div><a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="167" height="44"></a><p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p>
-        <ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul></div>
-      <div><h3>Services</h3><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
-      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal ↗</a></li></ul></div>
-      <div><h3>Connect</h3><ul><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+    <div class="tblock">
+      <div class="tb-c"><a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="167" height="44" loading="lazy" decoding="async"></a><p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p></div>
+      <div class="tb-c"><h3>Services</h3><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
+      <div class="tb-c"><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="tb-c"><h3>Offices</h3><ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul><h3>Connect</h3><ul class="tb-soc"><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+      <div class="tb-row">
+        <div class="tb-f tb-f--sheet"><small>Sheet</small><span>02</span>Projects</div>
+        <div class="tb-f"><small>Client portal</small><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Log in ↗</a></div>
+        <div class="tb-f tb-f--note"><small>Note</small>Some images may be stock images or illustrative renders.</div>
+        <div class="tb-f"><small>Owner</small>© 2026 Thomas Consultants Ltd</div>
+        <div class="tb-f"><small>Site design</small>Proudly designed by AMBS Solutions</div>
+        <div class="tb-f"><small>Return</small><a href="#top">Back to top ↑</a></div>
+      </div>
     </div>
-    <div class="foot__legal"><span>© 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span><span>Proudly designed by AMBS Solutions</span><a href="#top" style="color:var(--cyan);text-decoration:none">Back to top ↑</a></div>
   </div>
 </footer>
 <div class="qbar" aria-label="Quick contact"><a href="tel:+6498361804">Call 09 836 1804</a><a class="go" href="contact.html">Book a meeting</a></div>
@@ -892,7 +963,7 @@ $$('[data-carousel]').forEach(function(car){
   var track = $('[data-track]', car), slides = $$('[data-slide]', car), bars = $$('[data-bar]', car);
   var now = $('[data-now]', car), pauseBtn = $('[data-pause]', car), auto = +car.dataset.autoplay || 0;
   var idx = 0, timer = null, paused = !auto || reduced, onscreen = false, hover = false, started = false;
-  function lazy(){ [idx, idx + 1, idx - 1].forEach(function(k){ var s = slides[k]; if (s) $$('img[data-srcset]', s).forEach(loadImg); }); }
+  function lazy(){ [idx - 1, idx, idx + 1, idx + 2, idx + 3].forEach(function(k){ var s = slides[k]; if (s) $$('img[data-srcset]', s).forEach(loadImg); }); }
   function mark(){
     bars.forEach(function(b, k){ b.classList.toggle('done', k < idx); b.classList.toggle('on', k === idx); b.setAttribute('aria-current', k === idx ? 'true' : 'false'); b.classList.remove('run'); });
     if (now) now.textContent = ('0' + (idx + 1)).slice(-2);

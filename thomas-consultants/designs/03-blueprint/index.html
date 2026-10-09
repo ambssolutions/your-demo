@@ -658,6 +658,71 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
   .photo-wide{aspect-ratio:4/3}
   .hero__caption{display:none}
 }
+
+/* Phase 7: drawing-office surfaces. Square corners, hairlines, flat fills, no rounded sheets sliding over each other. */
+:root{--r:0px}
+@media (max-width:760px){:root{--r:0px}}
+.btn,.chip,.trust span,.dslide,.frame,.tb,.pc,.pc__img,.pcard,.pcard__no,.sector,.fslide__img,.collage figure,.point,.readouts,.log,.log__tabs button,.leg,.book,.form,.fld input,.fld select,.fld textarea,.office-strip,.subnav a,.svc__media figure,.filters button,.val,.commit__img,.planner,.tell li,.dl dd .social a,.gal__item,.gal__item figcaption,.pnav a,.qbar a,.reg__img,.reg__img figcaption,.photo-wide,.cs__q{border-radius:0}
+.btn{border-radius:2px}
+.book,.form,.collage figure{box-shadow:none}
+.sheet + .sheet{border-top:1px solid var(--line-2)}
+.sheet.light + .sheet.light{border-top-color:var(--pline-2)}
+.hero__ctas{align-items:center;gap:14px 28px}
+.band__ctas{align-items:flex-start}
+.band__ctas .btn{align-self:stretch}
+.planner__ctas{align-items:center;gap:14px 26px}
+.svc .tlink{margin-top:22px}
+.light .reg__more .tlink,.reg__more .tlink{margin-left:auto}
+/* about: practice record, a drawing-register table */
+.dreg{margin-top:clamp(40px,6vw,72px);display:grid;gap:1px;background:var(--pline-2);border:1px solid var(--pline-2)}
+.dreg__r{display:grid;grid-template-columns:76px minmax(0,3fr) minmax(0,8fr);gap:1px}
+.dreg__r > *{background:#fff;margin:0;padding:14px 18px;min-width:0}
+.dreg__r--h > *{background:var(--paper-2);font:500 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--pmuted);padding:10px 18px}
+.dreg__r b{font:500 12px var(--mono);color:var(--green-dk);letter-spacing:.06em}
+.dreg__r h3{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.dreg__r p{color:var(--ink-2);font-size:16px}
+.dreg__r p small{display:block;font:400 12px var(--mono);color:var(--pmuted);margin-top:4px}
+@media (max-width:640px){
+  .dreg__r{grid-template-columns:58px minmax(0,1fr)}
+  .dreg__r > *{padding:12px 14px}
+  .dreg__r > b{padding:13px 8px;white-space:nowrap;font-size:11px}
+  .dreg__r--h{display:none}
+  .dreg__r p{grid-column:2}
+  .dreg__r > b{grid-row:span 2}
+}
+/* about: general notes, as they appear on a drawing */
+.gnotes{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.gnotes__fig{margin:0;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ink-3);border:1px solid var(--line-2)}
+.gnotes__fig img{width:100%;height:100%;object-fit:cover}
+.gnotes__fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:var(--ink);font:400 11.5px var(--mono);color:var(--muted)}
+.notes{list-style:none;margin:28px 0 0;padding:0;counter-reset:n;border-top:1px solid var(--line-2)}
+.notes li{counter-increment:n;display:grid;grid-template-columns:52px minmax(0,1fr);padding:20px 0;border-bottom:1px solid var(--line-2)}
+.notes li::before{content:counter(n) ".";font:500 15px var(--mono);color:var(--green-hi);padding-top:3px}
+.notes h3{margin:0 0 6px;font-size:21px;font-weight:600;letter-spacing:-.015em}
+.notes p{margin:0;color:var(--muted)}
+@media (max-width:860px){.gnotes{grid-template-columns:minmax(0,1fr)}.gnotes__fig{aspect-ratio:16/10}}
+/* footer: a drawing title block */
+.foot{border-top:0}
+.tblock{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,3fr) minmax(0,2fr) minmax(0,3fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
+.tblock > .tb-c{background:var(--ink);padding:24px 22px 20px;min-width:0}
+.tblock .foot__logo{margin-bottom:14px}
+.tb-row{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,2.2fr) minmax(0,1.7fr) minmax(0,1.6fr) minmax(0,1fr);gap:1px}
+.tb-f{background:var(--ink);padding:10px 14px 12px;font:400 12px/1.45 var(--mono);color:var(--white);min-width:0}
+.tb-f small{display:block;font:500 9.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.tb-f a{color:var(--cyan);text-decoration:none;display:inline-block;padding:2px 0}
+.tb-f a:hover{color:var(--green-hi)}
+.tb-f--sheet span{display:block;font:500 20px/1.1 var(--mono);color:var(--green-hi);letter-spacing:-.02em}
+.tb-soc{display:flex;flex-wrap:wrap;gap:0 16px;margin-top:4px}
+.tb-c h3 + ul + h3{margin-top:18px}
+@media (max-width:1100px){
+  .tblock{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tb-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .tblock{grid-template-columns:minmax(0,1fr)}
+  .tb-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tb-f--note,.tb-f:last-child{grid-column:1/-1}
+}
 </style>
 
 </head>
@@ -698,7 +763,7 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
     <p class="lede" data-h style="--hd:240ms">Quality civil engineering, resource consents and planning, from site assessments to final delivery. Creating better spaces together.</p>
     <div class="hero__ctas" data-h style="--hd:340ms">
       <a class="btn mag" href="contact.html">Book Your Free Development Consultation <span class="ar">→</span></a>
-      <a class="btn btn--ghost mag" href="contact.html#planner">Complimentary Planner Meeting <span class="ar">→</span></a>
+      <a class="tlink" href="contact.html#planner">Complimentary planner meeting <span class="ar">→</span></a>
     </div>
   </div>
   <p class="hero__caption" aria-hidden="true">Drone survey of a completed residential subdivision, with an illustrative scheme plan overlaid.</p>
@@ -706,8 +771,8 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 
 <section class="sheet light grid-bg cv" id="register" aria-labelledby="reg-h">
   <div class="wrap">
-    <div class="head"><div><span class="eyebrow">Project register</span><h2 class="h rv" id="reg-h">Sixteen recent projects, <em>open any row.</em></h2></div>
-      <p class="lede rv">Kāinga Ora housing, council parks and reserves, and private subdivisions across Auckland. Each entry lists the site, the client and what our team did.</p></div>
+    <div class="head"><div><span class="eyebrow">Project register</span><h2 class="h rv" id="reg-h">Sixteen recent projects</h2></div>
+      <p class="lede rv">Kāinga Ora housing, council parks and reserves, and private subdivisions across Auckland. Each row lists the site, the client and what our team did. Open a row for the photo and the facts.</p></div>
     <div class="filters" data-filters="#reg" role="group" aria-label="Filter the register"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="engineering" aria-pressed="false">Engineering</button><button type="button" data-filter="planning" aria-pressed="false">Planning</button><button type="button" data-filter="landscape" aria-pressed="false">Landscape</button><button type="button" data-filter="surveying" aria-pressed="false">Surveying</button><button type="button" data-filter="environmental" aria-pressed="false">Environmental</button><button type="button" data-filter="res-com" aria-pressed="false">Residential &amp; Commercial</button><button type="button" data-filter="public" aria-pressed="false">Public spaces</button></div>
     <p class="fcount" aria-live="polite">Showing <b data-shown>16</b> of 16 projects</p>
     <div class="reg" id="reg">
@@ -827,7 +892,7 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 </div>
     </div>
     <p class="fcount" data-empty hidden>No projects in this category yet.</p>
-    <div class="reg__more"><a class="btn btn--ghost mag" href="projects.html">All projects with photos <span class="ar">→</span></a></div>
+    <div class="reg__more"><a class="tlink" href="projects.html">All projects with photos <span class="ar">→</span></a></div>
   </div>
 </section>
 
@@ -848,19 +913,12 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 
 <section class="sheet light cv" id="services" aria-labelledby="svc-h">
   <div class="wrap">
-    <div class="head"><div><span class="eyebrow">Services</span><h2 class="h rv" id="svc-h">Survey, planning and engineering <em>under one roof.</em></h2></div>
-      <p class="lede rv">Our engineers, planners, surveyors, landscape architects, ecologists and contamination experts work as one team, so nothing falls between consultants.</p></div>
+    <div class="head"><div><h2 class="h rv" id="svc-h">Services</h2></div>
+      <p class="lede rv">Engineers, planners, surveyors, landscape architects, ecologists and contamination specialists in the same practice. On Thom Street that meant one consultant for the design, the monitoring and the sign-offs.</p></div>
     <div class="svc-list"><a class="svc-row rv" href="services.html#surveying"><b>01</b><h3>Land Surveying</h3><p>Accurate and reliable data for your development projects.</p><span>Boundary redefinition, Cross-lease to freehold, Topographical surveys, Set out</span></a><a class="svc-row rv" href="services.html#planning"><b>02</b><h3>RMA Planning</h3><p>Advice on zoning, land use and resource consent applications.</p><span>Zoning and land use advice, Resource consent applications, Feasibility reports, Hearings evidence</span></a><a class="svc-row rv" href="services.html#engineering"><b>03</b><h3>Engineering</h3><p>Infrastructure that is robust and compliant.</p><span>Roads, Stormwater, Three waters, Earthworks</span></a><a class="svc-row rv" href="services.html#landscape"><b>04</b><h3>Landscape Architecture</h3><p>Every aspect of the outdoor design process.</p><span>Open space design, Landscape and visual assessments, Planting plans</span></a><a class="svc-row rv" href="services.html#environmental"><b>05</b><h3>Environmental Services</h3><p>Management plans, ecology, soil and water testing, and asbestos.</p><span>Environmental Management Plans, Ecology, Soil contamination testing, Water contamination testing</span></a><a class="svc-row rv" href="services.html#project-management"><b>06</b><h3>Project Management</h3><p>From concept to completion, we oversee the entire process.</p><span>Concept to completion, Programme and budget control, Consultant and contractor coordination, Regular client reporting</span></a></div>
   </div>
 </section>
 
-<section class="sheet dark grid-bg cv" id="process" aria-labelledby="proc-h">
-  <div class="wrap">
-    <div class="head"><div><span class="eyebrow">How a project runs</span><h2 class="h rv" id="proc-h">Four stages, <em>one team throughout.</em></h2></div>
-      <p class="lede rv">The same people carry your project from the first site visit to titles. <a class="tlink" href="services.html#process">More detail <span class="ar">→</span></a></p></div>
-    <ol class="trav"><li class="rv"><h3>Understand the site</h3><p>We survey, test and investigate your land to understand its constraints and opportunities before you commit.</p></li><li class="rv"><h3>Design &amp; consent</h3><p>Our engineers, planners and landscape architects design the scheme together and prepare your resource consent application.</p></li><li class="rv"><h3>Deliver on site</h3><p>We set out the works, monitor construction and manage the programme so the build matches the design.</p></li><li class="rv"><h3>Complete &amp; hand over</h3><p>We close out the project with as-built information, council sign-off and titles, then hand everything over to you.</p></li></ol>
-  </div>
-</section>
 
 <section class="sheet light grid-bg cv" id="words" aria-labelledby="q-h">
   <div class="wrap">
@@ -869,7 +927,6 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
       <div><blockquote class="bq rv">“We have all been commenting in the office how well the team have performed on this job. It’s much appreciated.”</blockquote><p class="bq-by rv">Gareth Ready, CEO, Signature Homes · Walmer and Moa Road, Pt Chevalier</p></div>
       <div class="bq-side">
         <blockquote class="rv"><p>You have been timely, pro-active in your communications with us, given us a cost-effective outcome, and I have found Thomas Consultants very easy to deal with.</p><footer>Nigel, New Plymouth District Council</footer></blockquote>
-        <blockquote class="rv"><p>I have to say – this looks amazing. I think this is the first time I received a first concept that fully met the brief and looks exactly how I imagined it.</p><footer>Barbara Heise, Auckland Council</footer></blockquote>
         <a class="tlink" href="about.html">About us <span class="ar">→</span></a>
       </div>
     </div>
@@ -878,7 +935,7 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 
 <section class="sheet deep grid-bg cv" id="legend" aria-labelledby="lg-h">
   <div class="wrap">
-    <div class="head"><div><span class="eyebrow">Clients and accreditations</span><h2 class="h rv" id="lg-h">Trusted by public agencies, <em>certified to standard.</em></h2></div><p class="lede rv">25 years of work for councils, agencies, developers and families, from offices in Auckland, Manukau and Christchurch.</p></div>
+    <div class="head"><div><h2 class="h rv" id="lg-h">Clients, certifications and memberships</h2></div><p class="lede rv">25 years of work for councils, agencies, developers and families, from offices in Auckland, Manukau and Christchurch.</p></div>
     <div class="legend"><div class="leg rv"><h3>Clients <span>10</span></h3><ul><li><span>C01</span>Kāinga Ora</li><li><span>C02</span>Auckland Transport</li><li><span>C03</span>Watercare</li><li><span>C04</span>Panuku</li><li><span>C05</span>NZ Transport Agency</li><li><span>C06</span>Ministry of Education</li><li><span>C07</span>Waikato District Council</li><li><span>C08</span>Rotorua Lakes Council</li><li><span>C09</span>Hobsonville Point</li><li><span>C10</span>Homes of Choice</li></ul></div><div class="leg rv"><h3>Accreditations <span>10</span></h3><ul><li><span>A01</span>ISO 45001</li><li><span>A02</span>IANZ</li><li><span>A03</span>Toitū Envirocare</li><li><span>A04</span>Engineering NZ</li><li><span>A05</span>Water NZ</li><li><span>A06</span>Survey and Spatial NZ</li><li><span>A07</span>NZ Planning Institute</li><li><span>A08</span>NZILA</li><li><span>A09</span>SiteSafe</li><li><span>A10</span>SiteWise</li></ul></div></div>
   </div>
 </section>
@@ -886,9 +943,8 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 <section class="sheet light cv" id="contact" aria-labelledby="ct-h">
   <div class="wrap contact">
     <div>
-      <span class="eyebrow">Get in touch</span>
-      <h2 class="h rv" id="ct-h">Bring us <em>your site.</em></h2>
-      <p class="lede rv">Book a free development consultation or a complimentary planner meeting. Tell us the address and your idea, and we will set out the next steps.</p>
+      <h2 class="h rv" id="ct-h">Send us the site address</h2>
+      <p class="lede rv">Book a free development consultation or a complimentary planner meeting. Give us the address and a line about your idea, and a planner or engineer will call you back.</p>
       <a class="book rv" href="contact.html"><span class="book__ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span><b>Book a meeting</b><small>Free development consultation</small></span></a>
       <a class="book book--alt rv" href="contact.html#planner"><span class="book__ic" style="color:var(--green-hi)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span><b>Complimentary planner meeting</b><small>Zoning and consent advice</small></span></a>
       <dl class="dl">
@@ -919,14 +975,20 @@ form.done .form-status{font:600 26px/1.25 var(--sans);color:var(--green-hi);marg
 </main>
 <footer class="foot">
   <div class="wrap">
-    <div class="foot__grid">
-      <div><a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="167" height="44"></a><p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p>
-        <ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul></div>
-      <div><h3>Services</h3><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
-      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Client portal ↗</a></li></ul></div>
-      <div><h3>Connect</h3><ul><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+    <div class="tblock">
+      <div class="tb-c"><a class="foot__logo" href="index.html"><img src="../../assets/logo/thomas-consultants-white.svg" alt="Thomas Consultants" width="167" height="44" loading="lazy" decoding="async"></a><p>Land Development &amp; Subdivision Consultants. Quality civil engineering, resource consents and planning.</p></div>
+      <div class="tb-c"><h3>Services</h3><ul><li><a href="services.html#surveying">Land Surveying</a></li><li><a href="services.html#planning">RMA Planning</a></li><li><a href="services.html#engineering">Engineering</a></li><li><a href="services.html#landscape">Landscape Architecture</a></li><li><a href="services.html#environmental">Environmental Services</a></li><li><a href="services.html#project-management">Project Management</a></li></ul></div>
+      <div class="tb-c"><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="tb-c"><h3>Offices</h3><ul><li><a href="tel:+6498361804">Auckland 09 836 1804</a></li><li><a href="tel:+6498696070">Manukau 09 869 6070</a></li><li><a href="contact.html">Christchurch satellite office</a></li></ul><h3>Connect</h3><ul class="tb-soc"><li><a href="https://www.facebook.com/thomasconsultantsltd" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/thomasconsultantsltd" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/thomasconsultantsltd" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+      <div class="tb-row">
+        <div class="tb-f tb-f--sheet"><small>Sheet</small><span>00</span>Home</div>
+        <div class="tb-f"><small>Client portal</small><a href="https://portal.thomasconsultants.co.nz" target="_blank" rel="noopener">Log in ↗</a></div>
+        <div class="tb-f tb-f--note"><small>Note</small>Some images may be stock images or illustrative renders.</div>
+        <div class="tb-f"><small>Owner</small>© 2026 Thomas Consultants Ltd</div>
+        <div class="tb-f"><small>Site design</small>Proudly designed by AMBS Solutions</div>
+        <div class="tb-f"><small>Return</small><a href="#top">Back to top ↑</a></div>
+      </div>
     </div>
-    <div class="foot__legal"><span>© 2026 Thomas Consultants Ltd</span><span>Some images may be stock images or illustrative renders.</span><span>Proudly designed by AMBS Solutions</span><a href="#top" style="color:var(--cyan);text-decoration:none">Back to top ↑</a></div>
   </div>
 </footer>
 <div class="qbar" aria-label="Quick contact"><a href="tel:+6498361804">Call 09 836 1804</a><a class="go" href="contact.html">Book a meeting</a></div>
@@ -1051,7 +1113,7 @@ $$('[data-carousel]').forEach(function(car){
   var track = $('[data-track]', car), slides = $$('[data-slide]', car), bars = $$('[data-bar]', car);
   var now = $('[data-now]', car), pauseBtn = $('[data-pause]', car), auto = +car.dataset.autoplay || 0;
   var idx = 0, timer = null, paused = !auto || reduced, onscreen = false, hover = false, started = false;
-  function lazy(){ [idx, idx + 1, idx - 1].forEach(function(k){ var s = slides[k]; if (s) $$('img[data-srcset]', s).forEach(loadImg); }); }
+  function lazy(){ [idx - 1, idx, idx + 1, idx + 2, idx + 3].forEach(function(k){ var s = slides[k]; if (s) $$('img[data-srcset]', s).forEach(loadImg); }); }
   function mark(){
     bars.forEach(function(b, k){ b.classList.toggle('done', k < idx); b.classList.toggle('on', k === idx); b.setAttribute('aria-current', k === idx ? 'true' : 'false'); b.classList.remove('run'); });
     if (now) now.textContent = ('0' + (idx + 1)).slice(-2);
