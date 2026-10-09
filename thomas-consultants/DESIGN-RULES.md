@@ -159,3 +159,21 @@ The ten concepts currently share one section order. Restructure each home page a
 
 ## Verify
 `node thomas-consultants/tests/e2e.mjs NN` 40/40 and `node thomas-consultants/tests/perf.mjs NN` all pages within budget. Grep your pages for the banned MiKia lines and for "people love" before finishing. Then regenerate thumbnails: `node thomas-consultants/tools/thumbs.mjs NN-slug`.
+
+# Phase 6: laptop screens (client feedback: "not laptop screen friendly, text overlapping", "design 2 cards stacking when transparent", "swiss grid is not good", "design 7 not laptop friendly")
+
+Test viewports (all must look intentional, nothing overlapping or cut): **1280x720, 1366x768, 1440x900, 1536x864**, plus 390x844 mobile.
+Audit: `node thomas-consultants/tests/laptop.mjs NN` must report **0 layout issues**. Also scroll each page with the mouse wheel at 1280x720 and look at screenshots yourself (tests/out/laptop/ has top-of-page shots).
+
+## Rules
+1. **Hero fits the screen.** On a 720px-tall laptop the whole hero (eyebrow, H1, lede, CTAs) must be visible above the fold with breathing room. Size display type with BOTH width and height, e.g. `font-size: clamp(2.4rem, min(6.2vw, 9.5vh), 6.5rem)`; tighten line-height; cap hero height to `min(100svh, …)`; never let hero text sit under the fixed header or run off the bottom.
+2. **Stacked/sticky cards:** every stacked card must have a **fully opaque background** (no rgba/alpha, no backdrop blur as the only background). No opacity or reveal (.rv) fade on a sticky card or its children: content inside stacked cards is always opacity 1 (animate only transform if anything). The card must fit: `max-height: calc(100svh - <sticky top> - 24px)`; if content can't fit, reduce padding/type with vh-aware clamp. When `(max-height: 760px)` and the stack would still be cramped, turn the stack into normal flow (position: static, no overlap).
+3. **No accidental overlap:** cursor-follow previews must not cover the text they belong to (offset them or show beside); giant footer/display text must fit the viewport width (use vw-based clamp, `overflow-wrap:anywhere` not acceptable for words, reduce size instead); big counters/numbers must not overlap their labels or neighbouring headings; animated counters reserve width (tabular-nums / min-width) so layouts don't jump.
+4. **Pinned/horizontal sections** (project reels, journals, pinned heroes): check at 720px height that titles and captions are fully visible; reduce card height using vh units.
+5. **Reveal animations** must never leave text semi-transparent over other content; anything that overlaps another layer must be opaque before it overlaps.
+6. Keep everything else from Phases 2–5 (perf budget, e2e 64/64, real logo/content, copy rules).
+
+## Concept-specific
+- **02 Flow:** fix the stacked process cards: opaque, no fade, fit 720px height, as above.
+- **06 Swiss Grid:** client says "not good". Redesign the home (and carry the system to inner pages): a proper International Typographic Style layout that is rich, not sparse: asymmetric 12-col grid with strong photography blocks next to the numbers (each real number paired with its project photo and caption), tighter vertical rhythm (no near-empty screens), a confident red-free palette of white, ink #052C31 and brand green #77A22F, Archivo/Inter Tight type with a clear scale, the services index without overlapping previews (preview image in a fixed right column instead), and a footer whose large type fits. It should look like a polished Swiss design studio site, not a wireframe.
+- **07 Aotearoa:** client says "not laptop friendly": the pinned ridgeline hero, the koru section and stacked sections must all fit 1280x720 and 1366x768 per the rules above.
