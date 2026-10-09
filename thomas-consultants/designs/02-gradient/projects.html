@@ -116,16 +116,16 @@ html:not(.lite) .nav.scrolled{background:rgba(255,255,255,.8);backdrop-filter:sa
 @keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 /* page hero */
-.phero{position:relative;min-height:540px;height:76svh;overflow:hidden;color:#fff;isolation:isolate;background:#052C31;clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),0 100%);display:flex;align-items:flex-end}
+.phero{position:relative;min-height:min(76svh,700px);height:auto;overflow:hidden;color:#fff;isolation:isolate;background:#052C31;clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),0 100%);display:flex;align-items:flex-end}
 .phero .bg{position:absolute;inset:0}
 .phero .bg img{width:100%;height:100%;object-fit:cover}
 html.anim:not(.lite) .phero .bg img{animation:kb 9s ease-out both}
-.phero .wrap{position:relative;z-index:2;padding-top:calc(var(--nav) + 30px);padding-bottom:96px}
+.phero .wrap{position:relative;z-index:2;padding-top:calc(var(--nav) + 48px);padding-bottom:96px}
 .crumbs ol{display:inline-flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0 0 20px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.16);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);font-size:13.5px;font-weight:500}
 .crumbs li+li::before{content:"›";margin-right:6px;opacity:.8}
 .crumbs a:hover{text-decoration:underline}
 .crumbs [aria-current]{font-weight:600}
-.phero h1{font-size:clamp(36px,min(5.6vw,9vh),74px);line-height:1.05;letter-spacing:-.04em;max-width:9.9em}
+.phero h1{font-size:clamp(34px,min(5vw,8vh),70px);line-height:1.05;letter-spacing:-.04em;max-width:9.9em}
 .phero .lead{color:#e6f1ed;max-width:30.2em}
 html.anim .phero h1,html.anim .phero .lead,html.anim .phero .crumbs{animation:up .9s var(--ease) both}
 html.anim .phero h1{animation-delay:.08s}
